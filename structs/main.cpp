@@ -1,103 +1,39 @@
 #include "DtFecha.cpp"
+#include "Puerto.h"
+
 #include <iostream>
 #include <string>
+#include <map>
+
 using namespace std;
 
-/*
-void listarVengadores(){
-  system("clear");
-  cout<< "__________________________" << endl;
-  cout<< "________VENGADORES________" << endl;
-  cout << endl;
-  system("sleep 5");
-}
-void listarMisiones(){
-  system("clear");
-  cout<< "__________________________" << endl;
-  cout<< "__________MISIONES________" << endl;
-  cout << endl;
-  system("sleep 5");
-}
-void listarMisionesDeVengador(string vengador){
-  system("clear");
-  cout<< "__________________________" << endl;
-  cout<< "__MISIONES DE " << vengador << endl;
-
-  cout << endl;
-  system("sleep 5");
-}
-
-void menuRegistarVengador(){
-  system("clear");
-  cout << "_______________________" << endl;
-  cout << "___REGISTRAR VENGADOR__" << endl;
-  string nombre;
-  int poder,dia,mes,anio,puntos;
-  cout << "NOMBRE: ";
-  cin >> nombre;
-  cout << "\nPUNTOS: ";
-  cin >> puntos;
-  cout << "\nFECHA NACIMIENTO";
-  cout << "\nDIA: ";
-  cin >> dia;
-  cout << "\nMES: ";
-  cin >> mes;
-  cout << "\nANIO: ";
-  cin >> anio;
- 
-}
-void menuCrearMision(){
-  system("clear");
-  cout << "_______________________" << endl;
-  cout << "___CREAR MISIONES______" << endl;
-  string nombre;
-  int dia,mes,anio;
-  cout << "NOMBRE: ";
-  cin >> nombre;
-  cout << "\nFECHA INICIO" <<endl;
-  cout << "DIA: ";
-  cin >> dia;
-  cout << "\nMES: ";
-  cin >> mes;
-  cout << "\nANIO: ";
-  cin >> anio;
- 
-  cout << "\nFECHA FIN" << endl;
-  cout << "DIA: ";
-  cin >> dia;
-  cout << "MES: ";
-  cin >> mes;
-  cout << "ANIO: ";
-  cin >> anio;
- 
-}
-void menuAsignarMisionAVengador(){
-  system("clear");
-  cout << "_______________________" << endl;
-  cout << "____ASIGNAR MISION_____" << endl;
-  string vengador,mision;
-  cout << "NOMBRE VENGADOR: ";
-  cin >> vengador;
-  cout << "\nNOMBRE MISION: ";
-  cin >> mision;
-  
-}
-
-void menuListarMisionesDeVengador(){
-  system("clear");
-  cout << "________________________________" << endl;
-  cout << "____MISIONES DE UN VENGADOR_____" << endl;
-  string vengador;
-  cout << "NOMBRE VENGADOR: ";
-  cin >> vengador;
- 
-}
-*/
+map<string, Puerto*> puertosMap;
 
 void agregarPuerto(){
-  
+  string id, nombre;
+  cout << "____AGREGAR PUERTO_____" << endl;
+  cout << "Ingresa los datos del nuevo puerto" << endl;
+  cout << "id:" << endl;
+  cin >> id;
+  cout << "nombre:" << endl;
+  cin >> nombre;
+  agregarPuerto(id, nombre, DtFecha(10,11,95));
 };
 void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
+    map<string, Puerto*>::iterator it;
+    try {
+      it = puertosMap.find(id);
+      if (it == puertosMap.end()){
+        Puerto *puerto = new Puerto(id, nombre, fechaCreacion);
+        puertosMap.insert({id, puerto});
+      }
+      else
+        throw invalid_argument("Por que si\n"); 
+    } catch (const invalid_argument& e) {
+      cout << e.what();
+    }
+    
+    
 
 };
 
@@ -131,6 +67,7 @@ int main() {
   int opcion;
   cin >> opcion;
   while(opcion!=8){
+    
     switch(opcion){
       case 1: agregarPuerto();
               break;
