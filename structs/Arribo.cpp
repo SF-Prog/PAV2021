@@ -1,7 +1,6 @@
 #ifndef DTARRIBO
 #define DTARRIBO
 #include <string>
-#include "DtFecha.h"
 #include "DtBarco.h"
 using namespace std;
 

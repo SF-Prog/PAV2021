@@ -1,7 +1,6 @@
 #ifndef DTPUERTO
 #define DTPUERTO
 #include <string>
-#include "DtFecha.h"
 #include "DtArribo.h"
 
 class DtPuerto{

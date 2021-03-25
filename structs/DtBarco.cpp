@@ -1,4 +1,7 @@
 #include "DtBarco.h"
-#include <string>
+
+DtBarco::DtBarco(){};
+DtBarco::~DtBarco(){};
+ostream& operator <<(ostream& retorno,const DtBarco&){};
 
 

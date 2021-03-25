@@ -1,7 +1,6 @@
 #ifndef DTBARCO
 #define DTBARCO
 
-#include "DtFecha.h"
 #include "Barco.h"
 
 #include <string>

@@ -1,4 +1,3 @@
-#include "DtFecha.cpp"
 #include "Puerto.h"
 
 #include <iostream>
@@ -9,16 +8,6 @@ using namespace std;
 
 map<string, Puerto*> puertosMap;
 
-void agregarPuerto(){
-  string id, nombre;
-  cout << "____AGREGAR PUERTO_____" << endl;
-  cout << "Ingresa los datos del nuevo puerto" << endl;
-  cout << "id:" << endl;
-  cin >> id;
-  cout << "nombre:" << endl;
-  cin >> nombre;
-  agregarPuerto(id, nombre, DtFecha(10,11,95));
-};
 void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
     map<string, Puerto*>::iterator it;
     try {
@@ -32,10 +21,18 @@ void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
     } catch (const invalid_argument& e) {
       cout << e.what();
     }
-    
-    
-
 };
+void agregarPuerto(){
+  string id, nombre;
+  cout << "____AGREGAR PUERTO_____" << endl;
+  cout << "Ingresa los datos del nuevo puerto" << endl;
+  cout << "id:" << endl;
+  cin >> id;
+  cout << "nombre:" << endl;
+  cin >> nombre;
+  agregarPuerto(id, nombre, DtFecha(10,11,95));
+};
+
 
 void agregarBarco(){};
 void listarPuertos(){};
