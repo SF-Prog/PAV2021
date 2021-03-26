@@ -1,8 +1,11 @@
 #include "DtPuerto.h"
-#include <string>
 
 DtPuerto::DtPuerto(){}
-DtPuerto::DtPuerto(string id, string nombre,DtFecha fechaCreacion){}
+DtPuerto::DtPuerto(string id, string nombre,DtFecha fechaCreacion){
+  this->id = id;
+  this->nombre = nombre;
+  this->fechaCreacion = fechaCreacion;
+}
 
 // OBTENER DATOS
 string DtPuerto::getId(){
@@ -35,9 +38,11 @@ void DtPuerto::setArribos(DtArribo * arribo){
 }
 
 //METODOS
-void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
-  
-}
+//void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){}
 
+ostream& operator <<(ostream& salida, const DtPuerto& puerto){
+  cout << "Id del puerto: " << puerto.id << ". Nombre del puerto: " << puerto.nombre << ". Fecha de creacion: " << endl; // << puerto.fechaCreacion << endl;
+  return salida;
+};
 
 DtPuerto::~DtPuerto(){}

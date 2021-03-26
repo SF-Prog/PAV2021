@@ -1,5 +1,5 @@
-#ifndef DTBARCO
-#define DTBARCO
+#ifndef BARCOPESQUERO
+#define BARCOPESQUERO
 
 #include "Barco.h"
 
@@ -17,8 +17,8 @@ class BarcoPesquero : public Barco{
     void setCarga(int);
     int getCapacidad();
     int getCarga();
-  
-   ~BarcoPesquero();
+    void arribar(float);
+    ~BarcoPesquero();
   
 };
 

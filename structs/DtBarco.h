@@ -13,7 +13,9 @@ class DtBarco{
     string id;
   public:
     DtBarco();
-    virtual ~DtBarco();
+    DtBarco(string, string);
+    string getId();
+    ~DtBarco();
     friend ostream& operator <<(ostream&,const DtBarco&);
 };
 

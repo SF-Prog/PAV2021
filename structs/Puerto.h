@@ -1,7 +1,10 @@
 #ifndef PUERTO
 #define PUERTO
+
 #include <string>
 #include "Arribo.h"
+
+using namespace std;
 
 class Puerto{
   private:

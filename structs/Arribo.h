@@ -14,7 +14,7 @@ class Arribo{
     Barco * barcos;
   public:
     Arribo();
-    Arribo(float a, DtFecha b, Barco * c);
+    Arribo(float, DtFecha, Barco *);
     
     // OBTENER DATOS
     float getCarga();

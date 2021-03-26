@@ -18,9 +18,7 @@ class BarcoPasajeros : public Barco {
     int getCantPasajeros();
     TipoTamanio getTamanio();
     void arribar(float);
-
     ~BarcoPasajeros();
-  
   
 };
 
