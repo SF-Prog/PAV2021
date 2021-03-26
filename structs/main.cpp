@@ -17,7 +17,7 @@ struct puertos {
 } colPuertos;
 
 void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
-    map<string, Puerto*>::iterator it;
+    /*map<string, Puerto*>::iterator it;
     try {
       it = puertosMap.find(id);
       if (it == puertosMap.end()){
@@ -28,7 +28,21 @@ void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
         throw invalid_argument("Por que si\n"); 
     } catch (const invalid_argument& e) {
       cout << e.what();
-    }
+    } */
+    int i = 0;
+    while (i < colPuertos.tope && id != colPuertos.p[i]->getId()){
+      i++;
+    };
+    try {
+      if (i == colPuertos.tope){
+        Puerto *puerto = new Puerto(id, nombre, fechaCreacion);
+        colPuertos.p[i] = puerto;
+        colPuertos.tope++;
+      }else
+        throw invalid_argument("Por que si\n");
+    }catch (const invalid_argument& e) {
+      cout << e.what();
+    }  
 };
 void agregarPuerto(){
   string id, nombre;
@@ -68,9 +82,8 @@ void agregarBarco(){
 };
 
 DtPuerto** listarPuertos(int& cantPuertos){
-  cantPuertos = colPuertos.tope;
   DtPuerto** listado = new DtPuerto*[cantPuertos];
-  for(int i=0; i<colPuertos.tope; i++){
+  for (int i=0; i<cantPuertos; i++){
     DtPuerto* dtp = new DtPuerto(colPuertos.p[i]->getId(), colPuertos.p[i]->getNombre(), colPuertos.p[i]->getFechaCreacion());
     listado[i] = dtp;
   }
@@ -82,9 +95,14 @@ void listarPuertos(){
   cout << "Ingresa cuantos puertos deseas listar" << endl;
   cout << "Cantidad de puertos a listar:" << endl;
   cin >> cantPuertos;
-  DtPuerto** dtPuerto = listarPuertos(cantPuertos);
-  for (int i=0; i < colPuertos.tope; i++){
-    cout << *dtPuerto[i];
+  int cant;
+  if (cantPuertos >= colPuertos.tope)
+    cant = colPuertos.tope;
+  else
+    cant = cantPuertos;
+  DtPuerto** dtPuerto = listarPuertos(cant);
+  for (int i=0; i < cant; i++){
+      cout << *dtPuerto[i];
   }
 };
 
@@ -96,7 +114,6 @@ void listarBarcos(){};
 
 
 void menu(){
-  system("clear");
   cout << "_________________________" << endl;
   cout << "_______Bienvenido. Elija la opción.__________" << endl;
   cout << "1. Agregar puerto" << endl;
