@@ -26,5 +26,5 @@ DtFecha.o: DtFecha.cpp
 main.o: main.cpp
 
 clean:
-	rm -rf *.o sistema
+	rm -rf *.o sistema.exe
 	clear
