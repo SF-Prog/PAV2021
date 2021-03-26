@@ -1,8 +1,10 @@
-#ifndef DTPUERTO
-#define DTPUERTO
+#ifndef PUERTO
+#define PUERTO
+
 #include <string>
-#include "DtFecha.h"
 #include "Arribo.h"
+
+using namespace std;
 
 class Puerto{
   private:

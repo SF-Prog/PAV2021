@@ -1,6 +1,8 @@
 #ifndef DTBARCO
 #define DTBARCO
 
+#include "DtFecha.h"
+
 #include <string>
 
 using namespace std;
@@ -10,9 +12,11 @@ class DtBarco{
     string nombre;
     string id;
   public:
-  
-  virtual ~DtBarco();
-  friend ostream& operator <<(ostream&,const DtBarco&);
+    DtBarco();
+    DtBarco(string, string);
+    string getId();
+    ~DtBarco();
+    friend ostream& operator <<(ostream&,const DtBarco&);
 };
 
 #endif

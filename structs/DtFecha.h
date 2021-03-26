@@ -1,6 +1,10 @@
 #ifndef DTFECHA
 #define DTFECHA
+
+#include <iostream>
+
 using namespace std;
+
 class DtFecha {
   private:
     int dia;
@@ -15,6 +19,7 @@ class DtFecha {
     void setMes(int);
     int getAnio();
     void setAnio(int);
+    friend ostream& operator <<(ostream&, const DtFecha&);
     ~DtFecha();
 };
 

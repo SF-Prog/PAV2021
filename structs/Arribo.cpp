@@ -1,30 +1,20 @@
-#ifndef DTARRIBO
-#define DTARRIBO
 #include <string>
-#include "DtFecha.h"
-#include "DtBarco.h"
+
+#include "Arribo.h"
+
 using namespace std;
 
-class DtArribo{
-  private:
-    float carga;
-    DtFecha fecha;
-    DtBarco * barcos;
-  public:
-    DtArribo();
-    DtArribo(float a, DtFecha b,DtBarco * c);
-    
-    // OBTENER DATOS
-    float getCarga();
-    DtFecha getFecha();
-    DtBarco * getBarcos();
-    
-    // CONFIGURAR DATOS
-    void setCarga(float carga);
-    void setFecha(DtFecha fecha);
-    void setBarcos(DtBarco * barcos);
+Arribo::Arribo(){};
+Arribo::Arribo(float a, DtFecha b,Barco * c){};
 
-    ~DtArribo();
-};
+// OBTENER DATOS
+float Arribo::getCarga(){};
+DtFecha Arribo::getFecha(){};
+Barco * Arribo::getBarcos(){};
 
-#endif
+// CONFIGURAR DATOS
+void Arribo::setCarga(float carga){};
+void Arribo::setFecha(DtFecha fecha){};
+void Arribo::setBarcos(Barco * barcos){};
+
+Arribo::~Arribo(){};

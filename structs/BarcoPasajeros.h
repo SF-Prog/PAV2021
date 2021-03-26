@@ -1,7 +1,6 @@
 #ifndef BARCOPASAJEROS
 #define BARCOPASAJEROS
 
-#include "DtFecha.h"
 #include "Barco.h"
 #include "TipoTamanio.h"
 
@@ -19,9 +18,7 @@ class BarcoPasajeros : public Barco {
     int getCantPasajeros();
     TipoTamanio getTamanio();
     void arribar(float);
-
     ~BarcoPasajeros();
-  
   
 };
 

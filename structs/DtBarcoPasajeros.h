@@ -2,7 +2,6 @@
 #define DTBARCOPASAJEROS
 
 #include "DtBarco.h"
-#include "DtFecha.h"
 #include "TipoTamanio.h"
 
 #include <string>

@@ -11,15 +11,15 @@ class Barco{
     string nombre;
     string id;
   public:
+    Barco();
     Barco(string, string);
     void setNombre(string);
     void setId(string);
     string getNombre();
     string getId();
-    virtual void arribar(float cargaDespacho);
-
-  virtual ~Barco();
-  friend ostream& operator <<(ostream&, const Barco&);
+    virtual void arribar(float)=0;
+    ~Barco();
+  //  friend ostream& operator <<(ostream&, const Barco&);
 };
 
 #endif

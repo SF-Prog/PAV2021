@@ -1,4 +1,3 @@
-#include "DtFecha.h"
 #include "BarcoPasajeros.h"
 
 #include <string>
@@ -14,5 +13,7 @@ void BarcoPasajeros::setCantPasajeros(int cantPasajeros){ this->cantPasajeros = 
 void BarcoPasajeros::setTamanio(TipoTamanio tamanio){ this->tamanio = tamanio; }
 int BarcoPasajeros::getCantPasajeros(){ return this->cantPasajeros; }
 TipoTamanio BarcoPasajeros::getTamanio(){ return this->tamanio; }
+
+void BarcoPasajeros::arribar(float cargaDespacho){}
 
 BarcoPasajeros::~BarcoPasajeros(){};

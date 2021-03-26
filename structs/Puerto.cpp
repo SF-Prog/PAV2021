@@ -1,7 +1,5 @@
 #include "Puerto.h"
 
-#include <string>
-
 
     Puerto::Puerto(){};
     Puerto::Puerto(string id, string nombre,DtFecha fechaCreacion){

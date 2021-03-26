@@ -9,4 +9,6 @@ void BarcoPesquero::setCarga(int carga){ this->carga = carga; };
 int BarcoPesquero::getCapacidad(){ this->carga = capacidad; };
 int BarcoPesquero::getCarga(){ this->carga = carga; };
 
+void BarcoPesquero::arribar(float cargaDespacho){}
+
 BarcoPesquero::~BarcoPesquero(){};

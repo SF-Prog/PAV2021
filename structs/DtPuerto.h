@@ -1,8 +1,11 @@
 #ifndef DTPUERTO
 #define DTPUERTO
+
+#include <iostream>
 #include <string>
-#include "DtFecha.h"
 #include "DtArribo.h"
+
+using namespace std;
 
 class DtPuerto{
   private:
@@ -27,8 +30,9 @@ class DtPuerto{
     void setArribos( DtArribo * arribo);
 
     // METODOS
-    void agregarPuerto(string id, string nombre, DtFecha fechaCreacion);
+  //  void agregarPuerto(string id, string nombre, DtFecha fechaCreacion);
 
+    friend ostream& operator <<(ostream&,const DtPuerto&);
 
     // DESTRUCTOR
     ~DtPuerto();

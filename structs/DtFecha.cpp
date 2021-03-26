@@ -1,4 +1,5 @@
 #include "DtFecha.h"
+
 DtFecha::DtFecha(){}
 DtFecha::DtFecha(int dia,int mes,int anio){
   this->dia=dia;
@@ -23,4 +24,10 @@ int DtFecha::getAnio(){
 void DtFecha::setAnio(int anio){
   this->anio=anio;
 }
+
+ostream& operator <<(ostream& salida,DtFecha& fecha){
+  cout << fecha.getDia() << "/" << fecha.getMes() << "/" << fecha.getAnio() << endl;
+  return salida;
+}
+
 DtFecha::~DtFecha(){}
