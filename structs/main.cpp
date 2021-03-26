@@ -68,6 +68,30 @@ void agregarBarco(){
 };
 
 DtPuerto** listarPuertos(int& cantPuertos){
+  
+  if(cantPuertos <= puertosMap.size()){
+    //Continuamos
+    DtPuerto** listado = new DtPuerto*[cantPuertos];
+    /*for(int i=0; i<cantPuertos; i++){
+      DtPuerto* dtp =puertosMap[i];
+      listado[i] = dtp;
+      
+      }
+      */
+    int i = 0;
+    for (map<string, Puerto*>::iterator it=puertosMap.begin(); it!=puertosMap.end(); ++it){
+      //std::cout << it->first << " => " << it->second->getNombre() << '\n';
+      i++;
+      DtPuerto* dtp = new DtPuerto(it->second->getId(), it->second->getNombre(), it->second->getFechaCreacion());
+      listado[i] = dtp;
+      return listado;
+    }
+  }else{
+    //Mensaje de error
+  }
+
+
+  /*
   cantPuertos = colPuertos.tope;
   DtPuerto** listado = new DtPuerto*[cantPuertos];
   for(int i=0; i<colPuertos.tope; i++){
@@ -75,17 +99,21 @@ DtPuerto** listarPuertos(int& cantPuertos){
     listado[i] = dtp;
   }
   return listado;
+  */
 };
 void listarPuertos(){
-  int cantPuertos;
+  int cantPuertos, flag;
   cout << "____LISTAR PUERTOS_____" << endl;
   cout << "Ingresa cuantos puertos deseas listar" << endl;
   cout << "Cantidad de puertos a listar:" << endl;
   cin >> cantPuertos;
   DtPuerto** dtPuerto = listarPuertos(cantPuertos);
-  for (int i=0; i < colPuertos.tope; i++){
+  for (int i=0; i < cantPuertos; i++){
     cout << *dtPuerto[i];
   }
+  //RS: vuelve al menu, no terine de ver si es que le falta un "pause" o si 
+  //    No esta recorriendo correctamente.
+   flag = cin.get();
 };
 
 void agregarArribo(){};
