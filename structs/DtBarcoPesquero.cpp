@@ -19,3 +19,10 @@ int DtBarcoPesquero::getCarga(){
   return this->carga;
 };
 DtBarcoPesquero::~DtBarcoPesquero(){};
+
+ostream& operator << (ostream& salida, const DtBarcoPesquero& dbp){
+  // cout << (Barco) bp << endl;
+  cout << "_______BARCO___PASAJEROS_____\n" << endl;
+  cout << "\tCantidad: " << dbp.cantidad << endl;
+  cout << "\tCarga: " << dbp.carga << endl;
+};

@@ -16,10 +16,4 @@ TipoTamanio BarcoPasajeros::getTamanio(){ return this->tamanio; }
 
 void BarcoPasajeros::arribar(float cargaDespacho){}
 
-ostream& operator << (ostream& salida, const BarcoPasajeros& bp){
-  // cout << (Barco) bp << endl;
-  cout << "CantPasajeros: " << bp.cantPasajeros << endl;
-  cout << "TipoTamanio: " << bp.tamanio << endl;
-};
-
 BarcoPasajeros::~BarcoPasajeros(){};
