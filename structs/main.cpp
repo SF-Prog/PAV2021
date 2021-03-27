@@ -1,6 +1,11 @@
 #include "Puerto.h"
 #include "DtBarco.h"
 #include "DtPuerto.h"
+#include "DtFecha.h"
+#include "DtBarcoPesquero.h"
+#include "DtBarcoPasajeros.h"
+#include "TipoTamanio.h"
+
 
 #include <iostream>
 #include <string>
@@ -60,6 +65,7 @@ void agregarPuerto(){
   agregarPuerto(id, nombre, DtFecha(10, 11, 95));
 };
 
+
 void agregarBarco(DtBarco& barco){
   /*map<string, DtBarco*>::iterator it;
     try {
@@ -76,7 +82,7 @@ void agregarBarco(DtBarco& barco){
 
   
    int i = 0;
-    while (i < colBarco.tope && id != colBarco.p[i]->getId()){
+    while (i < colBarco.tope && barco.getId() != colBarco.b[i]->getId()){
       i++;
     };
     try {
@@ -92,7 +98,7 @@ void agregarBarco(DtBarco& barco){
 };
 void agregarBarco(){
   string id, nombre;
-  int tipo ,cant,capacidad,carga;
+  int tipo ,cant,capacidad,carga, tt;
   TipoTamanio tipoPasajero;
 
   cout << "____AGREGAR BARCO_____" << endl;
@@ -104,14 +110,26 @@ void agregarBarco(){
   cout << "Ingresa tipo de Barco " << endl;
   cout << "Pasajero (1) o Pesquero (2)" << endl;
    cin >> tipo;
-  if(tipo == 1 ){
+  if(tipo == 1){
     cout << "____TIPO PASAJEROS_____" << endl;
     cout << "Ingresa cantidad pasaejeros" << endl;
     cout << "cantidad:" << endl;
     cin >> cant;
-    cout << "Tipo tamaño bote / crucero / galeon / trasatlantico :" << endl;
-    cin >> tipoPasajero;
-    DtBarcoPasajero *dtBarco = new DtBarcoPasajero(id, nombre, cant,tipoPasajero);
+    cout << "Ingrese un numero para indicar el tipo de tamaño" << endl;
+    cout << "Tipo tamaño: 1- bote / 2- crucero / 3- galeon / 4- trasatlantico :" << endl;
+    cin >> tt;
+    switch(tt){
+      case 1: BOTE;
+        break;
+      case 2: CRUCERO;
+        break;
+      case 3: GALEON;
+        break;
+      case 4: TRANSATLANTICO;
+        break;
+    }
+    tipoPasajero = TipoTamanio(tt);
+    DtBarcoPasajeros *dtBarco = new DtBarcoPasajeros(id, nombre, cant,tipoPasajero);
   }else{
     cout << "____TIPO PESQUERO_____" << endl;
     cout << "Ingresa la capacidad" << endl;
@@ -184,7 +202,7 @@ void listarPuertos(){
 bool buscarPuerto(string idPuerto){
 
   int i = 0;
-  while(i < colBarco.tope && idPuerto != colBarco.p[i]->getId()){
+  while(i < colBarco.tope && idPuerto != colBarco.b[i]->getId()){
     i++;
   }
   if (i != colBarco.tope){
@@ -207,7 +225,7 @@ bool buscarBarco(string idBarco){
 
 void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDespacho){
    try {
-      if (!buscarBarco(string idPuerto)){
+      if (!buscarBarco(idPuerto)){
        throw invalid_argument("No exite el puerto ingresado\n");
       }
     }catch (const invalid_argument& e) {
@@ -215,7 +233,7 @@ void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDe
     }  
 
     try {
-      if (!buscarPuerto(string idBarco)){
+      if (!buscarPuerto(idBarco)){
        throw invalid_argument("No exite el barco ingresado\n");
       }
     }catch (const invalid_argument& e) {
@@ -227,6 +245,7 @@ void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDe
 
 void agregarArribo(){
   string idpuerto, idbarco;
+  int dia, mes, año;
   DtFecha fecha;
   float valorCarga; 
   cout << "____AGREGAR ARRIBO_____" << endl;
@@ -237,13 +256,18 @@ void agregarArribo(){
   cout << "id:" << endl;
   cin >> idbarco;
   cout << "Ingresa una fecha" << endl;
-  cout << "fecha:" << endl;
-  cin >> fecha;
+  cout << "dia:" << endl;
+  cin >> dia;
+  cout << "mes:" << endl;
+  cin >> mes;
+  cout << "año:" << endl;
+  cin >> año;
+  fecha = DtFecha(dia, mes, año);
   cout << "Ingresa el valor de la carga" << endl;
   cout << "Valor de la carga:" << endl;
   cin >> valorCarga;
 
-  agregarArribo(idpuerto, idbarco, fecha, cargaDespacho);
+//  agregarArribo(idpuerto, idbarco, fecha, cargaDespacho);
 };
 
 void obtenerInfoArribosEnPuerto(){};
