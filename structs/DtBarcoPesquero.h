@@ -13,6 +13,7 @@ class DtBarcoPesquero : DtBarco{
     int carga;
   public:
     DtBarcoPesquero();
+    DtBarcoPesquero(string, string, int, int);
     void setCapacidad(int capacidad);
     void setCarga(int carga);  
     ~DtBarcoPesquero();

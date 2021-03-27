@@ -14,6 +14,7 @@ class DtBarcoPasajeros: DtBarco{
     TipoTamanio tamanio;
   public:
     DtBarcoPasajeros();
+    DtBarcoPasajeros(string, string, int, TipoTamanio);
     ~DtBarcoPasajeros();  
 };
 
