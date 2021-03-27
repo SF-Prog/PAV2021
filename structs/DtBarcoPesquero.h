@@ -7,7 +7,7 @@
 #include <string>
 using namespace std;
 
-class DtBarcoPesquero : DtBarco{
+class DtBarcoPesquero : public DtBarco{
   private:
     int capacidad;
     int carga;
@@ -15,7 +15,9 @@ class DtBarcoPesquero : DtBarco{
     DtBarcoPesquero();
     DtBarcoPesquero(string, string, int, int);
     void setCapacidad(int capacidad);
+    int getCapacidad();
     void setCarga(int carga);  
+    int getCarga();
     ~DtBarcoPesquero();
   
 };

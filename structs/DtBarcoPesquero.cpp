@@ -6,6 +6,16 @@ DtBarcoPesquero::DtBarcoPesquero(string id, string nombre, int capacidad, int ca
     this->capacidad = capacidad;
     this->carga = carga;
 };
-void DtBarcoPesquero::setCapacidad(int capacidad){};
-void DtBarcoPesquero::setCarga(int carga){};
+void DtBarcoPesquero::setCapacidad(int capacidad){
+  this->capacidad = capacidad;
+};
+int DtBarcoPesquero::getCapacidad(){
+  return this->capacidad;
+};
+void DtBarcoPesquero::setCarga(int carga){
+  this->carga = carga;
+};
+int DtBarcoPesquero::getCarga(){
+  return this->carga;
+};
 DtBarcoPesquero::~DtBarcoPesquero(){};
