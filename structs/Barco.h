@@ -19,7 +19,6 @@ class Barco{
     string getId();
     virtual void arribar(float)=0;
     ~Barco();
-    friend ostream& operator <<(ostream&, const Barco&);
 };
 
 #endif

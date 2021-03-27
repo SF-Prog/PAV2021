@@ -19,7 +19,8 @@ class DtBarcoPesquero : public DtBarco{
     void setCarga(int carga);  
     int getCarga();
     ~DtBarcoPesquero();
-  
+    friend ostream& operator << (ostream&, const DtBarcoPesquero&);
+
 };
 
 #endif

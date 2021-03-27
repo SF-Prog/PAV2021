@@ -287,30 +287,48 @@ void agregarArribo(){
 
 void obtenerInfoArribosEnPuerto(){};
 void eliminarArribos(){};
-DtBarco** listarBarcos(int& cantBarcos){
+
+DtBarco** listarBarcos(int/*&*/ cantBarcos){
   system("cls");
 // FALTA TERMINAR DE IMPLEMENTAR LA SOBRECAGRA EN LAS CLASES
-  for(int i=0; i<colBarco.tope; i++){
-    BarcoPesquero* BarcoPe = dynamic_cast<BarcoPesquero*>(colBarco.b[i]);
-    if(BarcoPe){
-      cout << "Barco numero  " << i << " : " << BarcoPe << endl;
-    }
-    BarcoPasajeros* BarcoPa = dynamic_cast<BarcoPasajeros*>(colBarco.b[i]);
-    if(BarcoPa){
-      cout << "Barco numero  " << i << " : " << BarcoPa << endl;
-    }
+  int topeBarcos = cantBarcos-1;
+  DtBarco** coleccionDtBarcos;
+  for(int i=0; i<topeBarcos; i++){
+    try {
+        BarcoPesquero *barcoPe = dynamic_cast<BarcoPesquero*>(colBarco.b[i]);
+        if(barcoPe != NULL){
+          DtBarcoPesquero* DtBarcoPe = new DtBarcoPesquero( barcoPe->getNombre(), barcoPe->getId(), barcoPe->getCapacidad(), barcoPe->getCarga());
+          coleccionDtBarcos[i] = DtBarcoPe;
+          cout << "Barco numero  " << i << " :    " << dtBarcoPe << endl;
+        }
+        BarcoPasajeros *barcoPa = dynamic_cast<BarcoPasajeros*>(colBarco.b[i]);
+        if(barcoPa != NULL){
+          DtBarcoPasajeros* DtBarcoPa = new DtBarcoPasajeros( barcoPa->getNombre(), barcoPa->getId(), barcoPa->getCantPasajeros(), barcoPa->getTamanio());
+          coleccionDtBarcos[i] = DtBarcoPa;
+          cout << "Barco numero  " << i << " :    " << dtBarcoPa << endl
+        }
+    }catch (const invalid_argument& e) {
+      cout << e.what();
+    }  
   }
-  sleep(2);
+  sleep(3);  
 };
-void listarBarcos(){
+void listarBarcosMenu(){
   system("cls");
+
+  cout << "El tope es:"  << colBarco.tope << endl;
   cout <<"______LISTAR__BARCOS_______"<< endl;
   cout <<"___________________________"<< endl;
-  cout <<"___________________________\n\n\n"<< endl;
-  int cantBarcos;
+  cout <<"___________________________\n\n\n" << endl;
+  int cant, cantidadBarcos;
 	cout << "INGRESE LA CANTIDAD DE BARCOS: ";
-	cin >> cantBarcos;
-  listarBarcos(cantBarcos);
+	cin >> cantidadBarcos;
+  if (cantidadBarcos >= colPuertos.tope){
+    cant = colPuertos.tope;
+  }else{
+    cant = cantidadBarcos;
+  }
+  listarBarcos(cant);
 };
 
 
@@ -318,15 +336,15 @@ void listarBarcos(){
 void menu(){
   system("cls");
   cout << "_________________________" << endl;
-  cout << "_______Bienvenido. Elija la opción.__________" << endl;
+  cout << "_______Bienvenido. Elija la opcion.__________" << endl;
   cout << "1. Agregar puerto" << endl;
   cout << "2. Agregar barco" << endl;
   cout << "3. Listar Puertos" << endl;
   cout << "4. Agregar Arribo" << endl;
-  cout << "5. Obtener información de los arribos de un puerto" << endl;
+  cout << "5. Obtener informacion de los arribos de un puerto" << endl;
   cout << "6. Eliminar arribos" << endl;
   cout << "7. Listar barcos" << endl;
-  cout << "8. Salir" << endl;
+  cout << "0. Salir" << endl;
   cout << "OPCION: ";
 }
 
@@ -349,7 +367,7 @@ int main() {
               break;
       case 6: eliminarArribos();  
               break;      
-      case 7: listarBarcos();  
+      case 7: listarBarcosMenu();  
               break;  
       case 8: system("exit");
               break;

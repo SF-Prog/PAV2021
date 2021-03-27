@@ -6,16 +6,22 @@ DtBarcoPasajeros::DtBarcoPasajeros(string id, string nombre, int cantPasajeros, 
     this->cantPasajeros = cantPasajeros;
     this->tamanio = tamanio;
 };
-DtBarcoPasajeros::setCantPasajeros(int cantPasajeros){
+void DtBarcoPasajeros::setCantPasajeros(int cantPasajeros){
   this->cantPasajeros=cantPasajeros;
 };
-DtBarcoPasajeros::getCantPasajeros(){
+int DtBarcoPasajeros::getCantPasajeros(){
   return this->cantPasajeros;
 };
-DtBarcoPasajeros::setTamanio(TipoTamanio tamanio){
+void DtBarcoPasajeros::setTamanio(TipoTamanio tamanio){
   this->tamanio=tamanio;
 };
-DtBarcoPasajeros::getTamanio(){
+TipoTamanio DtBarcoPasajeros::getTamanio(){
   return this->tamanio;
+};
+ostream& operator << (ostream& salida, const DtBarcoPasajeros& dbp){
+  // cout << (Barco) bp << endl;
+  cout << "_______BARCO___PASAJEROS_____\n" << endl;
+  cout << "\tCantPasajeros: " << dbp.cantPasajeros << endl;
+  cout << "\tTipoTamanio: " << dbp.tamanio << endl;
 };
 DtBarcoPasajeros::~DtBarcoPasajeros(){};

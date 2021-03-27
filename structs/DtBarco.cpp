@@ -18,6 +18,11 @@ void DtBarco::setId(string id){
 string DtBarco::getId(){
   return this->id;
 };
-ostream& operator <<(ostream& retorno,const DtBarco&){};
+ostream& operator <<(ostream& salida, const DtBarco& db){
+  cout<<"Nombre: " << db.nombre << endl;
+  cout<<"Id: " << db.id << endl;
+
+  return salida;
+};
 
 

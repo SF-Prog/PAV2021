@@ -19,7 +19,6 @@ class BarcoPasajeros : public Barco {
     TipoTamanio getTamanio();
     void arribar(float);
     ~BarcoPasajeros();
-    friend ostream& operator << (ostream&, const BarcoPasajeros&);
 };
 
 #endif
