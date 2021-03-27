@@ -12,10 +12,10 @@ string Barco::getId(){ return this->id; }
 
 Barco::~Barco(){}
 
-/*
-ostream& operator <<(ostream& salida, const Barco&){
-  cout<<"barco.cpp"<<endl;
+ostream& operator <<(ostream& salida, const Barco& b){
+  cout<<"Nombre: " << b.nombre << endl;
+  cout<<"Id: " << b.id << endl;
 
   return salida;
 };
-*/
+ 

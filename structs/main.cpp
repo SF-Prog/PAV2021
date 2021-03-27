@@ -4,27 +4,57 @@
 #include "DtFecha.h"
 #include "DtBarcoPesquero.h"
 #include "DtBarcoPasajeros.h"
+#include "BarcoPesquero.h"
+#include "BarcoPasajeros.h"
 #include "TipoTamanio.h"
 
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <unistd.h>
+#include "windows.h"
 #include <map>
-#define MAXPUERTO = 30 
-#define MAXBARCO = 30
+#define MAXPUERTO 30 
+#define MAXBARCO 30
 using namespace std;
 
 map<string, Puerto*> puertosMap;
 map<string, DtBarco*> barcosMap;
 
 struct puertos {
-  Puerto* p[30];
+  Puerto* p[MAXPUERTO];
   int tope;
 } colPuertos;
 struct Barcos {
-  Barco* b[30];
+  Barco* b[MAXBARCO];
   int tope;
 } colBarco;
+
+bool buscarPuerto(string idPuerto){
+
+  int i = 0;
+  while(i < colBarco.tope && idPuerto != colBarco.b[i]->getId()){
+    i++;
+  }
+  if (i != colBarco.tope){
+    return true;
+  }
+    return false;
+};
+
+bool buscarBarco(string idBarco){
+
+  int i = 0;
+  while(i < colPuertos.tope && idBarco != colPuertos.p[i]->getId()){
+    i++;
+  }
+  if (i != colPuertos.tope){
+    return true;
+  }else{
+    return false;
+  }
+};
 
 void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
     /*map<string, Puerto*>::iterator it;
@@ -52,7 +82,7 @@ void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
         throw invalid_argument("Por que si\n");
     }catch (const invalid_argument& e) {
       cout << e.what();
-    }  
+    }
 };
 void agregarPuerto(){
   string id, nombre;
@@ -66,7 +96,7 @@ void agregarPuerto(){
 };
 
 
-void agregarBarco(DtBarco& barco){
+void agregarBarco(DtBarco *barco){
   /*map<string, DtBarco*>::iterator it;
     try {
       it = barcosMap.find(barco.getId());
@@ -79,19 +109,25 @@ void agregarBarco(DtBarco& barco){
     } catch (const invalid_argument& e) {
       cout << e.what();
     }*/
-
-  
-   int i = 0;
-    while (i < colBarco.tope && barco.getId() != colBarco.b[i]->getId()){
-      i++;
-    };
     try {
-      if (i == colBarco.tope){
-        Barco *barco = new Barco(barco->getId(), barco->getNombre());
-        colBarco.b[i] = barco;
-        colBarco.tope++;
-      }else
-        throw invalid_argument("Por que si\n");
+      if ((!buscarBarco(barco->getId())) && (colBarco.tope <= MAXBARCO)){
+        DtBarcoPesquero *dtBarcoPe = dynamic_cast<DtBarcoPesquero*>(barco);
+        if(dtBarcoPe != NULL){
+          BarcoPesquero *barcoPe = new BarcoPesquero(dtBarcoPe->getId(), dtBarcoPe->getNombre(), dtBarcoPe->getCapacidad() , dtBarcoPe->getCarga());
+          colBarco.b[colBarco.tope] = barcoPe;
+          colBarco.tope++;
+          return;
+        }
+        DtBarcoPasajeros *dtBarcoPa = dynamic_cast<DtBarcoPasajeros*>(barco);
+        if(dtBarcoPa != NULL){
+          BarcoPasajeros *barcoPa = new BarcoPasajeros(dtBarcoPa->getId(), dtBarcoPa->getNombre(), dtBarcoPa->getCantPasajeros(), TipoTamanio(dtBarcoPa->getTamanio()));
+          colBarco.b[colBarco.tope] = barcoPa;
+          colBarco.tope++;
+          return;   
+        }
+      }else{
+        throw invalid_argument("Ya existe el Barco\n");
+      }
     }catch (const invalid_argument& e) {
       cout << e.what();
     }  
@@ -99,37 +135,41 @@ void agregarBarco(DtBarco& barco){
 void agregarBarco(){
   string id, nombre;
   int tipo ,cant,capacidad,carga, tt;
-  TipoTamanio tipoPasajero;
-
+  TipoTamanio tamanio;
+  system("cls");
   cout << "____AGREGAR BARCO_____" << endl;
   cout << "Ingresa los datos del nuevo barco" << endl;
-  cout << "id:" << endl;
+  cout << "Ingrese el id:" << endl;
   cin >> id;
-  cout << "nombre:" << endl;
+  system("cls");
+  cout << "Ingrese el nombre:" << endl;
   cin >> nombre;
-  cout << "Ingresa tipo de Barco " << endl;
+  system("cls");
+  cout << "Ingresa tipo de Barco:" << endl;
   cout << "Pasajero (1) o Pesquero (2)" << endl;
-   cin >> tipo;
+  cin >> tipo;
+  system("cls");
   if(tipo == 1){
     cout << "____TIPO PASAJEROS_____" << endl;
     cout << "Ingresa cantidad pasaejeros" << endl;
     cout << "cantidad:" << endl;
     cin >> cant;
+    system("cls");
     cout << "Ingrese un numero para indicar el tipo de tamaño" << endl;
-    cout << "Tipo tamaño: 1- bote / 2- crucero / 3- galeon / 4- trasatlantico :" << endl;
+    cout << "Tipo tamanioo: \n\t1- bote / \n\t2- crucero / \n\t3- galeon / \n\t4- trasatlantico :" << endl;
     cin >> tt;
-    switch(tt){
-      case 1: BOTE;
+    switch(tt) {
+      case 1: tamanio = BOTE;
         break;
-      case 2: CRUCERO;
+      case 2: tamanio = CRUCERO;
         break;
-      case 3: GALEON;
+      case 3: tamanio = GALEON;
         break;
-      case 4: TRANSATLANTICO;
+      case 4: tamanio = TRANSATLANTICO;
         break;
     }
-    tipoPasajero = TipoTamanio(tt);
-    DtBarcoPasajeros *dtBarco = new DtBarcoPasajeros(id, nombre, cant,tipoPasajero);
+    DtBarcoPasajeros *dtBarco = new DtBarcoPasajeros(id, nombre, cant,tamanio);
+    return agregarBarco(dtBarco);
   }else{
     cout << "____TIPO PESQUERO_____" << endl;
     cout << "Ingresa la capacidad" << endl;
@@ -137,34 +177,33 @@ void agregarBarco(){
     cout << "Ingresa la carga:" << endl;
     cin >> carga;
     DtBarcoPesquero *dtBarco = new DtBarcoPesquero(id, nombre,capacidad,carga);
+    return agregarBarco(dtBarco);
   }
-
-  agregarBarco(*dtBarco);
 };
 
 DtPuerto** listarPuertos(int& cantPuertos){
 
-  
-  if(cantPuertos <= puertosMap.size()){
-    //Continuamos
-    DtPuerto** listado = new DtPuerto*[cantPuertos];
-    /*for(int i=0; i<cantPuertos; i++){
-      DtPuerto* dtp =puertosMap[i];
-      listado[i] = dtp;
+  return 0;
+  // if(cantPuertos <= puertosMap.size()){
+  //   //Continuamos
+  //   DtPuerto** listado = new DtPuerto*[cantPuertos];
+  //   /*for(int i=0; i<cantPuertos; i++){
+  //     DtPuerto* dtp =puertosMap[i];
+  //     listado[i] = dtp;
       
-      }
-      */
-    int i = 0;
-    for (map<string, Puerto*>::iterator it=puertosMap.begin(); it!=puertosMap.end(); ++it){
-      //std::cout << it->first << " => " << it->second->getNombre() << '\n';
-      i++;
-      DtPuerto* dtp = new DtPuerto(it->second->getId(), it->second->getNombre(), it->second->getFechaCreacion());
-      listado[i] = dtp;
-      return listado;
-    }
-  }else{
-    //Mensaje de error
-  }
+  //     }
+  //     */
+  //   int i = 0;
+  //   for (map<string, Puerto*>::iterator it=puertosMap.begin(); it!=puertosMap.end(); ++it){
+  //     //std::cout << it->first << " => " << it->second->getNombre() << '\n';
+  //     i++;
+  //     DtPuerto* dtp = new DtPuerto(it->second->getId(), it->second->getNombre(), it->second->getFechaCreacion());
+  //     listado[i] = dtp;
+  //     return listado;
+  //   }
+  // }else{
+  //   //Mensaje de error
+  // }
 
 
   /*
@@ -199,30 +238,6 @@ void listarPuertos(){
    flag = cin.get();
 };
 
-bool buscarPuerto(string idPuerto){
-
-  int i = 0;
-  while(i < colBarco.tope && idPuerto != colBarco.b[i]->getId()){
-    i++;
-  }
-  if (i != colBarco.tope){
-    return true;
-  }
-    return false;
-};
-
-bool buscarBarco(string idBarco){
-
-  int i = 0;
-  while(i < colPuertos.tope && idBarco != colPuertos.p[i]->getId()){
-    i++;
-  }
-  if (i != colPuertos.tope){
-    return true;
-  }
-    return false;
-};
-
 void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDespacho){
    try {
       if (!buscarBarco(idPuerto)){
@@ -245,7 +260,7 @@ void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDe
 
 void agregarArribo(){
   string idpuerto, idbarco;
-  int dia, mes, año;
+  int dia, mes, anio;
   DtFecha fecha;
   float valorCarga; 
   cout << "____AGREGAR ARRIBO_____" << endl;
@@ -261,8 +276,8 @@ void agregarArribo(){
   cout << "mes:" << endl;
   cin >> mes;
   cout << "año:" << endl;
-  cin >> año;
-  fecha = DtFecha(dia, mes, año);
+  cin >> anio;
+  fecha = DtFecha(dia, mes, anio);
   cout << "Ingresa el valor de la carga" << endl;
   cout << "Valor de la carga:" << endl;
   cin >> valorCarga;
@@ -272,11 +287,36 @@ void agregarArribo(){
 
 void obtenerInfoArribosEnPuerto(){};
 void eliminarArribos(){};
-void listarBarcos(){};
+DtBarco** listarBarcos(int& cantBarcos){
+  system("cls");
+// FALTA TERMINAR DE IMPLEMENTAR LA SOBRECAGRA EN LAS CLASES
+  for(int i=0; i<colBarco.tope; i++){
+    BarcoPesquero* BarcoPe = dynamic_cast<BarcoPesquero*>(colBarco.b[i]);
+    if(BarcoPe){
+      cout << "Barco numero  " << i << " : " << BarcoPe << endl;
+    }
+    BarcoPasajeros* BarcoPa = dynamic_cast<BarcoPasajeros*>(colBarco.b[i]);
+    if(BarcoPa){
+      cout << "Barco numero  " << i << " : " << BarcoPa << endl;
+    }
+  }
+  sleep(2);
+};
+void listarBarcos(){
+  system("cls");
+  cout <<"______LISTAR__BARCOS_______"<< endl;
+  cout <<"___________________________"<< endl;
+  cout <<"___________________________\n\n\n"<< endl;
+  int cantBarcos;
+	cout << "INGRESE LA CANTIDAD DE BARCOS: ";
+	cin >> cantBarcos;
+  listarBarcos(cantBarcos);
+};
 
 
 
 void menu(){
+  system("cls");
   cout << "_________________________" << endl;
   cout << "_______Bienvenido. Elija la opción.__________" << endl;
   cout << "1. Agregar puerto" << endl;

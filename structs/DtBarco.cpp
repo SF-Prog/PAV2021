@@ -5,8 +5,19 @@ DtBarco::DtBarco(string id, string nombre){
     this->id = id;
     this->nombre = nombre;
 };
-string DtBarco::getId(){ return this->id; };
 DtBarco::~DtBarco(){};
+void DtBarco::setNombre(string nombre){
+  this->nombre = nombre;
+};
+string DtBarco::getNombre(){
+  return this->nombre;
+};
+void DtBarco::setId(string id){
+  this->id = id;
+};
+string DtBarco::getId(){
+  return this->id;
+};
 ostream& operator <<(ostream& retorno,const DtBarco&){};
 
 
