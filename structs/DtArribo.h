@@ -9,21 +9,22 @@ class DtArribo{
   private:
     float carga;
     DtFecha fecha;
-    DtBarco * barcos;
+    DtBarco * barco;
   public:
     DtArribo();
-    DtArribo(float a, DtFecha b,DtBarco * c);
+    DtArribo(float, DtFecha, DtBarco*);
     
     // OBTENER DATOS
     float getCarga();
     DtFecha getFecha();
-    DtBarco * getBarcos();
+    DtBarco* getBarco();
     
     // CONFIGURAR DATOS
-    void setCarga(float carga);
-    void setFecha(DtFecha fecha);
-    void setBarcos(DtBarco * barcos);
+    void setCarga(float);
+    void setFecha(DtFecha);
+    void setBarco(DtBarco*);
 
+    friend ostream& operator <<(ostream&, const DtArribo&);
     ~DtArribo();
 };
 

@@ -20,8 +20,8 @@ TipoTamanio DtBarcoPasajeros::getTamanio(){
 };
 ostream& operator << (ostream& salida, const DtBarcoPasajeros& dbp){
   // cout << (Barco) bp << endl;
-  cout << "_______BARCO___PASAJEROS_____\n" << endl;
-  cout << "\tCantPasajeros: " << dbp.cantPasajeros << endl;
-  cout << "\tTipoTamanio: " << dbp.tamanio << endl;
+  string tipoTamanio[4] = {"BOTE","CRUCERO","GALEON","TRANSATLATICO"};
+  salida << (DtBarco)dbp << "-------PASAJEROS-------- CantPasajeros: " << dbp.cantPasajeros << "----------TipoTamanio: " << tipoTamanio[dbp.tamanio] << endl;
+  return salida;
 };
 DtBarcoPasajeros::~DtBarcoPasajeros(){};

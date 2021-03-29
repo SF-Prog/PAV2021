@@ -4,7 +4,7 @@
 using namespace std;
 
 
-BarcoPasajeros::BarcoPasajeros(string nombre, string id, int cantPasajeros, TipoTamanio tamanio):Barco(nombre, id) {
+BarcoPasajeros::BarcoPasajeros(string id, string nombre, int cantPasajeros, TipoTamanio tamanio):Barco(id, nombre) {
   this->cantPasajeros = cantPasajeros;
   this->tamanio = tamanio;
 }

@@ -16,11 +16,11 @@ class DtBarcoPasajeros: public DtBarco{
     DtBarcoPasajeros();
     DtBarcoPasajeros(string, string, int, TipoTamanio);
     void setCantPasajeros(int);
-    int getCantPasajeros();
     void setTamanio(TipoTamanio);
+    int getCantPasajeros();
     TipoTamanio getTamanio();
-    ~DtBarcoPasajeros();
     friend ostream& operator << (ostream&, const DtBarcoPasajeros&);
+    ~DtBarcoPasajeros();
 };
 
 #endif

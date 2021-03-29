@@ -25,8 +25,8 @@ void DtFecha::setAnio(int anio){
   this->anio=anio;
 }
 
-ostream& operator <<(ostream& salida,DtFecha& fecha){
-  cout << fecha.getDia() << "/" << fecha.getMes() << "/" << fecha.getAnio() << endl;
+ostream& operator <<(ostream& salida, const DtFecha& fecha){
+  salida << fecha.dia << "/" << fecha.mes << "/" << fecha.anio << endl;
   return salida;
 }
 

@@ -22,7 +22,6 @@ DtBarcoPesquero::~DtBarcoPesquero(){};
 
 ostream& operator << (ostream& salida, const DtBarcoPesquero& dbp){
   // cout << (Barco) bp << endl;
-  cout << "_______BARCO___PASAJEROS_____\n" << endl;
-  cout << "\tCantidad: " << dbp.cantidad << endl;
-  cout << "\tCarga: " << dbp.carga << endl;
+  salida << (DtBarco)dbp << "------ PESQUERO ----- Capacidad: " << dbp.capacidad << "----- Carga: " << dbp.carga << endl;
+  return salida;
 };
