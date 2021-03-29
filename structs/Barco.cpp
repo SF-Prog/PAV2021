@@ -1,7 +1,7 @@
 #include "Barco.h"
 
 Barco::Barco(){};
-Barco::Barco(string nombre, string id){
+Barco::Barco(string id, string nombre){
   this->nombre = nombre;
   this->id = id;
 } 

@@ -11,26 +11,28 @@ class Puerto{
     string id;
     string nombre;
     DtFecha fechaCreacion;
-    Arribo* arribos[30];
+    struct arribosStruct {
+      Arribo* a[30];
+      int tope = 0;
+    } arribos;
   public:
     Puerto();
-    Puerto(string id, string nombre,DtFecha fechaCreacion);
+    Puerto(string, string, DtFecha);
     
     // OBTENER DATOS
     string getId();
     string getNombre();
     DtFecha getFechaCreacion();
-    Arribo* getArribos();
+    Arribo** getArribos();
+    int getCantArribos();
     
     // CONFIGURAR DATOS
-    void setId(string id);
-    void setNombre(string nombre);
-    void setFechaCreacion(DtFecha fechaCreacion);
-    void setArribos(Arribo * arribo);
+    void setId(string);
+    void setNombre(string);
+    void setFechaCreacion(DtFecha);
 
     // METODOS
-    void agregarPuerto(string id, string nombre, DtFecha fechaCreacion);
-
+    void agregarArribo(Arribo*);
 
     // DESTRUCTOR
     ~Puerto();

@@ -1,6 +1,6 @@
 #include "BarcoPesquero.h"
 
-BarcoPesquero::BarcoPesquero(string nombre, string id, int capacidad, int carga):Barco(nombre, id){
+BarcoPesquero::BarcoPesquero(string id, string nombre, int capacidad, int carga):Barco(id, nombre){
     this->capacidad = capacidad;
     this->carga = carga;
 };
@@ -14,11 +14,11 @@ void BarcoPesquero::setCarga(int carga){
 };
 
 int BarcoPesquero::getCapacidad(){
-   this->carga = capacidad; 
+   return this->capacidad; 
 };
 
 int BarcoPesquero::getCarga(){ 
-  this->carga = carga;
+  return this->carga;
 };
 
 void BarcoPesquero::arribar(float cargaDespacho){};

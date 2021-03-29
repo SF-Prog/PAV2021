@@ -8,7 +8,7 @@
 using namespace std;
 
 class DtBarco{
-  private:
+  protected:
     string nombre;
     string id;
   public:

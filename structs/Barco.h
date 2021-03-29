@@ -7,7 +7,7 @@
 using namespace std;
 
 class Barco{
-  private:
+  protected:
     string nombre;
     string id;
   public:
