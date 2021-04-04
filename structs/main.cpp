@@ -22,6 +22,8 @@ using namespace std;
 map<string, Puerto*> puertosMap;
 map<string, DtBarco*> barcosMap;
 
+
+//ESTRUCTURAS
 struct puertos {
   Puerto* p[MAXPUERTO];
   int tope = 0;
@@ -30,6 +32,35 @@ struct Barcos {
   Barco* b[MAXBARCO];
   int tope = 0;
 } colBarco;
+
+
+
+
+//DECLARACIÓN OPERACIONES AUXILIARES
+void existePuerto(string);
+
+
+
+//OPERACIONES AUXILIARES
+
+void existePuerto(string idPuerto){
+	int i=0;
+	bool existe=false;
+	while((i<colPuertos.tope)&&(!existe)){
+
+		if(idPuerto == colPuertos.p[i]->getId())
+			existe=true;
+		i++;
+	}
+	if (!existe)
+		throw invalid_argument("\nERROR: NO EXISTE PUERTO CON ESE IDENTIFICADOR EN EL SISTEMA\n");
+}
+
+//----------  FIN AUXILIARES --------
+
+
+
+
 
 Puerto* buscarPuerto(string idPuerto){
   int i = 0;
@@ -279,6 +310,7 @@ DtArribo** obtenerInfoArribosEnPuerto(string idPuerto, int& cantArribos){
       cout << e.what() << endl;
   }
 };
+
 void obtenerInfoArribosEnPuerto(){
   string idPuerto;
   int cantArribos;
@@ -289,7 +321,49 @@ void obtenerInfoArribosEnPuerto(){
   cin >> cantArribos;
   DtArribo** dtArribos = obtenerInfoArribosEnPuerto(idPuerto, cantArribos);
 };
-void eliminarArribos(){};
+
+
+void eliminarArribos(string idPuerto, DtFecha fecha){
+  Puerto* puerto = buscarPuerto(idPuerto);
+	puerto->borrarArribo(idPuerto, fecha);
+
+};
+
+
+void eliminarArribos(){
+	system("clear");
+	cout <<"__________________________" <<endl;
+  cout << "____Eliminar Arribos_____" << endl;
+  string idPuerto;
+	int dia, mes,anio;
+	cout << "\nIdentificador de Puerto: ";
+	cin >> idPuerto;
+	try{
+		existePuerto(idPuerto);
+		cout << "\nELIMINAR ARRIBOS DE LA FECHA" <<endl;
+		DtFecha dtFecha;
+		cout << "DIA: ";
+		cin >> dia;
+
+		cout << "MES: ";
+		cin >> mes;
+
+		cout << "ANIO: ";
+		cin >> anio;
+
+		dtFecha = DtFecha(dia,mes,anio);
+		eliminarArribos(idPuerto,dtFecha);
+		cout << "Se han eliminado los arribos del puerto: "<< idPuerto <<" en la fecha " << dtFecha << " correctamente!"<< endl;
+		
+		cout << "\nPulse enter para continuar..."<<endl;
+		
+	}catch(invalid_argument& e){
+		cout << e.what() << endl;
+	}
+
+};
+
+
 
 DtBarco** listarBarcos(int& cantBarcos){
  // system("cls");

@@ -26,6 +26,18 @@
       this->arribos.tope++;
     };
 
+    void Puerto::borrarArribo(string idPuerto, DtFecha fecha){
+      for(int i=0;i<this->arribos.tope;i++){
+        while(i<this->arribos.tope && this->arribos.a[i]->getFecha()==fecha && this->getId()==idPuerto){
+            this->arribos.a[i]=this->arribos.a[this->arribos.tope-1];
+            this->arribos.a[this->arribos.tope-1]=NULL;
+            delete this->arribos.a[this->arribos.tope-1];
+            this->arribos.tope--;
+        }
+      }
+    };
+
+
 
     // DESTRUCTOR
     Puerto::~Puerto(){};

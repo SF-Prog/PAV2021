@@ -30,4 +30,8 @@ ostream& operator <<(ostream& salida, const DtFecha& fecha){
   return salida;
 }
 
+bool operator ==(const DtFecha& f1,const DtFecha& f2){
+    return f1.dia==f2.dia && f1.mes==f2.mes && f1.anio==f2.anio;
+}
+
 DtFecha::~DtFecha(){}

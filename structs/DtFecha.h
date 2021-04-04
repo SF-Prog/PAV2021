@@ -20,6 +20,7 @@ class DtFecha {
     int getAnio();
     void setAnio(int);
     friend ostream& operator <<(ostream&, const DtFecha&);
+    friend bool operator ==(const DtFecha&,const DtFecha&);
     ~DtFecha();
 };
 
