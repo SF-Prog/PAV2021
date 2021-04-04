@@ -14,12 +14,11 @@ class BarcoPasajeros : public Barco {
   public:
     BarcoPasajeros(string, string, int, TipoTamanio);
     void setCantPasajeros(int);
-    void setTamanio(TipoTamanio);
     int getCantPasajeros();
+    void setTamanio(TipoTamanio);
     TipoTamanio getTamanio();
     void arribar(float);
     ~BarcoPasajeros();
-  
 };
 
 #endif

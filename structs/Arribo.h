@@ -11,20 +11,21 @@ class Arribo{
   private:
     float carga;
     DtFecha fecha;
-    Barco * barcos;
+    Barco* barco;
   public:
     Arribo();
-    Arribo(float, DtFecha, Barco *);
+    Arribo(DtFecha, float);
     
     // OBTENER DATOS
     float getCarga();
     DtFecha getFecha();
-    Barco * getBarcos();
+    Barco* getBarco();
     
     // CONFIGURAR DATOS
-    void setCarga(float carga);
-    void setFecha(DtFecha fecha);
-    void setBarcos(Barco * barcos);
+    void setCarga(float);
+    void setFecha(DtFecha);
+
+    void agregarBarco(Barco*);
 
     ~Arribo();
 };

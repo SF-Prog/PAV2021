@@ -3,10 +3,10 @@
 using namespace std;
 
 DtArribo::DtArribo(){}
-DtArribo::DtArribo(float carga, DtFecha fecha,DtBarco * barcos){
+DtArribo::DtArribo(float carga, DtFecha fecha,DtBarco * barco){
   this->carga = carga;
   this->fecha = fecha;
-  this->barcos = barcos;
+  this->barco = barco;
 }
   
   // OBTENER DATOS
@@ -16,23 +16,27 @@ float DtArribo::getCarga(){
 DtFecha DtArribo::getFecha(){
   return this->fecha;
 }
-DtBarco * DtArribo::getBarcos(){
-  return this->barcos;
+DtBarco * DtArribo::getBarco(){
+  return this->barco;
 }
   
 // CONFIGURAR DATOS
 void DtArribo::setCarga(float carga){
   this->carga = carga;
 }
-
 void DtArribo::setFecha(DtFecha fecha){
   this->fecha = fecha;
 }
-void DtArribo::setBarcos(DtBarco * barcos){
-  this->barcos = barcos;
+void DtArribo::setBarco(DtBarco* barco){
+  this->barco = barco;
 }
 
-
+ostream& operator <<(ostream& salida, const DtArribo& arribo){
+  salida << "Carga del arribo: " << arribo.carga << endl
+  << "Barco del arribo: " << *arribo.barco << endl
+  << "Fecha del arribo: " << arribo.fecha << endl;
+  return salida;
+}
 
 // DESTUCTOR
 DtArribo::~DtArribo(){}

@@ -8,14 +8,17 @@
 using namespace std;
 
 class DtBarco{
-  private:
+  protected:
     string nombre;
     string id;
   public:
     DtBarco();
     DtBarco(string, string);
+    virtual ~DtBarco();
+    void setNombre(string nombre);
+    string getNombre();
+    void setId(string id);
     string getId();
-    ~DtBarco();
     friend ostream& operator <<(ostream&,const DtBarco&);
 };
 
