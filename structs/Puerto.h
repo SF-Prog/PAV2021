@@ -33,6 +33,7 @@ class Puerto{
 
     // METODOS
     void agregarArribo(Arribo*);
+    void borrarArribo(string, DtFecha);
 
     // DESTRUCTOR
     ~Puerto();
