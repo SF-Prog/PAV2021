@@ -41,7 +41,7 @@ void DtPuerto::setArribos(DtArribo * arribo){
 //void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){}
 
 ostream& operator <<(ostream& salida, const DtPuerto& puerto){
-  cout << "Id del puerto: " << puerto.id << ". Nombre del puerto: " << puerto.nombre << ". Fecha de creacion: " << endl; // << puerto.fechaCreacion << endl;
+  cout << "Id del puerto: " << puerto.id << ". Nombre del puerto: " << puerto.nombre << ". Fecha de creacion: " << puerto.fechaCreacion << endl; // << puerto.fechaCreacion << endl;
   return salida;
 };
 

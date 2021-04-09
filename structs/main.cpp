@@ -103,13 +103,24 @@ void agregarPuerto(string id, string nombre, DtFecha fechaCreacion){
 };
 void agregarPuerto(){
   string id, nombre;
+  int dia,mes,anio;
+  DtFecha fecha;
+
   cout << "____AGREGAR PUERTO_____" << endl;
   cout << "Ingresa los datos del nuevo puerto" << endl;
   cout << "id:" << endl;
   cin >> id;
   cout << "nombre:" << endl;
   cin >> nombre;
-  agregarPuerto(id, nombre, DtFecha(10, 11, 95));
+  cout << "Ingresa una fecha" << endl;
+  cout << "dia:" << endl;
+  cin >> dia;
+  cout << "mes:" << endl;
+  cin >> mes;
+  cout << "año:" << endl;
+  cin >> anio;
+  fecha = DtFecha(dia, mes, anio);
+  agregarPuerto(id, nombre, fecha);
 };
 
 
@@ -370,41 +381,26 @@ void eliminarArribos(){
 
 };
 
-
-
 DtBarco** listarBarcos(int& cantBarcos){
  // system("cls");
   DtBarco** coleccionDtBarcos;
   for(int i=0; i<cantBarcos; i++){
-   // try {
-      
-      cout << "recorremo - Ini " << endl;
-        BarcoPesquero *barcoPe = dynamic_cast<BarcoPesquero*>(colBarco.b[i]);
-        if(barcoPe != NULL){
-          DtBarcoPesquero* dtBarcoPe = new DtBarcoPesquero(barcoPe->getId(), barcoPe->getNombre(), barcoPe->getCapacidad(), barcoPe->getCarga());
-          coleccionDtBarcos[i] = dtBarcoPe;
-          cout << "Barco numero  " << i << " :    " << *dtBarcoPe << endl;
-        } //else{          
-//throw invalid_argument ("No existe barco pesquero");
-        //}
-        BarcoPasajeros *barcoPa = dynamic_cast<BarcoPasajeros*>(colBarco.b[i]);
-        if(barcoPa != NULL){
-          DtBarcoPasajeros* dtBarcoPa = new DtBarcoPasajeros( barcoPa->getId(), barcoPa->getNombre(), barcoPa->getCantPasajeros(), barcoPa->getTamanio());
-          coleccionDtBarcos[i] = dtBarcoPa;
-          cout << "Barco numero  " << i << " :    " << *dtBarcoPa << endl;
-        } //else{
-        //  throw invalid_argument ("No existe barco de pasajeros");
-       // }
-        cout << "recorremo - FIN " << endl;
-   // }catch (const invalid_argument& e) {
-   //   cout << e.what();
-   // }
+    BarcoPesquero *barcoPe = dynamic_cast<BarcoPesquero*>(colBarco.b[i]);
+    if(barcoPe != NULL){
+      DtBarcoPesquero* dtBarcoPe = new DtBarcoPesquero(barcoPe->getId(), barcoPe->getNombre(), barcoPe->getCapacidad(), barcoPe->getCarga());
+      coleccionDtBarcos[i] = dtBarcoPe;
+      cout << "Barco numero  " << i << " :    " << *dtBarcoPe << endl;
+    }else{
+      BarcoPasajeros *barcoPa = dynamic_cast<BarcoPasajeros*>(colBarco.b[i]);
+      if(barcoPa != NULL){
+        DtBarcoPasajeros* dtBarcoPa = new DtBarcoPasajeros( barcoPa->getId(), barcoPa->getNombre(), barcoPa->getCantPasajeros(), barcoPa->getTamanio());
+        coleccionDtBarcos[i] = dtBarcoPa;
+        cout << "Barco numero  " << i << " :    " << *dtBarcoPa << endl;
+      } 
+    }  
   }
-  
-  cout << "antes return" << endl;
-  return coleccionDtBarcos;
-//  sleep(3);  
 };
+
 void listarBarcos(){
 //  system("cls");
 
@@ -423,6 +419,9 @@ void listarBarcos(){
   cout << "antes listarBarcos" << endl;
   DtBarco** dtBarco = listarBarcos(cant);
 cout << "despues listarBarcos" << endl;
+  for (int i=0; i < cant; i++){
+      cout << *dtBarco[i];
+  }
 
 };
 
