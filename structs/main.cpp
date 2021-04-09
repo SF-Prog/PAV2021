@@ -217,43 +217,50 @@ void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDe
   Puerto* puerto = buscarPuerto(idPuerto);
   Barco* barco = buscarBarco(idBarco);
   try {
-    if (puerto != NULL)
+    if (puerto != NULL){
       if (barco != NULL){
         BarcoPesquero *barcoPe = dynamic_cast<BarcoPesquero*>(barco);
-        if(barcoPe != NULL)
-          if (cargaDespacho >= 0)
+        if(barcoPe != NULL){
+          if (cargaDespacho >= 0){
             if (barcoPe->getCarga() >= cargaDespacho){
               barcoPe->setCarga(-cargaDespacho);
               Arribo* arribo = new Arribo(fecha, cargaDespacho);
               arribo->agregarBarco(barcoPe);
               puerto->agregarArribo(arribo);
-            }else
+            }else{
               throw invalid_argument("El barco no tiene suficiente carga para realizar el arribo\n");
-          else if (barcoPe->getCarga() - cargaDespacho <= barcoPe->getCapacidad()){ // -cargaDespacho >= 0
-            barcoPe->setCarga(cargaDespacho);
+            }
+          }else if ((barcoPe->getCarga() + cargaDespacho)*-1 <= barcoPe->getCapacidad()){ // -cargaDespacho >= 0
+            barcoPe->setCarga(barcoPe->getCarga() + cargaDespacho);
             Arribo* arribo = new Arribo(fecha, cargaDespacho);
             arribo->agregarBarco(barcoPe);
             puerto->agregarArribo(arribo);
-          }else
+          }else{
             throw invalid_argument("No se puede aumentar la carga de un barco más allá de la capacidad total que soporta\n");
-        else {
+          }
+        }else {
           BarcoPasajeros *barcoPa = dynamic_cast<BarcoPasajeros*>(barco);
           if (cargaDespacho == 0){
             Arribo* arribo = new Arribo(fecha, cargaDespacho);
             arribo->agregarBarco(barcoPa);
             puerto->agregarArribo(arribo);
             cout << arribo->getFecha() << " " << arribo->getCarga() << endl;
-          }else
+          }else{
             throw invalid_argument("El barco es de pasajeros y la carga que se despacha es distinta de cero.\n");
+          }
         }
-      }else 
+      }else {
         throw invalid_argument("No exite el barco ingresado\n");
-    else    
+      }
+  }else{
       throw invalid_argument("No exite el puerto ingresado\n");
+      }
   }catch (const invalid_argument& e) {
     cout << e.what();
   }  
 }
+
+
 void agregarArribo(){
   string idpuerto, idbarco;
   int dia, mes, anio;
@@ -369,23 +376,32 @@ DtBarco** listarBarcos(int& cantBarcos){
  // system("cls");
   DtBarco** coleccionDtBarcos;
   for(int i=0; i<cantBarcos; i++){
-    try {
+   // try {
+      
+      cout << "recorremo - Ini " << endl;
         BarcoPesquero *barcoPe = dynamic_cast<BarcoPesquero*>(colBarco.b[i]);
         if(barcoPe != NULL){
           DtBarcoPesquero* dtBarcoPe = new DtBarcoPesquero(barcoPe->getId(), barcoPe->getNombre(), barcoPe->getCapacidad(), barcoPe->getCarga());
           coleccionDtBarcos[i] = dtBarcoPe;
           cout << "Barco numero  " << i << " :    " << *dtBarcoPe << endl;
-        }
+        } //else{          
+//throw invalid_argument ("No existe barco pesquero");
+        //}
         BarcoPasajeros *barcoPa = dynamic_cast<BarcoPasajeros*>(colBarco.b[i]);
         if(barcoPa != NULL){
           DtBarcoPasajeros* dtBarcoPa = new DtBarcoPasajeros( barcoPa->getId(), barcoPa->getNombre(), barcoPa->getCantPasajeros(), barcoPa->getTamanio());
           coleccionDtBarcos[i] = dtBarcoPa;
           cout << "Barco numero  " << i << " :    " << *dtBarcoPa << endl;
-        }
-    }catch (const invalid_argument& e) {
-      cout << e.what();
-    }
+        } //else{
+        //  throw invalid_argument ("No existe barco de pasajeros");
+       // }
+        cout << "recorremo - FIN " << endl;
+   // }catch (const invalid_argument& e) {
+   //   cout << e.what();
+   // }
   }
+  
+  cout << "antes return" << endl;
   return coleccionDtBarcos;
 //  sleep(3);  
 };
@@ -398,12 +414,16 @@ void listarBarcos(){
   int cant, cantidadBarcos;
 	cout << "INGRESE LA CANTIDAD DE BARCOS: ";
 	cin >> cantidadBarcos;
+  
   if (cantidadBarcos >= colBarco.tope){
     cant = colBarco.tope;
   }else{
     cant = cantidadBarcos;
   }
+  cout << "antes listarBarcos" << endl;
   DtBarco** dtBarco = listarBarcos(cant);
+cout << "despues listarBarcos" << endl;
+
 };
 
 
