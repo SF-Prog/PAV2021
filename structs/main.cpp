@@ -416,12 +416,8 @@ void listarBarcos(){
   }else{
     cant = cantidadBarcos;
   }
-  cout << "antes listarBarcos" << endl;
+  
   DtBarco** dtBarco = listarBarcos(cant);
-cout << "despues listarBarcos" << endl;
-  for (int i=0; i < cant; i++){
-      cout << *dtBarco[i];
-  }
 
 };
 
