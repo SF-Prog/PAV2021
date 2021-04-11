@@ -1,3 +1,12 @@
+/*          INTEGRANTES
+52017956 Agustin Pressel aguspressel@gmail.com
+50640349 Robert Sinibaldi ro.sinibaldi@gmail.com 
+47232856 Santiago Fitipaldo fitipaldosantiago@gmail.com 
+51384110 Fernando Rolfo fernandorolfo@gmail.com 
+51411012 Federico García fgp952@gmail.com 
+*/
+
+
 #include "Puerto.h"
 #include "DtBarco.h"
 #include "DtPuerto.h"
@@ -12,7 +21,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "windows.h"
+//#include "windows.h"
 #include <map>
 #define MAXPUERTO 30 
 #define MAXBARCO 30
@@ -233,16 +242,18 @@ void agregarArribo(string idPuerto, string idBarco, DtFecha fecha, float cargaDe
         BarcoPesquero *barcoPe = dynamic_cast<BarcoPesquero*>(barco);
         if(barcoPe != NULL){
           if (cargaDespacho >= 0){
-            if (barcoPe->getCarga() >= cargaDespacho){
-              barcoPe->setCarga(-cargaDespacho);
+            
+            if ((abs(barcoPe->getCarga()) - cargaDespacho) <= barcoPe->getCapacidad()&&(abs(barcoPe->getCarga()) - cargaDespacho) >= 0){
+              barcoPe->setCarga((barcoPe->getCarga()-cargaDespacho));
               Arribo* arribo = new Arribo(fecha, cargaDespacho);
               arribo->agregarBarco(barcoPe);
               puerto->agregarArribo(arribo);
             }else{
               throw invalid_argument("El barco no tiene suficiente carga para realizar el arribo\n");
             }
-          }else if ((barcoPe->getCarga() + cargaDespacho)*-1 <= barcoPe->getCapacidad()){ // -cargaDespacho >= 0
-            barcoPe->setCarga(barcoPe->getCarga() + cargaDespacho);
+          }else if ((barcoPe->getCarga() - cargaDespacho)<=   barcoPe->getCapacidad()){ 
+            int suma = barcoPe->getCarga() + cargaDespacho;
+            barcoPe->setCarga(abs(suma));
             Arribo* arribo = new Arribo(fecha, cargaDespacho);
             arribo->agregarBarco(barcoPe);
             puerto->agregarArribo(arribo);
@@ -416,7 +427,7 @@ void listarBarcos(){
   }else{
     cant = cantidadBarcos;
   }
-  
+
   DtBarco** dtBarco = listarBarcos(cant);
 
 };

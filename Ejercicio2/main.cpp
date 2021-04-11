@@ -1,3 +1,11 @@
+/*          INTEGRANTES
+52017956 Agustin Pressel aguspressel@gmail.com
+50640349 Robert Sinibaldi ro.sinibaldi@gmail.com 
+47232856 Santiago Fitipaldo fitipaldosantiago@gmail.com 
+51384110 Fernando Rolfo fernandorolfo@gmail.com 
+51411012 Federico García fgp952@gmail.com 
+*/
+
 #include <iostream>
 #include "A.h"
 #include "B.h"

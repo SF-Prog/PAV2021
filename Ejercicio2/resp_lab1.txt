@@ -1,13 +1,10 @@
 Cuáles son las dependencias circulares que fueron necesarias solucionar para que el programa compile?
-El problema de las dependencias circulares aparece en el momento en que dos clases distintas tienen una instancia
-o hacen referencia a la otra en su declaración. 
-En la clase A la dependencia circular con B y C, en la clase B la dependencia circular con A y C y en la 
-clase C la dependencia circular con A y B.
-En este caso hasta que una de las clases no haya sido totalmente interpretada por el compilador, éste no 
-podrá interpretar la otra. Lo que hace que el compilador se queje de no conocer el objeto.
+La dependencias circulares tiene un problema que aparece en el momento en que dos clases distintas tienen una instancia o hacen referencia a la otra en su declaración. 
+En la clase A la dependencia circular con B y C, en la clase B la dependencia circular con A y C y en la clase C la dependencia circular con A y B.
 
-Para solucionar este problema se debe indicar al compilador en ClassB que ClassA es una clase, y lo mismo 
-para la ClassA. A esta declaración "anticipada" se la llama "Forward declaration" 
+Acá hasta que una de las clases no haya sido totalmente interpretada por el compilador, éste no podrá interpretar la otra. Generando que el compilador creashee impidiendo su funcionamiento dado se desconoce el objeto en operacion
+
+Para solucionar este problema se debe indicar al compilador en ClassB que ClassA es una clase, y lo mismo para la ClassA. A esta declaración "anticipada" se la llama "Forward declaration" 
 
 Que es el forward declaration?
 Es la manera de indicarle al compilador que una clase tiene una referencia o instancia a otra clase en su declaración que no conoce. 
