@@ -1,9 +1,7 @@
-#ifndef CONTROLADORCLASE
-#define CONTROLADORCLASE
+#ifndef CONTROLADORINSCRIPCIONASIGNATURA
+#define CONTROLADORINSCRIPCIONASIGNATURA
 
-#include <list>
-
-using namespace std;
+#include "IControladorInscripcionAsignatura.h"
 
 class ControladorInscripcionAsignatura: public IControladorInscripcionAsignatura{
     private:

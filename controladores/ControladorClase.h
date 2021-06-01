@@ -1,7 +1,7 @@
 #ifndef CONTROLADORCLASE
 #define CONTROLADORCLASE
 
-#include "DtAltaAsignatura.h"
+#include "IControladorAltaAsignatura.h"
 
 #include <iostream>
 using namespace std;
