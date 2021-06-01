@@ -1,0 +1,6 @@
+#ifndef CONTROLADORREPRODUCCIONDECLASEENDIFERIDO
+#define CONTROLADORREPRODUCCIONDECLASEENDIFERIDO
+
+using namespace std;
+
+class ControladorReproduccionDeClaseEnDiferido
