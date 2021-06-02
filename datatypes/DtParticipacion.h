@@ -1,7 +1,8 @@
 #ifndef DTPARTICIPACION
 #define DTPARTICIPACION
 
-#include "DtParticipacion";
+#include "DtParticipacion.h"
+#include <string>
 
 class DtParticipacion{
     private:
@@ -26,5 +27,5 @@ class DtParticipacion{
 
         // Destructor
         ~DtParticipacion();
-}
+};
 #endif

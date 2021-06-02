@@ -10,9 +10,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
  
 
-# Make data base, printed on Mon May 31 22:33:06 2021
+# Make data base, printed on Tue Jun  1 21:27:00 2021
 
 # Variables
+ 
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -43,8 +44,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
- 
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/xc/z0wswxzx4z1452qx09fd0nx80000gn/T/vscode-ipc-9753afe0-84d3-4cb9-abb4-4bcdeea28e2e.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/xc/z0wswxzx4z1452qx09fd0nx80000gn/T/vscode-ipc-c8bcbde1-fae3-490f-a13e-ad401cf566e8.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -56,7 +56,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.oTKXqYS9tT/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.OoR3HQnJGI/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -92,7 +92,7 @@ MAKE_VERSION := 3.81
 # environment
 USER = santiagofitipaldo
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := main
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -108,6 +108,7 @@ VSCODE_IPC_HOOK = /Users/santiagofitipaldo/Library/Application Support/Code/1.56
 # makefile
 MAKEFLAGS = Rrqp
 # environment
+ 
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
@@ -138,9 +139,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 18791
+VSCODE_PID = 1098
 # variable set hash-table stats:
-# Load=62/1024=6%, Rehash=0, Collisions=1/85=1%
+# Load=62/1024=6%, Rehash=0, Collisions=1/86=1%
 
 # Pattern-specific Variable Values
 
@@ -148,16 +149,45 @@ VSCODE_PID = 18791
 
 # Directories
 
-# . (device 16777231, inode 2233232): 12 files, no impossibilities.
+# . (device 16777232, inode 2233232): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
- 
 
 # Files
+
+# Not a target:
+clases/Perfil.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtInstanciaClase.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Docente.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Perfil.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtInstanciaClase.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 all:
@@ -168,20 +198,181 @@ all:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+Rol.o: clases/Rol.cpp clases/Rol.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 26):
+	g++ -c clases/Rol.cpp -o Rol.o
+	
+
+Perfil.o: clases/Perfil.cpp clases/Perfil.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 22):
+	g++ -c clases/Perfil.cpp -o Perfil.o
+	
+
+# Not a target:
+ 
+datatypes/DtDictadoAsignatura.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Rol.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Rol.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Asignatura.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+Asignatura.o: clases/Asignatura.cpp clases/Asignatura.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 8):
+	g++ -c clases/Asignatura.cpp -o Asignatura.o
+	
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-05-31 19:16:17
+#  Last modified 2021-06-01 21:26:22
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+clases/Asignatura.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtPerfil.o: datatypes/DtPerfil.cpp datatypes/DtPerfil.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 45):
+	g++ -c datatypes/DtPerfil.cpp -o DtPerfil.o
+	
+
+# Not a target:
+clases/Teorico.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtPerfil.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Docente.o: clases/Docente.cpp clases/Docente.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 16):
+	g++ -c clases/Docente.cpp -o Docente.o
+	
+
+DtAsistir.o: datatypes/DtAsistir.cpp datatypes/DtAsistir.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 33):
+	g++ -c datatypes/DtAsistir.cpp -o DtAsistir.o
+	
+
+Estudiante.o: clases/Estudiante.cpp clases/Estudiante.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 18):
+	g++ -c clases/Estudiante.cpp -o Estudiante.o
+	
+
+# Not a target:
+datatypes/DtPerfil.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtDictadoAsignatura.o: datatypes/DtDictadoAsignatura.cpp datatypes/DtDictadoAsignatura.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 39):
+	g++ -c datatypes/DtDictadoAsignatura.cpp -o DtDictadoAsignatura.o
+	
+
+DtParticipacion.o: datatypes/DtParticipacion.cpp datatypes/DtParticipacion.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 43):
+	g++ -c datatypes/DtParticipacion.cpp -o DtParticipacion.o
+	
+
+Time.o: datatypes/Time.cpp datatypes/Time.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 47):
+	g++ -c datatypes/Time.cpp -o Time.o
+	
+
+# Not a target:
+datatypes/DtAsistir.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtAsignatura.o: datatypes/DtAsignatura.cpp datatypes/DtAsignatura.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 31):
+	g++ -c datatypes/DtAsignatura.cpp -o DtAsignatura.o
+	
+
+# Not a target:
+clases/Teorico.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtParticipacion.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Monitoreo.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -189,8 +380,236 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+datatypes/Time.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtDictadoAsignatura.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtClase.o: datatypes/DtClase.cpp datatypes/DtClase.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 35):
+	g++ -c datatypes/DtClase.cpp -o DtClase.o
+	
+
+DtClaseAsistencia.o: datatypes/DtClaseAsistencia.cpp datatypes/DtClaseAsistencia.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 37):
+	g++ -c datatypes/DtClaseAsistencia.cpp -o DtClaseAsistencia.o
+	
+
+# Not a target:
+ 
+datatypes/DtAsignatura.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/AsisteDiferido.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Practico.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtParticipacion.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Monitoreo.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Clase.o: clases/Clase.cpp clases/Clase.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 14):
+	g++ -c clases/Clase.cpp -o Clase.o
+	
+
+# Not a target:
+datatypes/Time.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 49):
+	rm *.o
+	clear
+	
+
+AsisteDiferido.o: clases/AsisteDiferido.cpp clases/AsisteDiferido.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 10):
+	g++ -c clases/AsisteDiferido.cpp -o AsisteDiferido.o
+	
+
+# Not a target:
+datatypes/DtAsignatura.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtClase.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/AsisteDiferido.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Practico.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtClaseAsistencia.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Monitoreo.o: clases/Monitoreo.cpp clases/Monitoreo.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 20):
+	g++ -c clases/Monitoreo.cpp -o Monitoreo.o
+	
+
+# Not a target:
+clases/Estudiante.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Practico.o: clases/Practico.cpp clases/Practico.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 24):
+	g++ -c clases/Practico.cpp -o Practico.o
+	
+
+# Not a target:
+datatypes/DtClase.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtClaseAsistencia.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+main: Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 2):
+	g++ main.cpp --std=c++11 -o obligatorio Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o
+	
+
+# Not a target:
+clases/Estudiante.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/DtAsistir.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/Clase.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/AsisteEnVivo.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtInstanciaClase.o: datatypes/DtInstanciaClase.cpp datatypes/DtInstanciaClase.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 41):
+	g++ -c datatypes/DtInstanciaClase.cpp -o DtInstanciaClase.o
+	
+
+AsisteEnVivo.o: clases/AsisteEnVivo.cpp clases/AsisteEnVivo.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 12):
+	g++ -c clases/AsisteEnVivo.cpp -o AsisteEnVivo.o
+	
+
+# Not a target:
+clases/Clase.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+clases/AsisteEnVivo.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Teorico.o: clases/Teorico.cpp clases/Teorico.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 28):
+	g++ -c clases/Teorico.cpp -o Teorico.o
+	
+
+# Not a target:
+clases/Docente.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# Load=66/1024=6%, Rehash=0, Collisions=6/138=4%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -202,6 +621,6 @@ Makefile:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon May 31 22:33:06 2021
+# Finished Make data base on Tue Jun  1 21:27:00 2021
 
  

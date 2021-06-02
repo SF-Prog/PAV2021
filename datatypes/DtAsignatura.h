@@ -1,7 +1,7 @@
 #ifndef DTASIGNATURA
 #define DTASIGNATURA
 
-#include "DtInstanciaClase.h";
+#include "DtInstanciaClase.h"
 
 class DtAsignatura{
     private:
@@ -11,17 +11,17 @@ class DtAsignatura{
     public:
         // Constructores
         DtAsignatura();
-        DtAsignatura(string, string, tipoClase);
+        DtAsignatura(string, string, DtInstanciaClase);
 
         // Getters and Setters
         string getNombre();
         string getCodigo();
-        DtInstanciaClase getTipoClase()
+        DtInstanciaClase getTipoClase();
         void setNombre(string);
         void setCodigo(string);
         void setTipoClase(DtInstanciaClase);
 
         // Destructor
         ~DtAsignatura();
-}
+};
 #endif

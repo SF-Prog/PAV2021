@@ -20,15 +20,15 @@ bool DtInstanciaClase::getPractico() {
 bool DtInstanciaClase::getMonitoreo() {
     return this->monitoreo;
 }
-void DtInstanciaClase::setTeorico(string teorico) {
+void DtInstanciaClase::setTeorico(bool teorico) {
     this->teorico = teorico;
 }
-void DtInstanciaClase::setPractico(string practico) {
+void DtInstanciaClase::setPractico(bool practico) {
     this->practico = practico;
 }
-void DtInstanciaClase::setMonitoreo(string monitoreo) {
+void DtInstanciaClase::setMonitoreo(bool monitoreo) {
     this->monitoreo = monitoreo;
 }
 // Destructor 
 
-~DtInstanciaClase::DtInstanciaClase(){}
+DtInstanciaClase::~DtInstanciaClase(){}

@@ -17,7 +17,7 @@ int Time::getMin(){
 int Time::getSegundos(){
     return this->segundos;
 }
-void Time::setHora(int hora{
+void Time::setHora(int hora){
     this->hora = hora;
 }
 void Time::setMin(int min){
