@@ -16,13 +16,13 @@ class Asignatura{
    
   public:
     Asignatura();
-    Asignatura(int, string, TimeStamp, TimeStamp,string);
+    Asignatura(string, string);
     string getCodigo();
     string getNombre();
     DtInfoClase getDtInfoClase();
     
     void setCodigo(string);
-    void setNombre(string );
+    void setNombre(string);
 
     // DESTRUCTOR
     ~Asignatura();

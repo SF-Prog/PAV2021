@@ -17,10 +17,10 @@ class Time{
         // Getters y Setters
         int getHora();
         int getMin();
-        int getsegundos();
+        int getSegundos();
         void setHora(int);
         void setMin(int);
-        void setsegundos(int);
+        void setSegundos(int);
         //Destructor
         ~Time();
 };

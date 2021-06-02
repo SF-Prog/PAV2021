@@ -1,7 +1,7 @@
 #ifndef DTCLASE
 #define DTCLASE
 
-#include "DtClase";
+#include <string>
 
 class DtClase{
     private:
@@ -26,5 +26,5 @@ class DtClase{
 
         // Destructor
         ~DtClase();
-}
+};
 #endif
