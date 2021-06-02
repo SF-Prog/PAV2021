@@ -1,11 +1,12 @@
 #ifndef CONTROLENVIODECLASE
 #define CONTROLENVIODECLASE
 
+#include "IControladorEnvioDeMensaje.h"
+
 class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
     private:
         int id, idP;
         string txt;
-
     public:
         list<int> clasesOnlineAsistiendo();
         list<DtParticipacion> selectClase(int id);
@@ -13,5 +14,5 @@ class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
         void ingresarTexto(string);
         void enviarMensaje();
         void cancelar();
-}
+};
 #endif

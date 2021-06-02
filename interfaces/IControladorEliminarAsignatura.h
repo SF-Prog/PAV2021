@@ -7,12 +7,10 @@
 using namespace std;
 
 class IControladorEliminarAsignatura{
-    private:
-        //agregar los datos que se recuerdan
     public:
-        list<string> listarAsignaturas();
-        void selectAsignatura(string);
-        void eliminarAsignatura();
-        void cancelar();
+        virtual list<string> listarAsignaturas() = 0;
+        virtual void selectAsignatura(string) = 0;
+        virtual void eliminarAsignatura() = 0;
+        virtual void cancelar() = 0;
 };
 #endif

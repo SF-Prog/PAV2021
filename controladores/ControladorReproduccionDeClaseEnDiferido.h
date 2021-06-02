@@ -1,6 +1,16 @@
 #ifndef CONTROLADORREPRODUCCIONDECLASEENDIFERIDO
 #define CONTROLADORREPRODUCCIONDECLASEENDIFERIDO
 
-using namespace std;
+#include "IControladorReproduccionDeClaseEnDiferido.h"
 
-class ControladorReproduccionDeClaseEnDiferido
+class ControladorReproduccionDeClaseEnDiferido: public IControladorReproduccionDeClaseEnDiferido{
+    private:
+        string codigo;
+        int id;
+    public:
+        list<string> asignaturasInscripto();
+        list<int> selectAsignatura(string);
+        list<DtParticipacion> reproducir();
+        void cancelar();
+};
+#endif

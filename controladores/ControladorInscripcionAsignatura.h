@@ -6,7 +6,6 @@
 class ControladorInscripcionAsignatura: public IControladorInscripcionAsignatura{
     private:
         string cod;
-
     public:
         list<string*> asignaturasNoInscipto();
         void selectAsignatura(string);
