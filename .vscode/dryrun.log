@@ -1,7 +1,6 @@
 make all --dry-run --keep-going --print-directory
 make: Entering directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
+make: Leaving directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
  
 make: *** No rule to make target `all'.
- 
-make: Leaving directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
  

@@ -12,17 +12,17 @@ class Asignatura{
     string nombre;
    
   public:
-    Clase();
-    Clase(int,string, TimeStamp, TimeStamp,string);
+    Asignatura();
+    Asignatura(string, string);
     string getCodigo();
     string getNombre();
     
     
     void setCodigo(string);
-    void setNombre(string );
+    void setNombre(string);
 
     // DESTRUCTOR
-    ~ClaAsignaturase();
+    ~Asignatura();
 };
 
 #endif

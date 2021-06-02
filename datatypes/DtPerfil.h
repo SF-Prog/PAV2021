@@ -1,6 +1,8 @@
 #ifndef DTPERFIL
 #define DTPERFIL
 
+#include <string>
+
 class DtPerfil{
     private:
         string nombre;
@@ -24,5 +26,5 @@ class DtPerfil{
 
         // Destructor
         ~DtPerfil();
-}
+};
 #endif
