@@ -3,6 +3,8 @@
     "files.associations": {
         "string": "cpp",
         "xstring": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "iosfwd": "cpp",
+        "memory": "cpp"
     }
 }

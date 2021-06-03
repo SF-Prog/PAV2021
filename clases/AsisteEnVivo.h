@@ -2,28 +2,28 @@
 #define ASISTEENVIVO
 
 #include <string>
+#include <ctime>
 
 
 using namespace std;
 
 class AsisteEnVivo{
   private:
-   TimeStamp inicio;
-   TimeStamp fin;
+   time_t inicio;
+   time_t fin;
    
   public:
-    Rol();
-    Rol(TipoRol);
+    AsisteEnVivo();
+    AsisteEnVivo(time_t, time_t);
     
-    TimeStamp getInicio();
-    TimeStamp getFin();
+    time_t getInicio();
+    time_t getFin();
 
-    void getInicio(TimeStamp);
-    void getFin(TimeStamp);
+    void setInicio(time_t);
+    void setFin(time_t);
 
     
     // DESTRUCTOR
-    ~Rol();
+    ~AsisteEnVivo();
 };
-
 #endif

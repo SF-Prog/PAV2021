@@ -1,20 +1,20 @@
-#ifndef DTCLASEASIGNATURA
-#define DTCLASEASIGNATURA
+#ifndef DTCLASEASISTENCIA
+#define DTCLASEASISTENCIA
 
 #include <string>
 #include "Time.h"
 
 using namespace std;
 
-class DtClaseAsignatura{
+class DtClaseAsistencia{
     private:
         int id;
         string nombre;
         Time promedioAsistencia;
     public:
         //Constructores
-        DtClaseAsignatura();
-        DtClaseAsignatura(int, string, Time);
+        DtClaseAsistencia();
+        DtClaseAsistencia(int, string, Time);
         // Getters y Setters
         int getId();
         string getNombre();
@@ -23,6 +23,6 @@ class DtClaseAsignatura{
         void setNombre(string);
         void setPromedioAsistencia(Time);
         //Destructor
-        ~DtClaseAsignatura();
+        ~DtClaseAsistencia();
 };
 #endif

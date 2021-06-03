@@ -1,28 +1,32 @@
 #ifndef DTCLASE
 #define DTCLASE
 
+#include "../enum/TipoRol.h"
 #include <string>
+#include <ctime>
+
+using namespace std;
 
 class DtClase{
     private:
         int id;
         string nombre;
-        tipoRol tipo;
-        timeStamp inicio;
+        TipoRol tipo;
+        time_t inicio;
     public:
         // Constructores
         DtClase();
-        DtClase(int, string, tipoRol, timeStamp);
+        DtClase(int, string, TipoRol, time_t);
 
         // Getters and Setters
         int getId();
         string getNombre();
-        tipoRol getTipo();
-        timeStamp getInicio();
+        TipoRol getTipo();
+        time_t getInicio();
         void setId(int);
         void setNombre(string);
-        void setTipo(tipoRol);
-        void setInicio(timeStamp);
+        void setTipo(TipoRol);
+        void setInicio(time_t);
 
         // Destructor
         ~DtClase();

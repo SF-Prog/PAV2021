@@ -2,7 +2,7 @@
 
 //Constructor
 DtClase::DtClase(){}
-DtClase::DtClase(int id, string nombre,tipoRol tipo,timeStamp inicio){
+DtClase::DtClase(int id, string nombre,TipoRol tipo,time_t inicio){
     this->id = id;
     this->nombre = nombre;
     this->tipo = tipo;
@@ -15,10 +15,10 @@ int DtClase::getId(){
 string DtClase::getNombre(){
     return this->nombre;
 }
-tipoRol DtClase::getTipo(){
-     eturn this->tipo;
+TipoRol DtClase::getTipo(){
+     return this->tipo;
 }
-timeStamp DtClase::getInicio(){
+time_t DtClase::getInicio(){
     return this->inicio;
 }
 void DtClase::setId(int id){
@@ -27,10 +27,10 @@ void DtClase::setId(int id){
 void DtClase::setNombre(string nombre){
     this->nombre = nombre;
 }
-void DtClase::setTipo(tipoRol tipo){
+void DtClase::setTipo(TipoRol tipo){
     this->tipo = tipo;
 }
-void DtClase::setInicio(timeStamp inicio){
+void DtClase::setInicio(time_t inicio){
     this->inicio = inicio;
 }
 // Destructor

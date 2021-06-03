@@ -1,22 +1,22 @@
 #include "AsisteEnVivo.h"
 
   AsisteEnVivo::AsisteEnVivo(){};
-  AsisteEnVivo::AsisteEnVivo(TimeStamp inicio, TimeStamp fin){
+  AsisteEnVivo::AsisteEnVivo(time_t inicio, time_t fin){
     this->inicio = inicio;
     this->fin = fin;
   };
 
-  TimeStamp AsisteEnVivo::getInicio(){
+  time_t AsisteEnVivo::getInicio(){
     return this->inicio;
   };
-  TimeStamp AsisteEnVivo::getFin(){
+  time_t AsisteEnVivo::getFin(){
     return this->fin;
   };
   
-  void AsisteEnVivo::setInicio(TimeStamp inicio){
+  void AsisteEnVivo::setInicio(time_t inicio){
     this->inicio = inicio;
   };
-  void AsisteEnVivo::setFin(TimeStamp  fin){
+  void AsisteEnVivo::setFin(time_t fin){
     this->fin = fin;
   };
   

@@ -2,31 +2,31 @@
 #define CLASE
 
 #include <string>
-
+#include <ctime>
 
 using namespace std;
 
 class Clase{
-  private:
+  protected:
     int id;
     string nombre;
-    TimeStamp inicio;
-    TimeStamp fin;
+    time_t inicio;
+    time_t fin;
     string rutaVideo;
    
   public:
     Clase();
-    Clase(int,string, TimeStamp, TimeStamp,string);
+    Clase(int,string, time_t, time_t,string);
     int getId();
     string getNombre();
-    TimeStamp getInicio();
-    TimeStamp getFin();
+    time_t getInicio();
+    time_t getFin();
     string getRutaVideo();
     
     void setId(int);
     void setNombre(string );
-    void setInicio(TimeStamp );
-    void setFin(TimeStamp );
+    void setInicio(time_t);
+    void setFin(time_t );
     void setRutaVideo(string );
     // DESTRUCTOR
    virtual ~Clase();

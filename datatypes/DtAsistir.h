@@ -14,9 +14,9 @@ class DtAsistir{
         DtAsistir();
         DtAsistir(string, int);
         // Getters y Setters
-        void setCodigo(string);
+        void setCod(string);
         void setId(int);
-        string getCodigo();
+        string getCod();
         int getId();
         //Destructor
         ~DtAsistir();  

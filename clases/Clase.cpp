@@ -1,7 +1,7 @@
 #include "Clase.h"
 
   Clase::Clase(){};
-  Clase::Clase(int id ,string nombre, TimeStamp inicio, TimeStamp fin,string rutaVideo){
+  Clase::Clase(int id ,string nombre, time_t inicio, time_t fin,string rutaVideo){
     this->id = id;
     this->nombre = nombre;
     this->inicio = inicio;
@@ -15,10 +15,10 @@
   string Clase::getNombre(){
     return this->nombre;
   };
-  TimeStamp Clase::getInicio(){
+  time_t Clase::getInicio(){
     return this->inicio;
   };
-  TimeStamp Clase::getFin(){
+  time_t Clase::getFin(){
     return this->fin;
   };
   string Clase::getRutaVideo(){
@@ -31,13 +31,13 @@
   void Clase::setNombre(string nombre ){
     this->nombre = nombre;
   };
-  void Clase::setInicio(TimeStamp inicio){
+  void Clase::setInicio(time_t inicio){
     this->inicio = inicio;
   };
-  void Clase::setFin(TimeStamp  fin){
+  void Clase::setFin(time_t  fin){
     this->fin = fin;
   };
-  void Clase::setRutaVideo(string password){
-      this->password = password;
+  void Clase::setRutaVideo(string rutaVideo){
+      this->rutaVideo = rutaVideo;
   };
   

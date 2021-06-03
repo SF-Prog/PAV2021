@@ -1,7 +1,7 @@
 #ifndef TIPOPERFIL
 #define TIPOPERFIL
 
-enum{
+enum TipoPerfil{
     ESTUDIANTE, DOCENTE
 };
 

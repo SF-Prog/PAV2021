@@ -1,5 +1,5 @@
-main: Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o
-	g++ main.cpp --std=c++11 -o obligatorio Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o
+main: Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o Log.o
+	g++ main.cpp --std=c++11 -o obligatorio Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o Log.o
 #FABRICA
 #CONTROLADORES
 #MANEJADORES
@@ -45,6 +45,8 @@ DtPerfil.o: datatypes/DtPerfil.cpp datatypes/DtPerfil.h
 	g++ -c datatypes/DtPerfil.cpp -o DtPerfil.o
 Time.o: datatypes/Time.cpp datatypes/Time.h
 	g++ -c datatypes/Time.cpp -o Time.o
+Log.o: datatypes/Log.cpp datatypes/Log.h
+	g++ -c datatypes/Log.cpp -o Log.o
 clean:
 	rm *.o
 	clear
