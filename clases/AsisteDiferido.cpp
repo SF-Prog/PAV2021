@@ -1,23 +1,17 @@
 #include "AsisteDiferido.h"
 
   AsisteDiferido::AsisteDiferido(){};
-  AsisteDiferido::AsisteDiferido(log acceso){
+  AsisteDiferido::AsisteDiferido(Log acceso){
     this->acceso = acceso;
 
   };
 
-  TimeStamp AsisteDiferido::getInicio(){
-    return this->inicio;
-  };
-  TimeStamp AsisteDiferido::getFin(){
-    return this->fin;
+  Log AsisteDiferido::getAcceso(){
+    return this->acceso;
   };
   
-  void AsisteDiferido::setInicio(TimeStamp inicio){
-    this->inicio = inicio;
-  };
-  void AsisteDiferido::setFin(TimeStamp  fin){
-    this->fin = fin;
+  void AsisteDiferido::setAcceso(Log acceso){
+    this->acceso = acceso;
   };
   
   AsisteDiferido::~AsisteDiferido(){};

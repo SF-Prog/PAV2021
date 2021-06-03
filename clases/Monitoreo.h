@@ -7,14 +7,8 @@
 using namespace std;
 
 class Monitoreo: public Clase{
-  private:
-   
-   
   public:
     Monitoreo();
-    Monitoreo(int,string, TimeStamp, TimeStamp,string);
-
-    
     // DESTRUCTOR
     ~Monitoreo();
 };

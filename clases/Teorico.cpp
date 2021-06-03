@@ -1,15 +1,16 @@
 #include "Teorico.h"
 
-  Teorico::Teorico(){};
-  Teorico::Teorico():Clase(int id ,string nombre, TimeStamp inicio, TimeStamp fin,string rutaVideo){
-   
-  };
- 
- 
-  // DESTRUCTOR
-
-
-
-
-  // DESTRUCTOR
-  Teorico::~Teorico(){};
+//Contructores
+Teorico::Teorico(){};
+Teorico::Teorico(int cantAsistentes):Clase(id, nombre, inicio, fin, rutaVideo){
+  this->cantAsistencias = cantAsistencias;
+};
+//Getters y Setters
+int Teorico::getCantAsistencias(){
+  return this->cantAsistencias;
+};
+void Teorico::setCantAsistencias(int cantAsistencias){
+  this->cantAsistencias = cantAsistencias;
+};
+// DESTRUCTOR
+Teorico::~Teorico(){};

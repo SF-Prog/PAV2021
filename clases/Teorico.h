@@ -8,14 +8,14 @@ using namespace std;
 
 class Teorico: public Clase{
   private:
-    string instituto;
-   
-   
+    int cantAsistencias;
   public:
+    //Constructores
     Teorico();
-    Teorico(int,string, TimeStamp, TimeStamp,string);
-
-    
+    Teorico(int);
+    //Getters y Setters
+    int getCantAsistencias();
+    void setCantAsistencias(int);
     // DESTRUCTOR
     ~Teorico();
 };

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
  
 
-# Make data base, printed on Tue Jun  1 21:27:00 2021
+# Make data base, printed on Wed Jun  2 23:17:14 2021
 
 # Variables
  
@@ -44,7 +44,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/xc/z0wswxzx4z1452qx09fd0nx80000gn/T/vscode-ipc-c8bcbde1-fae3-490f-a13e-ad401cf566e8.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/xc/z0wswxzx4z1452qx09fd0nx80000gn/T/vscode-ipc-c9f5351a-c0a4-42c6-8cc1-5db27e8aa346.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -108,7 +108,6 @@ VSCODE_IPC_HOOK = /Users/santiagofitipaldo/Library/Application Support/Code/1.56
 # makefile
 MAKEFLAGS = Rrqp
 # environment
- 
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
@@ -119,6 +118,7 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.673305.673311
 # automatic
 +F = $(notdir $+)
 # environment
+ 
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
@@ -149,9 +149,9 @@ VSCODE_PID = 1098
 
 # Directories
 
-# . (device 16777232, inode 2233232): 13 files, no impossibilities.
+# . (device 16777232, inode 2233232): 14 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -215,7 +215,6 @@ Perfil.o: clases/Perfil.cpp clases/Perfil.h
 	
 
 # Not a target:
- 
 datatypes/DtDictadoAsignatura.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -246,6 +245,7 @@ clases/Asignatura.h:
 #  File has not been updated.
 
 Asignatura.o: clases/Asignatura.cpp clases/Asignatura.h
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -256,7 +256,7 @@ Asignatura.o: clases/Asignatura.cpp clases/Asignatura.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-06-01 21:26:22
+#  Last modified 2021-06-02 23:17:04
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -277,6 +277,12 @@ DtPerfil.o: datatypes/DtPerfil.cpp datatypes/DtPerfil.h
 	
 
 # Not a target:
+datatypes/Log.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 clases/Teorico.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -284,6 +290,12 @@ clases/Teorico.cpp:
 
 # Not a target:
 datatypes/DtPerfil.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+datatypes/Log.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -409,7 +421,6 @@ DtClaseAsistencia.o: datatypes/DtClaseAsistencia.cpp datatypes/DtClaseAsistencia
 	
 
 # Not a target:
- 
 datatypes/DtAsignatura.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -457,7 +468,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 49):
+#  commands to execute (from `Makefile', line 51):
 	rm *.o
 	clear
 	
@@ -524,6 +535,7 @@ Practico.o: clases/Practico.cpp clases/Practico.h
 
 # Not a target:
 datatypes/DtClase.cpp:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -534,12 +546,12 @@ datatypes/DtClaseAsistencia.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-main: Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o
+main: Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o Log.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 2):
-	g++ main.cpp --std=c++11 -o obligatorio Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o
+	g++ main.cpp --std=c++11 -o obligatorio Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o Log.o
 	
 
 # Not a target:
@@ -594,6 +606,14 @@ clases/AsisteEnVivo.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+Log.o: datatypes/Log.cpp datatypes/Log.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 49):
+	g++ -c datatypes/Log.cpp -o Log.o
+	
+
 Teorico.o: clases/Teorico.cpp clases/Teorico.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -609,7 +629,7 @@ clases/Docente.h:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=6/138=4%
+# Load=69/1024=7%, Rehash=0, Collisions=6/144=4%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -621,6 +641,6 @@ clases/Docente.h:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun  1 21:27:00 2021
+# Finished Make data base on Wed Jun  2 23:17:14 2021
 
  

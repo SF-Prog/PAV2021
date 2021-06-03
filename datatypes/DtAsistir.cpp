@@ -13,13 +13,13 @@ DtAsistir::DtAsistir(string cod, int id) {
 string DtAsistir::getCod() {
     return this->cod;
 }
-string DtAsistir::getId() {
+int DtAsistir::getId() {
     return this->id;
 }
 void DtAsistir::setCod(string cod) {
     this->cod = cod;
 }
-void DtAsistir::setId(string id) {
+void DtAsistir::setId(int id) {
     this->id = id;
 }
 // Destructor 

@@ -2,6 +2,7 @@
 #define DTPERFIL
 
 #include <string>
+using namespace std;
 
 class DtPerfil{
     private:

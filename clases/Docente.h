@@ -11,10 +11,12 @@ class Docente: public Perfil{
   private:
     string instituto;
   public:
+    //Constructores
     Docente();
-    Docente(string, string, string, string, string);
+    Docente(string);
+    //Getters y setters
     string getInstituto();
-    list<string> asignaturas();
+    // list<string> asignaturas();
    
 
     void setInstituto(string );

@@ -1,29 +1,31 @@
 #ifndef DTPARTICIPACION
 #define DTPARTICIPACION
 
-#include "DtParticipacion.h"
 #include <string>
+#include <ctime>
+
+using namespace std;
 
 class DtParticipacion{
     private:
         int id;
-        timeStamp fecha;
+        time_t fecha;
         string mensaje;
-        DtParticipacion responde;
+        DtParticipacion* responde;
     public:
         // Constructores
         DtParticipacion();
-        DtParticipacion(int, timeStamp, string, DtParticipacion);
+        DtParticipacion(int, time_t, string, DtParticipacion*);
 
         // Getters and Setters
         int getId();
-        timeStamp getFecha();
+        time_t getFecha();
         string getMensaje();
-        DtParticipacion getResponde();
+        DtParticipacion* getResponde();
         void setId(int);
-        void setFecha(timeStamp);
+        void setFecha(time_t);
         void setMensaje(string);
-        void setResponde(DtParticipacion);
+        void setResponde(DtParticipacion*);
 
         // Destructor
         ~DtParticipacion();

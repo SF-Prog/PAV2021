@@ -2,7 +2,7 @@
 #define ASIGNATURA
 
 #include "Clase.h"
-#include "DtInfoClase.h"
+#include "../datatypes/DtInfoClase.h"
 #include <string>
 #include <map>
 
@@ -12,20 +12,25 @@ class Asignatura{
   private:
     string codigo;
     string nombre;
-    map<int, Clase*> clases;
+    list<Clase*> clases;
    
   public:
+    //Constructores
     Asignatura();
     Asignatura(string, string);
     string getCodigo();
     string getNombre();
-    DtInfoClase getDtInfoClase();
-    
+    list<Clase*> getClases();
+
+    //Getters & Setters
     void setCodigo(string);
     void setNombre(string);
+    void setClases(list<Clase*>);
 
     // DESTRUCTOR
     ~Asignatura();
+
+    //Metodos
 };
 
 #endif
