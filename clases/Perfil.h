@@ -1,8 +1,8 @@
 #ifndef PERFIL
 #define PERFIL
 
+#include "../datatypes/DtPerfil.h"
 #include <string>
-
 
 using namespace std;
 
@@ -24,6 +24,7 @@ class Perfil{
     void setImagenUrl(string);
     void setEmail(string);
     void setPassword(string);
+
     // DESTRUCTOR
    virtual ~Perfil();
 };

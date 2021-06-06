@@ -5,6 +5,7 @@
         "xstring": "cpp",
         "list": "cpp",
         "iosfwd": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "map": "cpp"
     }
 }

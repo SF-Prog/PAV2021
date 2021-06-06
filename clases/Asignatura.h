@@ -3,6 +3,7 @@
 
 #include "Clase.h"
 #include "../datatypes/DtInfoClase.h"
+#include "../datatypes/DtInstanciaClase.h"
 #include <string>
 #include <map>
 
@@ -12,15 +13,16 @@ class Asignatura{
   private:
     string codigo;
     string nombre;
-    list<Clase*> clases;
+    map<int, Clase*> clases;
    
   public:
     //Constructores
     Asignatura();
-    Asignatura(string, string);
+    Asignatura(string, string, DtInstanciaClase);
     string getCodigo();
     string getNombre();
     list<Clase*> getClases();
+    list<DtInfoClase> getDtInfoClase();
 
     //Getters & Setters
     void setCodigo(string);

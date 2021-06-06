@@ -1,7 +1,7 @@
 #ifndef MANEJADORASIGNATURA
 #define MANEJADORASIGNATURA
 
-#include "Asignatura.h"
+#include "../clases/Asignatura.h"
 #include <map>
 #include <list>
 

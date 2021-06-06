@@ -1,8 +1,10 @@
-#ifndef ESTUDIANTE
-#define ESTUDIANTE
-#include "Perfil.h"
-#include <string>
+#ifndef ESTUDIANTE_H
+#define ESTUDIANTE_H
 
+#include "Perfil.h"
+#include "../datatypes/DtIniciarClase.h"
+
+#include <string>
 
 using namespace std;
 
@@ -12,10 +14,12 @@ class Estudiante: public Perfil{
   public:
     // Contructores
     Estudiante();
-    Estudiante(string);
+    Estudiante(string, string, string, string, string);
     // Getters y Setters
     string getDocumento();
-    void setDocumento(string );
+    void setDocumento(string);
+
+    bool estaInscripto(string);
     
     // DESTRUCTOR
     ~Estudiante();

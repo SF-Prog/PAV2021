@@ -32,4 +32,3 @@ void Perfil::setEmail(string email){
 void Perfil::setPassword(string password){
   this->password = password;
 };
-  

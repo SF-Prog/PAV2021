@@ -1,8 +1,9 @@
-#ifndef DOCENTE
-#define DOCENTE
+#ifndef DOCENTE_H
+#define DOCENTE_H
+
 #include "Perfil.h"
 #include <string>
-#include <map>
+#include <list>
 
 
 using namespace std;
@@ -13,10 +14,10 @@ class Docente: public Perfil{
   public:
     //Constructores
     Docente();
-    Docente(string);
+    Docente(string, string, string, string, string);
     //Getters y setters
     string getInstituto();
-    // list<string> asignaturas();
+    list<string> asignaturas();
    
 
     void setInstituto(string );

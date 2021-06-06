@@ -5,8 +5,9 @@ list<string> ControladorListarClases::asignaturasAsignadas(){
     list<string> codigosAsignatura = this->docente->asignaturas();
     return codigosAsignatura;
 };
-list<DtInfoClase>ControladorListarClases::selectAsignatura(string cod){
+list<DtInfoClase> ControladorListarClases::selectAsignatura(string cod){
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     Asignatura* asignatura = mA->getAsignatura(cod);
-    return asignatura->getDtInfoClase();
+    list<DtInfoClase> dticList = asignatura->getDtInfoClase();
+    return dticList;
 };

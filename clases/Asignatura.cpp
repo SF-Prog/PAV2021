@@ -1,7 +1,7 @@
 #include "Asignatura.h"
 
 Asignatura::Asignatura(){};
-Asignatura::Asignatura(string id ,string nombre){
+Asignatura::Asignatura(string codigo,string nombre, DtInstanciaClase instanciaClase){
   this->codigo = codigo;
   this->nombre = nombre;
 };
@@ -28,7 +28,15 @@ list<Clase*> Asignatura::getClases(){
   //   // en getDocentes() hay que ver la forma de retornar los docentes de clase
   //   dticList.push_front(dtic);
   // };
-   return this->clases;
+  // return this->clases;
+};
+
+list<DtInfoClase> Asignatura::getDtInfoClase(){
+  list<DtInfoClase> dticList;
+  for(map<int, Clase*>::iterator it = this->clases.begin(); it!=this->clases.end(); it++){
+    dticList.push_front(it->second->getDtInfoClase());
+  };
+  return dticList;
 };
 
 Asignatura::~Asignatura(){};

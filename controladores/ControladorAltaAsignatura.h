@@ -1,13 +1,14 @@
 #ifndef CONTROLADORALTAASIGNATURA
 #define CONTROLADORALTAASIGNATURA
 
-#include "IControladorAltaAsignatura.h"
+#include "../interfaces/IControladorAltaAsignatura.h"
+#include "../manejadores/ManejadorAsignatura.h"
 
 class ControladorAltaAsignatura: public IControladorAltaAsignatura{
     private:
-        DtAltaAsignatura datosAsignatura;
+        DtAsignatura datosAsignatura;
     public:
-        DtAltaAsignatura ingresar(DtAltaAsignatura);
+        DtAsignatura ingresar(DtAsignatura);
         void altaAsignatura();
         void cancelar();
 };

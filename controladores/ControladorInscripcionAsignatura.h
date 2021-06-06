@@ -1,13 +1,13 @@
 #ifndef CONTROLADORINSCRIPCIONASIGNATURA
 #define CONTROLADORINSCRIPCIONASIGNATURA
 
-#include "IControladorInscripcionAsignatura.h"
+#include "../interfaces/IControladorInscripcionAsignatura.h"
 
 class ControladorInscripcionAsignatura: public IControladorInscripcionAsignatura{
     private:
         string cod;
     public:
-        list<string*> asignaturasNoInscipto();
+        list<string*> asignaturasNoInscripto();
         void selectAsignatura(string);
         void inscribir();
         void cancelar();
