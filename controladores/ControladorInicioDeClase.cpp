@@ -16,7 +16,7 @@ bool ControladorInicioDeClase::selectAsignatura(DtIniciarClase dtic){
     else
         return false;
 };
-list<string> ControladorInicioDeClase::inscriptosAsignatura(){
+list<string> ControladorInicioDeClase::inscriposAstignatura(){
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
     list<Perfil*> perfiles = mP->listarPerfiles();
     list<string> emails;

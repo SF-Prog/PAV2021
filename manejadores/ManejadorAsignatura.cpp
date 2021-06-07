@@ -5,7 +5,17 @@ ManejadorAsignatura* ManejadorAsignatura::getInstancia(){
         instancia = new ManejadorAsignatura();
     return instancia;
 };
-list<Asignatura*> ManejadorAsignatura::getAsignaturas(){};
+
+list<Asignatura*> ManejadorAsignatura::getAsignaturas(){
+    list<Asignatura*> LstAsignatura;
+
+    for(map<string, Asignatura*>::iterator it = this->asignaturas.begin(); it!=this->asignaturas.end(); it++){
+        LstAsignatura.push_front(it->second);        
+    };
+
+    return LstAsignatura;
+};
+
 Asignatura* ManejadorAsignatura::getAsignatura(string cod){
     return this->asignaturas.find(cod)->second;
 };

@@ -1,6 +1,5 @@
-make all --dry-run --keep-going --print-directory
-make: Entering directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
-make: Leaving directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
- 
-make: *** No rule to make target `all'.
+make.exe --dry-run --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/Robert/Documents/Tecnologo/PAV/Obligatorio1/PAV2021'
+g++ main.cpp Object/DtInfoClase.o -o obligatorio
+make.exe: Leaving directory 'c:/Users/Robert/Documents/Tecnologo/PAV/Obligatorio1/PAV2021'
  

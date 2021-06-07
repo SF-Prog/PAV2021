@@ -70,5 +70,5 @@ $(OBJ_DIR)/Log.o: datatypes/Log.cpp datatypes/Log.h
 
 
 clean:
-	rm -rf *.o programa
+	rm -rf $(OBJ_DIR)/*.o programa
 	clear
