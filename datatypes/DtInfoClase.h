@@ -11,9 +11,9 @@ class DtInfoClase{
     private:
         int id;
         string nombre;
-        map<string, Docente*> docentes;
+        list<Docente*> docentes;
     public:
         DtInfoClase();
-        DtInfoClase(int, string, map<string, Docente*>);
+        DtInfoClase(int, string, list<Docente*>);
 };
 #endif

@@ -2,15 +2,16 @@
 #define DOCENTE_H
 
 #include "Perfil.h"
+#include "Rol.h"
 #include <string>
 #include <list>
-
 
 using namespace std;
 
 class Docente: public Perfil{
   private:
     string instituto;
+    list<Rol*> roles;
   public:
     //Constructores
     Docente();
@@ -18,9 +19,8 @@ class Docente: public Perfil{
     //Getters y setters
     string getInstituto();
     list<string> asignaturas();
-   
-
-    void setInstituto(string );
+    bool tieneMonitoreo(string);
+    void setInstituto(string);
     
     // DESTRUCTOR
     ~Docente();

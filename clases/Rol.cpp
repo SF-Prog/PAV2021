@@ -12,5 +12,12 @@ TipoRol Rol::getTipo(){
 void Rol::setTipo(TipoRol tipo){
   this->tipo = tipo;
 };
+
+string Rol::getCodigoAsignatura(){
+  return this->asignatura->getCodigo();
+}
+void Rol::setAsignatura(Asignatura* asignatura){
+  this->asignatura = asignatura;
+}
 // DESTRUCTOR
 Rol::~Rol(){};

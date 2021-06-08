@@ -19,15 +19,17 @@ class Asignatura{
     //Constructores
     Asignatura();
     Asignatura(string, string, DtInstanciaClase);
-    string getCodigo();
-    string getNombre();
-    list<Clase*> getClases();
-    list<DtInfoClase> getDtInfoClase();
 
     //Getters & Setters
+    string getCodigo();
+    string getNombre();
     void setCodigo(string);
     void setNombre(string);
     void setClases(list<Clase*>);
+
+    list<Clase*> getClases();
+    list<DtInfoClase> getDtInfoClase();
+    void agregarClase(Clase*);
 
     // DESTRUCTOR
     ~Asignatura();

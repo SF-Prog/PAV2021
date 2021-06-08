@@ -13,29 +13,30 @@ class Clase{
   protected:
     int id;
     string nombre;
-    map<string, Docente*> docentes;
+    list<Docente*> docentes;
     time_t inicio;
     time_t fin;
-    string rutaVideo;
+    string codigo;
    
   public:
     Clase();
     Clase(int, string, time_t, time_t, string);
-    Clase(int, string, map<string, Docente*>, time_t, time_t, string);
+    Clase(int, string, Docente*, time_t, string);
+    Clase(int, string, list<Docente*>, time_t, time_t, string);
     int getId();
     string getNombre();
-    map<string, Docente*> getDocentes();
+    list<Docente*> getDocentes();
     void addDocente(Docente*);
     time_t getInicio();
     time_t getFin();
-    string getRutaVideo();
+    string getCodigo();
     DtInfoClase getDtInfoClase();
     
     void setId(int);
     void setNombre(string );
     void setInicio(time_t);
     void setFin(time_t );
-    void setRutaVideo(string );
+    void setCodigo(string);
     // DESTRUCTOR
    virtual ~Clase();
 };

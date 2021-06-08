@@ -13,12 +13,14 @@ string Asignatura::getNombre(){
   return this->nombre;
 };
 
-
 void Asignatura::setCodigo(string codigo){
   this->codigo = codigo;
 };
 void Asignatura::setNombre(string nombre ){
   this->nombre = nombre;
+};
+void Asignatura::agregarClase(Clase* clase){
+  this->clases.insert(pair<int, Clase*>(clase->getId(), clase));
 };
 
 list<Clase*> Asignatura::getClases(){

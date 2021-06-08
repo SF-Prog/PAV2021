@@ -14,7 +14,14 @@ void Estudiante::setDocumento(string documento){
   this->documento = documento;
 };
 
-bool Estudiante::estaInscripto(string cod){};
+bool Estudiante::member(Asignatura* asignatura){
+    this->asignaturas.find(asignatura->getCodigo()) != this->asignaturas.end();
+};
+bool Estudiante::estaInscripto(string codigo){
+  ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
+  Asignatura* asignatura = mA->getAsignatura(codigo);
+  return member(asignatura);
+};
 
 // DESTRUCTOR
 Estudiante::~Estudiante(){};
