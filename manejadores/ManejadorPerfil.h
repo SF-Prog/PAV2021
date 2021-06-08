@@ -11,6 +11,7 @@ class ManejadorPerfil {
     public:
         static ManejadorPerfil* getInstancia();
         void add(Perfil*);
+        Perfil* getPerfil(string);
         list<Perfil*> listarPerfiles();
 };
 #endif
