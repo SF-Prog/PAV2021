@@ -16,6 +16,9 @@ $(OBJ_DIR)/main.o: main.cpp
 $(OBJ_DIR)/DtInfoClase.o: datatypes/DtInfoClase.cpp datatypes/DtInfoClase.h
 	$(CC) -c $< -o $@
 #FABRICA
+$(OBJ_DIR)/AsisteEnVivo.o: clases/Fabrica.cpp clases/Fabrica.h
+	$(CC) -c $< -o $@
+
 #INTERFACES
 #CONTROLADORES
 $(OBJ_DIR)/ControladorListarClases.o: controladores/ControladorListarClases.cpp controladores/ControladorListarClases.h

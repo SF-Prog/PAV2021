@@ -2,7 +2,7 @@
 #define ICONTROLADORINICIODECLASE
 
 #include "IControladorInicioDeClase.h"
-#include "DtPerfil.h"
+#include "../datatypes/DtPerfil.h"
 #include <string>
 #include <list>
 
