@@ -1,7 +1,7 @@
 #ifndef ICONTROLADORALTAUSUARIO
 #define ICONTROLADORALTAUSUARIO
 
-#include "DtPerfil.h"
+#include "../datatypes/DtPerfil.h"
 #include <string>
 
 using namespace std;

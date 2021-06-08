@@ -1,7 +1,7 @@
 #ifndef ICONTROLENVIODECLASE
 #define ICONTROLENVIODECLASE
 
-#include "DtParticipacion.h"
+#include "../datatypes/DtParticipacion.h"
 #include <string>
 #include <list>
 
