@@ -1,7 +1,7 @@
 #ifndef MANEJADORCLASE
 #define MANEJADORCLASE
 
-#include "Clase.h"
+#include "../clases/Clase.h"
 #include <list>
 
 class ManejadorClase {

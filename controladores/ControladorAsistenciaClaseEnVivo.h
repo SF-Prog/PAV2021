@@ -1,7 +1,7 @@
 #ifndef CONTROLADORASISTENCIACLASEENVIVO
 #define CONTROLADORASISTENCIACLASEENVIVO
 
-#include "IControladorAsistenciaClaseEnVivo.h"
+#include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
 
 class ControladorAsistenciaClaseEnVivo: public IControladorAsistenciaClaseEnVivo{
     private:

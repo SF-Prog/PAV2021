@@ -1,21 +1,4 @@
 #include "Fabrica.h"
-#include "../controladores/ControladorAClaseEnVivo.h"
-#include "../controladores/ControladorAltaAsignatura.h"
-#include "../controladores/ControladorAltaUsuario.h"
-#include "../controladores/ControladorAsignarAsignaturaDocente.h"
-#include "../controladores/ControladorAsignaturaDocente.h"
-#include "../controladores/ControladorAsistenciaClaseEnVivo.h"
-#include "../controladores/ControladorEliminarAsignatura.h"
-#include "../controladores/ControladorEnvioDeMensaje.h"
-#include "../controladores/ControladorInicioDeClase.h"
-#include "../controladores/ControladorInscripcionAsignatura.h"
-#include "../controladores/ControladorListarClases.h"
-
-#include <string>
-
-
-using namespace std;
-
 
 Fabrica* Fabrica::instancia=NULL;
 
@@ -27,8 +10,8 @@ Fabrica* Fabrica::getInstancia(){
     return instancia;
 }
 
-IControladorAClaseEnVivo* Fabrica::getIControladorAClaseEnVivo(){
-    return new ControladorAClaseEnVivo();
+IControladorAsistenciaClaseEnVivo* Fabrica::getIControladorAsistenciaClaseEnVivo(){
+    return new ControladorAsistenciaClaseEnVivo();
 }
 
 IControladorAltaAsignatura* Fabrica::getIControladorAltaAsignatura(){

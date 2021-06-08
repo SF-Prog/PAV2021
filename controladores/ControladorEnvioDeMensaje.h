@@ -1,7 +1,7 @@
 #ifndef CONTROLENVIODECLASE
 #define CONTROLENVIODECLASE
 
-#include "IControladorEnvioDeMensaje.h"
+#include "../interfaces/IControladorEnvioDeMensaje.h"
 
 class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
     private:
