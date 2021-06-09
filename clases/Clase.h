@@ -4,6 +4,7 @@
 #include "Docente.h"
 #include "../datatypes/DtInfoClase.h"
 #include <string>
+#include <list>
 #include <map>
 #include <ctime>
 
@@ -14,6 +15,7 @@ class Clase{
     int id;
     string nombre;
     list<Docente*> docentes;
+    list<AsisteEnVivo*> asistenciasEnVivo;
     time_t inicio;
     time_t fin;
     string codigo;
@@ -27,6 +29,8 @@ class Clase{
     string getNombre();
     list<Docente*> getDocentes();
     void addDocente(Docente*);
+    list<AsisteEnVivo*> getAsistenciasEnVivo();
+    void addAsistenciasEnVivo(AsisteEnVivo*);
     time_t getInicio();
     time_t getFin();
     string getCodigo();

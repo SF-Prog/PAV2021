@@ -36,6 +36,12 @@
   void Clase::addDocente(Docente* docente){
     this->docentes.push_front(docente);
   };
+  list<AsisteEnVivo*> Clase::getAsistenciasEnVivo(){
+    return this->asistenciasEnVivo;
+  };
+  void Clase::addAsistenciasEnVivo(AsisteEnVivo* asistenciasEnVivo){
+    this->asistenciasEnVivo.push_front(asistenciasEnVivo);
+  };
   time_t Clase::getInicio(){
     return this->inicio;
   };

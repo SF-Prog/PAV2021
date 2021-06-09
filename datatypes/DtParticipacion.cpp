@@ -2,6 +2,11 @@
 
 // Constructores
 DtParticipacion::DtParticipacion(){}
+DtParticipacion::DtParticipacion(int id, time_t fecha, string mensaje){
+    this->id = id;
+    this->fecha = fecha;
+    this->mensaje = mensaje;
+}
 DtParticipacion::DtParticipacion(int id, time_t fecha, string mensaje, DtParticipacion* responde){
     this->id = id;
     this->fecha = fecha;
