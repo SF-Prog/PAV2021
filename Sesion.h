@@ -1,17 +1,17 @@
 #ifndef SESION
 #define SESION
 
-#include "Perfil.h"
+#include "DtPerfil.h"
 
 class Sesion{
     private:
         static Sesion *instancia;
-        Perfil* perfil;
+        DtPerfil* perfil;
         Sesion();
         ~Sesion();
     public:
         static Sesion* getInstancia();
-        Perfil* getPerfil();
-        void setPerfil(Perfil*);
+        DtPerfil* getPerfil();
+        void setPerfil(DtPerfil*);
 };
 #endif
