@@ -3,6 +3,7 @@
 
 #include "../datatypes/DtPerfil.h"
 #include <string>
+#include "../clases/Sesion.h"
 
 using namespace std;
 

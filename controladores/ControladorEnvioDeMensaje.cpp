@@ -1,8 +1,8 @@
-#include "ControladorEnvioDeMensaje.h"
+#include "../controladores/ControladorEnvioDeMensaje.h"
 
 
  list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
-     list<int> = clasesOnline;
+     list<int> clasesOnline;
 
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     
@@ -11,7 +11,7 @@
 
        
     for(list<Clase*>::iterator it = lstClases.begin(); it!=lstClases.end(); it++){
-        list<AsisteEnVivo*> asistEnVivo = it->getAsistenciasEnVivo();
+        list<AsisteEnVivo*> asistEnVivo = it*->getAsistenciasEnVivo();
 
         for(list<AsisteEnVivo*>::iterator it2 = asistEnVivo.begin(); it2!=asistEnVivo.end(); it2++){
 
@@ -27,11 +27,15 @@
  };
 
 
-list<DtParticipacion> ControladorEnvioDeMensaje::selectClase(int id){
+DtParticipacion ControladorEnvioDeMensaje::selectClase(int id){
     this->id = id;
-    DtParticipacion participacionDt = new DtParticipacion(id, time_t, '');
+    ManejadorClase* mC = ManejadorClase::getInstancia();
+    Clase*  clase = mC->getClase(id);
 
-    return DtParticipacion;
+    string s ;
+    time_t tiempo ;
+    DtParticipacion participacionDt = new DtParticipacion(id,tiempo,s);
+    return participacionDt;
 };
 
 

@@ -1,7 +1,9 @@
 #ifndef CLASE
 #define CLASE
 
-#include "Docente.h"
+#include "../clases/Docente.h"
+#include "../clases/Participacion.h"
+#include "../clases/AsisteEnVivo.h"
 #include "../datatypes/DtInfoClase.h"
 #include <string>
 #include <list>
@@ -14,6 +16,8 @@ class Clase{
   protected:
     int id;
     string nombre;
+    
+    list<Participacion*> participaciones;
     list<Docente*> docentes;
     list<AsisteEnVivo*> asistenciasEnVivo;
     time_t inicio;

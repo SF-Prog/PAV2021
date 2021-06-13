@@ -4,6 +4,7 @@
 #include "Perfil.h"
 #include "../manejadores/ManejadorAsignatura.h"
 #include "../datatypes/DtIniciarClase.h"
+#include "../clases/Asignatura.h"
 
 #include <string>
 
