@@ -11,7 +11,7 @@ using namespace std;
 class ManejadorAsignatura{
     private:
        static ManejadorAsignatura* instancia;
-       map<string, Asignatura*> asignaturas;
+       map<string, Asignatura> asignaturas;
        ManejadorAsignatura();
     public:
        static ManejadorAsignatura* getInstancia();
