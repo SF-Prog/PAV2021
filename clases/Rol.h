@@ -2,7 +2,7 @@
 #define ROL
 
 #include "../enum/TipoRol.h"
-#include "Asignatura.h"
+#include "../clases/Asignatura.h"
 #include <string>
 using namespace std;
 
