@@ -1,4 +1,4 @@
-#include "../controladores/ControladorEnvioDeMensaje.h"
+#include "ControladorEnvioDeMensaje.h"
 
 
  list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){

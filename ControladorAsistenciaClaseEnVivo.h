@@ -1,12 +1,12 @@
 #ifndef CONTROLADORASISTENCIACLASEENVIVO
 #define CONTROLADORASISTENCIACLASEENVIVO
 
-#include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
-#include "../datatypes/DtAsistir.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../manejadores/ManejadorPerfil.h"
-#include "../clases/Sesion.h"
-#include "../clases/Docente.h"
+#include "IControladorAsistenciaClaseEnVivo.h"
+#include "DtAsistir.h"
+#include "ManejadorAsignatura.h"
+#include "ManejadorPerfil.h"
+#include "Sesion.h"
+#include "Docente.h"
 #include <iostream>
 
 class ControladorAsistenciaClaseEnVivo: public IControladorAsistenciaClaseEnVivo{

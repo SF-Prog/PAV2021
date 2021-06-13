@@ -1,9 +1,9 @@
 #ifndef PERFIL
 #define PERFIL
 
-#include "../datatypes/DtPerfil.h"
+#include "DtPerfil.h"
 #include <string>
-#include "../clases/Sesion.h"
+#include "Sesion.h"
 
 using namespace std;
 

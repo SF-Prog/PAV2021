@@ -1,7 +1,7 @@
 #ifndef ICONTROLADORASIGNARASIGNATURADOCENTE
 #define ICONTROLADORASIGNARASIGNATURADOCENTE
 
-#include "../enum/TipoRol.h"
+#include "TipoRol.h"
 #include <string>
 #include <list>
 

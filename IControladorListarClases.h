@@ -1,7 +1,7 @@
 #ifndef ICONTROLADORLISTARCLASES
 #define ICONTROLADORLISTARCLASES
 
-#include "../datatypes/DtInfoClase.h"
+#include "DtInfoClase.h"
 #include <string>
 #include <map>
 #include <list>

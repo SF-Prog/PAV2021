@@ -1,8 +1,8 @@
 #ifndef PARTICIPACION_H
 #define PARTICIPACION_H
 
-#include "../clases/Perfil.h"
-#include "../datatypes/DtParticipacion.h"
+#include "Perfil.h"
+#include "DtParticipacion.h"
 #include <string>
 #include <list>
 #include <ctime>

@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sun Jun 13 16:16:35 2021
+# Make data base, printed on Sun Jun 13 17:33:35 2021
 
 # Variables
 
@@ -52,14 +52,14 @@ MAKEFILE_LIST :=  Makefile
 VSCODE_NODE_CACHED_DATA_DIR = C:\Users\agusp\AppData\Roaming\Code\CachedData\b4c1bd0a9b03c749ea011b06c6d2676c8091a70c
 # environment
 TMP = C:\Users\agusp\AppData\Local\Temp
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 3)
 OBJ_DIR = Object
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 PROGRAMW6432 = C:\Program Files
-# makefile (from 'Makefile', line 10)
-OBJS = $(OBJ_DIR)/Fabrica.o $(OBJ_DIR)/Time.o $(OBJ_DIR)/Asignatura.o $(OBJ_DIR)/AsisteDiferido.o $(OBJ_DIR)/AsisteEnVivo.o $(OBJ_DIR)/Clase.o $(OBJ_DIR)/Docente.o $(OBJ_DIR)/Estudiante.o $(OBJ_DIR)/Monitoreo.o $(OBJ_DIR)/Perfil.o $(OBJ_DIR)/Practico.o $(OBJ_DIR)/Rol.o $(OBJ_DIR)/Teorico.o $(OBJ_DIR)/Participacion.o $(OBJ_DIR)/DtAsignatura.o $(OBJ_DIR)/DtAsistir.o $(OBJ_DIR)/DtClase.o $(OBJ_DIR)/DtClaseAsistencia.o $(OBJ_DIR)/DtDictadoAsignatura.o $(OBJ_DIR)/DtInstanciaClase.o $(OBJ_DIR)/DtParticipacion.o $(OBJ_DIR)/DtPerfil.o $(OBJ_DIR)/DtInfoClase.o $(OBJ_DIR)/Log.o $(OBJ_DIR)/ControladorListarClases.o $(OBJ_DIR)/ManejadorAsignatura.o $(OBJ_DIR)/main.o
+# makefile (from 'Makefile', line 5)
+OBJS = Fabrica.o Time.o Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o Participacion.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o DtInfoClase.o Log.o ControladorListarClases.o ManejadorAsignatura.o main.o
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
@@ -100,8 +100,6 @@ PROGRAMFILES = C:\Program Files (x86)
 DRIVERDATA = C:\Windows\System32\Drivers\DriverData
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
-# makefile (from 'Makefile', line 5)
-M_DIR = manejadores
 # environment
 USERNAME = Agus
 # environment
@@ -120,8 +118,6 @@ LOGONSERVER = \\LAPTOP-43F3RUQ3
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 USERDOMAIN = LAPTOP-43F3RUQ3
-# makefile (from 'Makefile', line 6)
-DT_DIR = datatypes
 # environment
 MAKELEVEL := 0
 # default
@@ -145,13 +141,13 @@ PROGRAMFILES(X86) = C:\Program Files (x86)
 # environment
 LOCALAPPDATA = C:\Users\agusp\AppData\Local
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\ 
+v1.0\Modules
 # default
 MAKE_COMMAND := make.exe
 # environment
 PROCESSOR_ARCHITEW6432 = AMD64
-# defaul 
-t
+# default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
@@ -189,16 +185,12 @@ COMSPEC = C:\WINDOWS\system32\cmd.exe
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# makefile (from 'Makefile', line 2)
-CL_DIR = clases
 # environment
 LC_ALL = C
 # environment
 CONFIGSETROOT = C:\WINDOWS\ConfigSetRoot
 # automatic
 ^F = $(notdir $^)
-# makefile (from 'Makefile', line 3)
-CON_DIR = controladores
 # default
 SUFFIXES := 
 # environment
@@ -213,20 +205,19 @@ VS140COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Too
 .INCLUDE_DIRS = C:/MinGW/include
 # default
 .RECIPEPREFIX := 
-# makefile (from 'Makefile', line 4)
-I_DIR = interfaces
 # environment
 LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
 PT7HOME = C:\Program Files (x86)\Cisco Packet Tracer 7.2.2
-# environment
+# environmen 
+t
 VSCODE_PID = 16380
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-43F3RUQ3
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=19/180=11%
+# Load=101/1024=10%, Rehash=0, Collisions=13/121=11%
 
 # Pattern-specific Variable Values
 
@@ -235,27 +226,29 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-43F3RUQ3
 # Directories
 
 # C:\Users\agusp\AppData\Local\Microsoft\WindowsApps (key C:/Users/agusp/AppData/Local/Microsoft/WindowsApps, mtime 1623363415): 14 files, no impossibilities.
-# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/, mtime 1604351591): 32 files, no impossibilities.
-# . (key c:/Users/agusp/Documents/GitHub/PAV2021, mtime 1623611634): 15 files, no impossibilities.
+# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/,  
+mtime 1604351591): 32 files, no impossibilities.
+# . (key c:/Users/agusp/Documents/GitHub/PAV2021, mtime 1623616138): 104 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\GitHubDesktop\bin (key C:/Users/agusp/AppData/Local/GitHubDesktop/bin, mtime 1623601561): 4 files, no impossibilities.
-# C:\Users\agusp\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/agusp/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1623512405) 
-: 4 files, no impossibilities.
+# C:\Users\agusp\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/agusp/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1623512405): 4 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1617842504): 8 files, no impossibilities.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1561503594): 10 files, no impossibilities.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1617848329): 145 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\Programs\Python\Python37-32\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python37-32/, mtime 1567201855): 17 files, no impossibilities.
-# C:\WINDOWS (key C:/WINDOWS, mtime 1623363673): 126 files, no impossibilities.
+# C:\WINDOWS (key C 
+:/WINDOWS, mtime 1623363673): 126 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\Programs\Python\Python37-32\Scripts\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python37-32/Scripts/, mtime 1588957625): 46 files, no impossibilities.
 # C:\WINDOWS\System32\Wbem (key C:/WINDOWS/System32/Wbem, mtime 1620876308): 155 files, no impossibilities.
 # C:\Program Files (x86)\ZeroTier\One\ (key C:/Program Files (x86)/ZeroTier/One/, mtime 1565046646): 9 files, no impossibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1617034454): 11 files, no impossibilities.
 # C:\WINDOWS\system32 (key C:/WINDOWS/system32, mtime 1623365097): 3004 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\Programs\Python\Python38-32\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python38-32/, mtime 1588957572): 24 files, no impossibilities.
-# C:\Users\agusp\AppData\Local\Programs\Python\Python38-32\Scripts\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python38-32/Scripts/, mtime 1585084360): 7 files, no impossibilities.
+# C:\Users\agusp\AppData\Local\Programs\Python\Python38-32\Scripts\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python38-32/Scripts/, mtime 1585084360) 
+: 7 files, no impossibilities.
 # C:\Users\agusp\AppData\Roaming\npm (key C:/Users/agusp/AppData/Roaming/npm, mtime 1617034565): 9 files, no impossibilities.
 # C:\WINDOWS\System32\OpenSSH\: could not be stat'd.
 
-# 3640 files, no impossibilities in 19 directories.
+# 3729 files, no impossibilities in 19 directories.
 
 # Implicit Rules
 
@@ -263,50 +256,54 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-43F3RUQ3
 
 # Files
 
-Object/AsisteEnVivo.o: clases/AsisteEnVivo.cpp clases/AsisteEnVivo.h
+# Not a target:
+Time.h:
 #  Implicit rule search has not been done.
-#  Modification tim 
-e never checked.
+#  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
+
+# Not a target:
+Estudiante.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Fabrica.o: Fabrica.cpp Fabrica.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
 	$(CC) -c $< -o $@
 
 # Not a target:
-clases/Perfil.h:
+DtInfoClase.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-datatypes/DtInstanciaClase.h:
+DtDictadoAsignatura.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-clases/Docente.cpp:
+DtAsignatura.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-clases/Perfil.cpp:
+DtParticipacion.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-datatypes/DtInstanciaClase.cpp:
+Time.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-Object/Docente.o: clases/Docente.cpp clases/Docente.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
-	$(CC) -c $< -o $@
 
 # Not a target:
 all:
@@ -315,100 +312,74 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-Object/DtAsistir.o: datatypes/DtAsistir.cpp datatypes/DtAsistir.h
+Rol.o: Rol.cpp Rol.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 60):
+#  recipe to execute (from 'Makefile', line 45):
 	$(CC) -c $< -o $@
 
-Object/Perfil.o: clases/Perfil.cpp clases/Perfil.h
+Perfil.o: Perfil.cpp Perfil.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
-	$(CC) -c $< -o $@
+#  recipe to execute (from 'Makefile', line 41):
+	$( 
+CC) -c $< -o $@
 
 # Not a target:
-clases/Rol.h:
+DtAsignatura.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-Object/DtInfoClase.o: datatypes/DtInfoClase.cpp datatypes/DtInfoClase.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
-	$(CC) -c $< -o $@
-
-Object/DtDictadoAsignatura.o: datatypes/DtDictadoAsignatura.cpp datatypes/DtDictadoAsignatura.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 66):
-	$(CC) -c $< -o $@
-
-Object/DtParticipacion.o: datatypes/DtParticipacion.cpp datatypes/DtParticipacion.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been upda 
-ted.
-#  recipe to execute (from 'Makefile', line 70):
-	$(CC) -c $< -o $@
-
-Object/ManejadorAsignatura.o: manejadores/ManejadorAsignatura.cpp manejadores/ManejadorAsignatura.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
-	$(CC) -c $< -o $@
-
-Object/Time.o: datatypes/Time.cpp datatypes/Time.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 74):
-	$(CC) -c $< -o $@
 
 # Not a target:
-clases/Rol.cpp:
+DtClase.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-Object/DtPerfil.o: datatypes/DtPerfil.cpp datatypes/DtPerfil.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 72):
-	$(CC) -c $< -o $@
 
 # Not a target:
-clases/Participacion.h:
+DtClaseAsistencia.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-Object/ControladorListarClases.o: controladores/ControladorListarClases.cpp controladores/ControladorListarClases.h
+# Not a target:
+DtClase.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 26):
-	$(CC) -c $< -o $@
 
-Object/Rol.o: clases/Rol.cpp clases/Rol.h
+# Not a target:
+AsisteDiferido.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 50):
-	$(CC) -c $< -o $@
 
-Object/DtAsignatura.o: datatypes/DtAsignatura.cpp datatypes/DtAsignatura.h
+# Not a target:
+DtClaseAsistencia.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 58):
+
+# Not a target:
+Clase.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Monitoreo.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ManejadorAsignatura.o: ManejadorAsignatura.cpp ManejadorAsignatura.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
 	$(CC) -c $< -o $@
 
 # Not a target:
@@ -416,60 +387,59 @@ Object/DtAsignatura.o: datatypes/DtAsignatura.cpp datatypes/DtAsignatura.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
+
+# Not a target:
+Practico.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Asignatura.o: Asignatura.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+	$(CC) -c $< -o $@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-06-13 16:16:25
+#  Last modified 2021-06-13 17:32:12
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-clases/Asignatura.cpp:
+AsisteDiferido.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-clases/Participacion.cpp:
+DtPerfil.o: DtPerfil.cpp DtPerfil.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-Object/Asignatura.o: clases/Asignatura.cpp
-#  Implicit rule search has not been done.
-# 
-  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
-	$(CC) -c $< -o $@
-
-Object/Participacion.o: clases/Participacion.cpp clases/Participacion.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 55):
-	$(CC) -c $< -o $@
-
-Object/DtClase.o: datatypes/DtClase.cpp datatypes/DtClase.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 62):
+#  recipe to execute (from 'Makefile', line 67):
 	$(CC) -c $< -o $@
 
 # Not a target:
-datatypes/Log.h:
+Monitoreo.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-Object/DtClaseAsistencia.o: datatypes/DtClaseAsistencia.cpp datatypes/DtClaseAsistencia.h
+Participacion.o: Participacion.cpp Participacion.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 64):
+#  recipe to execute (from 'Makefile', line 50):
 	$(CC) -c $< -o $@
+
+# Not a target:
+Practico.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 main.cpp:
@@ -478,67 +448,131 @@ main.cpp:
 #  File has not been updated.
 
 # Not a target:
-datatypes/DtPerfil.h:
+ControladorListarClases.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Docente.o: Docente.cpp Docente.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 35):
+	$(CC) -c $< -o $@
+
+# Not a target:
+DtInstanciaClase.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtAsistir.o: DtAsistir.cpp DtAsi 
+stir.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 55):
+	$(CC) -c $< -o $@
+
+# Not a target:
+AsisteEnVivo.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Estudiante.o: Estudiante.cpp Estudiante.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+	$(CC) -c $< -o $@
+
+# Not a target:
+ControladorListarClases.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtInfoClase.o: DtInfoClase.cpp DtInfoClase.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $< -o $@
+
+# Not a target:
+Log.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtDictadoAsignatura.o: DtDictadoAsignatura.cpp DtDictadoAsignatura.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) -c $< -o $@
+
+# Not a target:
+Teorico.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtParticipacion.o: DtParticipacion.cpp DtParticipacion.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 65):
+	$(CC) -c $< -o $@
+
+# Not a target:
+DtInstanciaClase.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-datatypes/Log.cpp:
+Fabrica.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Time.o: Time.cpp Time.h
+#  Implicit rule search has not been done.
+#  Modification tim 
+e never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 69):
+	$(CC) -c $< -o $@
+
+# Not a target:
+AsisteEnVivo.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-controladores/ControladorListarClases.h:
+Log.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-datatypes/DtPerfil.cpp:
+Teorico.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-datatypes/DtAsistir.h:
+DtAsignatura.o: DtAsignatura.cpp DtAsignatura.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 53):
+	$(CC) -c $< -o $@
 
 # Not a target:
-controladores/ControladorListarClases.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/DtInfoClase.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/DtDictadoAsignatura.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Teorico.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/DtParticipacion.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Monitoreo.h:
+Fabrica.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -550,280 +584,242 @@ clases/Monitoreo.h:
 #  File has not been updated.
 
 # Not a target:
-datatypes/Time.h:
-#  Implicit rule search has not been done.
-#  Modi 
-fication time never checked.
-#  File has not been updated.
-
-Object/DtInstanciaClase.o: datatypes/DtInstanciaClase.cpp datatypes/DtInstanciaClase.h
+Rol.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 68):
+
+# Not a target:
+Perfil.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtClase.o: DtClase.cpp DtClase.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 57):
+	$(CC) -c $< -o $@
+
+DtClaseAsistencia.o: DtClaseAsistencia.cpp DtClaseAsistencia.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 59):
+	$(CC) -c $< -o $@
+
+Clase.o: Clase.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 33):
 	$(CC) -c $< -o $@
 
 # Not a target:
-datatypes/DtInfoClase.cpp:
+Rol.cpp:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modification time never  
+checked.
 #  File has not been updated.
-
-# Not a target:
-datatypes/DtDictadoAsignatura.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Teorico.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/DtAsignatura.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/AsisteDiferido.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Practico.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/DtParticipacion.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Monitoreo.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/Time.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Object/Teorico.o: clases/Teorico.cpp clases/Teorico.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 52):
-	$(CC) -c $< -o $@
-	
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 80):
-	rm -rf $(OBJ_DIR)/*.o programa
+#  recipe to execute (from 'Makefile', line 75):
+	rm -rf *.o programa
 	clear
 
-Object/Monitoreo.o: clases/Monitoreo.cpp clases/Monitoreo.h
+# Not a target:
+Perfil.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
+
+AsisteDiferido.o: AsisteDiferido.cpp AsisteDiferido.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 29):
 	$(CC) -c $< -o $@
 
 # Not a target:
-datatypes/DtAsignatura.cpp:
+ManejadorAsignatura.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-datatypes/DtClase.h:
+Monitoreo.o: Monitoreo.cpp Monitoreo.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-clases/AsisteDiferido.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Practico.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-datatypes/DtClaseAsistencia.h:
-#  Implicit rule search has not been done.
-#  Modification time 
- never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/Estudiante.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Object/AsisteDiferido.o: clases/AsisteDiferido.cpp clases/AsisteDiferido.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 39):
 	$(CC) -c $< -o $@
 
-Object/Practico.o: clases/Practico.cpp clases/Practico.h
+Practico.o: Practico.cpp Practico.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 48):
-	$(CC) -c $< -o $@
-
-Object/main.o: main.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 16):
+#  recipe to execute (from 'Makefile', line 43):
 	$(CC) -c $< -o $@
 
 # Not a target:
-datatypes/DtClase.cpp:
+DtPerfil.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-clases/Fabrica.h:
+ManejadorAsignatura.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-datatypes/DtClaseAsistencia.cpp:
-#  Implicit rule search has not been done.
+Participacion.h:
+#  Implicit rule search has no 
+t been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-main: Object/Fabrica.o Object/Time.o Object/Asignatura.o Object/AsisteDiferido.o Object/AsisteEnVivo.o Object/Clase.o Object/Docente.o Object/Estudiante.o Object/Monitoreo.o Object/Perfil.o Object/Practico.o Object/Rol.o Object/Teorico.o Object/Participacion.o Object/DtAsignatura.o Object/DtAsistir.o Object/DtClase.o Object/DtClaseAsistencia.o Object/DtDictadoAsignatura.o Object/DtInstanciaClase.o Object/DtParticipacion.o Object/DtPerfil.o Object/DtInfoClase.o Object/Log.o Object/ControladorListarClases.o Object/ManejadorAsignatura.o Object/main.o
+main: Fabrica.o Time.o Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o Participacion.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o DtInfoClase.o Log.o ControladorListarClases.o ManejadorAsignatura.o main.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 13):
+#  recipe to execute (from 'Makefile', line 8):
 	$(CC) main.cpp $< -o obligatorio
 
-# Not a target:
-clases/Estudiante.cpp:
+main.o: main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-datatypes/DtAsistir.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Object/Estudiante.o: clases/Estudiante.cpp clases/Estudiante.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 42):
+#  recipe to execute (from 'Makefile', line 11):
 	$(CC) -c $< -o $@
 
 # Not a target:
-clases/Fabrica.cpp:
+Asignatura.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-clases/AsisteEnVivo.h:
+DtPerfil.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-manejadores/ManejadorAsignatura.h:
+Participacion.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-Object/Fabrica.o: clases/Fabrica.cpp clases/Fabrica.h
+ControladorListarClases.o: ControladorListarClases.cpp ControladorListarClases.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 21):
 	$(CC) -c $< -o $@
 
-Object/Log.o: datatypes/Log.cpp datatypes/Log.h
+# Not a target:
+Docente.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 76):
+
+# Not a target:
+DtAsistir.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DtInstanciaClase.o: DtInstanciaClase.cpp DtInstanciaClase.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 63):
 	$(CC) -c $< -o $@
 
 # Not a target:
-clases/Clase.cpp:
-#  Implicit  
-rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-clases/AsisteEnVivo.cpp:
+ 
+Estudiante.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-manejadores/ManejadorAsignatura.cpp:
+AsisteEnVivo.o: AsisteEnVivo.cpp AsisteEnVivo.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-clases/Docente.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Object/Clase.o: clases/Clase.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 31):
 	$(CC) -c $< -o $@
+
+# Not a target:
+DtInfoClase.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DtDictadoAsignatura.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Docente.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Log.o: Log.cpp Log.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 71):
+	$(CC) -c $< -o $@
+
+Teorico.o: Teorico.cpp Teorico.h
+#  Implicit r 
+ule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 47):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+DtParticipacion.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DtAsistir.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=84/1024=8%, Rehash=0, Collisions=5/199=3%
+# Load=84/1024=8%, Rehash=0, Collisions=2/199=1%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (6) / strings = 3664 / storage = 54765 B / avg = 14 B
-# current buf: size = 8174 B / used = 5761 B / count = 343 / avg = 16 B
-# other used: total = 46591 B / count = 3321 / avg = 14 B
-# other free: total = 40 B / max = 11 B / min = 1 B / avg = 6 B
+# strcache buffers: 7 (6) / strings = 3703 / storage = 55311 B / avg = 14 B
+# current buf: size = 8174 B / used = 6326 B / count = 412 / avg = 15 B
+# other used: total = 47137 B / count = 3291 / avg = 14 B
+# other free: total = 59 B / max = 13 B / min = 4 B / avg = 9 B
 
-# strcache performance: lookups = 3801 / hit rate = 3%
+# strcache performance: lookups = 3890 / hit rate = 4%
 # hash-table stats:
-# Load=3664/8192=45%, Rehash=0, Collisions=1355/3801=36%
-# Finished Make data base on Sun Jun 13 16:16:35 2021
-
- 
+# Load=3703/8192=45%, Rehash=0, Collisions=1441/3890=3 
 make.exe: *** No rule to make target 'all'.  Stop.
+ 
+7%
+# Finished Make data base on Sun Jun 13 17:33:35 2021
+
  

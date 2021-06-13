@@ -1,10 +1,10 @@
 #ifndef CONTROLADORLISTARCLASES
 #define CONTROLADORLISTARCLASES
 
-#include "../interfaces/IControladorListarClases.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../clases/Sesion.h"
-#include "../clases/Docente.h"
+#include "IControladorListarClases.h"
+#include "ManejadorAsignatura.h"
+#include "Sesion.h"
+#include "Docente.h"
 #include <iostream>
 
 class ControladorListarClases: public IControladorListarClases{

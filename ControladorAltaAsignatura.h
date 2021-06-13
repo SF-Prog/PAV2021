@@ -1,8 +1,8 @@
 #ifndef CONTROLADORALTAASIGNATURA
 #define CONTROLADORALTAASIGNATURA
 
-#include "../interfaces/IControladorAltaAsignatura.h"
-#include "../manejadores/ManejadorAsignatura.h"
+#include "IControladorAltaAsignatura.h"
+#include "ManejadorAsignatura.h"
 
 class ControladorAltaAsignatura: public IControladorAltaAsignatura{
     private:

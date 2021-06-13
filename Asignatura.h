@@ -2,8 +2,8 @@
 #define ASIGNATURA
 
 #include "Clase.h"
-#include "../datatypes/DtInfoClase.h"
-#include "../datatypes/DtInstanciaClase.h"
+#include "DtInfoClase.h"
+#include "DtInstanciaClase.h"
 #include <string>
 #include <map>
 

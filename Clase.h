@@ -1,10 +1,10 @@
 #ifndef CLASE
 #define CLASE
 
-#include "../clases/Docente.h"
-#include "../clases/Participacion.h"
-#include "../clases/AsisteEnVivo.h"
-#include "../datatypes/DtInfoClase.h"
+#include "Docente.h"
+#include "Participacion.h"
+#include "AsisteEnVivo.h"
+#include "DtInfoClase.h"
 #include <string>
 #include <list>
 #include <map>

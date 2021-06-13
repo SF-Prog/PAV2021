@@ -1,7 +1,7 @@
 #ifndef CONTROLADORINSCRIPCIONASIGNATURA
 #define CONTROLADORINSCRIPCIONASIGNATURA
 
-#include "../interfaces/IControladorInscripcionAsignatura.h"
+#include "IControladorInscripcionAsignatura.h"
 
 class ControladorInscripcionAsignatura: public IControladorInscripcionAsignatura{
     private:

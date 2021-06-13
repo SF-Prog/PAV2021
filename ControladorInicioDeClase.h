@@ -1,15 +1,15 @@
 #ifndef CONTROLADORINICIODECLASE
 #define CONTROLADORINICIODECLASE
 
-#include "../clases/Sesion.h"
-#include "../clases/Docente.h"
-#include "../clases/Estudiante.h"
-#include "../manejadores/ManejadorPerfil.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../manejadores/ManejadorClase.h"
-#include "../interfaces/IControladorInicioDeClase.h"
-#include "../datatypes/DtIniciarClase.h"
-#include "../datatypes/DtIniciarClaseFull.h"
+#include "Sesion.h"
+#include "Docente.h"
+#include "Estudiante.h"
+#include "ManejadorPerfil.h"
+#include "ManejadorAsignatura.h"
+#include "ManejadorClase.h"
+#include "IControladorInicioDeClase.h"
+#include "DtIniciarClase.h"
+#include "DtIniciarClaseFull.h"
 
 #include <Rpc.h>
 

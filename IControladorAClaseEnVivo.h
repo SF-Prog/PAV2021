@@ -1,7 +1,7 @@
 #ifndef ICONTROLADORASISTENCIAACLASEENVIVO
 #define ICONTROLADORASISTENCIAACLASEENVIVO
 
-#include "../datatypes/DtAsistir.h"
+#include "DtAsistir.h"
 #include <list>
 #include <string>
 

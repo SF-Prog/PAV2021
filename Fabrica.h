@@ -1,17 +1,17 @@
 #ifndef FABRICA
 #define FABRICA
 
-#include "../interfaces/IControladorAClaseEnVivo.h"
-#include "../interfaces/IControladorAltaAsignatura.h"
-#include "../interfaces/IControladorAltaUsuario.h"
-#include "../interfaces/IControladorAsignarAsignaturaDocente.h"
-#include "../interfaces/IControladorAsignaturaDocente.h"
-#include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
-#include "../interfaces/IControladorEliminarAsignatura.h"
-#include "../interfaces/IControladorEnvioDeMensaje.h"
-#include "../interfaces/IControladorInicioDeClase.h"
-#include "../interfaces/IControladorInscripcionAsignatura.h"
-#include "../interfaces/IControladorListarClases.h"
+#include "IControladorAClaseEnVivo.h"
+#include "IControladorAltaAsignatura.h"
+#include "IControladorAltaUsuario.h"
+#include "IControladorAsignarAsignaturaDocente.h"
+#include "IControladorAsignaturaDocente.h"
+#include "IControladorAsistenciaClaseEnVivo.h"
+#include "IControladorEliminarAsignatura.h"
+#include "IControladorEnvioDeMensaje.h"
+#include "IControladorInicioDeClase.h"
+#include "IControladorInscripcionAsignatura.h"
+#include "IControladorListarClases.h"
 
 
 class Fabrica{

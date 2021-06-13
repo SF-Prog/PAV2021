@@ -1,7 +1,7 @@
 #ifndef CONTROLADORTIEMPODICTADODECLASES
 #define CONTROLADORTIEMPODICTADODECLASES
 
-#include "../interfaces/IControladorTiempoDictadoDeClases.h"
+#include "IControladorTiempoDictadoDeClases.h"
 
 class ControladorTiempoDictadoDeClases: public IControladorTiempoDictadoDeClases{
     public:

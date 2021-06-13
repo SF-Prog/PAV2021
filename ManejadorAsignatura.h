@@ -4,7 +4,7 @@
 
 #include <map>
 #include <list>
-#include "../clases/Asignatura.h"
+#include "Asignatura.h"
 
 using namespace std;
 

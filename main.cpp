@@ -1,6 +1,6 @@
 
-#include "clases/Fabrica.h"
-#include "interfaces/IControladorAltaAsignatura.h"
+#include "Fabrica.h"
+#include "IControladorAltaAsignatura.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <list>

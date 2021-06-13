@@ -1,11 +1,11 @@
 #ifndef CONTROLADORALTAUSUARIO
 #define CONTROLADORALTAUSUARIO
 
-#include "../interfaces/IControladorAltaUsuario.h"
-#include "../manejadores/ManejadorPerfil.h"
-#include "../enum/TipoPerfil.h"
-#include "../clases/Docente.h"
-#include "../clases/Estudiante.h"
+#include "IControladorAltaUsuario.h"
+#include "ManejadorPerfil.h"
+#include "TipoPerfil.h"
+#include "Docente.h"
+#include "Estudiante.h"
 
 class ControladorAltaUsuario: public IControladorAltaUsuario{
     private:

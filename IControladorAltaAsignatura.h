@@ -1,7 +1,7 @@
 #ifndef ICONTROLADORALTAASIGNATURA
 #define ICONTROLADORALTAASIGNATURA
 
-#include "../datatypes/DtAsignatura.h"
+#include "DtAsignatura.h"
 
 class IControladorAltaAsignatura{
     public:

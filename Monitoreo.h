@@ -1,7 +1,7 @@
 #ifndef MONITOREO
 #define MONITOREO
 
-#include "../manejadores/ManejadorPerfil.h"
+#include "ManejadorPerfil.h"
 #include "Estudiante.h"
 #include "Clase.h"
 #include <string>

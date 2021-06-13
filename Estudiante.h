@@ -2,9 +2,9 @@
 #define ESTUDIANTE_H
 
 #include "Perfil.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../datatypes/DtIniciarClase.h"
-#include "../clases/Asignatura.h"
+#include "ManejadorAsignatura.h"
+#include "DtIniciarClase.h"
+#include "Asignatura.h"
 
 #include <string>
 

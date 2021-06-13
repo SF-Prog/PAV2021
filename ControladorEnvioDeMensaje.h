@@ -1,12 +1,12 @@
 #ifndef CONTROLENVIODECLASE
 #define CONTROLENVIODECLASE
 
-#include "../interfaces/IControladorEnvioDeMensaje.h"
-#include "../manejadores/ManejadorClase.h"
-#include "../clases/Estudiante.h"
-#include "../clases/Sesion.h"
-#include "../datatypes/Time.h"
-#include "../datatypes/DtParticipacion.h"
+#include "IControladorEnvioDeMensaje.h"
+#include "ManejadorClase.h"
+#include "Estudiante.h"
+#include "Sesion.h"
+#include "Time.h"
+#include "DtParticipacion.h"
 
 
 

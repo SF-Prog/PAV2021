@@ -2,7 +2,7 @@
 #define ASISTEDIFERIDO
 
 #include <string>
-#include "../datatypes/Log.h"
+#include "Log.h"
 
 using namespace std;
 

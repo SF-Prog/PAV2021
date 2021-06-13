@@ -1,7 +1,7 @@
 #ifndef CONTROLADORELIMINARASIGNATURA
 #define CONTROLADORELIMINARASIGNATURA
 
-#include "../interfaces/IControladorEliminarAsignatura.h"
+#include "IControladorEliminarAsignatura.h"
 
 class ControladorEliminarAsignatura: public IControladorEliminarAsignatura{
     private:

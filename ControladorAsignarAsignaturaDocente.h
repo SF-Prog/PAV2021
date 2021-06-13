@@ -1,9 +1,9 @@
 #ifndef CONTROLADORASIGNARASIGNATURADOCENTE
 #define CONTROLADORASIGNARASIGNATURADOCENTE
 
-#include "../interfaces/IControladorAsignarAsignaturaDocente.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../enum/TipoRol.h"
+#include "IControladorAsignarAsignaturaDocente.h"
+#include "ManejadorAsignatura.h"
+#include "TipoRol.h"
 #include <iostream>
 #include <list>
 #include <map>

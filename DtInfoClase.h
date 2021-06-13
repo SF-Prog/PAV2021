@@ -1,7 +1,7 @@
 #ifndef DTINFOCLASE
 #define DTINFOCLASE
 
-#include "../clases/Docente.h"
+#include "Docente.h"
 #include <map>
 #include <string>
 

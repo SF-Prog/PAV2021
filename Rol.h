@@ -1,7 +1,7 @@
 #ifndef ROL
 #define ROL
 
-#include "../enum/TipoRol.h"
+#include "TipoRol.h"
 #include "Asignatura.h"
 #include <string>
 using namespace std;

@@ -1,56 +1,57 @@
 make.exe --dry-run --keep-going --print-directory
 make.exe: Entering directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
-g++ -c clases/Fabrica.cpp -o Object/Fabrica.o
+g++ -c Fabrica.cpp -o Fabrica.o
  
-g++ -c clases/Asignatura.cpp -o Object/Asignatura.o
+g++ -c Time.cpp -o Time.o
+g++ -c Asignatura.cpp -o Asignatura.o
  
-g++ -c clases/AsisteDiferido.cpp -o Object/AsisteDiferido.o
+g++ -c AsisteDiferido.cpp -o AsisteDiferido.o
  
-g++ -c clases/AsisteEnVivo.cpp -o Object/AsisteEnVivo.o
+g++ -c AsisteEnVivo.cpp -o AsisteEnVivo.o
  
-g++ -c clases/Clase.cpp -o Object/Clase.o
+g++ -c Clase.cpp -o Clase.o
  
-g++ -c clases/Docente.cpp -o Object/Docente.o
+g++ -c Docente.cpp -o Docente.o
  
-g++ -c clases/Estudiante.cpp -o Object/Estudiante.o
+g++ -c Estudiante.cpp -o Estudiante.o
  
-g++ -c clases/Monitoreo.cpp -o Object/Monitoreo.o
+g++ -c Monitoreo.cpp -o Monitoreo.o
  
-g++ -c clases/Perfil.cpp -o Object/Perfil.o
+g++ -c Perfil.cpp -o Perfil.o
  
-g++ -c clases/Practico.cpp -o Object/Practico.o
+g++ -c Practico.cpp -o Practico.o
  
-g++ -c clases/Rol.cpp -o Object/Rol.o
+g++ -c Rol.cpp -o Rol.o
  
-g++ -c clases/Teorico.cpp -o Object/Teorico.o
+g++ -c Teorico.cpp -o Teorico.o
  
-g++ -c clases/Participacion.cpp -o Object/Participacion.o
+g++ -c Participacion.cpp -o Participacion.o
  
-g++ -c datatypes/DtAsignatura.cpp -o Object/DtAsignatura.o
+g++ -c DtAsignatura.cpp -o DtAsignatura.o
  
-g++ -c datatypes/DtAsistir.cpp -o Object/DtAsistir.o
+g++ -c DtAsistir.cpp -o DtAsistir.o
  
-g++ -c datatypes/DtClase.cpp -o Object/DtClase.o
+g++ -c DtClase.cpp -o DtClase.o
  
-g++ -c datatypes/DtClaseAsistencia.cpp -o Object/DtClaseAsistencia.o
+g++ -c DtClaseAsistencia.cpp -o DtClaseAsistencia.o
  
-g++ -c datatypes/DtDictadoAsignatura.cpp -o Object/DtDictadoAsignatura.o
+g++ -c DtDictadoAsignatura.cpp -o DtDictadoAsignatura.o
  
-g++ -c datatypes/DtInstanciaClase.cpp -o Object/DtInstanciaClase.o
+g++ -c DtInstanciaClase.cpp -o DtInstanciaClase.o
  
-g++ -c datatypes/DtParticipacion.cpp -o Object/DtParticipacion.o
+g++ -c DtParticipacion.cpp -o DtParticipacion.o
  
-g++ -c datatypes/DtPerfil.cpp -o Object/DtPerfil.o
+g++ -c DtPerfil.cpp -o DtPerfil.o
  
-g++ -c datatypes/DtInfoClase.cpp -o Object/DtInfoClase.o
+g++ -c DtInfoClase.cpp -o DtInfoClase.o
  
-g++ -c datatypes/Log.cpp -o Object/Log.o
+g++ -c Log.cpp -o Log.o
  
-g++ -c controladores/ControladorListarClases.cpp -o Object/ControladorListarClases.o
+g++ -c ControladorListarClases.cpp -o ControladorListarClases.o
  
-g++ -c manejadores/ManejadorAsignatura.cpp -o Object/ManejadorAsignatura.o
+g++ -c ManejadorAsignatura.cpp -o ManejadorAsignatura.o
  
-g++ -c main.cpp -o Object/main.o
-g++ main.cpp Object/Fabrica.o -o obligatorio
+g++ -c main.cpp -o main.o
+g++ main.cpp Fabrica.o -o obligatorio
 make.exe: Leaving directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
  
