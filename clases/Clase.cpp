@@ -42,6 +42,15 @@
   void Clase::addAsistenciasEnVivo(AsisteEnVivo* asistenciasEnVivo){
     this->asistenciasEnVivo.push_front(asistenciasEnVivo);
   };
+
+  
+  list<Participacion*> Clase::getParticipaciones(){
+    return this->participaciones;
+  };
+  void Clase::addParticipaciones(Participacion* participaciones){
+    this->participaciones.push_front(participaciones);
+  };
+
   time_t Clase::getInicio(){
     return this->inicio;
   };

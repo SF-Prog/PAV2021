@@ -6,7 +6,7 @@
 class Sesion{
     private:
         static Sesion *instancia;
-        Perfil *perfil;
+        Perfil* perfil;
         Sesion();
         ~Sesion();
     public:

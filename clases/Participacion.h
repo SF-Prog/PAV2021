@@ -2,6 +2,7 @@
 #define PARTICIPACION_H
 
 #include "../clases/Perfil.h"
+#include "../datatypes/DtParticipacion.h"
 #include <string>
 #include <list>
 #include <ctime>
@@ -13,7 +14,7 @@ class Participacion{
     int id;
     time_t fecha;
     string mensaje;
-    int responde;
+    DtParticipacion responde;
     list<Perfil*> perfiles;
   public:
     //Constructores
@@ -24,12 +25,12 @@ class Participacion{
     int getId();
     time_t getFecha();
     string getMensaje();
-    int getResponde();
+    DtParticipacion * getResponde();
 
     void setId(int);
     void setFecha(time_t);
     void setMensaje(string);
-    void setResponde(int);
+    void setResponde(DtParticipacion *);
     
     // DESTRUCTOR
     ~Participacion();

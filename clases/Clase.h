@@ -35,6 +35,8 @@ class Clase{
     void addDocente(Docente*);
     list<AsisteEnVivo*> getAsistenciasEnVivo();
     void addAsistenciasEnVivo(AsisteEnVivo*);
+    list<Participacion*> getParticipaciones();
+    void addParticipaciones(Participacion*);
     time_t getInicio();
     time_t getFin();
     string getCodigo();

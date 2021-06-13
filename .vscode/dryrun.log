@@ -1,14 +1,10 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make.exe: Entering directory 'c:/Users/Robert/Documents/Tecnologo/PAV/Obligatorio1/PAV2021'
+make.exe --dry-run --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
  
-Makefile:35: warning: overriding recipe for target 'Object/AsisteEnVivo.o'
-Makefile:20: warning: ignoring old recipe for target 'Object/AsisteEnVivo.o'
+Makefile:36: warning: overriding recipe for target 'Object/AsisteEnVivo.o'
+Makefile:21: warning: ignoring old recipe for target 'Object/AsisteEnVivo.o'
  
-g++ -c datatypes/DtInfoClase.cpp -o Object/DtInfoClase.o
- 
-g++ -c manejadores/ManejadorAsignatura.cpp -o Object/ManejadorAsignatura.o
- 
-g++ -c controladores/ControladorListarClases.cpp -o Object/ControladorListarClases.o
+g++ -c datatypes/Time.cpp -o Object/Time.o
  
 g++ -c clases/Asignatura.cpp -o Object/Asignatura.o
  
@@ -32,6 +28,8 @@ g++ -c clases/Rol.cpp -o Object/Rol.o
  
 g++ -c clases/Teorico.cpp -o Object/Teorico.o
  
+g++ -c clases/Participacion.cpp -o Object/Participacion.o
+ 
 g++ -c datatypes/DtAsignatura.cpp -o Object/DtAsignatura.o
  
 g++ -c datatypes/DtAsistir.cpp -o Object/DtAsistir.o
@@ -48,12 +46,15 @@ g++ -c datatypes/DtParticipacion.cpp -o Object/DtParticipacion.o
  
 g++ -c datatypes/DtPerfil.cpp -o Object/DtPerfil.o
  
-g++ -c datatypes/Time.cpp -o Object/Time.o
+g++ -c datatypes/DtInfoClase.cpp -o Object/DtInfoClase.o
  
 g++ -c datatypes/Log.cpp -o Object/Log.o
  
-g++ -c main.cpp -o Object/main.o
+g++ -c controladores/ControladorListarClases.cpp -o Object/ControladorListarClases.o
  
-g++ main.cpp Object/DtInfoClase.o -o obligatorio
-make.exe: Leaving directory 'c:/Users/Robert/Documents/Tecnologo/PAV/Obligatorio1/PAV2021'
+g++ -c manejadores/ManejadorAsignatura.cpp -o Object/ManejadorAsignatura.o
+ 
+g++ -c main.cpp -o Object/main.o
+g++ main.cpp Object/Time.o -o obligatorio
+make.exe: Leaving directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
  

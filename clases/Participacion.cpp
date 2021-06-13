@@ -6,7 +6,7 @@ Participacion::Participacion(int id, time_t fecha, string mensaje){
     this->responde=0;
     
 };
-Participacion::Participacion(int id, time_t fecha, string mensaje, int responder){
+Participacion::Participacion(int id, time_t fecha, string mensaje, DtParticipacion * responder){
     this->id=id;
     this->fecha=fecha;
     this->mensaje=mensaje;
@@ -22,7 +22,7 @@ time_t Participacion::getFecha(){
 string Participacion::getMensaje(){
     return this->mensaje;
 };
-int Participacion::getResponde(){
+DtParticipacion* Participacion::getResponde(){
     return this->responder;
 };
 
@@ -35,7 +35,7 @@ void Participacion::setFecha(time_t fecha){
 void Participacion::setMensaje(string mensaje){
     this->mensaje=mensaje;
 };
-void Participacion::setResponde(int responde){
+void Participacion::setResponde(DtParticipacion* responde){
     this->responde=responder;
 };
 
