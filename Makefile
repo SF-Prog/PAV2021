@@ -1,81 +1,76 @@
 CC = g++
-CL_DIR = clases
-CON_DIR = controladores
-I_DIR = interfaces
-M_DIR = manejadores
-DT_DIR = datatypes
 
 OBJ_DIR = Object
-#OBJS = $(OBJ_DIR)/DtInfoClase.o $(OBJ_DIR)/ManejadorAsignatura.o $(OBJ_DIR)/ControladorListarClases.o $(OBJ_DIR)/Asignatura.o $(OBJ_DIR)/AsisteDiferido.o $(OBJ_DIR)/AsisteEnVivo.o $(OBJ_DIR)/Clase.o $(OBJ_DIR)/Docente.o $(OBJ_DIR)/Estudiante.o $(OBJ_DIR)/Monitoreo.o $(OBJ_DIR)/Perfil.o $(OBJ_DIR)/Practico.o $(OBJ_DIR)/Rol.o $(OBJ_DIR)/Teorico.o $(OBJ_DIR)/DtAsignatura.o $(OBJ_DIR)/DtAsistir.o $(OBJ_DIR)/DtClase.o $(OBJ_DIR)/DtClaseAsistencia.o $(OBJ_DIR)/DtDictadoAsignatura.o $(OBJ_DIR)/DtInstanciaClase.o $(OBJ_DIR)/DtParticipacion.o $(OBJ_DIR)/DtPerfil.o $(OBJ_DIR)/Time.o $(OBJ_DIR)/Log.o $(OBJ_DIR)/main.o
-OBJS = $(OBJ_DIR)/Fabrica.o $(OBJ_DIR)/Time.o $(OBJ_DIR)/Asignatura.o $(OBJ_DIR)/AsisteDiferido.o $(OBJ_DIR)/AsisteEnVivo.o $(OBJ_DIR)/Clase.o $(OBJ_DIR)/Docente.o $(OBJ_DIR)/Estudiante.o $(OBJ_DIR)/Monitoreo.o $(OBJ_DIR)/Perfil.o $(OBJ_DIR)/Practico.o $(OBJ_DIR)/Rol.o $(OBJ_DIR)/Teorico.o $(OBJ_DIR)/Participacion.o $(OBJ_DIR)/DtAsignatura.o $(OBJ_DIR)/DtAsistir.o $(OBJ_DIR)/DtClase.o $(OBJ_DIR)/DtClaseAsistencia.o $(OBJ_DIR)/DtDictadoAsignatura.o $(OBJ_DIR)/DtInstanciaClase.o $(OBJ_DIR)/DtParticipacion.o $(OBJ_DIR)/DtPerfil.o $(OBJ_DIR)/DtInfoClase.o $(OBJ_DIR)/Log.o $(OBJ_DIR)/ControladorListarClases.o $(OBJ_DIR)/ManejadorAsignatura.o $(OBJ_DIR)/main.o
+#OBJS = DtInfoClase.o ManejadorAsignatura.o ControladorListarClases.o Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o Time.o Log.o main.o
+OBJS = Fabrica.o Time.o Asignatura.o AsisteDiferido.o AsisteEnVivo.o Clase.o Docente.o Estudiante.o Monitoreo.o Perfil.o Practico.o Rol.o Teorico.o Participacion.o DtAsignatura.o DtAsistir.o DtClase.o DtClaseAsistencia.o DtDictadoAsignatura.o DtInstanciaClase.o DtParticipacion.o DtPerfil.o DtInfoClase.o Log.o ControladorListarClases.o ManejadorAsignatura.o main.o
 
 main: $(OBJS)
 	$(CC) main.cpp $< -o obligatorio
 
-$(OBJ_DIR)/main.o: main.cpp
+main.o: main.cpp
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtInfoClase.o: datatypes/DtInfoClase.cpp datatypes/DtInfoClase.h
+DtInfoClase.o: DtInfoClase.cpp DtInfoClase.h
 	$(CC) -c $< -o $@
 #FABRICA
-$(OBJ_DIR)/Fabrica.o: clases/Fabrica.cpp clases/Fabrica.h
+Fabrica.o: Fabrica.cpp Fabrica.h
 	$(CC) -c $< -o $@
 
 #INTERFACES
 #CONTROLADORES
-$(OBJ_DIR)/ControladorListarClases.o: controladores/ControladorListarClases.cpp controladores/ControladorListarClases.h
+ControladorListarClases.o: ControladorListarClases.cpp ControladorListarClases.h
 	$(CC) -c $< -o $@
 #MANEJADORES
-$(OBJ_DIR)/ManejadorAsignatura.o: manejadores/ManejadorAsignatura.cpp manejadores/ManejadorAsignatura.h
+ManejadorAsignatura.o: ManejadorAsignatura.cpp ManejadorAsignatura.h
 	$(CC) -c $< -o $@
 #CLASES
-$(OBJ_DIR)/Asignatura.o: clases/Asignatura.cpp
+Asignatura.o: Asignatura.cpp
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/AsisteDiferido.o: clases/AsisteDiferido.cpp clases/AsisteDiferido.h
+AsisteDiferido.o: AsisteDiferido.cpp AsisteDiferido.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/AsisteEnVivo.o: clases/AsisteEnVivo.cpp clases/AsisteEnVivo.h
+AsisteEnVivo.o: AsisteEnVivo.cpp AsisteEnVivo.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Clase.o: clases/Clase.cpp
+Clase.o: Clase.cpp
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Docente.o: clases/Docente.cpp clases/Docente.h
+Docente.o: Docente.cpp Docente.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Estudiante.o: clases/Estudiante.cpp clases/Estudiante.h
+Estudiante.o: Estudiante.cpp Estudiante.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Monitoreo.o: clases/Monitoreo.cpp clases/Monitoreo.h
+Monitoreo.o: Monitoreo.cpp Monitoreo.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Perfil.o: clases/Perfil.cpp clases/Perfil.h
+Perfil.o: Perfil.cpp Perfil.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Practico.o: clases/Practico.cpp clases/Practico.h
+Practico.o: Practico.cpp Practico.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Rol.o: clases/Rol.cpp clases/Rol.h
+Rol.o: Rol.cpp Rol.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Teorico.o: clases/Teorico.cpp clases/Teorico.h
+Teorico.o: Teorico.cpp Teorico.h
 	$(CC) -c $< -o $@
 	
-$(OBJ_DIR)/Participacion.o: clases/Participacion.cpp clases/Participacion.h
+Participacion.o: Participacion.cpp Participacion.h
 	$(CC) -c $< -o $@
 #DATATYPES
-$(OBJ_DIR)/DtAsignatura.o: datatypes/DtAsignatura.cpp datatypes/DtAsignatura.h
+DtAsignatura.o: DtAsignatura.cpp DtAsignatura.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtAsistir.o: datatypes/DtAsistir.cpp datatypes/DtAsistir.h
+DtAsistir.o: DtAsistir.cpp DtAsistir.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtClase.o: datatypes/DtClase.cpp datatypes/DtClase.h
+DtClase.o: DtClase.cpp DtClase.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtClaseAsistencia.o: datatypes/DtClaseAsistencia.cpp datatypes/DtClaseAsistencia.h
+DtClaseAsistencia.o: DtClaseAsistencia.cpp DtClaseAsistencia.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtDictadoAsignatura.o: datatypes/DtDictadoAsignatura.cpp datatypes/DtDictadoAsignatura.h
+DtDictadoAsignatura.o: DtDictadoAsignatura.cpp DtDictadoAsignatura.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtInstanciaClase.o: datatypes/DtInstanciaClase.cpp datatypes/DtInstanciaClase.h
+DtInstanciaClase.o: DtInstanciaClase.cpp DtInstanciaClase.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtParticipacion.o: datatypes/DtParticipacion.cpp datatypes/DtParticipacion.h
+DtParticipacion.o: DtParticipacion.cpp DtParticipacion.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/DtPerfil.o: datatypes/DtPerfil.cpp datatypes/DtPerfil.h
+DtPerfil.o: DtPerfil.cpp DtPerfil.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Time.o: datatypes/Time.cpp datatypes/Time.h
+Time.o: Time.cpp Time.h
 	$(CC) -c $< -o $@
-$(OBJ_DIR)/Log.o: datatypes/Log.cpp datatypes/Log.h
+Log.o: Log.cpp Log.h
 	$(CC) -c $< -o $@
 
 
 clean:
-	rm -rf $(OBJ_DIR)/*.o programa
+	rm -rf *.o programa
 	clear
