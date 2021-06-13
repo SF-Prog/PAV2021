@@ -1,10 +1,6 @@
 make.exe --dry-run --keep-going --print-directory
 make.exe: Entering directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
- 
-Makefile:36: warning: overriding recipe for target 'Object/AsisteEnVivo.o'
-Makefile:21: warning: ignoring old recipe for target 'Object/AsisteEnVivo.o'
- 
-g++ -c datatypes/Time.cpp -o Object/Time.o
+g++ -c clases/Fabrica.cpp -o Object/Fabrica.o
  
 g++ -c clases/Asignatura.cpp -o Object/Asignatura.o
  
@@ -55,6 +51,6 @@ g++ -c controladores/ControladorListarClases.cpp -o Object/ControladorListarClas
 g++ -c manejadores/ManejadorAsignatura.cpp -o Object/ManejadorAsignatura.o
  
 g++ -c main.cpp -o Object/main.o
-g++ main.cpp Object/Time.o -o obligatorio
+g++ main.cpp Object/Fabrica.o -o obligatorio
 make.exe: Leaving directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
  

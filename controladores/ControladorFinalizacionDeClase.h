@@ -1,7 +1,7 @@
 #ifndef CONTROLADORFINALIZACIONDECLASE
 #define CONTROLADORFINALIZACIONDECLASE
 
-#include "IControladorFinalizacionDeClase.h"
+#include "../interfaces/IControladorFinalizacionDeClase.h"
 
 class ControladorFinalizacionDeClase: public IControladorFinalizacionDeClase{
     private:

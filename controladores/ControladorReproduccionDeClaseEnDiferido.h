@@ -1,7 +1,7 @@
 #ifndef CONTROLADORREPRODUCCIONDECLASEENDIFERIDO
 #define CONTROLADORREPRODUCCIONDECLASEENDIFERIDO
 
-#include "IControladorReproduccionDeClaseEnDiferido.h"
+#include "../interfaces/IControladorReproduccionDeClaseEnDiferido.h"
 
 class ControladorReproduccionDeClaseEnDiferido: public IControladorReproduccionDeClaseEnDiferido{
     private:
