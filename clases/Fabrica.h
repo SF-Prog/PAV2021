@@ -1,6 +1,7 @@
 #ifndef FABRICA
 #define FABRICA
-
+#include "../Interfaces/IControladorAltaAsignatura.h"
+#include "../Interfaces/IControladorAltaUsuario.h"
 class Fabrica{
     private: 
         static Fabrica* instancia;
@@ -12,5 +13,5 @@ class Fabrica{
         ~Fabrica();
 
 
-
+};
 #endif

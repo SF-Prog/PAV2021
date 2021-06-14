@@ -12,8 +12,8 @@
 using namespace std;
 
 Fabrica *f;
-class IControladorAltaAsignatura{};
-IControladorAltaAsignatura *IControladorAltaAsignatura; 
+IControladorAltaAsignatura *iConAltaAsignatura; 
+IControladorAltaUsuario *iContAltaUsuario;
 //IControladorAltaAsignatura *iConAltaAsignatura;
 //IControladorAltaUsuario *iConAltaUsuario;
 
@@ -49,7 +49,7 @@ void ingrese_enter(){
 }
 
 void limpiarPantalla(){
-    sleep(1);
+    //sleep(1);
     system("clear");
     fflush(stdout);
 }

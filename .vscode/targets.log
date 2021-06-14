@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Mon Jun 14 03:52:27 2021
+# Make data base, printed on Mon Jun 14 04:19:48 2021
 
 # Variables
 
@@ -115,7 +115,8 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 USERDOMAIN = LAPTOP-43F3RUQ3
 # environment
-MAKELEVEL := 0
+M 
+AKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -219,12 +220,12 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-43F3RUQ3
 # Directories
 
 # C:\Users\agusp\AppData\Local\Microsoft\WindowsApps (key C:/Users/agusp/AppData/Local/Microsoft/WindowsApps, mtime 1623363415): 14 files, no impossibilities.
-# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/, mtime 1604351591): 32 files, no impossibilities.
-# . (key c:/Users/agusp/Documents/GitHub/PAV2021, mtime 1623653514): 22 files, no impossibilities.
+# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/ 
+v1.0/, mtime 1604351591): 32 files, no impossibilities.
+# . (key c:/Users/agusp/Documents/GitHub/PAV2021, mtime 1623655184): 24 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\GitHubDesktop\bin (key C:/Users/agusp/AppData/Local/GitHubDesktop/bin, mtime 1623601561): 4 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/agusp/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1623512405): 4 files, no impossibilities.
-# C:\Program Files\Git\cmd (key 
- C:/Program Files/Git/cmd, mtime 1617842504): 8 files, no impossibilities.
+# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1617842504): 8 files, no impossibilities.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1561503594): 10 files, no impossibilities.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1617848329): 145 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\Programs\Python\Python37-32\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python37-32/, mtime 1567201855): 17 files, no impossibilities.
@@ -235,11 +236,12 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-43F3RUQ3
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1617034454): 11 files, no impossibilities.
 # C:\WINDOWS\system32 (key C:/WINDOWS/system32, mtime 1623365097): 3004 files, no impossibilities.
 # C:\Users\agusp\AppData\Local\Programs\Python\Python38-32\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python38-32/, mtime 1588957572): 24 files, no impossibilities.
-# C:\Users\agusp\AppData\Local\Programs\Python\Python38-32\Scripts\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python38-32/Scripts/, mtime 1585084360): 7 files, no impossibilities.
+# C:\Users\agusp\AppData\Local\Programs\Python\Python38-32\Scripts\ (key C:/Users/agusp/AppData/Local/Programs/Python/Python38-32/Scripts/, mtime 15850 
+84360): 7 files, no impossibilities.
 # C:\Users\agusp\AppData\Roaming\npm (key C:/Users/agusp/AppData/Roaming/npm, mtime 1617034565): 9 files, no impossibilities.
 # C:\WINDOWS\System32\OpenSSH\: could not be stat'd.
 
-# 3647 files, no impossibilities in 19 directories.
+# 3649 files, no impossibilities in 19 directories.
 
 # Implicit Rules
 
@@ -259,12 +261,12 @@ clases/Perfil.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-Fabrica.o: Fabrica.cpp Fabrica.h
+Fabrica.o: clases/Fabrica.cpp clases/Fabrica.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 9):
-	g++ -c Fabrica.cpp -o Fabrica.o
+	g++ -c clases/Fabrica.cpp -o Fabrica.o
 
 # Not a target:
 clases/Docente.cpp:
@@ -308,8 +310,7 @@ ManejadorAsignatura.o: manejador/ManejadorAsignatura.cpp manejador/ManejadorAsig
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to 
- execute (from 'Makefile', line 18):
+#  recipe to execute (from 'Makefile', line 18):
 	g++ -c manejador/ManejadorAsignatura.cpp -o ManejadorAsignatura.o
 
 # Not a target:
@@ -323,12 +324,13 @@ Asignatura.o: clases/Asignatura.cpp clases/Asignatura.h
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
-	g++ -c clases/Asignatura.cpp -o Asignatura.o
+	g++ -c clases/Asignatura.cpp -o As 
+ignatura.o
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-06-14 03:51:46
+#  Last modified 2021-06-14 04:19:35
 #  File has been updated.
 #  Successfully updated.
 
@@ -398,8 +400,7 @@ Estudiante.o: clases/Estudiante.cpp clases/Estudiante.h
 # Not a target:
 datatypes/DtPerfil.cpp:
 #  Implicit rule search has not been done.
-#  Modification time 
- never checked.
+#  Modification time never checked.
 #  File has not been updated.
 
 ControladorAltaUsuario.o: controladores/ControladorAltaUsuario.cpp controladores/ControladorAltaUsuario.h
@@ -411,12 +412,6 @@ ControladorAltaUsuario.o: controladores/ControladorAltaUsuario.cpp controladores
 
 # Not a target:
 controladores/ControladorAltaAsignatura.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-Fabrica.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -448,16 +443,11 @@ DtAsignatura.o: datatypes/DtAsignatura.cpp datatypes/DtAsignatura.h
 	g++ -c datatypes/DtAsignatura.cpp -o DtAsignatura.o
 
 # Not a target:
-Fabrica.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#  
+ File has not been updated.
 
 # Not a target:
 datatypes/Time.h:
@@ -510,12 +500,18 @@ clases/Estudiante.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+clases/Fabrica.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 main: ControladorAltaAsignatura.o ControladorAltaUsuario.o ManejadorAsignatura.o ManejadorPerfil.o Asignatura.o Docente.o Estudiante.o Perfil.o DtAsignatura.o DtPerfil.o main.o Fabrica.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 4):
-	g++	main.o Fabrica.o  ControladorAltaAsignatura.o	ControladorAltaUsuario.o ManejadorAsignatura.o ManejadorPerfil.o Asignatura.o 	Docente.o Estudiante.o Perfil.o DtAsignatura.o  DtPerfil.o -o	obligatorio.exe 
+	g++	main.o Fabrica.o  ControladorAltaAsignatura.o	ControladorAltaUsuario.o ManejadorAsignatura.o ManejadorPerfil.o Asignatura.o 	Docente.o Estudiante.o Perfil.o DtAsignatura.o  DtPerfil.o -o	obligatorio 
 
 main.o: main.cpp
 #  Implicit rule search has not been done.
@@ -530,8 +526,13 @@ clases/Estudiante.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-ControladorAltaAsignatura.o: controladores/Contr 
-oladorAltaAsignatura.cpp controladores/ControladorAltaAsignatura.h
+# Not a target:
+clases/Fabrica.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ControladorAltaAsignatura.o: controladores/ControladorAltaAsignatura.cpp controladores/ControladorAltaAsignatura.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -541,7 +542,10 @@ oladorAltaAsignatura.cpp controladores/ControladorAltaAsignatura.h
 ManejadorPerfil.o: manejador/ManejadorPerfil.cpp manejador/ManejadorPerfil.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#  File has not  
+make.exe: *** No rule to make target 'all'.  Stop.
+ 
+been updated.
 #  recipe to execute (from 'Makefile', line 21):
 	g++ -c manejador/ManejadorPerfil.cpp -o ManejadorPerfil.o
 
@@ -559,16 +563,14 @@ clases/Docente.h:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (5) / strings = 3624 / storage = 53833 B / avg = 14 B
-# current buf: size = 8174 B / used = 4843 B / count = 304 / avg = 15 B
-# other used: total = 45659 B / count = 3320 / avg = 13 B
-# other free: total = 54 B / max = 15 B / min = 5 B / avg = 9 B
+# strcache buffers: 7 (6) / strings = 3624 / storage = 53847 B / avg = 14 B
+# current buf: size = 8174 B / used = 4866 B / count = 304 / avg = 16 B
+# other used: total = 45673 B / count = 3320 / avg = 13 B
+# other free: total = 63 B / max = 13 B / min = 9 B / avg = 10 B
 
-# strcache performance: lookups = 3743 / hit rate = 3%
+# strcache performance: lookups = 3745 / hit rate = 3%
 # hash-table stats:
-# Load=3624/8192=44%, Rehash=0, Collisions=1298/3743=35%
-# Finished Make data base on Mon Jun 14 03:52:27 2021
+# Load=3624/8192=44%, Rehash=0, Collisions=1298/3745=35%
+# Finished Make data base on Mon Jun 14 04:19:48 2021
 
- 
-make.exe: *** No rule to make target 'all'.  Stop.
  

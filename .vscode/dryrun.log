@@ -1,9 +1,6 @@
 make.exe --dry-run --keep-going --print-directory
 make.exe: Entering directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
-g++ -c ./main.cpp -o main.o
- 
-make.exe: *** No rule to make target 'Fabrica.cpp', needed by 'Fabrica.o'.
-make.exe: *** No rule to make target 'Fabrica.h', needed by 'Fabrica.o'.
+g++	main.o Fabrica.o  ControladorAltaAsignatura.o	ControladorAltaUsuario.o ManejadorAsignatura.o ManejadorPerfil.o Asignatura.o 	Docente.o Estudiante.o Perfil.o DtAsignatura.o  DtPerfil.o -o	obligatorio 
  
 make.exe: Leaving directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
  
