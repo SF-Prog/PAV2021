@@ -1,82 +1,9 @@
 make.exe --dry-run --keep-going --print-directory
 make.exe: Entering directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
+g++ -c ./main.cpp -o main.o
  
-g++ -c controladores/ControladorAsignarAsignaturaDocente.cpp -o ControladorAsignarAsignaturaDocente.o
- 
-g++ -c controladores/ControladorAsistenciaClaseEnVivo.cpp -o ControladorAsistenciaClaseEnVivo.o
- 
-make.exe: *** No rule to make target 'controladores/ControladorEliminarAsignatura.cpp', needed by 'ControladorEliminarAsignatura.o'.
- 
-g++ -c controladores/ControladorEnvioDeMensaje.cpp -o ControladorEnvioDeMensaje.o
- 
-make.exe: *** No rule to make target 'controladores/ConstrolorInicioDeClase.cpp', needed by 'ConstrolorInicioDeClase.o'.
- 
-make.exe: *** No rule to make target 'controladores/ConstrolorInicioDeClase.h', needed by 'ConstrolorInicioDeClase.o'.
- 
-g++ -c controladores/ControladorListarClases.cpp -o ControladorListarClases.o
- 
-make.exe: *** No rule to make target 'manejadores/ManejadorAsignatura.cpp', needed by 'ManejadorAsignatura.o'.
-make.exe: *** No rule to make target 'manejadores/ManejadorAsignatura.h', needed by 'ManejadorAsignatura.o'.
-make.exe: *** No rule to make target 'manejadores/ManejadorClase.cpp', needed by 'ManejadorClase.o'.
- 
-make.exe: *** No rule to make target 'manejadores/ManejadorClase.h', needed by 'ManejadorClase.o'.
- 
-make.exe: *** No rule to make target 'manejadores/ManejadorPerfil.cpp', needed by 'ManejadorPerfil.o'.
-make.exe: *** No rule to make target 'manejadores/ManejadorPerfil.h', needed by 'ManejadorPerfil.o'.
- 
-g++ -c clases/Asignatura.cpp -o Asignatura.o
- 
-g++ -c clases/AsisteDiferido.cpp -o AsisteDiferido.o
- 
-g++ -c clases/AsisteEnVivo.cpp -o AsisteEnVivo.o
- 
-g++ -c clases/Clase.cpp -o Clase.o
- 
-g++ -c clases/Docente.cpp -o Docente.o
- 
-g++ -c clases/Estudiante.cpp -o Estudiante.o
- 
-g++ -c clases/Monitoreo.cpp -o Monitoreo.o
- 
-g++ -c clases/Perfil.cpp -o Perfil.o
- 
-g++ -c clases/Practico.cpp -o Practico.o
- 
-g++ -c clases/Rol.cpp -o Rol.o
- 
-g++ -c clases/Sesion.cpp -o Sesion.o
- 
-make.exe: *** No rule to make target 'Teorico.0', needed by 'main'.
- 
-g++ -c datatypes/DtAsignatura.cpp -o DtAsignatura.o
- 
-g++ -c datatypes/DtAsistir.cpp -o DtAsistir.o
- 
-g++ -c datatypes/DtClase.cpp -o DtClase.o
- 
-g++ -c datatypes/DtClaseAsistencia.cpp -o DtClaseAsistencia.o
- 
-g++ -c datatypes/DtDictadoAsignatura.cpp -o DtDictadoAsignatura.o
- 
-g++ -c datatypes/DtInfoClase.cpp -o DtInfoClase.o
- 
-g++ -c datatypes/DtIniciarClase.cpp -o DtIniciarClase.o
- 
-g++ -c datatypes/DtIniciarClaseFull.cpp -o DtIniciarClaseFull.o
- 
-g++ -c datatypes/DtIniciarMonitoreo.cpp -o DtIniciarMonitoreo.o
- 
-g++ -c datatypes/DtInstanciaClase.cpp -o DtInstanciaClase.o
- 
-g++ -c datatypes/DtParticipacion.cpp -o DtParticipacion.o
- 
-g++ -c datatypes/DtPerfil.cpp -o DtPerfil.o
- 
-g++ -c datatypes/Log.cpp -o Log.o
- 
-make.exe: *** No rule to make target 'datatypes/Time.cpp', needed by 'Time.o'.
- 
-make.exe: *** No rule to make target 'datatypes/Time.h', needed by 'Time.o'.
+make.exe: *** No rule to make target 'Fabrica.cpp', needed by 'Fabrica.o'.
+make.exe: *** No rule to make target 'Fabrica.h', needed by 'Fabrica.o'.
  
 make.exe: Leaving directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
  
