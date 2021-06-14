@@ -33,8 +33,8 @@ void ControladorInicioDeClase::habilitar(string email){
     this->habilitados.push_front(email);
 };
 DtIniciarClaseFull ControladorInicioDeClase::datosIngresados(){
-    UUID id;
-    this->data.setId(UuidCreate(&id));
+    // UUID id;
+    // this->data.setId(UuidCreate(&id));
     this->data.setCodigo(this->dtInicio.getCodigo());
     this->data.setNombre(this->dtInicio.getNombre());
     this->data.setFechaHora(this->dtInicio.getFechaHora());

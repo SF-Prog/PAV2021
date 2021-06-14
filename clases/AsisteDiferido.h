@@ -3,9 +3,10 @@
 
 #include <string>
 #include "../datatypes/Log.h"
+#include "Estudiante.h"
 
 using namespace std;
-
+class Estudiante;
 class AsisteDiferido{
   private:
    Log acceso;

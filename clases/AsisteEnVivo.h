@@ -1,6 +1,7 @@
 #ifndef ASISTEENVIVO
 #define ASISTEENVIVO
 
+#include "Estudiante.h"
 #include <string>
 #include <ctime>
 

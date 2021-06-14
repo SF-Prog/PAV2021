@@ -25,7 +25,7 @@ bool Estudiante::estaInscripto(string codigo){
 
 
 map<string, Asignatura*> Estudiante::getAsignaturas(){
-  return this->asignatura;
+  return this->asignaturas;
 };
 
 

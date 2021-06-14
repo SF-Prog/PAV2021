@@ -1,10 +1,10 @@
 #ifndef CONTROLADORTIEMPOASISTENCIAACLASE
 #define CONTROLADORTIEMPOASISTENCIAACLASE
 
-#include "IControladorTiempoAsistenciaAClase.h"
+// // #include "../interfaces/IControladorTiempoAsistenciaAClase.h"
 
-class ControladorTiempoAsistenciaAClase: public IControladorTiempoAsistenciaAClase{
-    list<string> asignaturasAsignadas();
-    list<DtClaseAsistencia> selectAsignatura(string);
-};
-#endif
+// class ControladorTiempoAsistenciaAClase: public IControladorTiempoAsistenciaAClase{
+//     list<string> asignaturasAsignadas();
+//     list<DtClaseAsistencia> selectAsignatura(string);
+// };
+ #endif

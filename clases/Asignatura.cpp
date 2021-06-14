@@ -20,7 +20,7 @@ void Asignatura::setNombre(string nombre ){
   this->nombre = nombre;
 };
 void Asignatura::agregarClase(Clase* clase){
-  this->clases.insert(pair<int, Clase*>(clase->getId(), clase));
+  // this->clases.push(pair<int, Clase*>(clase->getId(), clase));
 };
 
 list<Clase*> Asignatura::getClases(){
@@ -35,9 +35,9 @@ list<Clase*> Asignatura::getClases(){
 
 list<DtInfoClase> Asignatura::getDtInfoClase(){
   list<DtInfoClase> dticList;
-  for(map<int, Clase*>::iterator it = this->clases.begin(); it!=this->clases.end(); it++){
-    dticList.push_front(it->second->getDtInfoClase());
-  };
+  // for(map<int, Clase*>::iterator it = this->clases.begin(); it!=this->clases.end(); it++){
+  //   dticList.push_front(it->second->getDtInfoClase());
+  // };
   return dticList;
 };
 

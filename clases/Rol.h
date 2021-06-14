@@ -6,6 +6,7 @@
 #include <string>
 using namespace std;
 
+class Asignatura;
 class Rol{
   private:
    TipoRol tipo;

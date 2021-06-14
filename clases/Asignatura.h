@@ -9,11 +9,12 @@
 
 using namespace std;
 
+class Clase;
 class Asignatura{
   private:
     string codigo;
     string nombre;
-    map<int, Clase*> clases;
+    list<Clase*> clases;
    
   public:
     //Constructores
@@ -23,11 +24,12 @@ class Asignatura{
     //Getters & Setters
     string getCodigo();
     string getNombre();
+    list<Clase*> getClases();
     void setCodigo(string);
     void setNombre(string);
     void setClases(list<Clase*>);
 
-    list<Clase*> getClases();
+    // Metodos
     list<DtInfoClase> getDtInfoClase();
     void agregarClase(Clase*);
 

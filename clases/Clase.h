@@ -1,7 +1,10 @@
 #ifndef CLASE
 #define CLASE
 
+
 #include "Docente.h"
+#include "AsisteEnVivo.h"
+#include "AsisteDiferido.h"
 #include "../datatypes/DtInfoClase.h"
 #include <string>
 #include <list>
@@ -10,6 +13,10 @@
 
 using namespace std;
 
+class Docente;
+// class Asignatura;
+class AsisteEnVivo;
+class AsisteDiferido;
 class Clase{
   protected:
     int id;

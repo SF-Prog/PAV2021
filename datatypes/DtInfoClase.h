@@ -13,7 +13,12 @@ class DtInfoClase{
         string nombre;
         list<Docente*> docentes;
     public:
+        // Constructores
         DtInfoClase();
         DtInfoClase(int, string, list<Docente*>);
+        // Getters y Setters
+
+        // Destructores
+        ~DtInfoClase();
 };
 #endif

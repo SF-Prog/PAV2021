@@ -6,3 +6,4 @@ DtInfoClase::DtInfoClase(int id, string nombre, list<Docente*> docentes){
     this->nombre = nombre;
     this->docentes = docentes;
 };
+DtInfoClase::~DtInfoClase(){};

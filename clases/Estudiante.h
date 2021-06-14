@@ -2,13 +2,14 @@
 #define ESTUDIANTE_H
 
 #include "Perfil.h"
+#include "Asignatura.h"
 #include "../manejadores/ManejadorAsignatura.h"
 #include "../datatypes/DtIniciarClase.h"
 
 #include <string>
 
 using namespace std;
-
+class Asignatura;
 class Estudiante: public Perfil{
   private:
     string documento;
