@@ -1,8 +1,8 @@
-#ifndef CONTROLADORDEASISTENCIACLASEENVIVO
-#define CONTROLADORDEASISTENCIACLASEENVIVO
+#ifndef CONTROLADORFINALIZACIONDEASISTENCIACLASEENVIVO
+#define CONTROLADORFINALIZACIONDEASISTENCIACLASEENVIVO
 
-
-class ControladorDeAsistenciaClaseEnVivo: public IControladorDeAsistenciaClaseEnVivo{
+/*
+class ControladorFinalizacionDeAsistenciaClaseEnVivo: public IControladorFinalizacionDeAsistenciaClaseEnVivo{
     private:
         int id;
     public:
@@ -11,4 +11,6 @@ class ControladorDeAsistenciaClaseEnVivo: public IControladorDeAsistenciaClaseEn
         void finalizarAsistencia();
         void cancelar();
 };
+*/
+
 #endif
