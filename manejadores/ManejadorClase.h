@@ -13,6 +13,7 @@ class ManejadorClase {
     public:
         static ManejadorClase* getInstancia();
         void agregarClase(Clase*);
+        Clase* getClase(int);
         list<Clase*> listarClases();
 };
 #endif

@@ -34,8 +34,6 @@ void ControladorInicioDeClase::habilitar(string email){
     this->habilitados.push_front(email);
 };
 DtIniciarClaseFull ControladorInicioDeClase::datosIngresados(){
-    UUID id;
-    //this->data.setId(UuidCreate(&id));
     this->data.setCodigo(this->dtInicio.getCodigo());
     this->data.setNombre(this->dtInicio.getNombre());
     this->data.setFechaHora(this->dtInicio.getFechaHora());
@@ -45,7 +43,7 @@ DtIniciarClaseFull ControladorInicioDeClase::datosIngresados(){
 void ControladorInicioDeClase::iniciarClase(){
     //hay que contemplar que tipo de Clase (monitoreo, practico o teorico) se quiere crear
     //para ver que constructor de clase usar
-    Clase* clase = new Clase(this->data.getId(), this->data.getNombre(), this->docente, 
+    Clase* clase = new Clase(this->data.getNombre(), this->docente, 
                             this->data.getFechaHora(), this->data.getCodigo());
     ManejadorClase* mC = ManejadorClase::getInstancia();
     mC->agregarClase(clase);

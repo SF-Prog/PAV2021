@@ -3,60 +3,55 @@
 ControladorAsistenciaClaseEnVivo::ControladorAsistenciaClaseEnVivo(){};
 
 list<string> ControladorAsistenciaClaseEnVivo::asignaturasInscripto(){
-/*    list<string> codigosAsignatura;
+    list<string> codigosAsignatura;
 
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
-    map<string, Asignatura*> mapAsignatura = this->estudiante->getAsignaturas();
+    map<string, Asignatura*> mapAsignatura = estudiante->getAsignaturas();
 
-    for(map<string, Asignatura*>::iterator it = this->mapAsignatura.begin(); it!=this->mapAsignatura.end(); it++){
+    for(map<string, Asignatura*>::iterator it = mapAsignatura.begin(); it!=mapAsignatura.end(); it++){
         codigosAsignatura.push_front(it->second->getCodigo());        
     };
-    return codigosAsignatura; */
+    return codigosAsignatura;
 };
-
 list<int> ControladorAsistenciaClaseEnVivo::clasesOnlineDisponibles(string codAsignatura){
-/*    this->codigo = codAsignatura;
+    this->codigo = codAsignatura;
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     Asignatura* asignatura = mA->getAsignatura(codAsignatura);
 
     list<Clase*> lstClase = asignatura->getClases();
-
-    for(list<Clase*>::iterator it = this->lstClase.begin(); it!=this->lstClase.end(); it++){
-        list<int> lstClaseOnlineDisponible.push_front(it->getId());
+    list<int> lstClaseOnlineDisponible;
+    for(list<Clase*>::iterator it = lstClase.begin(); it!=lstClase.end(); it++){
+        lstClaseOnlineDisponible.push_front((*it)->getId());
     };
 
     return lstClaseOnlineDisponible;
-*/
 };
-
 DtAsistir ControladorAsistenciaClaseEnVivo::selectClase(int idClase){
-/*    this->id = idClase;
-    DtAsistir asistirDt = new DtAsistir(this->codigo,idClase);
+    this->id = idClase;
+    DtAsistir asistirDt = DtAsistir(this->codigo,idClase);
     
     return asistirDt;
-*/
+
 };
-
 void ControladorAsistenciaClaseEnVivo::asistirClaseEnVivo(){
-/*    Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
-    // time_t inicio =   
-    //time_t Fir =   
+    Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
+    time_t inicio = time(&inicio);
+    time_t fin = time(&fin);
 
-    AsistirEnVivo asistir = new AsisteEnVivo(time_t, time_t, estudiante);
+    AsisteEnVivo* asistir = new AsisteEnVivo(inicio, fin, estudiante);
 
     ManejadorClase* mC = ManejadorClase::getInstancia();
     list<Clase*> lstClases = mC->listarClases();
   
     list<Clase*>::iterator it;
-    while (it != lstClases.end() && *it->getId() != this->id){
+    while (it != lstClases.end() && (*it)->getId() != this->id){
         it++;
     };
         
-    if (*it->getId() == this->id){
+    if ((*it)->getId() == this->id){
         //agrego
-        *it->addAsistenciasEnVivo(asistir);
+        (*it)->addAsistenciasEnVivo(asistir);
     }
-*/
 };
 
 void ControladorAsistenciaClaseEnVivo::cancelar(){};

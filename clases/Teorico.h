@@ -12,7 +12,7 @@ class Teorico: public Clase{
   public:
     //Constructores
     Teorico();
-    Teorico(int);
+    Teorico(string, time_t, time_t, string, int);
     //Getters y Setters
     int getCantAsistencias();
     void setCantAsistencias(int);

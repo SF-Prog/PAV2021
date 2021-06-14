@@ -9,7 +9,7 @@ using namespace std;
 class Practico: public Clase{
   private:
   public:
-    Practico();
+    Practico(string, time_t, time_t, string);
     // DESTRUCTOR
     ~Practico();
 };

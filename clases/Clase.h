@@ -2,6 +2,7 @@
 #define CLASE
 
 #include "AsisteEnVivo.h"
+#include "Participacion.h"
 #include "../datatypes/DtInfoClase.h"
 #include <string>
 #include <list>
@@ -13,22 +14,25 @@ using namespace std;
 
 class Clase{
   private:
+    static int idAutoGenerado;
     int id;
     string nombre;
     list<Docente*> docentes;
     list<AsisteEnVivo*> asistenciasEnVivo;
+    list<Participacion*> participaciones;
     time_t inicio;
     time_t fin;
     string codigo;
    
   public:
     Clase();
-    Clase(int, string, time_t, time_t, string);
-    Clase(int, string, Docente*, time_t, string);
-    Clase(int, string, list<Docente*>, time_t, time_t, string);
+    Clase(string, time_t, time_t, string);
+    Clase(string, Docente*, time_t, string);
+    Clase(string, list<Docente*>, time_t, time_t, string);
     int getId();
     string getNombre();
     list<Docente*> getDocentes();
+    list<Participacion*> getParticipaciones();
     void addDocente(Docente*);
     list<AsisteEnVivo*> getAsistenciasEnVivo();
     void addAsistenciasEnVivo(AsisteEnVivo*);
@@ -36,6 +40,8 @@ class Clase{
     time_t getFin();
     string getCodigo();
     DtInfoClase getDtInfoClase();
+
+    void addParticipacion(Participacion*);
     
     void setId(int);
     void setNombre(string );

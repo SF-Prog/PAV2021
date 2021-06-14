@@ -2,10 +2,14 @@
 #define CONTROLADORASISTENCIACLASEENVIVO
 
 #include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
+#include "../manejadores/ManejadorClase.h"
 #include "../manejadores/ManejadorAsignatura.h"
 #include "../manejadores/ManejadorPerfil.h"
+#include "../clases/AsisteEnVivo.h"
 #include "../clases/Sesion.h"
 #include "../clases/Docente.h"
+#include "../clases/Estudiante.h"
+
 #include <iostream>
 
 class ControladorAsistenciaClaseEnVivo: public IControladorAsistenciaClaseEnVivo{

@@ -1,4 +1,4 @@
 #include "Practico.h"
-Practico::Practico():Clase(id, nombre, inicio, fin, codigo){};
+Practico::Practico(string nombre, time_t inicio, time_t fin, string codigo):Clase(nombre, inicio, fin, codigo){};
 // DESTRUCTOR
 Practico::~Practico(){};

@@ -14,7 +14,7 @@ class Monitoreo: public Clase{
     map<string, Estudiante*> estudiantes;
     list<string> habilitados;
   public:
-    Monitoreo(int, string, Docente*, time_t, string, list<string>);
+    Monitoreo(string, Docente*, time_t, string, list<string>);
     // DESTRUCTOR
     ~Monitoreo();
 };

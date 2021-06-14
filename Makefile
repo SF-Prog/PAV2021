@@ -6,7 +6,7 @@ M_DIR = manejadores
 DT_DIR = datatypes
 
 OBJ_DIR = Object
-OBJS = $(OBJ_DIR)/ManejadorAsignatura.o $(OBJ_DIR)/ManejadorClase.o $(OBJ_DIR)/ManejadorPerfil.o $(OBJ_DIR)/ControladorAltaUsuario.o $(OBJ_DIR)/ControladorAsignarAsignaturaDocente.o $(OBJ_DIR)/ControladorAsistenciaClaseEnVivo.o $(OBJ_DIR)/ControladorEliminarAsignatura.o $(OBJ_DIR)/ControladorEnvioDeMensaje.o $(OBJ_DIR)/ControladorAltaAsignatura.o $(OBJ_DIR)/ControladorInicioDeClase.o $(OBJ_DIR)/ControladorInscripcionAsignatura.o $(OBJ_DIR)/Fabrica.o $(OBJ_DIR)/Sesion.o $(OBJ_DIR)/ControladorListarClases.o $(OBJ_DIR)/Asignatura.o $(OBJ_DIR)/AsisteDiferido.o $(OBJ_DIR)/AsisteEnVivo.o $(OBJ_DIR)/Clase.o $(OBJ_DIR)/Docente.o $(OBJ_DIR)/Estudiante.o $(OBJ_DIR)/Monitoreo.o $(OBJ_DIR)/Perfil.o $(OBJ_DIR)/Practico.o $(OBJ_DIR)/Rol.o $(OBJ_DIR)/Teorico.o $(OBJ_DIR)/DtInfoClase.o $(OBJ_DIR)/DtAsignatura.o $(OBJ_DIR)/DtAsistir.o $(OBJ_DIR)/DtClase.o $(OBJ_DIR)/DtClaseAsistencia.o $(OBJ_DIR)/DtDictadoAsignatura.o $(OBJ_DIR)/DtIniciarClase.o $(OBJ_DIR)/DtIniciarClaseFull.o $(OBJ_DIR)/DtIniciarMonitoreo.o $(OBJ_DIR)/DtInstanciaClase.o $(OBJ_DIR)/DtParticipacion.o $(OBJ_DIR)/DtPerfil.o $(OBJ_DIR)/Time.o $(OBJ_DIR)/Log.o $(OBJ_DIR)/main.o
+OBJS = $(OBJ_DIR)/ManejadorAsignatura.o $(OBJ_DIR)/ManejadorClase.o $(OBJ_DIR)/ManejadorPerfil.o $(OBJ_DIR)/ControladorAltaUsuario.o $(OBJ_DIR)/ControladorAsignarAsignaturaDocente.o $(OBJ_DIR)/ControladorAsistenciaClaseEnVivo.o $(OBJ_DIR)/ControladorEliminarAsignatura.o $(OBJ_DIR)/ControladorEnvioDeMensaje.o $(OBJ_DIR)/ControladorAltaAsignatura.o $(OBJ_DIR)/ControladorInicioDeClase.o $(OBJ_DIR)/ControladorInscripcionAsignatura.o $(OBJ_DIR)/Fabrica.o $(OBJ_DIR)/Sesion.o $(OBJ_DIR)/ControladorListarClases.o $(OBJ_DIR)/Asignatura.o $(OBJ_DIR)/AsisteDiferido.o $(OBJ_DIR)/Participacion.o $(OBJ_DIR)/AsisteEnVivo.o $(OBJ_DIR)/Clase.o $(OBJ_DIR)/Docente.o $(OBJ_DIR)/Estudiante.o $(OBJ_DIR)/Monitoreo.o $(OBJ_DIR)/Perfil.o $(OBJ_DIR)/Practico.o $(OBJ_DIR)/Rol.o $(OBJ_DIR)/Teorico.o $(OBJ_DIR)/DtInfoClase.o $(OBJ_DIR)/DtAsignatura.o $(OBJ_DIR)/DtAsistir.o $(OBJ_DIR)/DtClase.o $(OBJ_DIR)/DtClaseAsistencia.o $(OBJ_DIR)/DtDictadoAsignatura.o $(OBJ_DIR)/DtIniciarClase.o $(OBJ_DIR)/DtIniciarClaseFull.o $(OBJ_DIR)/DtIniciarMonitoreo.o $(OBJ_DIR)/DtInstanciaClase.o $(OBJ_DIR)/DtParticipacion.o $(OBJ_DIR)/DtPerfil.o $(OBJ_DIR)/Time.o $(OBJ_DIR)/Log.o $(OBJ_DIR)/main.o
 
 main: $(OBJS)
 	$(CC) $(OBJS) -o obligatorio
@@ -50,6 +50,8 @@ $(OBJ_DIR)/Asignatura.o: clases/Asignatura.cpp clases/Asignatura.h
 $(OBJ_DIR)/AsisteDiferido.o: clases/AsisteDiferido.cpp clases/AsisteDiferido.h
 	$(CC) -c $< -o $@
 $(OBJ_DIR)/AsisteEnVivo.o: clases/AsisteEnVivo.cpp clases/AsisteEnVivo.h
+	$(CC) -c $< -o $@
+$(OBJ_DIR)/Participacion.o: clases/Participacion.cpp clases/Participacion.h
 	$(CC) -c $< -o $@
 $(OBJ_DIR)/Clase.o: clases/Clase.cpp clases/Clase.h
 	$(CC) -c $< -o $@
