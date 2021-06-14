@@ -2,12 +2,12 @@
 #define DOCENTE_H
 
 #include "Perfil.h"
+#include "Rol.h"
+#include "../enum/TipoRol.h"
 #include <string>
 #include <list>
 
 using namespace std;
-
-class Rol; //¿esta bien el fw declaration??
 
 class Docente: public Perfil{
   private:

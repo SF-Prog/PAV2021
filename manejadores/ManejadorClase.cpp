@@ -1,5 +1,8 @@
 #include "ManejadorClase.h"
-        
+
+ManejadorClase* ManejadorClase::instancia=NULL;
+ManejadorClase::ManejadorClase(){};
+ManejadorClase::~ManejadorClase(){};
 ManejadorClase* ManejadorClase::getInstancia(){
     if (instancia == NULL)
         instancia = new ManejadorClase();

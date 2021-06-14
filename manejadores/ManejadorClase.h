@@ -8,6 +8,8 @@ class ManejadorClase {
     private:
         static ManejadorClase* instancia;
         list<Clase*> clases;
+        ManejadorClase();
+        ~ManejadorClase();
     public:
         static ManejadorClase* getInstancia();
         void agregarClase(Clase*);

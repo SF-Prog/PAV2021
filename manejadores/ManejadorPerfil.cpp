@@ -1,5 +1,9 @@
 #include "ManejadorPerfil.h"
 
+ManejadorPerfil* ManejadorPerfil::instancia=NULL;
+
+ManejadorPerfil::ManejadorPerfil(){};
+ManejadorPerfil::~ManejadorPerfil(){};
 ManejadorPerfil* ManejadorPerfil::getInstancia(){
     if (instancia == NULL)
         instancia = new ManejadorPerfil();

@@ -10,10 +10,6 @@ Fabrica* Fabrica::getInstancia(){
     return instancia;
 }
 
-IControladorAsistenciaClaseEnVivo* Fabrica::getIControladorAsistenciaClaseEnVivo(){
-    return new ControladorAsistenciaClaseEnVivo();
-}
-
 IControladorAltaAsignatura* Fabrica::getIControladorAltaAsignatura(){
     return new ControladorAltaAsignatura();
 }
@@ -26,8 +22,8 @@ IControladorAsignarAsignaturaDocente* Fabrica::getIControladorAsignarAsignaturaD
     return new ControladorAsignarAsignaturaDocente();
 }
 
-IControladorAsignaturaDocente* Fabrica::getIControladorAsignaturaDocente(){
-    return new ControladorAsignaturaDocente();
+IControladorAsignarAsignaturaDocente* Fabrica::getIControladorAsignaturaDocente(){
+    return new ControladorAsignarAsignaturaDocente();
 }
 
 IControladorAsistenciaClaseEnVivo* Fabrica::getIControladorAsistenciaClaseEnVivo(){

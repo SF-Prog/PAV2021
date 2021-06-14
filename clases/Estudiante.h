@@ -6,6 +6,7 @@
 #include "../datatypes/DtIniciarClase.h"
 
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ class Estudiante: public Perfil{
     Estudiante(string, string, string, string, string);
     // Getters y Setters
     string getDocumento();
+    map<string, Asignatura*> getAsignaturas();
     void setDocumento(string);
 
     bool estaInscripto(string);

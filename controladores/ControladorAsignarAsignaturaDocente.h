@@ -16,9 +16,11 @@ class ControladorAsignarAsignaturaDocente: public IControladorAsignarAsignaturaD
         TipoRol Rol;
 
     public:
+        ControladorAsignarAsignaturaDocente();
         list<string> listarAsignaturas();
         void docentesSinLaAsignatura(string);
         void selectDocente(string, TipoRol);
         void asignarDocente();
+        ~ControladorAsignarAsignaturaDocente();
 };
 #endif

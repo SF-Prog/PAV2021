@@ -1,4 +1,4 @@
 #include "Practico.h"
-Practico::Practico():Clase(id, nombre, inicio, fin, rutaVideo){};
+Practico::Practico():Clase(id, nombre, inicio, fin, codigo){};
 // DESTRUCTOR
 Practico::~Practico(){};

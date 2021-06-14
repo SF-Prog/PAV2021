@@ -15,6 +15,7 @@ class DtParticipacion{
     public:
         // Constructores
         DtParticipacion();
+        DtParticipacion(int, time_t, string);
         DtParticipacion(int, time_t, string, DtParticipacion*);
 
         // Getters and Setters

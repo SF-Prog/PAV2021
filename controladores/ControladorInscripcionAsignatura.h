@@ -7,9 +7,11 @@ class ControladorInscripcionAsignatura: public IControladorInscripcionAsignatura
     private:
         string cod;
     public:
-        list<string*> asignaturasNoInscripto();
+        ControladorInscripcionAsignatura();
+        list<string> asignaturasNoInscripto();
         void selectAsignatura(string);
         void inscribir();
         void cancelar();
+        ~ControladorInscripcionAsignatura();
 };
 #endif

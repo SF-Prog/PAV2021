@@ -8,7 +8,7 @@ using namespace std;
 
 class IControladorInscripcionAsignatura{
     public:
-        virtual list<string*> asignaturasNoInscipto() = 0;
+        virtual list<string> asignaturasNoInscripto() = 0;
         virtual void selectAsignatura(string) = 0;
         virtual void inscribir() = 0;
         virtual void cancelar() = 0;

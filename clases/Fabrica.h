@@ -1,6 +1,16 @@
 #ifndef FABRICA
 #define FABRICA
 
+#include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
+#include "../interfaces/IControladorAltaAsignatura.h"
+#include "../interfaces/IControladorAltaUsuario.h"
+#include "../interfaces/IControladorAsignarAsignaturaDocente.h"
+#include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
+#include "../interfaces/IControladorEliminarAsignatura.h"
+#include "../interfaces/IControladorEnvioDeMensaje.h"
+#include "../interfaces/IControladorInicioDeClase.h"
+#include "../interfaces/IControladorInscripcionAsignatura.h"
+#include "../interfaces/IControladorListarClases.h"
 #include "../controladores/ControladorAsistenciaClaseEnVivo.h"
 #include "../controladores/ControladorAltaAsignatura.h"
 #include "../controladores/ControladorAltaUsuario.h"
@@ -22,11 +32,10 @@ class Fabrica{
         Fabrica();
     public:
         static Fabrica* getInstancia();
-        IControladorAsistenciaClaseEnVivo* getIControladorAClaseEnVivo();
         IControladorAltaAsignatura* getIControladorAltaAsignatura();
         IControladorAltaUsuario* getIControladorAltaUsuario();
         IControladorAsignarAsignaturaDocente* getIControladorAsignarAsignaturaDocente();
-        IControladorAsignaturaDocente* getIControladorAsignaturaDocente();
+        IControladorAsignarAsignaturaDocente* getIControladorAsignaturaDocente();
         IControladorAsistenciaClaseEnVivo* getIControladorAsistenciaClaseEnVivo();
         IControladorEliminarAsignatura* getIControladorEliminarAsignatura();
         IControladorEnvioDeMensaje* getIControladorEnvioDeMensaje();
