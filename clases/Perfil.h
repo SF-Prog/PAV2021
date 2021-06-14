@@ -7,7 +7,7 @@
 using namespace std;
 
 class Perfil{
-  protected:
+  private:
     string nombre;
     string imagenUrl;
     string email;

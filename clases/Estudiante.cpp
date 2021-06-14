@@ -23,11 +23,9 @@ bool Estudiante::estaInscripto(string codigo){
   return member(asignatura);
 };
 
-
 map<string, Asignatura*> Estudiante::getAsignaturas(){
-  return this->asignatura;
+  return this->asignaturas;
 };
-
 
 // DESTRUCTOR
 Estudiante::~Estudiante(){};

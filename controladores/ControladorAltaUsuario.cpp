@@ -1,5 +1,6 @@
 #include "ControladorAltaUsuario.h"
 
+ControladorAltaUsuario::ControladorAltaUsuario(){};
 void ControladorAltaUsuario::ingresarDatosPerfil(DtPerfil dtPerfil){
     this->datosPerfil = dtPerfil;
 };
@@ -12,7 +13,6 @@ void ControladorAltaUsuario::ingresarDocente(string inst){
     this->tipoPerfil = DOCENTE;
 };
 void ControladorAltaUsuario::altaUsuario(){
-
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
     if (this->tipoPerfil == DOCENTE){
         Docente* docente = new Docente(this->datosPerfil.getNombre(), this->datosPerfil.getImagenUrl(),
@@ -28,6 +28,6 @@ void ControladorAltaUsuario::altaUsuario(){
     }
 
 };
-
+ControladorAltaUsuario::~ControladorAltaUsuario(){};
 
 void ControladorAltaUsuario::cancelar(){};

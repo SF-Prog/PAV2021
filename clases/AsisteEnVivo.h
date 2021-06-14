@@ -4,14 +4,15 @@
 #include <string>
 #include <ctime>
 
-
 using namespace std;
+
+class Estudiante;
 
 class AsisteEnVivo{
   private:
     Estudiante* estudiante;
-   time_t inicio;
-   time_t fin;
+    time_t inicio;
+    time_t fin;
    
   public:
     AsisteEnVivo();

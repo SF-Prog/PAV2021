@@ -14,10 +14,12 @@ class ControladorAltaUsuario: public IControladorAltaUsuario{
         string institutoDocente;
         TipoPerfil tipoPerfil;
     public:
+        ControladorAltaUsuario();
         void ingresarDatosPerfil(DtPerfil);
         void ingresarEstudiante(string);
         void ingresarDocente(string);
         void altaUsuario();
         void cancelar();
+        ~ControladorAltaUsuario();
 };
 #endif

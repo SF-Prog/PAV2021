@@ -114,7 +114,7 @@ int main(){
         }       
     }   
     if (num!=9) {
-        system("clear");
+        //system("clear");
         menu();
         int num2;
         cin>>num2;

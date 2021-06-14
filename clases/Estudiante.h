@@ -6,6 +6,7 @@
 #include "../datatypes/DtIniciarClase.h"
 
 #include <string>
+#include <map>
 
 using namespace std;
 

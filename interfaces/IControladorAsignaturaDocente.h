@@ -1,5 +1,5 @@
-#ifndef ICONTROLADORASIGNARASIGNATURADOCENTE
-#define ICONTROLADORASIGNARASIGNATURADOCENTE
+#ifndef ICONTROLADORASIGNATURADOCENTE
+#define ICONTROLADORASIGNATURADOCENTE
 
 #include "../enum/TipoRol.h"
 #include <list>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class IControladorAsignarAsignaturaDocente{
+class IControladorAsignaturaDocente{
     public:
         virtual list<string> listarAsignaturas() = 0;
         virtual void docentesSinLaAsignatura(string) = 0;

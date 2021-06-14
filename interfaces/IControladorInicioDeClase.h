@@ -1,7 +1,7 @@
 #ifndef ICONTROLADORINICIODECLASE
 #define ICONTROLADORINICIODECLASE
 
-#include "IControladorInicioDeClase.h"
+#include "../datatypes/DtIniciarClaseFull.h"
 #include "../datatypes/DtPerfil.h"
 #include <string>
 #include <list>
@@ -10,10 +10,12 @@ using namespace std;
 
 class IControladorInicioDeClase{
     public:
-        virtual void ingresarDatosPerfil(DtPerfil) = 0;
-        virtual void ingresarEstudiante(string) = 0;
-        virtual void ingresarDocente(string) = 0;
-        virtual void altaUsuario() = 0;
+        virtual list<string> asignaturasAsignadas() = 0;
+        virtual bool selectAsignatura(DtIniciarClase) = 0;
+        virtual list<string> inscriptosAsignatura() = 0;
+        virtual void habilitar(string) = 0;
+        virtual DtIniciarClaseFull datosIngresados() = 0;
+        virtual void iniciarClase() = 0;
         virtual void cancelar() = 0;
 };
 #endif

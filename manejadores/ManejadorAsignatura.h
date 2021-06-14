@@ -12,6 +12,7 @@ class ManejadorAsignatura{
        static ManejadorAsignatura* instancia;
        map<string, Asignatura*> asignaturas;
        ManejadorAsignatura();
+       ~ManejadorAsignatura();
     public:
        static ManejadorAsignatura* getInstancia();
        list<Asignatura*> getAsignaturas();

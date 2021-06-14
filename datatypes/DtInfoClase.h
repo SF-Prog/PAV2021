@@ -1,9 +1,10 @@
 #ifndef DTINFOCLASE
 #define DTINFOCLASE
 
-#include "../clases/Docente.h"
-#include <map>
+#include <list>
 #include <string>
+
+class Docente;
 
 using namespace std;
 

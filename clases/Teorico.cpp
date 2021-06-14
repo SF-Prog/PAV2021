@@ -2,7 +2,7 @@
 
 //Contructores
 Teorico::Teorico(){};
-Teorico::Teorico(int cantAsistentes):Clase(id, nombre, inicio, fin, rutaVideo){
+Teorico::Teorico(string nombre, time_t inicio, time_t fin, string codigo, int cantAsistentes):Clase(nombre, inicio, fin, codigo){
   this->cantAsistencias = cantAsistencias;
 };
 //Getters y Setters
