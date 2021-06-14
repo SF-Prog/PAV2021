@@ -1,18 +1,18 @@
-#include "ControladorAltaUsuario.h"
+#include "../controladores/ControladorAltaUsuario.h"
 
 void ControladorAltaUsuario::ingresarDatosPerfil(DtPerfil dtPerfil){
-    this->datosPerfil = dtPerfil;
+  //  this->datosPerfil = dtPerfil;
 };
 void ControladorAltaUsuario::ingresarEstudiante(string docEstudiante){
-    this->documentoEstudiante = docEstudiante;
-    this->tipoPerfil = ESTUDIANTE;
+  //  this->documentoEstudiante = docEstudiante;
+  //  this->tipoPerfil = ESTUDIANTE;
 };
 void ControladorAltaUsuario::ingresarDocente(string inst){
-    this->institutoDocente = inst;
-    this->tipoPerfil = DOCENTE;
+  //  this->institutoDocente = inst;
+  //  this->tipoPerfil = DOCENTE;
 };
 void ControladorAltaUsuario::altaUsuario(){
-
+/*
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
     if (this->tipoPerfil == DOCENTE){
         Docente* docente = new Docente(this->datosPerfil.getNombre(), this->datosPerfil.getImagenUrl(),
@@ -26,7 +26,7 @@ void ControladorAltaUsuario::altaUsuario(){
                                                 this->documentoEstudiante);
         mP->add(estudiante);
     }
-
+*/
 };
 
 

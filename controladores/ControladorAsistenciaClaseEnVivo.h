@@ -2,9 +2,9 @@
 #define CONTROLADORASISTENCIACLASEENVIVO
 
 #include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
-#include "../datatype/DtAsistir.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../manejadores/ManejadorPerfil.h"
+#include "../datatypes/DtAsistir.h"
+#include "../manejador/ManejadorAsignatura.h"
+#include "../manejador/ManejadorPerfil.h"
 #include "../clases/Sesion.h"
 #include "../clases/Docente.h"
 #include <iostream>

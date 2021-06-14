@@ -1,7 +1,7 @@
 #ifndef MANEJADORPERFIL
 #define MANEJADORPERFIL
 
-#include "Perfil.h"
+#include "../clases/Perfil.h"
 #include <list>
 
 class ManejadorPerfil {

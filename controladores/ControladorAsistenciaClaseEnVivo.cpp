@@ -1,7 +1,7 @@
 #include "ControladorAsistenciaClaseEnVivo.h"
 
 list<string> ControladorAsistenciaClaseEnVivo::asignaturasInscripto(){
-    list<string> codigosAsignatura;
+    /*list<string> codigosAsignatura;
 
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     map<string, Asignatura*> mapAsignatura = this->estudiante->getAsignaturas();
@@ -9,11 +9,11 @@ list<string> ControladorAsistenciaClaseEnVivo::asignaturasInscripto(){
     for(map<string, Asignatura*>::iterator it = this->mapAsignatura.begin(); it!=this->mapAsignatura.end(); it++){
         codigosAsignatura.push_front(it->second->getCodigo());        
     };
-    return codigosAsignatura;
+    return codigosAsignatura;*/
 };
 
 list<int> ControladorAsistenciaClaseEnVivo::clasesOnlineDisponibles(string codAsignatura){
-    this->codigo = codAsignatura;
+   /* this->codigo = codAsignatura;
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     Asignatura* asignatura = mA->getAsignatura(codAsignatura);
 
@@ -23,20 +23,20 @@ list<int> ControladorAsistenciaClaseEnVivo::clasesOnlineDisponibles(string codAs
         list<int> lstClaseOnlineDisponible.push_front(it->getId());
     };
 
-    return lstClaseOnlineDisponible;
+    return lstClaseOnlineDisponible;*/
 
 };
 
 DtAsistir ControladorAsistenciaClaseEnVivo::selectClase(int idClase){
-    this->id = idClase;
+   /* this->id = idClase;
     DtAsistir asistirDt = new DtAsistir(this->codigo,idClase);
     
-    return asistirDt;
+    return asistirDt;*/
 };
 
 
 void ControladorAsistenciaClaseEnVivo::AsistirClaseEnVivo(){
-    Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
+    /*Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     // time_t inicio =   
     //time_t Fir =   
 
@@ -54,7 +54,7 @@ void ControladorAsistenciaClaseEnVivo::AsistirClaseEnVivo(){
         //agrego
         *it->addAsistenciasEnVivo(asistir);
     }
-
+*/
 };
 
 void ControladorAsistenciaClaseEnVivo::cancelar(){};

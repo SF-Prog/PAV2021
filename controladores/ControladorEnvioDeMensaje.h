@@ -1,7 +1,18 @@
 #ifndef CONTROLENVIODECLASE
 #define CONTROLENVIODECLASE
 
-#include "IControladorEnvioDeMensaje.h"
+#include "../interfaces/IControladorEnvioDeMensaje.h"
+#include "../manejador/ManejadorClase.h"
+#include "../clases/Estudiante.h"
+#include "../clases/Sesion.h"
+#include "../datatypes/Time.h"
+#include "../datatypes/DtParticipacion.h"
+
+
+
+#include <list>
+#include <string>
+#include <ctime>
 
 class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
     private:
@@ -9,7 +20,7 @@ class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
         string txt;
     public:
         list<int> clasesOnlineAsistiendo();
-        list<DtParticipacion> selectClase(int id);
+        DtParticipacion selectClase(int id);
         void responder(int);
         void ingresarTexto(string);
         void enviarMensaje();

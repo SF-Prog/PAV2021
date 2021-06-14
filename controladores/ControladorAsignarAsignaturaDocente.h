@@ -1,8 +1,8 @@
 #ifndef CONTROLADORASIGNARASIGNATURADOCENTE
 #define CONTROLADORASIGNARASIGNATURADOCENTE
 
-#include "IControladorAsignarAsignaturaDocente.h"
-#include "../manejadores/ManejadorAsignatura.h"
+#include "../interfaces/IControladorAsignarAsignaturaDocente.h"
+#include "../manejador/ManejadorAsignatura.h"
 #include "../enum/TipoRol.h"
 #include <iostream>
 #include <list>
@@ -17,8 +17,8 @@ class ControladorAsignarAsignaturaDocente: public IControladorAsignarAsignaturaD
 
     public:
         list<string> listarAsignaturas();
-        void docentesSinLaAsignatura(string);
+        /*list<string> docentesSinLaAsignatura(string);
         void selectDocente(string, TipoRol);
-        void asignarDocente();
+        void asignarDocente();*/
 };
 #endif

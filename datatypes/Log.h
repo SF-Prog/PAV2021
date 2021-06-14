@@ -2,24 +2,22 @@
 #define LOG
 
 #include <string>
-#include <ctime>
+
+
+using namespace std;
 
 class Log{
-    private:
-        time_t inicio;
-        time_t fin;
-    public:
-        // Constructores
-        Log();
-        Log(time_t, time_t);
+  private:
+    string codigo;
+    string nombre;
+   
+  public:
+    DtAsignatura();
+    DtAsignatura();
+    
 
-        // Getters and Setters
-        time_t getInicio();
-        time_t getFin();
-        void setInicio(time_t);
-        void setFin(time_t);
-
-        // Destructor
-        ~Log();
+    // DESTRUCTOR
+    ~DtAsignatura();
 };
+
 #endif

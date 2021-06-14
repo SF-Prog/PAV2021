@@ -2,6 +2,7 @@
 #define DTINICIARCLASE
 
 #include <string>
+#include "TimeStamp.h"
 
 using namespace std;
 
@@ -9,16 +10,16 @@ class DtIniciarClase{
     private:
         string codigo;
         string nombre;
-        time_t fechaHora;
+        TimeStamp fechaHora;
     public:
         DtIniciarClase();
-        DtIniciarClase(string, string, time_t);
+        DtIniciarClase(string, string, TimeStamp);
         string getCodigo();
         string getNombre();
-        time_t getFechaHora();
+        TimeStamp getFechaHora();
         void setCodigo(string);
         void setNombre(string);
-        void setFechaHora(time_t);
+        void setFechaHora(TimeStamp);
         ~DtIniciarClase();
 };
 #endif

@@ -2,7 +2,7 @@
 
 
 list<string> ControladorAsignarAsignaturaDocente::listarAsignaturas(){
-    
+    /*
     list<Asignatura*> LstAsignaturas;
     list<string> LstCodigoAsignaturas;
 
@@ -14,11 +14,11 @@ list<string> ControladorAsignarAsignaturaDocente::listarAsignaturas(){
     }
 
     return LstCodigoAsignaturas;
-
+*/
 }
-
+/*
 list<string> ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string cod){
-    list<Perfil*> lstPerfiles;
+    /*list<Perfil*> lstPerfiles;
     list<string> LstEmailDocente;
 
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
@@ -42,8 +42,8 @@ list<string> ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string
 
         LstEmailDocente.push_front(it->getCodigo());
     }
-
-}
+   
+} */
 
 /*
 

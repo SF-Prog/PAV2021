@@ -1,7 +1,7 @@
 #ifndef DTASIGNATURA
 #define DTASIGNATURA
 
-#include "DtInstanciaClase.h"
+#include "../datatypes/DtInstanciaClase.h"
 
 class DtAsignatura{
     private:

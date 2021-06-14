@@ -1,12 +1,12 @@
-#include "ManejadorAsignatura.h"
+#include "../manejador/ManejadorAsignatura.h"
 
 ManejadorAsignatura* ManejadorAsignatura::getInstancia(){
     if (instancia == NULL)
         instancia = new ManejadorAsignatura();
     return instancia;
 };
-
-list<Asignatura*> ManejadorAsignatura::getAsignaturas(){
+/*
+list<Asignatura*> ManejadorAsignatura::getAsignaturasTT(){
     list<Asignatura*> LstAsignatura;
 
     for(map<string, Asignatura*>::iterator it = this->asignaturas.begin(); it!=this->asignaturas.end(); it++){
@@ -21,3 +21,4 @@ Asignatura* ManejadorAsignatura::getAsignatura(string cod){
 };
 void ManejadorAsignatura::removerAsignatura(Asignatura*){};
 void ManejadorAsignatura::agregarAsignatura(Asignatura*){};
+*/

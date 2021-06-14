@@ -9,16 +9,20 @@ using namespace std;
 class AsisteDiferido{
   private:
    Log acceso;
+
+   
   public:
-    // Constructores
     AsisteDiferido();
     AsisteDiferido(Log);
     
-    // Getters y Setters
-    Log getAcceso();
-    void setAcceso(Log);
+    Log getLog();
+
+
+    void setLog(Log);
  
+    
     // DESTRUCTOR
     ~AsisteDiferido();
 };
+
 #endif

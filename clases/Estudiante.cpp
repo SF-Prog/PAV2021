@@ -1,33 +1,23 @@
 #include "Estudiante.h"
 
-Estudiante::Estudiante(){};
-Estudiante::Estudiante(string nombre, string imagenUrl, string email,
-string password, string documento):Perfil(nombre, imagenUrl, email, password){
-  this->documento = documento;
-};
+  Estudiante::Estudiante(){};
+  Estudiante::Estudiante(string nombre, string imagen, string email,string password,string documento):Perfil(nombre,imagen,email,password){
+    this->documento = documento;
+   
+  };
+  string Estudiante::getDocumento(){
+    return this->documento;
+  };
+ 
 
-string Estudiante::getDocumento(){
-  return this->documento;
-};
-
-void Estudiante::setDocumento(string documento){
-  this->documento = documento;
-};
-
-bool Estudiante::member(Asignatura* asignatura){
-    this->asignaturas.find(asignatura->getCodigo()) != this->asignaturas.end();
-};
-bool Estudiante::estaInscripto(string codigo){
-  ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
-  Asignatura* asignatura = mA->getAsignatura(codigo);
-  return member(asignatura);
-};
+  void Estudiante::setDocumento(string documento ){
+    this->documento = documento;
+  };
+ 
+  // DESTRUCTOR
 
 
-map<string, Asignatura*> Estudiante::getAsignaturas(){
-  return this->asignatura;
-};
 
 
-// DESTRUCTOR
-Estudiante::~Estudiante(){};
+  // DESTRUCTOR
+  Estudiante::~Estudiante(){};

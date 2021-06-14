@@ -1,13 +1,14 @@
-#ifndef DTINFOCLASE
-#define DTINFOCLASE
+#ifndef DTINFOCLASE_H
+#define DTINFOCLASE_H
 
 #include "../clases/Docente.h"
-#include <map>
+#include <list>
 #include <string>
 
 using namespace std;
 
 class DtInfoClase{
+    class Docente{};
     private:
         int id;
         string nombre;

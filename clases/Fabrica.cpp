@@ -1,15 +1,18 @@
-#include "Fabrica.h"
-#include "../controladores/ControladorAClaseEnVivo.h"
-#include "../controladores/ControladorAltaAsignatura.h"
-#include "../controladores/ControladorAltaUsuario.h"
+#include "../clases/Fabrica.h"
+
 #include "../controladores/ControladorAsignarAsignaturaDocente.h"
-#include "../controladores/ControladorAsignaturaDocente.h"
 #include "../controladores/ControladorAsistenciaClaseEnVivo.h"
 #include "../controladores/ControladorEliminarAsignatura.h"
 #include "../controladores/ControladorEnvioDeMensaje.h"
+#include "../controladores/ControladorFinalizacionDeAsistenciaClaseEnVivo.h"
+#include "../controladores/ControladorFinalizacionDeClase.h"
 #include "../controladores/ControladorInicioDeClase.h"
 #include "../controladores/ControladorInscripcionAsignatura.h"
 #include "../controladores/ControladorListarClases.h"
+#include "../controladores/ControladorReproduccionDeClaseEnDiferido.h"
+#include "../controladores/ControladorTiempoAsistenciaAClase.h"
+#include "../controladores/ControladorTiempoDictadoDeClases.h"
+#
 
 #include <string>
 

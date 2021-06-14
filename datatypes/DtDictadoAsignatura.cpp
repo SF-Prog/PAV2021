@@ -2,7 +2,7 @@
 
 //Constructores
 DtDictadoAsignatura::DtDictadoAsignatura(){}
-DtDictadoAsignatura::DtDictadoAsignatura(string codigo, string nombre, Time tiempoTotal){
+DtDictadoAsignatura::DtDictadoAsignatura(string codigo, string nombre, TimeStamp tiempoTotal){
     this->codigo = codigo;
     this->nombre = nombre;
     this->tiempoTotal = tiempoTotal;
@@ -14,7 +14,7 @@ string DtDictadoAsignatura::getCodigo(){
 string DtDictadoAsignatura::getNombre(){
     return this->nombre;
 }
-Time DtDictadoAsignatura::getTiempoTotal(){
+TimeStamp DtDictadoAsignatura::getTiempoTotal(){
     return this->tiempoTotal;
 }
 void DtDictadoAsignatura::setCodigo(string codigo){
@@ -23,7 +23,7 @@ void DtDictadoAsignatura::setCodigo(string codigo){
 void DtDictadoAsignatura::setNombre(string nombre){
     this->nombre = nombre;
 }
-void DtDictadoAsignatura::setTiempoTotal(Time tiempoTotal){
+void DtDictadoAsignatura::setTiempoTotal(TimeStamp tiempoTotal){
     this->tiempoTotal = tiempoTotal;
 }
 //Destructor

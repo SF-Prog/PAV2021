@@ -2,7 +2,7 @@
 #define CONTROLADORALTAASIGNATURA
 
 #include "../interfaces/IControladorAltaAsignatura.h"
-#include "../manejadores/ManejadorAsignatura.h"
+#include "../manejador/ManejadorAsignatura.h"
 
 class ControladorAltaAsignatura: public IControladorAltaAsignatura{
     private:

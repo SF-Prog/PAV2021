@@ -1,8 +1,7 @@
 #include "DtIniciarClaseFull.h"
 
 DtIniciarClaseFull::DtIniciarClaseFull(){};
-DtIniciarClaseFull::DtIniciarClaseFull(string codigo, string nombre, time_t fechaHora, int id):
-                                        DtIniciarClase(codigo, nombre, fechaHora){
+DtIniciarClaseFull::DtIniciarClaseFull(string codigo, string nombre, TimeStamp fechaHora, int id):DtIniciarClase(codigo, nombre, fechaHora){
     this->id = id;
 };
 int DtIniciarClaseFull::getId(){

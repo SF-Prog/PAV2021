@@ -1,7 +1,7 @@
 #ifndef MANEJADORCLASE
 #define MANEJADORCLASE
 
-#include "Clase.h"
+#include "../clases/Clase.h"
 #include <list>
 
 class ManejadorClase {
@@ -12,5 +12,6 @@ class ManejadorClase {
         static ManejadorClase* getInstancia();
         void agregarClase(Clase*);
         list<Clase*> listarClases();
+        Clase* getClase(int);
 };
 #endif

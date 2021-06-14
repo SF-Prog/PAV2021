@@ -5,13 +5,19 @@
     this->acceso = acceso;
 
   };
-
-  Log AsisteDiferido::getAcceso(){
-    return this->acceso;
+/*
+  TimeStamp AsisteDiferido::getInicio(){
+    return this->inicio;
+  };
+  TimeStamp AsisteDiferido::getFin(){
+    return this->fin;
   };
   
-  void AsisteDiferido::setAcceso(Log acceso){
-    this->acceso = acceso;
+  void AsisteDiferido::setInicio(TimeStamp inicio){
+    this->inicio = inicio;
   };
-  
+  void AsisteDiferido::setFin(TimeStamp  fin){
+    this->fin = fin;
+  };
+  */
   AsisteDiferido::~AsisteDiferido(){};

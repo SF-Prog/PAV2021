@@ -2,7 +2,7 @@
 #define DTDICTADOASIGNATURA
 
 #include <string>
-#include "Time.h"
+#include "../datatypes/TimeStamp.h"
 
 using namespace std;
 
@@ -10,18 +10,18 @@ class DtDictadoAsignatura{
     private:
         string codigo;
         string nombre;
-        Time tiempoTotal;
+        TimeStamp tiempoTotal;
     public:
         //Constructores
         DtDictadoAsignatura();
-        DtDictadoAsignatura(string, string, Time);
+        DtDictadoAsignatura(string, string, TimeStamp);
         // Getters y Setters
         string getCodigo();
         string getNombre();
-        Time getTiempoTotal();
+        TimeStamp getTiempoTotal();
         void setCodigo(string);
         void setNombre(string);
-        void setTiempoTotal(Time);
+        void setTiempoTotal(TimeStamp);
         //Destructor
         ~DtDictadoAsignatura();
 };

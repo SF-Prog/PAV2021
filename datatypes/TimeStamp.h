@@ -5,15 +5,15 @@
 
 using namespace std;
 
-class Time{
+class TimeStamp{
     private:
         int hora;
         int min;
         int segundos;
     public:
         //Constructores
-        Time();
-        Time(int, int, int);
+        TimeStamp();
+        TimeStamp(int, int, int);
         // Getters y Setters
         int getHora();
         int getMin();
@@ -22,6 +22,6 @@ class Time{
         void setMin(int);
         void setSegundos(int);
         //Destructor
-        ~Time();
+        ~TimeStamp();
 };
 #endif

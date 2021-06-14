@@ -1,8 +1,8 @@
-#include "ControladorEnvioDeMensaje.h"
+#include "../controladores/ControladorEnvioDeMensaje.h"
 
 
  list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
-     list<int> = clasesOnline;
+    /* list<int> clasesOnline;
 
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     
@@ -11,7 +11,7 @@
 
        
     for(list<Clase*>::iterator it = lstClases.begin(); it!=lstClases.end(); it++){
-        list<AsisteEnVivo*> asistEnVivo = it->getAsistenciasEnVivo();
+        list<AsisteEnVivo*> asistEnVivo = it*->getAsistenciasEnVivo();
 
         for(list<AsisteEnVivo*>::iterator it2 = asistEnVivo.begin(); it2!=asistEnVivo.end(); it2++){
 
@@ -22,22 +22,49 @@
         };
     };
 
-    return clasesOnline;
+    return clasesOnline;*/
 
  };
 
 
-list<DtParticipacion> ControladorEnvioDeMensaje::selectClase(int id){
-    this->id = id;
-    DtParticipacion participacionDt = new DtParticipacion(id, time_t, '');
+list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
+    /*this->id = id;
+    ManejadorClase* mC = ManejadorClase::getInstancia();
+    Clase*  clase = mC->getClase(id);
+    clase->getParticipaciones();
 
-    return DtParticipacion;
+    list<DtParticipacion*> listDtParticipacion ;    
+    for(list<Participacion*>::iterator it = clase->getParticipaciones().begin(); it!=clase->getParticipaciones().end(); it++){
+        listDtParticipacion.push_front(new DtParticipacion(it->getid(),it->getFecha(),it->getMensaje(),it->getResponde());
+    };
+
+   return listDtParticipacion;*/
 };
 
 
 
 
-void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int){};
-void ControladorEnvioDeMensaje::ingresarTexto(string){};
-void ControladorEnvioDeMensaje::enviarMensaje(){};
+void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
+    this->idP = idP ;
+};
+void ControladorEnvioDeMensaje::ingresarTexto(string mensaje){
+ this->txt = mensaje;
+};
+void ControladorEnvioDeMensaje::enviarMensaje(){
+    ManejadorClase* mC = ManejadorClase::getInstancia();
+    Clase*  clase = mC->getClase(this->id);
+    clase->getParticipaciones();
+
+    
+    if(this->idP != NULL && this->idP != ''){
+        for(list<Participacion*>::iterator it = clase->getParticipaciones().begin(); it!=clase->getParticipaciones().end(); it++){
+            if(*it->getId() == idP){
+                *it->setResponde(new Participacion(id,fecha,mensaje));
+            }        
+        };        
+    }else{
+        clase->addParticipaciones(new Participacion(id,fecha,mensaje))
+    }
+    
+};
 void ControladorEnvioDeMensaje::cancelar(){};

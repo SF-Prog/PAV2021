@@ -1,26 +1,23 @@
-#ifndef DOCENTE_H
-#define DOCENTE_H
-
+#ifndef DOCENTE
+#define DOCENTE
 #include "Perfil.h"
-#include "Rol.h"
 #include <string>
-#include <list>
+
 
 using namespace std;
 
 class Docente: public Perfil{
   private:
     string instituto;
-    list<Rol*> roles;
+   
+   
   public:
-    //Constructores
     Docente();
-    Docente(string, string, string, string, string);
-    //Getters y setters
+    Docente(string,string, string, string,string);
     string getInstituto();
-    list<string> asignaturas();
-    bool tieneMonitoreo(string);
-    void setInstituto(string);
+   
+
+    void setInstituto(string );
     
     // DESTRUCTOR
     ~Docente();

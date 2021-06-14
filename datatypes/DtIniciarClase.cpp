@@ -1,10 +1,10 @@
-#include "DtIniciarClase.h"
+#include "../datatypes/DtIniciarClase.h"
 
 DtIniciarClase::DtIniciarClase(){};
-DtIniciarClase::DtIniciarClase(string codigo, string nombre, time_t fechaHora){
+DtIniciarClase::DtIniciarClase(string codigo,string nombre ,TimeStamp fecha){
     this->codigo = codigo;
     this->nombre = nombre;
-    this->fechaHora = fechaHora;
+    this->fechaHora = fecha;
 };
 string DtIniciarClase::getCodigo(){
     return this->codigo;
@@ -12,16 +12,19 @@ string DtIniciarClase::getCodigo(){
 string DtIniciarClase::getNombre(){
     return this->nombre;
 };
-time_t DtIniciarClase::getFechaHora(){
+TimeStamp DtIniciarClase::getFechaHora(){
     return this->fechaHora;
 };
+
 void DtIniciarClase::setCodigo(string codigo){
     this->codigo = codigo;
 };
 void DtIniciarClase::setNombre(string nombre){
     this->nombre = nombre;
 };
-void DtIniciarClase::setFechaHora(time_t fechaHora){
-    this->fechaHora = fechaHora;
+void DtIniciarClase::setFechaHora(TimeStamp fecha){
+    this->fechaHora = fecha;
 };
-DtIniciarClase::~DtIniciarClase(){};
+
+// DESTRUCTOR
+DtIniciarClase::~DtIniciarClase();

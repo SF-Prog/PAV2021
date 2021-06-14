@@ -2,31 +2,28 @@
 #define ASISTEENVIVO
 
 #include <string>
-#include <ctime>
-
+#include "../datatypes/TimeStamp.h"
 
 using namespace std;
 
 class AsisteEnVivo{
   private:
-    Estudiante* estudiante;
-   time_t inicio;
-   time_t fin;
+   TimeStamp inicio;
+   TimeStamp fin;
    
   public:
     AsisteEnVivo();
-    AsisteEnVivo(time_t, time_t);
-    AsisteEnVivo(time_t, time_t, Estudiante*);
+    AsisteEnVivo(TimeStamp,TimeStamp);
     
-    time_t getInicio();
-    time_t getFin();
-    Estudiante* getEstudiante();
+    TimeStamp getInicio();
+    TimeStamp getFin();
 
-    void setInicio(time_t);
-    void setFin(time_t);
+    void setInicio(TimeStamp);
+    void setFin(TimeStamp);
 
     
     // DESTRUCTOR
     ~AsisteEnVivo();
 };
+
 #endif

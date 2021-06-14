@@ -1,8 +1,5 @@
 #ifndef MONITOREO
 #define MONITOREO
-
-#include "../manejadores/ManejadorPerfil.h"
-#include "Estudiante.h"
 #include "Clase.h"
 #include <string>
 
@@ -11,10 +8,13 @@ using namespace std;
 
 class Monitoreo: public Clase{
   private:
-    map<string, Estudiante*> estudiantes;
-    list<string> habilitados;
+   
+   
   public:
-    Monitoreo(int, string, Docente*, time_t, string, list<string>);
+    Monitoreo();
+    Monitoreo(int,string, TimeStamp, TimeStamp,string);
+
+    
     // DESTRUCTOR
     ~Monitoreo();
 };

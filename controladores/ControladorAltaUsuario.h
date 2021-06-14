@@ -2,7 +2,7 @@
 #define CONTROLADORALTAUSUARIO
 
 #include "../interfaces/IControladorAltaUsuario.h"
-#include "../manejadores/ManejadorPerfil.h"
+#include "../manejador/ManejadorPerfil.h"
 #include "../enum/TipoPerfil.h"
 #include "../clases/Docente.h"
 #include "../clases/Estudiante.h"

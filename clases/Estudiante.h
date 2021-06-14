@@ -1,29 +1,23 @@
-#ifndef ESTUDIANTE_H
-#define ESTUDIANTE_H
-
+#ifndef ESTUDIANTE
+#define ESTUDIANTE
 #include "Perfil.h"
-#include "../manejadores/ManejadorAsignatura.h"
-#include "../datatypes/DtIniciarClase.h"
-
 #include <string>
+
 
 using namespace std;
 
 class Estudiante: public Perfil{
   private:
     string documento;
-    map<string, Asignatura*> asignaturas;
-    bool member(Asignatura*);
+   
+   
   public:
-    // Contructores
     Estudiante();
-    Estudiante(string, string, string, string, string);
-    // Getters y Setters
+    Estudiante(string,string, string, string,string);
     string getDocumento();
-    map<string, Asignatura*> getAsignaturas();
-    void setDocumento(string);
+   
 
-    bool estaInscripto(string);
+    void setDocumento(string );
     
     // DESTRUCTOR
     ~Estudiante();
