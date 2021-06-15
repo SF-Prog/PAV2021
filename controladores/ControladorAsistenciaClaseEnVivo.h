@@ -10,6 +10,7 @@
 #include "../clases/Docente.h"
 #include "../clases/Estudiante.h"
 
+#include <map>
 #include <iostream>
 
 class ControladorAsistenciaClaseEnVivo: public IControladorAsistenciaClaseEnVivo{

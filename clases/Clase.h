@@ -2,10 +2,12 @@
 #define CLASE
 
 #include "AsisteEnVivo.h"
+#include "AsisteDiferido.h"
 #include "Participacion.h"
 #include "../datatypes/DtInfoClase.h"
 #include <string>
 #include <list>
+#include <map>
 #include <ctime>
 
 class Docente;
@@ -19,7 +21,8 @@ class Clase{
     string nombre;
     list<Docente*> docentes;
     list<AsisteEnVivo*> asistenciasEnVivo;
-    list<Participacion*> participaciones;
+    list<AsisteDiferido*> asistenciasDiferido;
+    map<int, Participacion*> participaciones;
     time_t inicio;
     time_t fin;
     string codigo;
@@ -32,7 +35,7 @@ class Clase{
     int getId();
     string getNombre();
     list<Docente*> getDocentes();
-    list<Participacion*> getParticipaciones();
+    map<int, Participacion*> getParticipaciones();
     void addDocente(Docente*);
     list<AsisteEnVivo*> getAsistenciasEnVivo();
     void addAsistenciasEnVivo(AsisteEnVivo*);
@@ -49,7 +52,7 @@ class Clase{
     void setFin(time_t );
     void setCodigo(string);
     // DESTRUCTOR
-    ~Clase();
+    virtual ~Clase();
 };
 
 #endif

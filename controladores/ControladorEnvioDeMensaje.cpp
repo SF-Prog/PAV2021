@@ -1,33 +1,24 @@
 #include "../controladores/ControladorEnvioDeMensaje.h"
 
-
-ControladorEnvioDeMensaje::ControladorEnvioDeMensaje(){};
-
+ControladorEnvioDeMensaje::ControladorEnvioDeMensaje(){
+    this->idP = NULL;
+};
 list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
-     list<int> clasesOnline;
-
+    list<int> clasesOnline;
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
-    
     ManejadorClase* mC = ManejadorClase::getInstancia();
-    list<Clase*> lstClases = mC->listarClases();
-
+    map<int, Clase*> clases = mC->listarClases();
        
-    for(list<Clase*>::iterator it = lstClases.begin(); it!=lstClases.end(); it++){
-        list<AsisteEnVivo*> asistEnVivo = (*it)->getAsistenciasEnVivo();
-
+    for(map<int, Clase*>::iterator it = clases.begin(); it!=clases.end(); it++){
+        list<AsisteEnVivo*> asistEnVivo = it->second->getAsistenciasEnVivo();
         for(list<AsisteEnVivo*>::iterator it2 = asistEnVivo.begin(); it2!=asistEnVivo.end(); it2++){
-
             if((*it2)->getEstudiante() == estudiante){
-                clasesOnline.push_front((*it)->getId());
+                clasesOnline.push_front(it->second->getId());
             }
-        
         };
     };
-
     return clasesOnline;
-
  };
-
 list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
     this->id = id;
     ManejadorClase* mC = ManejadorClase::getInstancia();
@@ -35,18 +26,16 @@ list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
     clase->getParticipaciones();
 
     list<DtParticipacion*> listDtParticipacion;
-    for(list<Participacion*>::iterator it = clase->getParticipaciones().begin(); it!=clase->getParticipaciones().end(); it++){
-        listDtParticipacion.push_front(new DtParticipacion((*it)->getId(),(*it)->getFecha(),(*it)->getMensaje(),(*it)->getResponde()));
+    for(map<int, Participacion*>::iterator it = clase->getParticipaciones().begin(); it!=clase->getParticipaciones().end(); it++){
+        listDtParticipacion.push_front(new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje(), it->second->getResponde()));
     };
-
-   return listDtParticipacion;
+    return listDtParticipacion;
 };
-
 void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
-    this->idP = idP ;
+    this->idP = idP;
 };
 void ControladorEnvioDeMensaje::ingresarTexto(string mensaje){
- this->txt = mensaje;
+    this->txt = mensaje;
 };
 void ControladorEnvioDeMensaje::enviarMensaje(){
     ManejadorClase* mC = ManejadorClase::getInstancia();
@@ -54,16 +43,13 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
     clase->getParticipaciones();
     time_t fecha = time(&fecha);
     if(this->idP != NULL){
-        for(list<Participacion*>::iterator it = clase->getParticipaciones().begin(); it!=clase->getParticipaciones().end(); it++){
-            if((*it)->getId() == idP){
-                (*it)->setResponde(new DtParticipacion(this->id, fecha, this->txt));
-            }
-        };        
+        map<int, Participacion*> clases = clase->getParticipaciones();
+        map<int, Participacion*>::iterator it = clases.find(this->idP);
+        if(it != clases.end())
+            it->second->respondeA(new Participacion(fecha, this->txt));     
     }else{
-        clase->addParticipacion(new Participacion(this->id, fecha, this->txt));
+        clase->addParticipacion(new Participacion(fecha, this->txt));
     }
-    
 };
 void ControladorEnvioDeMensaje::cancelar(){};
-
 ControladorEnvioDeMensaje::~ControladorEnvioDeMensaje(){};

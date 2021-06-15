@@ -15,7 +15,7 @@ class ManejadorAsignatura{
        ~ManejadorAsignatura();
     public:
        static ManejadorAsignatura* getInstancia();
-       list<Asignatura*> getAsignaturas();
+       map<string, Asignatura*> getAsignaturas();
        Asignatura* getAsignatura(string);
        void removerAsignatura(Asignatura*);
        void agregarAsignatura(Asignatura*);

@@ -2,18 +2,19 @@
 #define MANEJADORCLASE
 
 #include "../clases/Clase.h"
-#include <list>
+#include <map>
 
 class ManejadorClase {
     private:
         static ManejadorClase* instancia;
-        list<Clase*> clases;
+        map<int, Clase*> clases;
         ManejadorClase();
         ~ManejadorClase();
     public:
         static ManejadorClase* getInstancia();
         void agregarClase(Clase*);
         Clase* getClase(int);
-        list<Clase*> listarClases();
+        map<int, Clase*> listarClases();
+        void eliminarClase(int);
 };
 #endif

@@ -5,6 +5,7 @@
 #include "../datatypes/DtParticipacion.h"
 #include <string>
 #include <list>
+#include <map>
 #include <ctime>
 
 using namespace std;
@@ -12,25 +13,25 @@ using namespace std;
 class Participacion{
   private:
     int id;
+    static int idAutoGenerado;
     time_t fecha;
     string mensaje;
-    DtParticipacion* responde;
+    Participacion* responde;
     list<Perfil*> perfiles;
   public:
     //Constructores
     Participacion();
-    Participacion(int, time_t, string);
-    Participacion(int, time_t, string, DtParticipacion*);
+    Participacion(time_t, string);
+    Participacion(time_t, string, DtParticipacion*);
     //Getters y setters
     int getId();
     time_t getFecha();
     string getMensaje();
     DtParticipacion* getResponde();
 
-    void setId(int);
     void setFecha(time_t);
     void setMensaje(string);
-    void setResponde(DtParticipacion*);
+    void respondeA(Participacion*);
     
     // DESTRUCTOR
     ~Participacion();

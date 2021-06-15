@@ -2,14 +2,16 @@
 #define CONTROLADORELIMINARASIGNATURA
 
 #include "../interfaces/IControladorEliminarAsignatura.h"
+#include "../manejadores/ManejadorAsignatura.h"
+#include "../manejadores/ManejadorClase.h"
 
 class ControladorEliminarAsignatura: public IControladorEliminarAsignatura{
     private:
-        //agregar los datos que se recuerdan
+        int codigo;
     public:
         ControladorEliminarAsignatura();
         list<string> listarAsignaturas();
-        void selectAsignatura(string);
+        void selectAsignatura(int);
         void eliminarAsignatura();
         void cancelar();
 };

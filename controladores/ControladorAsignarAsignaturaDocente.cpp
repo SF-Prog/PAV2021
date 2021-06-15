@@ -3,18 +3,16 @@
 ControladorAsignarAsignaturaDocente::ControladorAsignarAsignaturaDocente(){};
 list<string> ControladorAsignarAsignaturaDocente::listarAsignaturas(){
     
-    list<Asignatura*> LstAsignaturas;
-    list<string> LstCodigoAsignaturas;
+    map<string, Asignatura*> asignaturas;
+    list<string> lstCodigoAsignaturas;
 
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
-    LstAsignaturas = mA->getAsignaturas();
+    asignaturas = mA->getAsignaturas();
 
-    for (list<Asignatura*>::iterator it=LstAsignaturas.begin(); it!=LstAsignaturas.end(); ++it){
-        LstCodigoAsignaturas.push_front((*it)->getCodigo());
+    for (map<string, Asignatura*>::iterator it=asignaturas.begin(); it!=asignaturas.end(); ++it){
+        lstCodigoAsignaturas.push_front(it->second->getCodigo());
     }
-
-    return LstCodigoAsignaturas;
-
+    return lstCodigoAsignaturas;
 }
 void ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string){};
 void ControladorAsignarAsignaturaDocente::selectDocente(string, TipoRol){};

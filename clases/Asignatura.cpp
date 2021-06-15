@@ -41,4 +41,9 @@ list<DtInfoClase> Asignatura::getDtInfoClase(){
   return dticList;
 };
 
-Asignatura::~Asignatura(){};
+Asignatura::~Asignatura(){
+  for(map<int, Clase*>::iterator it=this->clases.begin(); it!=this->clases.end(); it++){
+    delete it->second;
+    this->clases.erase(it);
+  }
+};

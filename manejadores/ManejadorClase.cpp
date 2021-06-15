@@ -9,17 +9,19 @@ ManejadorClase* ManejadorClase::getInstancia(){
     return instancia;
 };
 void ManejadorClase::agregarClase(Clase* clase){
-    this->clases.push_front(clase);
+    this->clases.insert(pair<int, Clase*>(clase->getId(), clase));
 };
 Clase* ManejadorClase::getClase(int id){
-    Clase* clase = NULL;
-    for(list<Clase*>::iterator it = this->clases.begin(); it!=this->clases.end(); it++){
-        if((*it)->getId() == id){
-          clase = (*it);
-        }
-    };
-    return clase;
+    map<int, Clase*>::iterator it = this->clases.find(id);
+    if (it!=this->clases.end())
+        return this->clases.find(id)->second;
+    else return NULL;
 };
-list<Clase*> ManejadorClase::listarClases(){
+map<int, Clase*> ManejadorClase::listarClases(){
     return this->clases;
+};
+void ManejadorClase::eliminarClase(int id){
+    map<int, Clase*>::iterator it = this->clases.find(id);
+    this->clases.erase(it);
+    delete it->second;
 };
