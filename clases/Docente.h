@@ -16,13 +16,16 @@ class Docente: public Perfil{
   public:
     //Constructores
     Docente();
-    Docente(string, string, string, string, string);
+    Docente(string, string, string, string, string, list<Rol*>);
     //Getters y setters
     string getInstituto();
+    void setInstituto(string);
+    list<Rol*> getRoles();
+    void setRoles(list<Rol*>);
+
+    void agregarAsignatura(Rol*);
     list<string> asignaturas();
     bool tieneMonitoreo(string);
-    void setInstituto(string);
-    
     // DESTRUCTOR
     ~Docente();
 };

@@ -15,7 +15,7 @@ class Rol{
     //Constructores
     Rol();
     Rol(TipoRol);
-
+    Rol(TipoRol, Asignatura*);
     //Getters ySetters
     TipoRol getTipo();
     void setTipo(TipoRol);

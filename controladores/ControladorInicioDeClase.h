@@ -11,7 +11,7 @@
 #include "../datatypes/DtIniciarClase.h"
 #include "../datatypes/DtIniciarClaseFull.h"
 
-#include <Rpc.h>
+// #include <Rpc.h>
 
 class ControladorInicioDeClase: public IControladorInicioDeClase{
     private:
@@ -20,7 +20,6 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         DtIniciarClaseFull data;
         list<string> habilitados;
     public:
-        ControladorInicioDeClase();
         list<string> asignaturasAsignadas();
         bool selectAsignatura(DtIniciarClase);
         list<string> inscriptosAsignatura();
@@ -28,6 +27,5 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         DtIniciarClaseFull datosIngresados();
         void iniciarClase();
         void cancelar();
-        ~ControladorInicioDeClase();
 };
 #endif
