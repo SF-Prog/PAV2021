@@ -3,6 +3,9 @@
 
 #include "../interfaces/IControladorAsignarAsignaturaDocente.h"
 #include "../manejadores/ManejadorAsignatura.h"
+#include "../manejadores/ManejadorPerfil.h"
+#include "../clases/Docente.h"
+#include "../clases/Rol.h"
 #include "../enum/TipoRol.h"
 #include <iostream>
 #include <list>
@@ -13,12 +16,12 @@ class ControladorAsignarAsignaturaDocente: public IControladorAsignarAsignaturaD
     private:
         string cod;
         string email;
-        TipoRol Rol;
+        TipoRol rol;
 
     public:
         ControladorAsignarAsignaturaDocente();
         list<string> listarAsignaturas();
-        void docentesSinLaAsignatura(string);
+        list<string> docentesSinLaAsignatura(string);
         void selectDocente(string, TipoRol);
         void asignarDocente();
         ~ControladorAsignarAsignaturaDocente();

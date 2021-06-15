@@ -4,6 +4,10 @@ Rol::Rol(){};
 Rol::Rol(TipoRol tipo){
   this->tipo = tipo;
 };
+Rol::Rol(TipoRol tipo, Asignatura* asignatura){
+  this->tipo = tipo;
+  this->asignatura = asignatura;
+};
 // Getters y Setters
 TipoRol Rol::getTipo(){
   return this->tipo;
