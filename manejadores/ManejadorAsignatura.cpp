@@ -22,4 +22,6 @@ Asignatura* ManejadorAsignatura::getAsignatura(string cod){
     return this->asignaturas.find(cod)->second;
 };
 void ManejadorAsignatura::removerAsignatura(Asignatura*){};
-void ManejadorAsignatura::agregarAsignatura(Asignatura*){};
+void ManejadorAsignatura::agregarAsignatura(Asignatura* asignatura){
+    this->asignaturas.insert(pair<string, Asignatura*>(asignatura->getCodigo(), asignatura));
+};
