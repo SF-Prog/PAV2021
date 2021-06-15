@@ -20,6 +20,7 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         DtIniciarClaseFull data;
         list<string> habilitados;
     public:
+        ControladorInicioDeClase();
         list<string> asignaturasAsignadas();
         bool selectAsignatura(DtIniciarClase);
         list<string> inscriptosAsignatura();
@@ -27,5 +28,6 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         DtIniciarClaseFull datosIngresados();
         void iniciarClase();
         void cancelar();
+        ~ControladorInicioDeClase();
 };
 #endif

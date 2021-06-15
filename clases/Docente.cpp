@@ -2,6 +2,10 @@
 
 Docente::Docente(){};
 Docente::Docente(string nombre, string imagenUrl, string email,
+string password, string instituto):Perfil(nombre, imagenUrl, email, password){
+  this->instituto = instituto;
+};
+Docente::Docente(string nombre, string imagenUrl, string email,
 string password, string instituto, list<Rol*> roles):Perfil(nombre, imagenUrl, email, password){
   this->instituto = instituto;
   this->roles = roles;

@@ -16,6 +16,7 @@ class Docente: public Perfil{
   public:
     //Constructores
     Docente();
+    Docente(string, string, string, string, string);
     Docente(string, string, string, string, string, list<Rol*>);
     //Getters y setters
     string getInstituto();
