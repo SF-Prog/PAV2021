@@ -1,18 +1,12 @@
 #include "Participacion.h"
 
+int Participacion::idAutoGenerado=1;
 Participacion::Participacion(){};
-Participacion::Participacion(int id, time_t fecha, string mensaje){
-    this->id=id;
+Participacion::Participacion(time_t fecha, string mensaje){
+    this->id=idAutoGenerado;
+    idAutoGenerado++;
     this->fecha=fecha;
     this->mensaje=mensaje;
-    this->responde = NULL;
-    
-};
-Participacion::Participacion(int id, time_t fecha, string mensaje, DtParticipacion* responder){
-    this->id=id;
-    this->fecha=fecha;
-    this->mensaje=mensaje;
-    this->responde=responder;
 };
 //Getters y setters
 int Participacion::getId(){
@@ -24,22 +18,28 @@ time_t Participacion::getFecha(){
 string Participacion::getMensaje(){
     return this->mensaje;
 };
-DtParticipacion* Participacion::getResponde(){
-    return this->responde;
-};
-
-void Participacion::setId(int id){
-    this->id=id;
-};
 void Participacion::setFecha(time_t fecha){
     this->fecha = fecha;
 };
 void Participacion::setMensaje(string mensaje){
     this->mensaje=mensaje;
 };
-void Participacion::setResponde(DtParticipacion* responde){
-    this->responde=responde;
+void Participacion::respondeA(Participacion* p){
+    this->responde = p;
+};
+/*
+list<DtParticipacion*> Participacion::getRespuestas(){
+    list<DtParticipacion> dtParticipaciones;
+    for(map<int, Participacion*>::iterator it=this->enRespuesta.begin(); it!=this->enRespuesta.end(); it++){
+        dtParticipaciones.push_front(DtParticipacion(it->second->getId(), it->second->getFecha(), it->second->getResponde()));
+    };
+    return dtParticipaciones;
+}*/
+DtParticipacion* Participacion::getResponde(){
+    return new DtParticipacion(this->getId(), this->getFecha(), this->getMensaje(), this->getResponde());
 };
 
 // DESTRUCTOR
-Participacion::~Participacion(){};
+Participacion::~Participacion(){
+    delete this->responde;
+};

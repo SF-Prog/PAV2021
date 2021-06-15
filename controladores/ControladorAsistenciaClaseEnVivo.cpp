@@ -39,19 +39,9 @@ void ControladorAsistenciaClaseEnVivo::asistirClaseEnVivo(){
     time_t fin = time(&fin);
 
     AsisteEnVivo* asistir = new AsisteEnVivo(inicio, fin, estudiante);
-
     ManejadorClase* mC = ManejadorClase::getInstancia();
-    list<Clase*> lstClases = mC->listarClases();
-  
-    list<Clase*>::iterator it;
-    while (it != lstClases.end() && (*it)->getId() != this->id){
-        it++;
-    };
-        
-    if ((*it)->getId() == this->id){
-        //agrego
-        (*it)->addAsistenciasEnVivo(asistir);
-    }
+    Clase* clase = mC->getClase(this->id);
+    clase->addAsistenciasEnVivo(asistir);    
 };
 
 void ControladorAsistenciaClaseEnVivo::cancelar(){};

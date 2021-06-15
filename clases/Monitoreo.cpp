@@ -11,4 +11,7 @@ Monitoreo::Monitoreo(string nom, Docente* doc, time_t fecha, string codigo, list
     };
 };
 // DESTRUCTOR
-Monitoreo::~Monitoreo(){};
+Monitoreo::~Monitoreo(){
+    for(map<string, Estudiante*>::iterator it=this->estudiantes.begin(); it!=this->estudiantes.end(); it++)
+      this->estudiantes.erase(it);
+};

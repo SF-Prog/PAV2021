@@ -117,8 +117,7 @@ void agregarUsuario(){
 // 2- ALTA ASIGNATURA
 void agregarAsignatura(){
 
-    cout<<"ALTA ASIGNATURA"<<endl;
-       
+    cout<<"ALTA ASIGNATURA"<<endl;  
     string auxCod,auxNombre,auxTipMonitoreo,auxTipPractico,auxTipTeorico,confirma;
     cout<<"Codigo: ";
     cin>>auxCod;
@@ -219,7 +218,7 @@ int main(){
                 break;
             case 3:
                 limpiarPantalla();
-                asignacionDocente();
+            //    asignacionDocente();
                 limpiarPantalla();             
                 break;
             case 4:
