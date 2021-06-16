@@ -1,7 +1,7 @@
 #include "../controladores/ControladorEnvioDeMensaje.h"
 
 ControladorEnvioDeMensaje::ControladorEnvioDeMensaje(){
-    this->idP = NULL;
+    this->vaAresponder = false;
 };
 list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
     list<int> clasesOnline;
@@ -33,6 +33,7 @@ list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
 };
 void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
     this->idP = idP;
+    this->vaAresponder = true;
 };
 void ControladorEnvioDeMensaje::ingresarTexto(string mensaje){
     this->txt = mensaje;
@@ -42,7 +43,8 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
     Clase*  clase = mC->getClase(this->id);
     clase->getParticipaciones();
     time_t fecha = time(&fecha);
-    if(this->idP != NULL){
+
+    if(this->vaAresponder){
         map<int, Participacion*> clases = clase->getParticipaciones();
         map<int, Participacion*>::iterator it = clases.find(this->idP);
         if(it != clases.end())
@@ -50,6 +52,7 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
     }else{
         clase->addParticipacion(new Participacion(fecha, this->txt));
     }
+    
 };
 void ControladorEnvioDeMensaje::cancelar(){};
 ControladorEnvioDeMensaje::~ControladorEnvioDeMensaje(){};

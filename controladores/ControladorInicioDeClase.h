@@ -11,7 +11,7 @@
 #include "../datatypes/DtIniciarClase.h"
 #include "../datatypes/DtIniciarClaseFull.h"
 
-#include <Rpc.h>
+// #include <Rpc.h>
 
 class ControladorInicioDeClase: public IControladorInicioDeClase{
     private:

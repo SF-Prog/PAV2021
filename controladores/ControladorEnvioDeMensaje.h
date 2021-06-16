@@ -18,6 +18,7 @@ class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
         int id, idP;
         string txt;
         time_t fecha;
+        bool  vaAresponder;
     public:
         ControladorEnvioDeMensaje();
         list<int> clasesOnlineAsistiendo();
