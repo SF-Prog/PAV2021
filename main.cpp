@@ -140,7 +140,9 @@ void agregarAsignatura(){
 
     if(confirma=="si"){
         try{
-            iConAltaAsignatura->altaAsignatura();   
+            
+            iConAltaAsignatura->altaAsignatura();  
+
         }catch (const invalid_argument& e) {
             cerr << "Invalid argument: " << e.what() << '\n';
         }

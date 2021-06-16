@@ -19,5 +19,6 @@ class ManejadorAsignatura{
        Asignatura* getAsignatura(string);
        void removerAsignatura(Asignatura*);
        void agregarAsignatura(Asignatura*);
+       bool existeAsignatura(string);
 };
 #endif
