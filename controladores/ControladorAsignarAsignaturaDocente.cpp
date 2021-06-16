@@ -51,8 +51,7 @@ void ControladorAsignarAsignaturaDocente::asignarDocente(){
     Docente* docente = dynamic_cast<Docente*>(mP->getPerfil(this->email));
     Asignatura* asignatura = mA->getAsignatura(this->cod);
     
-    // Fito tuya 
-    // Rol* rol = new Rol(this->rol, asignatura);
-    // docente->agregarAsignatura(rol);
+    Rol* rol = new Rol(this->rol, asignatura);
+    docente->agregarAsignatura(rol);
 };
 ControladorAsignarAsignaturaDocente::~ControladorAsignarAsignaturaDocente(){};

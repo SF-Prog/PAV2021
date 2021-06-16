@@ -6,15 +6,15 @@ ControladorInscripcionAsignatura::ControladorInscripcionAsignatura(){
 list<string> ControladorInscripcionAsignatura::asignaturasNoInscripto(){
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
-    list<Asignatura*> listAsignaturas = mA->getAsignaturas();
+    map<string, Asignatura*> listAsignaturas = mA->getAsignaturas();
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     map<string, Asignatura*> mapAsignaturas = estudiante->getAsignaturas();
     list<string> listCodAsignaturas;
     for(map<string, Asignatura*>::iterator it = mapAsignaturas.begin(); it != mapAsignaturas.end(); it++){
         bool estaInscripto = false;
         string codigoAsignaturaItertor = it->second->getCodigo();
-        for(list<Asignatura*>::iterator itA = listAsignaturas.begin(); itA != listAsignaturas.end(); itA++){
-            if((*itA)->getCodigo() == codigoAsignaturaItertor){
+        for(map<string, Asignatura*>::iterator itA = listAsignaturas.begin(); itA != listAsignaturas.end(); itA++){
+            if(itA->second->getCodigo() == codigoAsignaturaItertor){
                 estaInscripto = true;
             }
         }
