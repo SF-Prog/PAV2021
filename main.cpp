@@ -24,8 +24,8 @@ Fabrica *f;
 IControladorIniciarSesion *iConIniciarSesion; 
 IControladorAltaAsignatura *iConAltaAsignatura;
 IControladorAltaUsuario *iConAltaUsuario;
-// IControladorAsignarAsignaturaDocente *iConAsignarAsignaturaDocente;
-// IControladorAsignarAsignaturaDocente *iConAsignaturaDocente;
+IControladorAsignarAsignaturaDocente *iConAsignarAsignaturaDocente;
+IControladorAsignarAsignaturaDocente *iConAsignaturaDocente;
 IControladorAsistenciaClaseEnVivo *iConAsistenciaClaseEnVivo;
 IControladorEliminarAsignatura *iConEliminarAsignatura;
 IControladorEnvioDeMensaje *iConEnvioDeMensaje;
@@ -35,7 +35,7 @@ IControladorListarClases *iConListarClases;
 
 void agregarUsuario();
 void agregarAsignatura();
-void asignacionDocente();
+void asignacionAsignaturaDocente();
 void inscripcionAsignatura();
 void inicioClase();
 void asistenciaClaseEnVivo();
@@ -153,7 +153,102 @@ void agregarAsignatura(){
 }
 
 // 3- ASIGNACION DOCENTE
-void asignacionAsignaturaDocente(){}
+void asignacionAsignaturaDocente(){
+    cout<<"ASIGNACION DE DOCENTES A UNA ASIGNATURA"<<endl;
+    list<string> listaAsignaturas = iConAsignarAsignaturaDocente->listarAsignaturas();
+    int indiceDeLaAsignaturaSeleccionada;
+    int indexListaDocente = 1;
+    int indiceDelDocenteSeleccionado;
+    int indiceDeLaAsignatura = 1;
+    cout << "\n\n\n\n\n ---------------LISTA DE ASIGNATURAS---------------\n\n\n" << endl;
+    for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Indice de la Asignatura (" << indiceDeLaAsignatura << ") con codigo: "<< (*it) << endl;
+    };
+    cout << "SELECCIONE EL INDICE DE LA ASIGNATURA, Lista vacia? seleccione 0 :  ";
+    cin >> indiceDeLaAsignaturaSeleccionada;
+    if(indiceDeLaAsignaturaSeleccionada == 0){
+        menu();
+    };
+    while(indiceDeLaAsignaturaSeleccionada  < listaAsignaturas.size()){
+        cout << "\nIndice incorrecto, seleccione el indice de la asignatura nuevamente:" << listaAsignaturas.size();
+        cin >> indiceDeLaAsignaturaSeleccionada;
+    };
+    //Obtengo el cod de la asignatura del indice que selecciono el usuario
+    string codAsignaturaSeleccionada; 
+    int iteratorIndexAsignatura = 1;
+    for(list<string>::iterator itA=listaAsignaturas.begin(); itA != listaAsignaturas.end(); itA++){
+        if(iteratorIndexAsignatura == indiceDeLaAsignaturaSeleccionada){
+            codAsignaturaSeleccionada = *(itA);
+        }
+    };
+    cout << "\nUsted ha seleccionado el codigo de Asignatura: " << codAsignaturaSeleccionada << endl;
+    list<string> listaEmailsDocentes = iConAsignarAsignaturaDocente->docentesSinLaAsignatura(codAsignaturaSeleccionada);
+    for(list<string>::iterator itD=listaEmailsDocentes.begin(); itD != listaEmailsDocentes.end(); itD++){
+        cout << "Indice del docente "<< indexListaDocente << ", con email:   "<< (*itD) << endl;
+    };
+    cout << "SELECCIONE EL INDICE DEL DOCENTE, Lista vacia? seleccione 0 :  ";
+    cin >> indiceDelDocenteSeleccionado;
+    // busco y creo el Docente* de email seleccionado
+    if(indiceDelDocenteSeleccionado == 0){
+        menu();
+    };
+    while(indiceDelDocenteSeleccionado  < listaEmailsDocentes.size()){
+        cout << "\nIndice incorrecto, seleccione el indice de la docente nuevamente:" << listaEmailsDocentes.size();
+        cin >> indiceDelDocenteSeleccionado;
+    };
+    int iteratorIndexDocente = 1;
+    string emailDocenteSeleccionado;
+    for(list<string>::iterator itA=listaEmailsDocentes.begin(); itA != listaEmailsDocentes.end(); itA++){
+        if(iteratorIndexDocente == indiceDeLaAsignaturaSeleccionada){
+            emailDocenteSeleccionado = *(itA);
+        }
+    };
+    bool agregarDocente = true;
+    while(agregarDocente == true){
+        int rolDelDocente;
+        cout << "Ingrese el Rol del docente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO) \n";
+        cin >> rolDelDocente;
+        // Como se trabaja con el ENUM>?
+        if(rolDelDocente < 1 || rolDelDocente > 3){
+            cout << "ROL INCORRECTO -> Ingrese el Rol del docente nuevamente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO) \n";
+            cin >> rolDelDocente;
+        };
+        TipoRol tipoRol;
+        switch (rolDelDocente) {
+            case 1: tipoRol = TEORICO;
+                break;
+            case 2: tipoRol = PRACTICO;
+                break;
+            case 3: tipoRol = MONITOREO;
+                break;
+        } // NO ESTOY SEGURO COMO ASIGNAR EL VALOR A UN ENUM
+    
+        iConAsignarAsignaturaDocente->selectDocente(emailDocenteSeleccionado, tipoRol);
+        string deseaConfirmarString;
+        cout << "Desea confirmar la operacion? (si/no): ";
+        cin >> deseaConfirmarString;
+        while(deseaConfirmarString != "si" && deseaConfirmarString != "no"){
+            cout << "\nINPUT INCORRECTO\nDesea confirmar la operacion? (si/no): ";
+            cin >> deseaConfirmarString;
+        };
+        if(deseaConfirmarString == "si"){
+            iConAsignarAsignaturaDocente->asignarDocente();
+            string deseaAgregarOtro;
+            cout << "\nOPERACION REALIZADA EXITOSAMENTE, desea agregar otro Docente? (si/no): ";
+            cin >> deseaAgregarOtro;
+            while(deseaConfirmarString != "si" && deseaConfirmarString != "no"){
+                cout << "\nINPUT INCORRECTO\nDesea agregar otro Docente? (si/no): ";
+                cin >> deseaConfirmarString;
+            };
+            if(deseaConfirmarString == "no"){
+                agregarDocente = false;
+                menu();
+            };
+        } else if(deseaConfirmarString == "no"){
+            menu(); // cancelar
+        }
+    }
+}
 
 // 4- INSCRIPCION ASIGNATURA
 void inscripcionAsignatura(){}
@@ -228,8 +323,8 @@ void cargarDatos(){
     iConIniciarSesion = f->getIControladorIniciarSesion();
     iConAltaAsignatura = f->getIControladorAltaAsignatura();
     iConAltaUsuario = f->getIControladorAltaUsuario();
-    // iConAsignarAsignaturaDocente = f->getIControladorAsignarAsignaturaDocente();
-    // iConAsignarAsignaturaDocente = f->getIControladorAsignaturaDocente();
+    iConAsignarAsignaturaDocente = f->getIControladorAsignarAsignaturaDocente();
+    iConAsignarAsignaturaDocente = f->getIControladorAsignaturaDocente();
     iConAsistenciaClaseEnVivo = f->getIControladorAsistenciaClaseEnVivo();
     iConEliminarAsignatura = f->getIControladorEliminarAsignatura();
     iConEnvioDeMensaje = f->getIControladorEnvioDeMensaje();
@@ -261,7 +356,7 @@ int main(){
                 break;
             case 3:
                 limpiarPantalla();
-            //    asignacionDocente();
+                asignacionAsignaturaDocente();
                 limpiarPantalla();             
                 break;
             case 4:

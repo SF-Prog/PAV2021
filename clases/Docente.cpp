@@ -41,5 +41,15 @@ bool Docente::tieneMonitoreo(string codigo){
 void Docente::agregarAsignatura(Rol* rol){
   this->roles.push_front(rol);
 };
+bool Docente::noDictaLaAsignatura(string cod){
+  list<Rol*> rolesDelDocente = this->getRoles();
+  bool noDicta = true;
+  for(list<Rol*>::iterator it=rolesDelDocente.begin(); it != rolesDelDocente.end(); it++){
+    if(cod == (*it)->getCodigoAsignatura()){
+      noDicta = false;
+    }
+  };
+  return noDicta;
+}
 // DESTRUCTOR
 Docente::~Docente(){};
