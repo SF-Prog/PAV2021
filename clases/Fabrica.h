@@ -1,7 +1,6 @@
 #ifndef FABRICA
 #define FABRICA
 
-//#include "../interfaces/IControladorIniciarSesion.h"
 #include "../interfaces/IControladorAsistenciaClaseEnVivo.h"
 #include "../interfaces/IControladorAltaAsignatura.h"
 #include "../interfaces/IControladorAltaUsuario.h"
@@ -22,7 +21,7 @@
 #include "../controladores/ControladorInicioDeClase.h"
 #include "../controladores/ControladorInscripcionAsignatura.h"
 #include "../controladores/ControladorListarClases.h"
-#include "../controladores/ControladorIniciarSesion.h"
+
 
 #include <string>
 using namespace std;
@@ -33,7 +32,6 @@ class Fabrica{
         Fabrica();
     public:
         static Fabrica* getInstancia();
-        IControladorIniciarSesion* getIControladorIniciarSesion();
         IControladorAltaAsignatura* getIControladorAltaAsignatura();
         IControladorAltaUsuario* getIControladorAltaUsuario();
         IControladorAsignarAsignaturaDocente* getIControladorAsignarAsignaturaDocente();

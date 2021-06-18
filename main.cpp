@@ -21,7 +21,6 @@
 using namespace std;
 
 Fabrica *f;
-IControladorIniciarSesion *iConIniciarSesion; 
 IControladorAltaAsignatura *iConAltaAsignatura;
 IControladorAltaUsuario *iConAltaUsuario;
 IControladorAsignarAsignaturaDocente *iConAsignarAsignaturaDocente;
@@ -245,13 +244,42 @@ void asignacionAsignaturaDocente(){
                 menu();
             };
         } else if(deseaConfirmarString == "no"){
-            menu(); // cancelar
+                menu(); // cancelar
         }
     }
 }
 
 // 4- INSCRIPCION ASIGNATURA
-void inscripcionAsignatura(){}
+void inscripcionAsignatura(){
+    cout<<"INSCRIPCION ASIGNATURA"<<endl; 
+    bool sigue = true;
+    while (sigue){
+        cout<<"Listado de asignaturas :"<<endl;
+        list<string> listaAsignaturas = iConInscripcionAsignatura->asignaturasNoInscripto();
+        for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
+        };
+        string cod;// ver si no deberia ser un string
+        cout<<"Ingrese el codigo de la asignatura a inscribirse"<<endl;
+        cin>>cod; 
+        iConInscripcionAsignatura->selectAsignatura(cod);
+        string confirma;
+        cout<<"¿Desea confirmar? (si/no)";
+        cin>>confirma;
+        if(confirma=="si"){
+            iConInscripcionAsignatura->inscribir();
+            cout<<"Inscripcion confirmada";
+        }else{
+            iConInscripcionAsignatura->cancelar();
+        }
+        cout<<"¿Desea continuar inscribiendo asignaturas? (si/no)";
+        cin>>confirma;
+        if(confirma=="no"){
+            sigue = false;
+        }
+
+    }
+}
 
 // 5- INICIO CLASE
 void inicioClase(){}
@@ -263,51 +291,50 @@ void asistenciaClaseEnVivo(){}
 void envioDeMensaje(){}
 
 // 8- ELIMINACION DE ASIGNATURA
-void eliminacionDeAsignatura(){
-    int cod;
-    string confirma = "";
+void eliminDeAsignatura(){
     cout<<"ELIMINACION DE ASIGNATURA"<<endl;  
-    iConEliminarAsignatura->listarAsignaturas();
-    cout<<"Seleccione una asignatura: ";
-    cin>>cod;
-    iConEliminarAsignatura->selectAsignatura(cod);
-    while (confirma != "si" && confirma != "no"){
-        cout<<"¿Desea confirmar? (si/no): ";
-        cin>>confirma;
+    cout<<"Listado de Asignaturas:"<<endl; 
+    list<string> listaAsignaturas = iConEliminarAsignatura->listarAsignaturas();
+    for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
     };
-    if (confirma == "si"){
-            iConEliminarAsignatura->eliminarAsignatura();
-        }else
-            iConEliminarAsignatura->cancelar();
-};
+    int cod;// ver si no deberia ser un string
+    cout<<"Ingrese el codigo de la asignatura a eliminar"<<endl;
+    cin>>cod; 
+    iConEliminarAsignatura->selectAsignatura(cod);
+    string confirma;
+    cout<<"¿Desea confirmar? (si/no)";
+    cin>>confirma;
+    if(confirma=="si"){
+        try{
+            iConEliminarAsignatura->eliminarAsignatura();  
+        }catch (const invalid_argument& e) {
+            cerr << "Invalid argument: " << e.what() << '\n';
+        }
+    }else{
+        iConEliminarAsignatura->cancelar();
+    } // no recuerdo donde teniamos el control del codigo
+}
 
 // 9- LISTAR CLASE
-void listadoDeClase(){}
-
-void iniciarSesion(){
-    string email, password;
-    string confirma = "";
-    cout<<"INICIAR SESION"<<endl;
-    cout<<"Ingrese su email:"<<endl;
-    cin>>email;
-    cout<<"Ingrese su password:"<<endl;
-    cin>>password;
-    iConIniciarSesion->ingresarCredenciales(email, password);
-    while (confirma != "si" && confirma != "no"){
-        cout<<"¿Desea confirmar? (si/no)"<<endl;
-        cin>>confirma;
+void listClase(){
+    cout<<"LISTADO DE CLASES"<<endl; 
+    cout<<"Listado de asignaturas:"<<endl; 
+    list<string> listaAsignaturas = iConListarClases->asignaturasAsignadas();
+    for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
     };
-    if (confirma == "si")
-        try{
-            iConIniciarSesion->iniciarSesion();
-        }catch(const invalid_argument& e){
-            cout<< e.what() <<endl;
-        }
-    else
-        iConIniciarSesion->cancelar();
-};
+    string cod;
+    cout<<"Ingrese el codigo de la asignatura:"<<endl;
+    cin>>cod; 
+    list<DtInfoClase> listaDtInfoClase = iConListarClases->selectAsignatura(cod);
+     for(list<DtInfoClase>::iterator it=listaDtInfoClase.begin(); it != listaDtInfoClase.end(); it++){
+        cout <<(*it)<< endl;
+     };
+     
 
 
+}
 
 /*
 // FUNCIoN PARA CARGAR DATOS VALIDO UNA VEZ;
@@ -320,7 +347,6 @@ void cargarDatos(){
 
 void cargarDatos(){
     f = Fabrica::getInstancia();
-    iConIniciarSesion = f->getIControladorIniciarSesion();
     iConAltaAsignatura = f->getIControladorAltaAsignatura();
     iConAltaUsuario = f->getIControladorAltaUsuario();
     iConAsignarAsignaturaDocente = f->getIControladorAsignarAsignaturaDocente();
@@ -381,12 +407,12 @@ int main(){
                 break;
             case 8:
                 limpiarPantalla();
-               // eliminDeAsignatura();
+                eliminDeAsignatura();
                 limpiarPantalla();             
                 break;
             case 9:
                 limpiarPantalla();
-                //listClase();
+                listClase();
                 limpiarPantalla();             
                 break;
             case 10:

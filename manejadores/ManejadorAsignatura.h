@@ -4,9 +4,6 @@
 #include "../clases/Asignatura.h"
 #include <map>
 #include <list>
-#include <iostream>
-
-using namespace std;
 
 using namespace std;
 
