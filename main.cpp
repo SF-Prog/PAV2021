@@ -251,7 +251,37 @@ void asignacionAsignaturaDocente(){
 }
 
 // 4- INSCRIPCION ASIGNATURA
-void inscripcionAsignatura(){}
+void inscripcionAsignatura(){
+    cout<<"INSCRIPCION ASIGNATURA"<<endl; 
+    bool sigue = true;
+    while (sigue){
+        cout<<"Listado de asignaturas :"<<endl;
+        list<string> listaAsignaturas = iConInscripcionAsignatura->asignaturasNoInscripto();
+        for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
+        };
+        string cod;// ver si no deberia ser un string
+        cout<<"Ingrese el codigo de la asignatura a inscribirse"<<endl;
+        cin>>cod; 
+        iConInscripcionAsignatura->selectAsignatura(cod);
+        string confirma;
+        cout<<"¿Desea confirmar? (si/no)";
+        cin>>confirma;
+        if(confirma=="si"){
+            iConInscripcionAsignatura->inscribir();
+            cout<<"Inscripcion confirmada";
+        }else{
+            iConInscripcionAsignatura->cancelar();
+        }
+        cout<<"¿Desea continuar inscribiendo asignaturas? (si/no)";
+        cin>>confirma;
+        if(confirma=="no"){
+            sigue = false;
+        }
+
+    }
+}
+
 
 // 5- INICIO CLASE
 void inicioClase(){}
@@ -313,7 +343,25 @@ void eliminacionDeAsignatura(){
 };
 
 // 9- LISTAR CLASE
-void listadoDeClase(){}
+// 9- LISTAR CLASE
+void listarClase(){
+    cout<<"LISTADO DE CLASES"<<endl; 
+    cout<<"Listado de asignaturas:"<<endl; 
+    list<string> listaAsignaturas = iConListarClases->asignaturasAsignadas();
+    for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
+    };
+    string cod;
+    cout<<"Ingrese el codigo de la asignatura:"<<endl;
+    cin>>cod; 
+    list<DtInfoClase> listaDtInfoClase = iConListarClases->selectAsignatura(cod);
+     for(list<DtInfoClase>::iterator it=listaDtInfoClase.begin(); it != listaDtInfoClase.end(); it++){
+        cout<<(*it)<< endl;
+     };
+     
+
+
+}
 
 void iniciarSesion(){
     string email, password;

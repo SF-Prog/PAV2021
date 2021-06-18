@@ -3,6 +3,7 @@
 
 #include <list>
 #include <string>
+#include <iostream>
 
 class Docente;
 
@@ -16,5 +17,6 @@ class DtInfoClase{
     public:
         DtInfoClase();
         DtInfoClase(int, string, list<Docente*>);
+        friend ostream& operator << (ostream&, DtInfoClase&);
 };
 #endif

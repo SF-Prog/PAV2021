@@ -28,6 +28,7 @@ class Docente: public Perfil{
     list<string> asignaturas();
     bool tieneMonitoreo(string);
     bool noDictaLaAsignatura(string);
+    friend ostream& operator <<(ostream&, Docente*&);
     // DESTRUCTOR
     ~Docente();
 };
