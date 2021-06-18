@@ -260,7 +260,38 @@ void inicioClase(){}
 void asistenciaClaseEnVivo(){}
 
 // 7- ENVIO DE MENSAJE
-void envioDeMensaje(){}
+void envioDeMensaje(){
+    string responde, texto;
+    string confirma = "";
+    int idC, idP;
+    list<int> clases;
+    cout<<"ENVIO DE MENSAJE"<<endl;
+    cout<<"Clases disponibles:"<<endl;
+    clases = iConEnvioDeMensaje->clasesOnlineAsistiendo();
+    for(list<int>::iterator it=clases.begin(); it!=clases.end(); it++){
+        cout<<(*it)<<endl;
+    }
+    cout<<"Seleccione la clase:"<<endl;
+    cin>>idC;
+    list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
+    for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
+        cout<<(*it)<<endl;
+    };
+    cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
+    cin>>idP;
+    if(idP != 0)
+        iConEnvioDeMensaje->responder(idP);
+    cout<<"Ingrese su mensaje:"<<endl;
+    cin>>texto;
+    iConEnvioDeMensaje->ingresarTexto(texto);
+    while(confirma != "si" && confirma != "no"){
+        cout<<"¿Desea confirmar? (si/no)"<<endl;
+        cin>>confirma;
+    }
+    if (confirma == "si")
+        iConEnvioDeMensaje->enviarMensaje();
+    iConEnvioDeMensaje->cancelar();
+}
 
 // 8- ELIMINACION DE ASIGNATURA
 void eliminacionDeAsignatura(){
