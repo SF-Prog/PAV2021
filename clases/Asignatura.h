@@ -27,6 +27,8 @@ class Asignatura{
     void setNombre(string);
     void setClases(list<Clase*>);
 
+    // Metodos
+
     list<Clase*> getClases();
     list<DtInfoClase> getDtInfoClase();
     void agregarClase(Clase*);
@@ -34,7 +36,8 @@ class Asignatura{
     // DESTRUCTOR
     ~Asignatura();
 
-    //Metodos
+   
+
 };
 
 #endif
