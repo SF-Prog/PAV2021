@@ -6,7 +6,9 @@
         "list": "cpp",
         "iosfwd": "cpp",
         "memory": "cpp",
-        "map": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
+        "map": "cpp",
+        "iostream": "cpp",
+        "xmemory0": "cpp",
+        "ostream": "cpp"
+    }
 }

@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "C:\\cygwin64\\bin",
+            "command": "C:\\MinGW\\bin",
             "args": [
                 // Ask msbuild to generate full paths for file names.
                 "/property:GenerateFullPaths=true",

@@ -1,0 +1,40 @@
+#ifndef PARTICIPACION_H
+#define PARTICIPACION_H
+
+#include "../clases/Perfil.h"
+#include "../datatypes/DtParticipacion.h"
+#include <string>
+#include <list>
+#include <map>
+#include <ctime>
+
+using namespace std;
+
+class Participacion{
+  private:
+    int id;
+    static int idAutoGenerado;
+    time_t fecha;
+    string mensaje;
+    Participacion* responde;
+    list<Perfil*> perfiles;
+  public:
+    //Constructores
+    Participacion();
+    Participacion(time_t, string);
+    Participacion(time_t, string, DtParticipacion*);
+    //Getters y setters
+    int getId();
+    time_t getFecha();
+    string getMensaje();
+    DtParticipacion* getResponde();
+
+    void setFecha(time_t);
+    void setMensaje(string);
+    void respondeA(Participacion*);
+    
+    // DESTRUCTOR
+    ~Participacion();
+};
+
+#endif

@@ -1,57 +1,6 @@
-make.exe --dry-run --keep-going --print-directory
-make.exe: Entering directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
-g++ -c Fabrica.cpp -o Fabrica.o
+make all --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
+make: Leaving directory `/Users/santiagofitipaldo/Desktop/Facultad/PAV2021'
  
-g++ -c Time.cpp -o Time.o
-g++ -c Asignatura.cpp -o Asignatura.o
- 
-g++ -c AsisteDiferido.cpp -o AsisteDiferido.o
- 
-g++ -c AsisteEnVivo.cpp -o AsisteEnVivo.o
- 
-g++ -c Clase.cpp -o Clase.o
- 
-g++ -c Docente.cpp -o Docente.o
- 
-g++ -c Estudiante.cpp -o Estudiante.o
- 
-g++ -c Monitoreo.cpp -o Monitoreo.o
- 
-g++ -c Perfil.cpp -o Perfil.o
- 
-g++ -c Practico.cpp -o Practico.o
- 
-g++ -c Rol.cpp -o Rol.o
- 
-g++ -c Teorico.cpp -o Teorico.o
- 
-g++ -c Participacion.cpp -o Participacion.o
- 
-g++ -c DtAsignatura.cpp -o DtAsignatura.o
- 
-g++ -c DtAsistir.cpp -o DtAsistir.o
- 
-g++ -c DtClase.cpp -o DtClase.o
- 
-g++ -c DtClaseAsistencia.cpp -o DtClaseAsistencia.o
- 
-g++ -c DtDictadoAsignatura.cpp -o DtDictadoAsignatura.o
- 
-g++ -c DtInstanciaClase.cpp -o DtInstanciaClase.o
- 
-g++ -c DtParticipacion.cpp -o DtParticipacion.o
- 
-g++ -c DtPerfil.cpp -o DtPerfil.o
- 
-g++ -c DtInfoClase.cpp -o DtInfoClase.o
- 
-g++ -c Log.cpp -o Log.o
- 
-g++ -c ControladorListarClases.cpp -o ControladorListarClases.o
- 
-g++ -c ManejadorAsignatura.cpp -o ManejadorAsignatura.o
- 
-g++ -c main.cpp -o main.o
-g++ main.cpp Fabrica.o -o obligatorio
-make.exe: Leaving directory 'c:/Users/agusp/Documents/GitHub/PAV2021'
+make: *** No rule to make target `all'.
  
