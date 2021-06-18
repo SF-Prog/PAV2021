@@ -21,6 +21,7 @@
 using namespace std;
 
 Fabrica *f;
+IControladorIniciarSesion *iConIniciarSesion; 
 IControladorAltaAsignatura *iConAltaAsignatura;
 IControladorAltaUsuario *iConAltaUsuario;
 // IControladorAsignarAsignaturaDocente *iConAsignarAsignaturaDocente;
@@ -167,10 +168,49 @@ void asistenciaClaseEnVivo(){}
 void envioDeMensaje(){}
 
 // 8- ELIMINACION DE ASIGNATURA
-void eliminDeAsignatura(){}
+void eliminacionDeAsignatura(){
+    int cod;
+    string confirma = "";
+    cout<<"ELIMINACION DE ASIGNATURA"<<endl;  
+    iConEliminarAsignatura->listarAsignaturas();
+    cout<<"Seleccione una asignatura: ";
+    cin>>cod;
+    iConEliminarAsignatura->selectAsignatura(cod);
+    while (confirma != "si" && confirma != "no"){
+        cout<<"¿Desea confirmar? (si/no): ";
+        cin>>confirma;
+    };
+    if (confirma == "si"){
+            iConEliminarAsignatura->eliminarAsignatura();
+        }else
+            iConEliminarAsignatura->cancelar();
+};
 
 // 9- LISTAR CLASE
-void listClase(){}
+void listadoDeClase(){}
+
+void iniciarSesion(){
+    string email, password;
+    string confirma = "";
+    cout<<"INICIAR SESION"<<endl;
+    cout<<"Ingrese su email:"<<endl;
+    cin>>email;
+    cout<<"Ingrese su password:"<<endl;
+    cin>>password;
+    iConIniciarSesion->ingresarCredenciales(email, password);
+    while (confirma != "si" && confirma != "no"){
+        cout<<"¿Desea confirmar? (si/no)"<<endl;
+        cin>>confirma;
+    };
+    if (confirma == "si")
+        try{
+            iConIniciarSesion->iniciarSesion();
+        }catch(const invalid_argument& e){
+            cout<< e.what() <<endl;
+        }
+    else
+        iConIniciarSesion->cancelar();
+};
 
 
 
@@ -185,6 +225,7 @@ void cargarDatos(){
 
 void cargarDatos(){
     f = Fabrica::getInstancia();
+    iConIniciarSesion = f->getIControladorIniciarSesion();
     iConAltaAsignatura = f->getIControladorAltaAsignatura();
     iConAltaUsuario = f->getIControladorAltaUsuario();
     // iConAsignarAsignaturaDocente = f->getIControladorAsignarAsignaturaDocente();
@@ -245,12 +286,12 @@ int main(){
                 break;
             case 8:
                 limpiarPantalla();
-                eliminDeAsignatura();
+               // eliminDeAsignatura();
                 limpiarPantalla();             
                 break;
             case 9:
                 limpiarPantalla();
-                listClase();
+                //listClase();
                 limpiarPantalla();             
                 break;
             case 10:

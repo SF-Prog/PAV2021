@@ -3,7 +3,7 @@
 
 #include "Perfil.h"
 #include "Rol.h"
-#include "../enum/TipoRol.h"
+//#include "../enum/TipoRol.h"
 #include <string>
 #include <list>
 

@@ -1,7 +1,6 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 
-#include "Perfil.h"
 #include "../manejadores/ManejadorAsignatura.h"
 #include "../datatypes/DtIniciarClase.h"
 
