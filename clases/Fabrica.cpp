@@ -10,6 +10,10 @@ Fabrica* Fabrica::getInstancia(){
     return instancia;
 }
 
+IControladorIniciarSesion* Fabrica::getIControladorIniciarSesion(){
+    return new ControladorIniciarSesion();
+};
+
 IControladorAltaAsignatura* Fabrica::getIControladorAltaAsignatura(){
     return new ControladorAltaAsignatura();
 }

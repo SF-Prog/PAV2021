@@ -1,13 +1,12 @@
 #ifndef DTINFOCLASE
 #define DTINFOCLASE
 
-#include "DtPerfil.h"
 #include <list>
 #include <string>
-#include <iostream>
+
+class Docente;
 
 using namespace std;
-class Docente;
 
 class DtInfoClase{
     private:
@@ -17,6 +16,5 @@ class DtInfoClase{
     public:
         DtInfoClase();
         DtInfoClase(int, string, list<Docente*>);
-        friend ostream& operator << (ostream&, DtInfoClase&);
 };
 #endif

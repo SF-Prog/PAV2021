@@ -13,4 +13,6 @@ void Teorico::setCantAsistencias(int cantAsistencias){
   this->cantAsistencias = cantAsistencias;
 };
 // DESTRUCTOR
-Teorico::~Teorico(){};
+Teorico::~Teorico(){
+  //delete todos los AsisteEnVivo, AsisteDiferido, 
+};

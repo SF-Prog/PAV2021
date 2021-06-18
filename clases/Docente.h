@@ -3,7 +3,7 @@
 
 #include "Perfil.h"
 #include "Rol.h"
-#include "../enum/TipoRol.h"
+//#include "../enum/TipoRol.h"
 #include <string>
 #include <list>
 
@@ -28,7 +28,6 @@ class Docente: public Perfil{
     list<string> asignaturas();
     bool tieneMonitoreo(string);
     bool noDictaLaAsignatura(string);
-    friend ostream& operator << (ostream&, Docente*&);
     // DESTRUCTOR
     ~Docente();
 };

@@ -51,10 +51,5 @@ bool Docente::noDictaLaAsignatura(string cod){
   };
   return noDicta;
 }
-
-ostream& operator << (ostream& salida, Docente*& docente){
-    cout<<docente->getNombre()<<endl;
-    return salida;
-}
 // DESTRUCTOR
 Docente::~Docente(){};

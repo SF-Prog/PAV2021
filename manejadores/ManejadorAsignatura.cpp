@@ -1,7 +1,4 @@
 #include "ManejadorAsignatura.h"
-#include <iostream>
-
-using namespace std;
 
 ManejadorAsignatura* ManejadorAsignatura::instancia = NULL;
 
