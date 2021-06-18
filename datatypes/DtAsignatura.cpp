@@ -3,7 +3,7 @@
 //Constructores
 
 DtAsignatura::DtAsignatura() {}
-DtAsignatura::DtAsignatura(string nombre, string codigo, DtInstanciaClase tipoClase) {
+DtAsignatura::DtAsignatura(string codigo, string nombre, DtInstanciaClase tipoClase) {
     this->nombre = nombre;
     this->codigo = codigo;
     this->tipoClase = tipoClase;

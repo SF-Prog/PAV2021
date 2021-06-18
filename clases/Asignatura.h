@@ -26,10 +26,10 @@ class Asignatura{
     void setCodigo(string);
     void setNombre(string);
     void setClases(list<Clase*>);
+    list<Clase*> getClases();
 
     // Metodos
 
-    list<Clase*> getClases();
     list<DtInfoClase> getDtInfoClase();
     void agregarClase(Clase*);
 

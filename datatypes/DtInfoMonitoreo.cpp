@@ -8,3 +8,10 @@ DtInfoMonitoreo::DtInfoMonitoreo(int id, string nombre, list<Docente*> docentes,
 void DtInfoMonitoreo::setEstudiante(string est){};
 list<string> DtInfoMonitoreo::getEstudiantes(){ return this->estudiantes;};
 DtInfoMonitoreo::~DtInfoMonitoreo(){};
+
+ostream& operator<<(ostream& salida, DtInfoMonitoreo dtim){
+    list<string> estudiantes = dtim.getEstudiantes();
+    for(list<string>::iterator it=estudiantes.begin(); it!=estudiantes.end(); it++)
+        salida<<(DtInfoClase)dtim<<(*it);
+    return salida;
+};

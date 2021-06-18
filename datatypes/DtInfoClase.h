@@ -17,6 +17,6 @@ class DtInfoClase{
     public:
         DtInfoClase();
         DtInfoClase(int, string, list<Docente*>);
-        friend ostream& operator << (ostream&, DtInfoClase&);
+        friend ostream& operator <<(ostream&, DtInfoClase&);
 };
 #endif

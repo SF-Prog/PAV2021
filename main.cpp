@@ -355,9 +355,9 @@ void listarClase(){
     cout<<"Ingrese el codigo de la asignatura:"<<endl;
     cin>>cod; 
     list<DtInfoClase> listaDtInfoClase = iConListarClases->selectAsignatura(cod);
-     for(list<DtInfoClase>::iterator it=listaDtInfoClase.begin(); it != listaDtInfoClase.end(); it++){
+    for(list<DtInfoClase>::iterator it=listaDtInfoClase.begin(); it != listaDtInfoClase.end(); it++){
         cout<<(*it)<< endl;
-     };
+    };
      
 
 

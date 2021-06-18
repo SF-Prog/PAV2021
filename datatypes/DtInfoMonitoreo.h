@@ -14,5 +14,7 @@ class DtInfoMonitoreo: public DtInfoClase{
         void setEstudiante(string);
         list<string> getEstudiantes();
         ~DtInfoMonitoreo();
+
+        friend ostream& operator <<(ostream&, DtInfoMonitoreo);
 };
 #endif

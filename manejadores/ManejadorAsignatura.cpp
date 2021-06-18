@@ -19,14 +19,10 @@ Asignatura* ManejadorAsignatura::getAsignatura(string cod){
 
 bool ManejadorAsignatura::existeAsignatura(string cod){
     map<string, Asignatura*>::iterator it;
-    cout << "- A -" << endl;
     it = this->asignaturas.find(cod);
-    
     if(it != this->asignaturas.end()){
-        cout << "- B -" << endl;
         return true;
     }else{
-        cout << "- C -" << endl;
         return false;
     }
 };
