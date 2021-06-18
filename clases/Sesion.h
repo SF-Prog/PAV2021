@@ -1,10 +1,7 @@
 #ifndef SESION
 #define SESION
 
-//#include "Perfil.h"
-#include <string>
-
-class Perfil;
+#include "Perfil.h"
 
 class Sesion{
     private:
