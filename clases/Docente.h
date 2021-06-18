@@ -27,6 +27,7 @@ class Docente: public Perfil{
     void agregarAsignatura(Rol*);
     list<string> asignaturas();
     bool tieneMonitoreo(string);
+    bool noDictaLaAsignatura(string);
     // DESTRUCTOR
     ~Docente();
 };
