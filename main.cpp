@@ -391,6 +391,7 @@ void asistenciaClaseEnVivo(){
     cout << "INGRESE CODIGO DE LA ASIGNATURA"<< endl;
     cin>>cod;
     list<int> listClaseDisponiles = iConAsistenciaClaseEnVivo->clasesOnlineDisponibles(cod);
+    
     for(list<int>::iterator it=listClaseDisponiles.begin(); it != listClaseDisponiles.end(); it++){
         cout << "Codigo de la Clase :"<< (*it) << endl;
     };
