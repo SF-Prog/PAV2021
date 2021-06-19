@@ -1,8 +1,7 @@
 #include "DtIniciarMonitoreo.h"
 
 DtIniciarMonitoreo::DtIniciarMonitoreo(){};
-DtIniciarMonitoreo::DtIniciarMonitoreo(string codigo, string nombre, time_t fechaHora, int id,
-                                       list<string> habilitados):DtIniciarClaseFull(codigo, nombre, fechaHora, id){
+DtIniciarMonitoreo::DtIniciarMonitoreo(string codigo, string nombre, time_t fechaHora,list<string> habilitados):DtIniciarClaseFull(codigo, nombre, fechaHora){
     this->habilitados = habilitados;
 };
 list<string> DtIniciarMonitoreo::getHabilitados(){

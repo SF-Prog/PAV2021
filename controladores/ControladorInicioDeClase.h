@@ -10,8 +10,12 @@
 #include "../interfaces/IControladorInicioDeClase.h"
 #include "../datatypes/DtIniciarClase.h"
 #include "../datatypes/DtIniciarClaseFull.h"
+#include "../clases/Clase.h"
+#include "../clases/Monitoreo.h"
+#include "../clases/Practico.h"
+#include "../clases/Teorico.h"
 
-// #include <Rpc.h>
+#include <Rpc.h>
 
 class ControladorInicioDeClase: public IControladorInicioDeClase{
     private:
@@ -19,6 +23,7 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         DtIniciarClase dtInicio;
         DtIniciarClaseFull data;
         list<string> habilitados;
+        string tipoRol;
     public:
         ControladorInicioDeClase();
         list<string> asignaturasAsignadas();
@@ -29,5 +34,6 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         void iniciarClase();
         void cancelar();
         ~ControladorInicioDeClase();
+        string getTipoRol();
 };
 #endif

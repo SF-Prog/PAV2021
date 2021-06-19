@@ -12,12 +12,16 @@
 #include "interfaces/IControladorListarClases.h"
 #include "datatypes/DtAsignatura.h"
 #include "datatypes/DtInstanciaClase.h"
+#include "datatypes/DtIniciarClase.h"
+#include "datatypes/DtIniciarClaseFull.h"
+#include "enum/TipoRol.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <list>
 #include <string>
 #include <iostream>
 #include <time.h>
+
 using namespace std;
 
 Fabrica *f;
@@ -151,8 +155,8 @@ void agregarAsignatura(){
         iConAltaAsignatura->cancelar();
     } 
 }
-
-// 3- ASIGNACION DOCENTE
+void asignacionAsignaturaDocente(){}
+/*// 3- ASIGNACION DOCENTE
 void asignacionAsignaturaDocente(){
     cout<<"ASIGNACION DE DOCENTES A UNA ASIGNATURA"<<endl;
     list<string> listaAsignaturas = iConAsignarAsignaturaDocente->listarAsignaturas();
@@ -189,20 +193,22 @@ void asignacionAsignaturaDocente(){
     cout << "SELECCIONE EL INDICE DEL DOCENTE, Lista vacia? seleccione 0 :  ";
     cin >> indiceDelDocenteSeleccionado;
     // busco y creo el Docente* de email seleccionado
-    if(indiceDelDocenteSeleccionado == 0){
-        menu();
-    };
-    while(indiceDelDocenteSeleccionado  < listaEmailsDocentes.size()){
-        cout << "\nIndice incorrecto, seleccione el indice de la docente nuevamente:" << listaEmailsDocentes.size();
-        cin >> indiceDelDocenteSeleccionado;
-    };
-    int iteratorIndexDocente = 1;
+    if(indiceDelDocenteSeleccionado != 0){
+        //menu();
+        while(indiceDelDocenteSeleccionado  < listaEmailsDocentes.size()){
+            cout << "\nIndice incorrecto, seleccione el indice de la docente nuevamente:" << listaEmailsDocentes.size();
+            cin >> indiceDelDocenteSeleccionado;
+        };
+        int iteratorIndexDocente = 1;
     string emailDocenteSeleccionado;
     for(list<string>::iterator itA=listaEmailsDocentes.begin(); itA != listaEmailsDocentes.end(); itA++){
         if(iteratorIndexDocente == indiceDeLaAsignaturaSeleccionada){
             emailDocenteSeleccionado = *(itA);
         }
     };
+    };
+    
+    
     bool agregarDocente = true;
     while(agregarDocente == true){
         int rolDelDocente;
@@ -217,9 +223,9 @@ void asignacionAsignaturaDocente(){
         switch (rolDelDocente) {
             case 1: tipoRol = TEORICO;
                 break;
-            case 2: tipoRol = PRACTICO;
+            case 2: tipoRol = PRACTICO ;
                 break;
-            case 3: tipoRol = MONITOREO;
+            case 3: tipoRol = MONITOREO ;
                 break;
         } // NO ESTOY SEGURO COMO ASIGNAR EL VALOR A UN ENUM
     
@@ -248,7 +254,7 @@ void asignacionAsignaturaDocente(){
             menu(); // cancelar
         }
     }
-}
+}*/
 
 // 4- INSCRIPCION ASIGNATURA
 void inscripcionAsignatura(){
@@ -284,7 +290,54 @@ void inscripcionAsignatura(){
 
 
 // 5- INICIO CLASE
-void inicioClase(){}
+void inicioClase(){
+    cout<<"INICIO DE CLASE"<<endl;
+    list<string> listaAsignaturas = iConInicioDeClase->asignaturasAsignadas();
+    for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
+    };
+    string nombre,cod ;
+    time_t fecha,hora;
+    cout << "INGRESE CODIGO DE LA ASIGNATURA"<< endl;
+    cin>>cod;
+    cout << "INGRESE NOMBRE"<< endl;
+    cin>>nombre;
+    cout << "INGRESE FECHA"<< endl;
+    cin>>fecha;
+    cout << "INGRESE HORA"<< endl;
+    cin>>hora;
+    
+    DtIniciarClase dtInicioClase = DtIniciarClase(cod,nombre,fecha);
+    bool monitoreo = iConInicioDeClase->selectAsignatura(dtInicioClase);
+    if(monitoreo){
+        cout << "INSCRIPTOS EN LA ASIGNATURA"<< endl;
+        list<string> listaInscriptos = iConInicioDeClase->inscriptosAsignatura();
+        for(list<string>::iterator it=listaInscriptos.begin(); it != listaInscriptos.end(); it++){
+            cout <<  (*it) << endl;
+        };
+        string habilitar = "si";
+        while (habilitar == "si"){
+            cout << "¿Quiere habilitar más estudiantes ?(si/no) "<< endl;
+            cin >> habilitar;
+            if(habilitar == "si"){
+                string email;
+                cout << "Ingrese email"<< endl;
+                cin>>email;
+                iConInicioDeClase->habilitar(email);
+            }        
+        }
+        
+    }
+    string confirmar;
+    iConInicioDeClase->datosIngresados();
+    cout << "¿Confirmar inicio de clase ?(si/no) "<< endl;
+    cin >> confirmar;
+    if(confirmar == "si"){
+       iConInicioDeClase->iniciarClase();
+    }else{
+       iConInicioDeClase->cancelar(); 
+    }
+}
 
 // 6- ASISTENCIA CLASE EN VIVO
 void asistenciaClaseEnVivo(){}
