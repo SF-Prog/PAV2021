@@ -9,6 +9,7 @@
         "map": "cpp",
         "iostream": "cpp",
         "xmemory0": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "ostream": "cpp"
     }
 }

@@ -15,7 +15,6 @@
 #include "../clases/Practico.h"
 #include "../clases/Teorico.h"
 
-#include <Rpc.h>
 
 class ControladorInicioDeClase: public IControladorInicioDeClase{
     private:
