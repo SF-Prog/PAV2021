@@ -45,7 +45,7 @@ void inscripcionAsignatura();
 void inicioClase();
 void asistenciaClaseEnVivo();
 void envioDeMensaje();
-void eliminDeAsignatura();
+void eliminacionDeAsignatura();
 void listClase();
 
 //PROPIEDADES
@@ -69,6 +69,40 @@ void menu(){
     cout<<"Ingrese opcion: ";
 }
 
+void menuAdministrador(){
+    cout<<"___________________________________"<<endl;
+    cout<<endl<<"~~~~~~~~~~~~ Institucion ~~~~~~~~~~~~"<<endl;
+    cout<<"___________________________________"<<endl;
+    cout<<endl<<"1 - Alta de usuario"<<endl;
+    cout<<endl<<"2 - Alta de asignatura"<<endl;
+    cout<<endl<<"3 - Asignacion de docentes a una asignatura"<<endl;
+    cout<<endl<<"8 - Eliminacion de asignatura"<<endl;
+    cout<<endl<<"99 - Cargar Datos de Prueba"<<endl;
+    cout<<"10 - Salir"<<endl<<endl;
+    cout<<"Ingrese opcion: ";
+}
+
+void menuEstudiante(){
+    cout<<"___________________________________"<<endl;
+    cout<<endl<<"~~~~~~~~~~~~ Institucion ~~~~~~~~~~~~"<<endl;
+    cout<<"___________________________________"<<endl;
+    cout<<endl<<"4 - Inscripcion a las asignaturas"<<endl;
+    cout<<endl<<"6 - Asistencia a clase en vivo"<<endl;
+    cout<<endl<<"7 - Envio de mensaje"<<endl;
+    cout<<"10 - Salir"<<endl<<endl;
+    cout<<"Ingrese opcion: ";
+}
+
+void menuDocente(){
+    cout<<"___________________________________"<<endl;
+    cout<<endl<<"~~~~~~~~~~~~ Institucion ~~~~~~~~~~~~"<<endl;
+    cout<<"___________________________________"<<endl;
+    cout<<endl<<"5 - Inicio de clase"<<endl;
+    cout<<endl<<"7 - Envio de mensaje"<<endl;
+    cout<<endl<<"9 - Listado de Clases"<<endl;
+    cout<<"10 - Salir"<<endl<<endl;
+    cout<<"Ingrese opcion: ";
+}
 void ingrese_enter(){    
     cout<<endl<<endl<<"Ingrese <enter>"<<endl;
     fflush(stdout);
@@ -348,7 +382,33 @@ void inicioClase(){
 }
 
 // 6- ASISTENCIA CLASE EN VIVO
-void asistenciaClaseEnVivo(){}
+void asistenciaClaseEnVivo(){
+    list<string> listAsignaturasInscripto = iConAsistenciaClaseEnVivo->asignaturasInscripto();
+    for(list<string>::iterator it=listAsignaturasInscripto.begin(); it != listAsignaturasInscripto.end(); it++){
+        cout << "Codigo de la Asignatura :"<< (*it) << endl;
+    };
+    string cod;
+    cout << "INGRESE CODIGO DE LA ASIGNATURA"<< endl;
+    cin>>cod;
+    list<int> listClaseDisponiles = iConAsistenciaClaseEnVivo->clasesOnlineDisponibles(cod);
+    for(list<int>::iterator it=listClaseDisponiles.begin(); it != listClaseDisponiles.end(); it++){
+        cout << "Codigo de la Clase :"<< (*it) << endl;
+    };
+    int id;
+    cout << "INGRESE CODIGO DE LA CLASE"<< endl;
+    cin>>id;
+    DtAsistir dtAsistir = iConAsistenciaClaseEnVivo->selectClase(id);
+    cout<< dtAsistir << endl;
+    string respuesta;
+    cout << "¿Desea confirmar la asistencia? (SI/NO)"<< endl;
+    cin>>respuesta;
+    if(respuesta=="SI"){
+        iConAsistenciaClaseEnVivo->asistirClaseEnVivo();
+    }else{
+        iConAsistenciaClaseEnVivo->cancelar();
+    }
+
+}
 
 // 7- ENVIO DE MENSAJE
 void envioDeMensaje(){
@@ -453,7 +513,17 @@ void iniciarSesion(){
         iConIniciarSesion->cancelar();
 };
 
-
+bool login(){
+    string respuesta;
+    cout<<"¿Desea iniciar sesion? (si/no)"<< endl;
+    cin>>respuesta;
+    if(respuesta =="si"){
+        iniciarSesion();
+        return true;
+    }else{
+        return false;
+    }
+}
 
 
 // FUNCIoN PARA CARGAR DATOS VALIDO UNA VEZ;
@@ -491,75 +561,138 @@ void cargarFabrica(){
 
 // MAIN
 
+int menuFuncionesDocente(int num){
+    switch (num){
+        case 5:
+            limpiarPantalla();
+            inicioClase();
+            limpiarPantalla();             
+            break;
+        case 7:
+            limpiarPantalla();
+            envioDeMensaje();
+            limpiarPantalla();             
+            break;
+        case 9:
+            limpiarPantalla();
+            listarClase();
+            limpiarPantalla();             
+            break;
+        case 10:
+            //salir
+            return 0;                
+            break;
+        default:
+            cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
+            ingrese_enter();
+            limpiarPantalla();
+            break;
+    }
+}
+
+int menuFuncionesEstudiante(int num){
+    switch (num){
+        case 4:
+            limpiarPantalla();
+            inscripcionAsignatura();
+            limpiarPantalla();             
+            break;
+        case 6:
+            limpiarPantalla();
+            asistenciaClaseEnVivo();
+            limpiarPantalla();             
+            break;
+        case 7:
+            limpiarPantalla();
+            envioDeMensaje();
+            limpiarPantalla();             
+            break;
+        case 10:
+            //salir
+            return 0;                
+            break;
+        default:
+            cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
+            ingrese_enter();
+            limpiarPantalla();
+            break;
+    }
+}
+
+int menuFuncionesAdministrado(int num){
+
+    switch (num){
+        case 1:
+            limpiarPantalla();
+            agregarUsuario();
+            limpiarPantalla();             
+            break;
+        case 2:
+            limpiarPantalla();
+            agregarAsignatura();
+            limpiarPantalla();             
+            break;
+        case 3:
+            limpiarPantalla();
+            asignacionAsignaturaDocente();
+            limpiarPantalla();             
+            break;
+        case 8:
+            limpiarPantalla();
+            eliminacionDeAsignatura();
+            limpiarPantalla();             
+            break;
+        case 99:
+            limpiarPantalla();
+            cargarDatos();
+            limpiarPantalla();             
+            break;
+        case 10:
+            //salir
+            return 0;                
+            break;
+        default:
+            cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
+            ingrese_enter();
+            limpiarPantalla();
+            break;
+    }
+}
+
+
 int main(){
     cargarFabrica();//Carga datos de fabrica
     int num = 0;
     system("cls");
     while (num != 10){
-        menu();
-        cin>>num;
-        switch (num)
-        {
-            case 1:
-                limpiarPantalla();
-                agregarUsuario();
-                limpiarPantalla();             
-                break;
-            case 2:
-                limpiarPantalla();
-                agregarAsignatura();
-                limpiarPantalla();             
-                break;
-            case 3:
-                limpiarPantalla();
-                asignacionAsignaturaDocente();
-                limpiarPantalla();             
-                break;
-            case 4:
-                limpiarPantalla();
-                inscripcionAsignatura();
-                limpiarPantalla();             
-                break;
-            case 5:
-                limpiarPantalla();
-                inicioClase();
-                limpiarPantalla();             
-                break;
-            case 6:
-                limpiarPantalla();
-                asistenciaClaseEnVivo();
-                limpiarPantalla();             
-                break;
-            case 7:
-                limpiarPantalla();
-                envioDeMensaje();
-                limpiarPantalla();             
-                break;
-            case 8:
-                limpiarPantalla();
-               // eliminDeAsignatura();
-                limpiarPantalla();             
-                break;
-            case 9:
-                limpiarPantalla();
-                //listClase();
-                limpiarPantalla();             
-                break;
-            case 99:
-                limpiarPantalla();
-                cargarDatos();
-                limpiarPantalla();             
-                break;
-            case 10:
-                //salir
-                return 0;                
-                break;
-            default:
-                cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
-                ingrese_enter();
-                limpiarPantalla();
-                break;
+        if(login()){
+            int opcion = 3;
+            while (opcion!=1 && opcion!=2 && opcion !=0 ){
+                cout<<"Si eres docente ingrese 1, si eres estudiante ingrese 2 y si desea salir ingrese 0"<<endl;
+                cin>>opcion;
+                if(opcion == 1){
+                    /// MENU DOCENTE
+                    menuDocente();
+                    cin>>num;
+                    menuFuncionesDocente(num);
+                }else if(opcion == 2){
+                    /// MENU ESTUDIANTE
+                    menuEstudiante();
+                    cin>>num;
+                    menuFuncionesEstudiante(num);   
+                }else{
+                    cout<<"Ingreso un dato invalido"<<endl;
+                }
+            }
+            
+            
+        }else{
+            /// MENU ADMINISTRADOR
+            menuAdministrador();
+            cin>>num;
+            menuFuncionesAdministrado(num);
         }
+    
     } 
     return 0;
 }
