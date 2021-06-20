@@ -13,12 +13,12 @@ void ControladorAgregarDatos::cargarDatos(){
     list<Rol*> roles; // incializar esta variable
     //Perfiles
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
-    Perfil* d1 = new Docente("Juan Malcom", "image01.jpg", "juanmalcom@gmail.com", "juan1010", "Facultad de ingenieria", roles);
-    Perfil* d2 = new Docente("Pedro Tunez", "image02.jpg", "pedrotunex@gmail.com", "pedro1010", "Facultad de Economia", roles);
-    Perfil* d3 = new Docente("Alberto Gacia", "image03.jpg", "albertogarcia@gmail.com", "alberto1010", "Facultad de Quimica", roles);
-    Perfil* e1 = new Estudiante("Santiago Martinez", "image04.jpg", "santiagomartinez@gmail.com", "santiago1010", "4723727");
-    Perfil* e2 = new Estudiante("Gonzalo Perez", "image05.jpg", "gonzaloperez@gmail.com", "gonzalo1010", "4723721");
-    Perfil* e3 = new Estudiante("Facundo De los Santos", "image06.jpg", "facundedelossantos@gmail.com", "facundo1010", "4723724");
+    Docente* d1 = new Docente("Juan Malcom", "image01.jpg", "juanmalcom@gmail.com", "juan1010", "Facultad de ingenieria", roles);
+    Docente* d2 = new Docente("Pedro Tunez", "image02.jpg", "pedrotunex@gmail.com", "pedro1010", "Facultad de Economia", roles);
+    Docente* d3 = new Docente("Alberto Gacia", "image03.jpg", "albertogarcia@gmail.com", "alberto1010", "Facultad de Quimica", roles);
+    Estudiante* e1 = new Estudiante("Santiago Martinez", "image04.jpg", "santiagomartinez@gmail.com", "santiago1010", "4723727");
+    Estudiante* e2 = new Estudiante("Gonzalo Perez", "image05.jpg", "gonzaloperez@gmail.com", "gonzalo1010", "4723721");
+    Estudiante* e3 = new Estudiante("Facundo De los Santos", "image06.jpg", "facundedelossantos@gmail.com", "facundo1010", "4723724");
     mP->add(d1);
     mP->add(d2);
     mP->add(d3);
@@ -45,6 +45,11 @@ void ControladorAgregarDatos::cargarDatos(){
     mA->agregarAsignatura(a7);
     mA->agregarAsignatura(a8);
     // Asignar Asignatura
+   // Practico* claseP = new Practico("clase1", 10, 10,)
+    Rol* rol = new Rol(TEORICO);
+    rol->setAsignatura(a1);
+    d1->agregarAsignatura(rol);
+   // a1->agregarClase
 
     // Clase
     ManejadorClase* mC = ManejadorClase::getInstancia();

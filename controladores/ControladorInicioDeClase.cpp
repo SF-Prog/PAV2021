@@ -3,7 +3,7 @@
 
 ControladorInicioDeClase::ControladorInicioDeClase(){};
 
-string ControladorInicioDeClase::getTipoRol(){
+TipoRol ControladorInicioDeClase::getTipoRol(){
     return this->tipoRol;
 }
 
@@ -14,17 +14,16 @@ list<string> ControladorInicioDeClase::asignaturasAsignadas(){
 bool ControladorInicioDeClase::selectAsignatura(DtIniciarClase dtic){
     this->dtInicio = dtic;
     list<string> asignaturas = this->docente->asignaturas();
-    list<string>::iterator it;
+    list<string>::iterator it = asignaturas.begin();
     while (it != asignaturas.end() && *it != dtic.getCodigo()){
         it++;
     };
     if (*it == dtic.getCodigo()){
-    
          list<Rol*> listaRoles = this->docente->getRoles();
-         list<Rol*>::iterator it2;
+         list<Rol*>::iterator it2 = listaRoles.begin();
          while (it2 != listaRoles.end() && (*it2)->getCodigoAsignatura() != dtic.getCodigo()){
                 it2++;
-          };
+        };
          if ((*it2)->getCodigoAsignatura() == dtic.getCodigo()){
               if((*it2)->getTipo() == MONITOREO){
                   this->tipoRol = MONITOREO;
@@ -68,11 +67,10 @@ DtIniciarClaseFull ControladorInicioDeClase::datosIngresados(){
     return this->data;
 };
 void ControladorInicioDeClase::iniciarClase(){
-  
-    if (this->tipoRol == to_string(MONITOREO)){
-         Monitoreo* monitoreo = new Monitoreo(this->data.getNombre(),this->docente,this->data.getFechaHora(),this->data.getCodigo(),this->habilitados);
-         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
-         mP->add(this->docente);
+    if (this->tipoRol == MONITOREO){
+        Monitoreo* monitoreo = new Monitoreo(this->data.getNombre(),this->docente,this->data.getFechaHora(),this->data.getCodigo(),this->habilitados);
+        ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
+        mP->add(this->docente);
         list<Perfil*> perfiles = mP->listarPerfiles();
         for(list<Perfil*>::iterator it = perfiles.begin(); it != perfiles.end(); it++){
            if (Estudiante* est = dynamic_cast<Estudiante*>(*it)) {
@@ -81,28 +79,27 @@ void ControladorInicioDeClase::iniciarClase(){
                 }
             }
         }
+    }
     
-    if (this->tipoRol == to_string(PRACTICO)){
+    if (this->tipoRol == PRACTICO){
         Practico* practico = new Practico(this->data.getNombre(),this->data.getFechaHora(),
                                           this->data.getFechaHora(),this->data.getCodigo());
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
-         mP->add(this->docente);
+        mP->add(this->docente);
     }
 
-    if (this->tipoRol == to_string(TEORICO)){
+    if (this->tipoRol == TEORICO){
         Teorico* teorico = new Teorico(this->data.getNombre(),this->data.getFechaHora(),
                                        this->data.getFechaHora(),this->data.getCodigo());
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
-         mP->add(this->docente);
+        mP->add(this->docente);
     }
-   
     Clase* clase = new Clase(this->data.getNombre(), this->docente, this->data.getFechaHora(), this->data.getCodigo());
     ManejadorClase* mC = ManejadorClase::getInstancia();
     mC->agregarClase(clase);
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
     asignatura->agregarClase(clase);
-    }
 }
 
 void ControladorInicioDeClase::cancelar(){

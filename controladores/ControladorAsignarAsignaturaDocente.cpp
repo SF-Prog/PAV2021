@@ -12,34 +12,21 @@ list<string> ControladorAsignarAsignaturaDocente::listarAsignaturas(){
     for (map<string, Asignatura*>::iterator it=asignaturas.begin(); it!=asignaturas.end(); ++it){
         lstCodigoAsignaturas.push_front(it->second->getCodigo());
     }
-    // El usuario escoge un rol de los de esta lista y el controlador lo gurda en 
-    // la variable this->cod
     return lstCodigoAsignaturas;
 }
 list<string> ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string cod){
     this->cod = cod;
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
-    ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
-    Asignatura* a = mA->getAsignatura(cod);
     list<Perfil*> listPerfiles = mP->listarPerfiles();
-    list<string> listDocentesSinAsignatura;
+    list<string> docentesSinAsignatura;
     for(list<Perfil*>::iterator it = listPerfiles.begin(); it != listPerfiles.end(); it++){
-        Docente* docente = dynamic_cast<Docente*>(*it);
-        if(docente != NULL){
-            list<string> asignaturasDocente = docente->asignaturas();
-            bool tieneAsignatura = false;
-
-            for(list<string>::iterator itA = asignaturasDocente.begin(); itA != asignaturasDocente.end(); itA++){
-                if(*itA == a->getCodigo()){
-                    tieneAsignatura = true;
-                };
+        if(Docente* docente = dynamic_cast<Docente*>(*it)){
+            if(docente->noDictaLaAsignatura(cod)){
+                docentesSinAsignatura.push_front(docente->getEmail());
             };
-            if(tieneAsignatura == false){
-                listDocentesSinAsignatura.push_front(docente->getEmail());
-            };
-        };
-    };
-    return listDocentesSinAsignatura;
+        }
+    }
+    return docentesSinAsignatura;
 };
 void ControladorAsignarAsignaturaDocente::selectDocente(string email, TipoRol rol){
     this->email = email;
@@ -54,4 +41,7 @@ void ControladorAsignarAsignaturaDocente::asignarDocente(){
     Rol* rol = new Rol(this->rol, asignatura);
     docente->agregarAsignatura(rol);
 };
+
+void ControladorAsignarAsignaturaDocente::cancelar(){};
+
 ControladorAsignarAsignaturaDocente::~ControladorAsignarAsignaturaDocente(){};

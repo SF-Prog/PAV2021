@@ -76,7 +76,7 @@ void menuAdministrador(){
     cout<<endl<<"1 - Alta de usuario"<<endl;
     cout<<endl<<"2 - Alta de asignatura"<<endl;
     cout<<endl<<"3 - Asignacion de docentes a una asignatura"<<endl;
-    cout<<endl<<"8 - Eliminacion de asignatura"<<endl;
+    cout<<endl<<"4 - Eliminacion de asignatura"<<endl;
     cout<<endl<<"99 - Cargar Datos de Prueba"<<endl;
     cout<<"10 - Salir"<<endl<<endl;
     cout<<"Ingrese opcion: ";
@@ -86,9 +86,9 @@ void menuEstudiante(){
     cout<<"___________________________________"<<endl;
     cout<<endl<<"~~~~~~~~~~~~ Institucion ~~~~~~~~~~~~"<<endl;
     cout<<"___________________________________"<<endl;
-    cout<<endl<<"4 - Inscripcion a las asignaturas"<<endl;
-    cout<<endl<<"6 - Asistencia a clase en vivo"<<endl;
-    cout<<endl<<"7 - Envio de mensaje"<<endl;
+    cout<<endl<<"1 - Inscripcion a las asignaturas"<<endl;
+    cout<<endl<<"2 - Asistencia a clase en vivo"<<endl;
+    cout<<endl<<"3 - Envio de mensaje"<<endl;
     cout<<"10 - Salir"<<endl<<endl;
     cout<<"Ingrese opcion: ";
 }
@@ -97,9 +97,9 @@ void menuDocente(){
     cout<<"___________________________________"<<endl;
     cout<<endl<<"~~~~~~~~~~~~ Institucion ~~~~~~~~~~~~"<<endl;
     cout<<"___________________________________"<<endl;
-    cout<<endl<<"5 - Inicio de clase"<<endl;
-    cout<<endl<<"7 - Envio de mensaje"<<endl;
-    cout<<endl<<"9 - Listado de Clases"<<endl;
+    cout<<endl<<"1 - Inicio de clase"<<endl;
+    cout<<endl<<"2 - Envio de mensaje"<<endl;
+    cout<<endl<<"3 - Listado de Clases"<<endl;
     cout<<"10 - Salir"<<endl<<endl;
     cout<<"Ingrese opcion: ";
 }
@@ -202,64 +202,26 @@ void asignacionAsignaturaDocente(){
     cout << "_____________________________________________________" << endl;
     cout << "=============ASIGNAR DOCENTE A ASIGNATURA===========" << endl;
     cout << "_____________________________________________________" << endl;
-    list<string> listaAsignaturas = iConAsignarAsignaturaDocente->listarAsignaturas();
-    int indiceDeLaAsignaturaSeleccionada;
-    int indiceDelDocenteSeleccionado;
-    int indiceDeLaAsignatura = listaAsignaturas.size();
-//    listaAsignaturas.reverse();
-    cout << "\n\n\n\n\n ---------------LISTA DE ASIGNATURAS---------------\n\n\n" << endl;
-    for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
-        cout << "Indice de la Asignatura (" << indiceDeLaAsignatura-- << ") con codigo: "<< (*it) << endl;
+
+    list<string> asignaturas = iConAsignarAsignaturaDocente->listarAsignaturas();
+    for(list<string>::iterator it=asignaturas.begin(); it != asignaturas.end(); it++){
+        cout << (*it) << endl;
     };
-    cout << "SELECCIONE EL INDICE DE LA ASIGNATURA, Lista vacia? seleccione 0 :  ";
-    cin>>indiceDeLaAsignaturaSeleccionada;
-    if(indiceDeLaAsignaturaSeleccionada == 0){
-        return;
-    };
-    while(indiceDeLaAsignaturaSeleccionada > listaAsignaturas.size()){
-        cout << "\nIndice incorrecto, seleccione el indice de la asignatura nuevamente:" << listaAsignaturas.size();
-        cout << indiceDeLaAsignaturaSeleccionada<<endl;
-        cin>>indiceDeLaAsignaturaSeleccionada;
-    };
-    //Obtengo el cod de la asignatura del indice que selecciono el usuario
-    string codAsignaturaSeleccionada; 
-    int iteratorIndexAsignatura = 1;
-    for(list<string>::iterator itA=listaAsignaturas.begin(); itA != listaAsignaturas.end(); itA++){
-        if(iteratorIndexAsignatura == indiceDeLaAsignaturaSeleccionada){
-            codAsignaturaSeleccionada = *(itA);
-        }
-        else
-            iteratorIndexAsignatura++;
-    };
-    cout << "\nUsted ha seleccionado el codigo de Asignatura: " << codAsignaturaSeleccionada << endl;
-    list<string> listaEmailsDocentes = iConAsignarAsignaturaDocente->docentesSinLaAsignatura(codAsignaturaSeleccionada);
-    int indexListaDocente = listaEmailsDocentes.size();
-    for(list<string>::iterator itD=listaEmailsDocentes.begin(); itD != listaEmailsDocentes.end(); itD++){
-        cout << "Indice del docente "<< indexListaDocente-- << ", con email:   "<< (*itD) << endl;
-    };
-    cout << "SELECCIONE EL INDICE DEL DOCENTE, Lista vacia? seleccione 0 :  ";
-    cin >> indiceDelDocenteSeleccionado;
-    if(indiceDelDocenteSeleccionado == 0){
-        return;
-    };
-    while(indiceDelDocenteSeleccionado > listaEmailsDocentes.size()){
-        cout << "\nIndice incorrecto, seleccione el indice de la docente nuevamente:" << listaEmailsDocentes.size();
-        cin >> indiceDelDocenteSeleccionado;
-    };
-    int iteratorIndexDocente = 1;
-    string emailDocenteSeleccionado;
-    for(list<string>::iterator itA=listaEmailsDocentes.begin(); itA != listaEmailsDocentes.end(); itA++){
-        if(iteratorIndexDocente == indiceDeLaAsignaturaSeleccionada){
-            emailDocenteSeleccionado = *(itA);
-        }
-    };
-    bool agregarDocente = true;
-    while(agregarDocente == true){
-        int rolDelDocente = 0;
-        while (rolDelDocente < 1 || rolDelDocente > 3){
-            cout << "Ingrese el Rol del docente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO \n";
-            cin >> rolDelDocente;
+    string cod;
+    cout << "Ingrese el codigo de la asignatura:" << endl;
+    cin>> cod;
+    bool agregar = true;
+    while(agregar){
+        string emailDocente;
+        int rolDelDocente;
+        list<string> docSinAsignatura = iConAsignarAsignaturaDocente->docentesSinLaAsignatura(cod);
+        for(list<string>::iterator it=docSinAsignatura.begin(); it != docSinAsignatura.end(); it++){
+            cout << (*it) << endl;
         };
+        cout<< "Seleccione el email del docente"<<endl;
+        cin>>emailDocente;
+        cout << "Ingrese el indice del Rol del docente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO \n";
+            cin >> rolDelDocente;
         TipoRol tipoRol;
         switch (rolDelDocente) {
              case 1: tipoRol = TEORICO;
@@ -269,30 +231,24 @@ void asignacionAsignaturaDocente(){
              case 3: tipoRol = MONITOREO;
                  break;
         };
-        iConAsignarAsignaturaDocente->selectDocente(emailDocenteSeleccionado, tipoRol);
-        string deseaConfirmarString;
-        cout << "Desea confirmar la operacion? (si/no): ";
-        cin >> deseaConfirmarString;
-        while(deseaConfirmarString != "si" && deseaConfirmarString != "no"){
-            cout << "\nINPUT INCORRECTO\nDesea confirmar la operacion? (si/no): ";
-            cin >> deseaConfirmarString;
+        iConAsignarAsignaturaDocente->selectDocente(emailDocente, tipoRol);
+        string confirma = "";
+        while(confirma != "si" && confirma != "no"){
+            cout << "Desea confirmar? (si/no)"<<endl;
+            cin >> confirma;
+            if(confirma == "si")
+                iConAsignarAsignaturaDocente->asignarDocente();
+            else
+                iConAsignarAsignaturaDocente->cancelar();
         };
-        if(deseaConfirmarString == "si"){
-            iConAsignarAsignaturaDocente->asignarDocente();
-            string deseaAgregarOtro;
-            cout << "\nOPERACION REALIZADA EXITOSAMENTE, desea agregar otro Docente? (si/no): ";
-            cin >> deseaAgregarOtro;
-            while(deseaAgregarOtro != "si" && deseaAgregarOtro != "no"){
-                cout << "\nINPUT INCORRECTO\nDesea agregar otro Docente? (si/no): ";
-                cin >> deseaAgregarOtro;
-            };
-            if(deseaAgregarOtro == "no"){
-                agregarDocente = false;
-            };
-        } else if(deseaConfirmarString == "no"){
-            agregarDocente = false;
-        }
-    }
+        string respuesta = "";
+        while (respuesta != "si" && respuesta != "no"){
+            cout << "Desea seguir agregando docentes a la asignatura (si/no)"<<endl;
+            cin >>respuesta;
+        };
+        if(respuesta == "no")
+            agregar = false;
+    };
 }
 
 // 4- INSCRIPCION ASIGNATURA
@@ -334,7 +290,7 @@ void inicioClase(){
     cout<<"INICIO DE CLASE"<<endl;
     list<string> listaAsignaturas = iConInicioDeClase->asignaturasAsignadas();
     for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
-        cout << "Codigo de la Asignatura :"<< (*it) << endl;
+        cout << "Codigo de la Asignatura :"<< *it << endl;
     };
     string nombre,cod ;
     int anio, mes, dia, hora, minutos;
@@ -359,6 +315,8 @@ void inicioClase(){
     fecha.tm_mon = mes;
     fecha.tm_mday = dia;
     fecha.tm_hour = hora;
+    time_t t = mktime(&fecha);
+    cout<< t<<endl;
     DtIniciarClase dtic = DtIniciarClase(cod, nombre, mktime(&fecha));
     bool monitoreo = iConInicioDeClase->selectAsignatura(dtic);
     if(monitoreo){
@@ -479,7 +437,6 @@ void eliminacionDeAsignatura(){
 };
 
 // 9- LISTAR CLASE
-// 9- LISTAR CLASE
 void listarClase(){
     cout << "_____________________________________________________" << endl;
     cout << "==================Listado De Clases==================" << endl;
@@ -493,15 +450,15 @@ void listarClase(){
     cout<<"Ingrese el codigo de la asignatura:"<<endl;
     cin>>cod; 
     list<DtInfoClase> listaDtInfoClase = iConListarClases->selectAsignatura(cod);
+    cout<<listaDtInfoClase.size() << "tamanio de la listaDtInfoClase"<<endl;
     for(list<DtInfoClase>::iterator it=listaDtInfoClase.begin(); it != listaDtInfoClase.end(); it++){
         cout<<(*it)<< endl;
     };
      
-
-
 }
 
-void iniciarSesion(){
+bool iniciarSesion(){
+    bool sesionIniciada = false;
     string email, password;
     string confirma = "";
     cout<<"INICIAR SESION"<<endl;
@@ -517,25 +474,15 @@ void iniciarSesion(){
     if (confirma == "si")
         try{
             iConIniciarSesion->iniciarSesion();
+            sesionIniciada = true;
         }catch(const invalid_argument& e){
+            sesionIniciada = false;
             cout<< e.what() <<endl;
         }
     else
         iConIniciarSesion->cancelar();
+    return sesionIniciada;
 };
-
-bool login(){
-    string respuesta;
-    cout<<"¿Desea iniciar sesion? (si/no)"<< endl;
-    cin>>respuesta;
-    if(respuesta =="si"){
-        iniciarSesion();
-        return true;
-    }else{
-        return false;
-    }
-}
-
 
 // FUNCION PARA CARGAR DATOS VALIDO UNA VEZ;
 void cargarDatos(){
@@ -571,20 +518,19 @@ void cargarFabrica(){
 };
 
 // MAIN
-
 int menuFuncionesDocente(int num){
     switch (num){
-        case 5:
+        case 1:
             limpiarPantalla();
             inicioClase();
             limpiarPantalla();             
             break;
-        case 7:
+        case 2:
             limpiarPantalla();
             envioDeMensaje();
             limpiarPantalla();             
             break;
-        case 9:
+        case 3:
             limpiarPantalla();
             listarClase();
             limpiarPantalla();             
@@ -603,17 +549,17 @@ int menuFuncionesDocente(int num){
 
 int menuFuncionesEstudiante(int num){
     switch (num){
-        case 4:
+        case 1:
             limpiarPantalla();
             inscripcionAsignatura();
             limpiarPantalla();             
             break;
-        case 6:
+        case 2:
             limpiarPantalla();
             asistenciaClaseEnVivo();
             limpiarPantalla();             
             break;
-        case 7:
+        case 3:
             limpiarPantalla();
             envioDeMensaje();
             limpiarPantalla();             
@@ -648,7 +594,7 @@ int menuFuncionesAdministrado(int num){
             asignacionAsignaturaDocente();
             limpiarPantalla();             
             break;
-        case 8:
+        case 4:
             limpiarPantalla();
             eliminacionDeAsignatura();
             limpiarPantalla();             
@@ -670,13 +616,13 @@ int menuFuncionesAdministrado(int num){
     }
 }
 
-
+/*
 int main(){
     cargarFabrica();//Carga datos de fabrica
     int num = 0;
     system("cls");
     while (num != 10){
-        if(login()){
+        if(iniciarSesion()){
             int opcion = 3;
             while (opcion!=1 && opcion!=2 && opcion !=0 ){
                 cout<<"Si eres docente ingrese 1, si eres estudiante ingrese 2 y si desea salir ingrese 0"<<endl;
@@ -706,4 +652,51 @@ int main(){
     
     } 
     return 0;
-}
+} */
+bool deseaIniciarSesion(){
+    string respuesta="";
+    while(respuesta != "si" && respuesta != "no"){
+        cout<<"Desea iniciar Sesion? (si/no)"<<endl;
+        cin>>respuesta;
+    }
+    return respuesta == "si";
+};
+
+int main(){
+    cargarFabrica();
+    int menuOpcion = 0;
+    while (menuOpcion != 10){
+        while(deseaIniciarSesion()){
+            if(iniciarSesion()){
+                int opcion = 3;
+                while (opcion!=1 && opcion!=2 && opcion !=0){
+                    cout<<"Si eres docente ingrese 1, si eres estudiante ingrese 2 y si desea salir ingrese 0"<<endl;
+                    cin>>opcion;
+                    switch(opcion){
+                        case 1: 
+                            /// MENU DOCENTE
+                            menuDocente();
+                            cin>>menuOpcion;
+                            menuFuncionesDocente(menuOpcion);
+                            break;
+                        case 2:
+                            /// MENU ESTUDIANTE
+                            menuEstudiante();
+                            cin>>menuOpcion;
+                            menuFuncionesEstudiante(menuOpcion);
+                            break;
+                        default:
+                            cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
+                            ingrese_enter();
+                            limpiarPantalla();
+                            break;
+                    }
+                }
+            }
+        }
+        /// MENU ADMINISTRADOR
+        menuAdministrador();
+        cin>>menuOpcion;
+        menuFuncionesAdministrado(menuOpcion);
+    }
+};
