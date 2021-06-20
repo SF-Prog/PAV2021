@@ -17,6 +17,7 @@ list<string> ControladorAsignarAsignaturaDocente::listarAsignaturas(){
     return lstCodigoAsignaturas;
 }
 list<string> ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string cod){
+    this->cod = cod;
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     Asignatura* a = mA->getAsignatura(cod);
