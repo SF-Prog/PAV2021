@@ -25,3 +25,9 @@ void DtAsistir::setId(int id) {
 // Destructor 
 
 DtAsistir::~DtAsistir(){}
+
+ostream& operator <<(ostream& salida, DtAsistir& dtAsis){
+    cout<<" Codico: "<<dtAsis.getCod()<<" Id: "<<dtAsis.getId() <<endl;
+     
+    return salida;
+}

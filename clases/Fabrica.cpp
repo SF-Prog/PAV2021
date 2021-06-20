@@ -58,4 +58,8 @@ IControladorListarClases* Fabrica::getIControladorListarClases(){
     return new ControladorListarClases();
 }
 
+IControladorAgregarDatos* Fabrica::getIControladorAgregarDatos(){
+    return new ControladorAgregarDatos();
+}
+
 Fabrica::~Fabrica(){}

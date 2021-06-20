@@ -2,7 +2,7 @@
 #define DTASISTIR
 
 #include <string>
-
+#include <iostream>
 using namespace std;
 
 class DtAsistir{
@@ -19,6 +19,7 @@ class DtAsistir{
         string getCod();
         int getId();
         //Destructor
-        ~DtAsistir();  
+        ~DtAsistir();
+        friend ostream& operator <<(ostream&, DtAsistir&);  
 };
 #endif

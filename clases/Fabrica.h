@@ -12,6 +12,7 @@
 #include "../interfaces/IControladorInicioDeClase.h"
 #include "../interfaces/IControladorInscripcionAsignatura.h"
 #include "../interfaces/IControladorListarClases.h"
+#include "../interfaces/IControladorAgregarDatos.h"
 #include "../controladores/ControladorAsistenciaClaseEnVivo.h"
 #include "../controladores/ControladorAltaAsignatura.h"
 #include "../controladores/ControladorAltaUsuario.h"
@@ -23,6 +24,7 @@
 #include "../controladores/ControladorInscripcionAsignatura.h"
 #include "../controladores/ControladorListarClases.h"
 #include "../controladores/ControladorIniciarSesion.h"
+#include "../controladores/ControladorAgregarDatos.h"
 
 #include <string>
 using namespace std;
@@ -43,7 +45,8 @@ class Fabrica{
         IControladorEnvioDeMensaje* getIControladorEnvioDeMensaje();
         IControladorInicioDeClase* getIControladorInicioDeClase();      
         IControladorInscripcionAsignatura* getIControladorInscripcionAsignatura();      
-        IControladorListarClases* getIControladorListarClases();        
+        IControladorListarClases* getIControladorListarClases();
+        IControladorAgregarDatos* getIControladorAgregarDatos(); 
         ~Fabrica();
 };
 #endif
