@@ -26,14 +26,14 @@ bool ControladorInicioDeClase::selectAsignatura(DtIniciarClase dtic){
                 it2++;
           };
          if ((*it2)->getCodigoAsignatura() == dtic.getCodigo()){
-              if((*it2)->getTipo() == 'MONITOREO'){
-                  this->tipoRol = 'MONITOREO';
+              if((*it2)->getTipo() == MONITOREO){
+                  this->tipoRol = MONITOREO;
                   return true;
-              }else if((*it2)->getTipo() == 'PRACTICO'){
-                  this->tipoRol = 'PRACTICO';
+              }else if((*it2)->getTipo() == PRACTICO){
+                  this->tipoRol = PRACTICO;
                   return false;
-              } else if ((*it2)->getTipo() == 'TEORICO'){
-                  this->tipoRol = 'TEORICO';
+              } else if ((*it2)->getTipo() == TEORICO){
+                  this->tipoRol = TEORICO;
                   return false;
               }
               return false;
@@ -69,7 +69,7 @@ DtIniciarClaseFull ControladorInicioDeClase::datosIngresados(){
 };
 void ControladorInicioDeClase::iniciarClase(){
   
-    if (this->tipoRol == to_string('MONITOREO')){
+    if (this->tipoRol == to_string(MONITOREO)){
          Monitoreo* monitoreo = new Monitoreo(this->data.getNombre(),this->docente,this->data.getFechaHora(),this->data.getCodigo(),this->habilitados);
          ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
          mP->add(this->docente);
@@ -82,14 +82,14 @@ void ControladorInicioDeClase::iniciarClase(){
             }
         }
     
-    if (this->tipoRol == to_string('PRACTICO')){
+    if (this->tipoRol == to_string(PRACTICO)){
         Practico* practico = new Practico(this->data.getNombre(),this->data.getFechaHora(),
                                           this->data.getFechaHora(),this->data.getCodigo());
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
          mP->add(this->docente);
     }
 
-    if (this->tipoRol == to_string('TEORICO')){
+    if (this->tipoRol == to_string(TEORICO)){
         Teorico* teorico = new Teorico(this->data.getNombre(),this->data.getFechaHora(),
                                        this->data.getFechaHora(),this->data.getCodigo());
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();

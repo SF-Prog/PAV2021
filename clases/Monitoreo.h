@@ -1,5 +1,5 @@
-#ifndef MONITOREO
-#define MONITOREO
+#ifndef MONITOREO_H
+#define MONITOREO_H
 
 #include "../manejadores/ManejadorPerfil.h"
 #include "Estudiante.h"

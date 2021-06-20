@@ -25,7 +25,7 @@
 using namespace std;
 
 Fabrica *f;
-IControladorIniciarSesion *iConIniciarSesion; 
+IControladorIniciarSesion *iConIniciarSesion;
 IControladorAltaAsignatura *iConAltaAsignatura;
 IControladorAltaUsuario *iConAltaUsuario;
 IControladorAsignarAsignaturaDocente *iConAsignarAsignaturaDocente;
@@ -33,9 +33,9 @@ IControladorAsignarAsignaturaDocente *iConAsignaturaDocente;
 IControladorAsistenciaClaseEnVivo *iConAsistenciaClaseEnVivo;
 IControladorEliminarAsignatura *iConEliminarAsignatura;
 IControladorEnvioDeMensaje *iConEnvioDeMensaje;
-IControladorInicioDeClase *iConInicioDeClase;      
-IControladorInscripcionAsignatura *iConInscripcionAsignatura;      
-IControladorListarClases *iConListarClases;     
+IControladorInicioDeClase *iConInicioDeClase;
+IControladorInscripcionAsignatura *iConInscripcionAsignatura;  
+IControladorListarClases *iConListarClases;
 
 void agregarUsuario();
 void agregarAsignatura();
@@ -121,7 +121,6 @@ void agregarUsuario(){
 
 // 2- ALTA ASIGNATURA
 void agregarAsignatura(){
-
     cout<<"ALTA ASIGNATURA"<<endl;  
     string auxCod,auxNombre,auxTipMonitoreo,auxTipPractico,auxTipTeorico,confirma;
     cout<<"Codigo: ";
@@ -288,7 +287,6 @@ void inscripcionAsignatura(){
     }
 }
 
-
 // 5- INICIO CLASE
 void inicioClase(){
     cout<<"INICIO DE CLASE"<<endl;
@@ -297,18 +295,30 @@ void inicioClase(){
         cout << "Codigo de la Asignatura :"<< (*it) << endl;
     };
     string nombre,cod ;
-    time_t fecha,hora;
+    int anio, mes, dia, hora, minutos;
+    struct tm fecha = {0};
     cout << "INGRESE CODIGO DE LA ASIGNATURA"<< endl;
     cin>>cod;
     cout << "INGRESE NOMBRE"<< endl;
     cin>>nombre;
-    cout << "INGRESE FECHA"<< endl;
-    cin>>fecha;
-    cout << "INGRESE HORA"<< endl;
+    cout << "INGRESE LA FECHA Y HORA DEL INICIO DE CLASE:"<< endl;
+    cout << "ANIO:"<< endl;
+    cin>>anio;
+    cout << "MES:"<< endl;
+    cin>>mes;
+    cout << "DIA:"<< endl;
+    cin>>dia;
+    cout << "INGRESE LA HORA"<< endl;
+    cout << "HORA:"<< endl;
     cin>>hora;
-    
-    DtIniciarClase dtInicioClase = DtIniciarClase(cod,nombre,fecha);
-    bool monitoreo = iConInicioDeClase->selectAsignatura(dtInicioClase);
+    cout << "MINUTOS:"<< endl;
+    cin>>minutos;
+    fecha.tm_year = anio;
+    fecha.tm_mon = mes;
+    fecha.tm_mday = dia;
+    fecha.tm_hour = hora;
+    DtIniciarClase dtic = DtIniciarClase(cod, nombre, mktime(&fecha));
+    bool monitoreo = iConInicioDeClase->selectAsignatura(dtic);
     if(monitoreo){
         cout << "INSCRIPTOS EN LA ASIGNATURA"<< endl;
         list<string> listaInscriptos = iConInicioDeClase->inscriptosAsignatura();
