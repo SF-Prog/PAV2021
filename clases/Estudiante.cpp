@@ -27,5 +27,10 @@ map<string, Asignatura*> Estudiante::getAsignaturas(){
   return this->asignaturas;
 };
 
+
+void Estudiante::addAsignatura(Asignatura* asignatura){
+  this->asignaturas.insert(pair<string, Asignatura*>(asignatura->getCodigo(), asignatura));
+};
+
 // DESTRUCTOR
 Estudiante::~Estudiante(){};

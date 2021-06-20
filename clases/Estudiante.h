@@ -18,6 +18,7 @@ class Estudiante: public Perfil{
     // Contructores
     Estudiante();
     Estudiante(string, string, string, string, string);
+    void addAsignatura(Asignatura* asignatura);
     // Getters y Setters
     string getDocumento();
     map<string, Asignatura*> getAsignaturas();

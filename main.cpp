@@ -260,6 +260,7 @@ void inscripcionAsignatura(){
     while (sigue){
         cout<<"Listado de asignaturas :"<<endl;
         list<string> listaAsignaturas = iConInscripcionAsignatura->asignaturasNoInscripto();
+        cout<<"CANTIDAD ASIGNATURAS:"<< listaAsignaturas.size()<<endl;
         for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
         cout << "Codigo de la Asignatura :"<< (*it) << endl;
         };
