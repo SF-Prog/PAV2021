@@ -22,7 +22,6 @@ list<string> ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string
     Asignatura* a = mA->getAsignatura(cod);
     list<Perfil*> listPerfiles = mP->listarPerfiles();
     list<string> listDocentesSinAsignatura;
-
     for(list<Perfil*>::iterator it = listPerfiles.begin(); it != listPerfiles.end(); it++){
         Docente* docente = dynamic_cast<Docente*>(*it);
         if(docente != NULL){
@@ -34,7 +33,7 @@ list<string> ControladorAsignarAsignaturaDocente::docentesSinLaAsignatura(string
                     tieneAsignatura = true;
                 };
             };
-            if(tieneAsignatura == true){
+            if(tieneAsignatura == false){
                 listDocentesSinAsignatura.push_front(docente->getEmail());
             };
         };

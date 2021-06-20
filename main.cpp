@@ -204,21 +204,22 @@ void asignacionAsignaturaDocente(){
     cout << "_____________________________________________________" << endl;
     list<string> listaAsignaturas = iConAsignarAsignaturaDocente->listarAsignaturas();
     int indiceDeLaAsignaturaSeleccionada;
-    int indexListaDocente = 1;
     int indiceDelDocenteSeleccionado;
-    int indiceDeLaAsignatura = 1;
+    int indiceDeLaAsignatura = listaAsignaturas.size();
+//    listaAsignaturas.reverse();
     cout << "\n\n\n\n\n ---------------LISTA DE ASIGNATURAS---------------\n\n\n" << endl;
     for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
-        cout << "Indice de la Asignatura (" << indiceDeLaAsignatura << ") con codigo: "<< (*it) << endl;
+        cout << "Indice de la Asignatura (" << indiceDeLaAsignatura-- << ") con codigo: "<< (*it) << endl;
     };
     cout << "SELECCIONE EL INDICE DE LA ASIGNATURA, Lista vacia? seleccione 0 :  ";
-    cin >> indiceDeLaAsignaturaSeleccionada;
+    cin>>indiceDeLaAsignaturaSeleccionada;
     if(indiceDeLaAsignaturaSeleccionada == 0){
         return;
     };
-    while(indiceDeLaAsignaturaSeleccionada  < listaAsignaturas.size()){
+    while(indiceDeLaAsignaturaSeleccionada > listaAsignaturas.size()){
         cout << "\nIndice incorrecto, seleccione el indice de la asignatura nuevamente:" << listaAsignaturas.size();
-        cin >> indiceDeLaAsignaturaSeleccionada;
+        cout << indiceDeLaAsignaturaSeleccionada<<endl;
+        cin>>indiceDeLaAsignaturaSeleccionada;
     };
     //Obtengo el cod de la asignatura del indice que selecciono el usuario
     string codAsignaturaSeleccionada; 
@@ -227,18 +228,21 @@ void asignacionAsignaturaDocente(){
         if(iteratorIndexAsignatura == indiceDeLaAsignaturaSeleccionada){
             codAsignaturaSeleccionada = *(itA);
         }
+        else
+            iteratorIndexAsignatura++;
     };
     cout << "\nUsted ha seleccionado el codigo de Asignatura: " << codAsignaturaSeleccionada << endl;
     list<string> listaEmailsDocentes = iConAsignarAsignaturaDocente->docentesSinLaAsignatura(codAsignaturaSeleccionada);
+    int indexListaDocente = listaEmailsDocentes.size();
     for(list<string>::iterator itD=listaEmailsDocentes.begin(); itD != listaEmailsDocentes.end(); itD++){
-        cout << "Indice del docente "<< indexListaDocente << ", con email:   "<< (*itD) << endl;
+        cout << "Indice del docente "<< indexListaDocente-- << ", con email:   "<< (*itD) << endl;
     };
     cout << "SELECCIONE EL INDICE DEL DOCENTE, Lista vacia? seleccione 0 :  ";
     cin >> indiceDelDocenteSeleccionado;
     if(indiceDelDocenteSeleccionado == 0){
         return;
     };
-    while(indiceDelDocenteSeleccionado  < listaEmailsDocentes.size()){
+    while(indiceDelDocenteSeleccionado > listaEmailsDocentes.size()){
         cout << "\nIndice incorrecto, seleccione el indice de la docente nuevamente:" << listaEmailsDocentes.size();
         cin >> indiceDelDocenteSeleccionado;
     };
@@ -251,24 +255,21 @@ void asignacionAsignaturaDocente(){
     };
     bool agregarDocente = true;
     while(agregarDocente == true){
-        int rolDelDocente;
-        cout << "Ingrese el Rol del docente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO) \n";
-        cin >> rolDelDocente;
-        // Como se trabaja con el ENUM>?
-        if(rolDelDocente < 1 || rolDelDocente > 3){
-            cout << "ROL INCORRECTO -> Ingrese el Rol del docente nuevamente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO) \n";
+        int rolDelDocente = 0;
+        while (rolDelDocente < 1 || rolDelDocente > 3){
+            cout << "Ingrese el Rol del docente\n1 - TEORICO\n2 - PRACTICO\n3 - MONITOREO \n";
             cin >> rolDelDocente;
         };
-        // TipoRol tipoRol;
-        // switch (rolDelDocente) {
-        //     case 1: tipoRol = "TEORICO";
-        //         break;
-        //     case 2: tipoRol = PRACTICO;
-        //         break;
-        //     case 3: tipoRol = MONITOREO;
-        //         break;
-        // } // NO ESTOY SEGURO COMO ASIGNAR EL VALOR A UN ENUM
-        // iConAsignarAsignaturaDocente->selectDocente(emailDocenteSeleccionado, tipoRol);
+        TipoRol tipoRol;
+        switch (rolDelDocente) {
+             case 1: tipoRol = TEORICO;
+                 break;
+             case 2: tipoRol = PRACTICO;
+                 break;
+             case 3: tipoRol = MONITOREO;
+                 break;
+        };
+        iConAsignarAsignaturaDocente->selectDocente(emailDocenteSeleccionado, tipoRol);
         string deseaConfirmarString;
         cout << "Desea confirmar la operacion? (si/no): ";
         cin >> deseaConfirmarString;
@@ -536,7 +537,7 @@ bool login(){
 }
 
 
-// FUNCIoN PARA CARGAR DATOS VALIDO UNA VEZ;
+// FUNCION PARA CARGAR DATOS VALIDO UNA VEZ;
 void cargarDatos(){
     cout << "_____________________________________________________" << endl;
     cout << "=====C A R G A R   D A T O S   D E   P R U E B A=====" << endl;

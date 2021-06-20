@@ -26,7 +26,6 @@ void ControladorAgregarDatos::cargarDatos(){
     mP->add(e2);
     mP->add(e3);
     // Asignaturas
-    ManejadorAsignatura* mA =ManejadorAsignatura::getInstancia();
     DtInstanciaClase dtIC = DtInstanciaClase(true, true, true);
     Asignatura* a1 = new Asignatura("MAT01", "Calculo1" , dtIC);
     Asignatura* a2 = new Asignatura("MAT02", "Calculo2" , dtIC);
@@ -36,6 +35,17 @@ void ControladorAgregarDatos::cargarDatos(){
     Asignatura* a6 = new Asignatura("PROG03", "PAV" , dtIC);
     Asignatura* a7 = new Asignatura("BD1", "Bases de datos I" , dtIC);
     Asignatura* a8 = new Asignatura("BD2", "Bases de datos II" , dtIC);
+    ManejadorAsignatura* mA =ManejadorAsignatura::getInstancia();
+    mA->agregarAsignatura(a1);
+    mA->agregarAsignatura(a2);
+    mA->agregarAsignatura(a3);
+    mA->agregarAsignatura(a4);
+    mA->agregarAsignatura(a5);
+    mA->agregarAsignatura(a6);
+    mA->agregarAsignatura(a7);
+    mA->agregarAsignatura(a8);
+    // Asignar Asignatura
+
     // Clase
     ManejadorClase* mC = ManejadorClase::getInstancia();
     time_t timer;
