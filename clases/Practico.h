@@ -1,5 +1,5 @@
-#ifndef PRACTICO
-#define PRACTICO
+#ifndef PRACTICO_H
+#define PRACTICO_H
 #include "Clase.h"
 #include <string>
 

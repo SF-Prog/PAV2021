@@ -24,6 +24,7 @@ class ControladorAsignarAsignaturaDocente: public IControladorAsignarAsignaturaD
         list<string> docentesSinLaAsignatura(string);
         void selectDocente(string, TipoRol);
         void asignarDocente();
+        void cancelar();
         ~ControladorAsignarAsignaturaDocente();
 };
 #endif

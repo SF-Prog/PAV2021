@@ -12,7 +12,7 @@ void ControladorIniciarSesion::iniciarSesion(){
     while (it!=perfiles.end() && this->email != (*it)->getEmail()){
         it++;
     };
-    if(this->email == (*it)->getEmail() && this->password == (*it)->getPassword()){
+    if(it!=perfiles.end() && this->email == (*it)->getEmail() && this->password == (*it)->getPassword()){
         Perfil* perfilDeseado = (*it);
         Sesion *sesion = Sesion::getInstancia();
         sesion->setPerfil(perfilDeseado);

@@ -7,12 +7,13 @@ DtInfoClase::DtInfoClase(int id, string nombre, list<Docente*> docentes){
     this->docentes = docentes;
 };
 ostream& operator <<(ostream& salida, DtInfoClase& dtic){
-    cout<<"Clases: "<<endl<<endl;
+    salida<<"Clases: "<<endl<<endl;
     list<Docente*> listaDocentes = dtic.docentes;
     list<Docente*>::iterator it = listaDocentes.begin();
+    salida<<dtic.nombre<<":" <<endl;
     while(it != listaDocentes.end()){
-        cout<< dtic.id<<"\t\t"<<dtic.nombre<<(*it)<<endl;
+        salida<<(*it)<<endl;//(*it)<<endl;
         it++;
-    }    
+    }
     return salida;
 }

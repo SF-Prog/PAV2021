@@ -42,17 +42,16 @@ void Docente::agregarAsignatura(Rol* rol){
   this->roles.push_front(rol);
 };
 bool Docente::noDictaLaAsignatura(string cod){
-  list<Rol*> rolesDelDocente = this->getRoles();
   bool noDicta = true;
-  for(list<Rol*>::iterator it=rolesDelDocente.begin(); it != rolesDelDocente.end(); it++){
+  for(list<Rol*>::iterator it=this->roles.begin(); it != this->roles.end(); it++){
     if(cod == (*it)->getCodigoAsignatura()){
       noDicta = false;
     }
   };
   return noDicta;
 }
-ostream& operator <<(ostream& salida, Docente*& docente){
-    cout<<docente->getNombre()<<endl;
+ostream& operator <<(ostream& salida, Docente* docente){
+    salida<<docente->getNombre()<<endl;
     return salida;
 }
 // DESTRUCTOR

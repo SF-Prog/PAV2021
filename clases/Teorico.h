@@ -1,5 +1,5 @@
-#ifndef TEORICO
-#define TEORICO
+#ifndef TEORICO_H
+#define TEORICO_H
 #include "Clase.h"
 #include <string>
 

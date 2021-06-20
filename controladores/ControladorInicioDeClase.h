@@ -22,7 +22,7 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         DtIniciarClase dtInicio;
         DtIniciarClaseFull data;
         list<string> habilitados;
-        string tipoRol;
+        TipoRol tipoRol;
     public:
         ControladorInicioDeClase();
         list<string> asignaturasAsignadas();
@@ -33,6 +33,6 @@ class ControladorInicioDeClase: public IControladorInicioDeClase{
         void iniciarClase();
         void cancelar();
         ~ControladorInicioDeClase();
-        string getTipoRol();
+        TipoRol getTipoRol();
 };
 #endif
