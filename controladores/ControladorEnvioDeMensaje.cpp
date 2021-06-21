@@ -8,8 +8,6 @@ list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     ManejadorClase* mC = ManejadorClase::getInstancia();
     map<int, Clase*> clases = mC->listarClases();
-    cout<<"cantidad de clases"<<clases.size()<<endl;
-   
     for(map<int, Clase*>::iterator it = clases.begin(); it!=clases.end(); it++){
         list<AsisteEnVivo*> asistEnVivo = it->second->getAsistenciasEnVivo();
         //cout<<"CANTIDAD DE ASISTENCIAS EN VIVO ("<<asistEnVivo.size() <<") DE CLASE"<<it->first<<endl;
@@ -44,8 +42,9 @@ void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
     this->idP = idP;
     this->vaAresponder = true;
 };
-void ControladorEnvioDeMensaje::ingresarTexto(string mensaje){
+void ControladorEnvioDeMensaje::ingresarTexto(char mensaje){
     this->txt = mensaje;
+    cout << mensaje<< "llega char a controlador"  << endl;
 };
 void ControladorEnvioDeMensaje::enviarMensaje(){
     ManejadorClase* mC = ManejadorClase::getInstancia();
