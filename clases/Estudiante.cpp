@@ -27,5 +27,9 @@ map<string, Asignatura*> Estudiante::getAsignaturas(){
   return this->asignaturas;
 };
 
+void Estudiante::borrarAsignatura(string codAsignatura){
+  this->asignaturas.erase(codAsignatura);
+}
+
 // DESTRUCTOR
 Estudiante::~Estudiante(){};

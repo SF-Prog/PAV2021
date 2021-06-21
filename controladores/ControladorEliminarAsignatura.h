@@ -4,10 +4,12 @@
 #include "../interfaces/IControladorEliminarAsignatura.h"
 #include "../manejadores/ManejadorAsignatura.h"
 #include "../manejadores/ManejadorClase.h"
+#include "../manejadores/ManejadorPerfil.h"
+
 
 class ControladorEliminarAsignatura: public IControladorEliminarAsignatura{
     private:
-        int codigo;
+        string codigo;
     public:
         ControladorEliminarAsignatura();
         list<string> listarAsignaturas();

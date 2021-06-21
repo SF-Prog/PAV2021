@@ -8,7 +8,7 @@ list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     ManejadorClase* mC = ManejadorClase::getInstancia();
     map<int, Clase*> clases = mC->listarClases();
-       
+
     for(map<int, Clase*>::iterator it = clases.begin(); it!=clases.end(); it++){
         list<AsisteEnVivo*> asistEnVivo = it->second->getAsistenciasEnVivo();
         for(list<AsisteEnVivo*>::iterator it2 = asistEnVivo.begin(); it2!=asistEnVivo.end(); it2++){
@@ -48,11 +48,11 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
         map<int, Participacion*> clases = clase->getParticipaciones();
         map<int, Participacion*>::iterator it = clases.find(this->idP);
         if(it != clases.end())
-            it->second->respondeA(new Participacion(fecha, this->txt));     
+            it->second->respondeA(new Participacion(fecha, this->txt));
     }else{
         clase->addParticipacion(new Participacion(fecha, this->txt));
     }
-    
+
 };
 void ControladorEnvioDeMensaje::cancelar(){};
 ControladorEnvioDeMensaje::~ControladorEnvioDeMensaje(){};
