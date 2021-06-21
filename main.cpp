@@ -409,6 +409,7 @@ void envioDeMensaje(){
     cin>>idC;
     list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
     if(dtParticipaciones.size()>0){
+        cout<<"ANTES DE MOSTRAR"<<endl;
         for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
             cout<<(*it)<<endl;
         };

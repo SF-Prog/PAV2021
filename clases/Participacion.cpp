@@ -8,6 +8,13 @@ Participacion::Participacion(time_t fecha, string mensaje){
     this->fecha=fecha;
     this->mensaje=mensaje;
 };
+Participacion::Participacion(time_t fecha, string mensaje,Participacion * responde){
+    this->id=idAutoGenerado;
+    idAutoGenerado++;
+    this->fecha=fecha;
+    this->mensaje=mensaje;
+    this->responde = responde;
+};
 //Getters y setters
 int Participacion::getId(){
     return this->id;
@@ -27,6 +34,9 @@ void Participacion::setMensaje(string mensaje){
 void Participacion::respondeA(Participacion* p){
     this->responde = p;
 };
+Participacion * Participacion::getRespondeA(){
+    return this->responde;
+}; 
 /*
 list<DtParticipacion*> Participacion::getRespuestas(){
     list<DtParticipacion> dtParticipaciones;

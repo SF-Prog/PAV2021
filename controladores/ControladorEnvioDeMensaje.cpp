@@ -30,7 +30,12 @@ list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
     list<DtParticipacion*> listDtParticipacion;
     if(participaciones.size()>0){
         for(map<int, Participacion*>::iterator it = participaciones.begin(); it!=participaciones.end(); it++){
-            listDtParticipacion.push_front(new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje(), it->second->getResponde()));
+           cout<<it->second->getId()<<endl;
+           cout<<it->second->getFecha()<<endl;
+           cout<<it->second->getMensaje()<<endl;
+            DtParticipacion* prticipacion = new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje());
+           //cout<<"PUNTERO" <<prticipacion->getId()<<endl;
+            listDtParticipacion.push_front(prticipacion);
         };
     }
     return listDtParticipacion;
@@ -51,8 +56,11 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
     if(this->vaAresponder){
         map<int, Participacion*> clases = clase->getParticipaciones();
         map<int, Participacion*>::iterator it = clases.find(this->idP);
-        if(it != clases.end())
-            it->second->respondeA(new Participacion(fecha, this->txt));
+        if(it != clases.end()){
+            
+            clase->addParticipacion(new Participacion(fecha, this->txt,it->second));
+        }
+        
     }else{
         clase->addParticipacion(new Participacion(fecha, this->txt));
     }

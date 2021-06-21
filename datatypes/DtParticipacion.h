@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ctime>
+#include <iostream>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ class DtParticipacion{
         time_t fecha;
         string mensaje;
         DtParticipacion* responde;
+        
     public:
         // Constructores
         DtParticipacion();
@@ -30,5 +32,7 @@ class DtParticipacion{
 
         // Destructor
         ~DtParticipacion();
+
+        friend ostream& operator<<(ostream&, const DtParticipacion&);
 };
 #endif

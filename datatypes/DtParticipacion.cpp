@@ -6,6 +6,7 @@ DtParticipacion::DtParticipacion(int id, time_t fecha, string mensaje){
     this->id = id;
     this->fecha = fecha;
     this->mensaje = mensaje;
+    this->responde = NULL;
 }
 DtParticipacion::DtParticipacion(int id, time_t fecha, string mensaje, DtParticipacion* responde){
     this->id = id;
@@ -42,3 +43,10 @@ void DtParticipacion::setResponde(DtParticipacion* responde){
 
 // Destructor
 DtParticipacion::~DtParticipacion(){}
+
+ostream& operator <<(ostream& salida, const DtParticipacion &dtp){
+    cout<<"hola"<<endl;
+    //cout<<"Id participacion:"<<dtp.id<<"\n Fecha:"<<dtp.fecha<<"\n Mensaje:"<<dtp.mensaje<<endl;
+    
+    return salida;
+};

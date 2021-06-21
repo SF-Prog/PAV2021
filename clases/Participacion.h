@@ -22,11 +22,12 @@ class Participacion{
     //Constructores
     Participacion();
     Participacion(time_t, string);
-    Participacion(time_t, string, DtParticipacion*);
+    Participacion(time_t, string, Participacion*);
     //Getters y setters
     int getId();
     time_t getFecha();
     string getMensaje();
+    Participacion* getRespondeA();
     DtParticipacion* getResponde();
 
     void setFecha(time_t);
