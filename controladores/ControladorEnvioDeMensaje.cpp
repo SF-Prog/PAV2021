@@ -8,9 +8,11 @@ list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     ManejadorClase* mC = ManejadorClase::getInstancia();
     map<int, Clase*> clases = mC->listarClases();
-       
+    cout<<"cantidad de clases"<<clases.size()<<endl;
+   
     for(map<int, Clase*>::iterator it = clases.begin(); it!=clases.end(); it++){
         list<AsisteEnVivo*> asistEnVivo = it->second->getAsistenciasEnVivo();
+        cout<<"CANTIDAD DE ASISTENCIAS EN VIVO ("<<asistEnVivo.size() <<") DE CLASE"<<it->first<<endl;  
         for(list<AsisteEnVivo*>::iterator it2 = asistEnVivo.begin(); it2!=asistEnVivo.end(); it2++){
             if((*it2)->getEstudiante() == estudiante){
                 clasesOnline.push_front(it->second->getId());

@@ -12,6 +12,6 @@ class ControladorListarClases: public IControladorListarClases{
         Docente* docente;
     public:
         list<string> asignaturasAsignadas();
-        list<DtInfoClase> selectAsignatura(string);
+        list<DtInfoClase*> selectAsignatura(string);
 };
 #endif

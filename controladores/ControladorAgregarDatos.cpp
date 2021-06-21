@@ -13,10 +13,10 @@ void ControladorAgregarDatos::cargarDatos(){
     list<Rol*> roles; // incializar esta variable
     //Perfiles
     ManejadorPerfil* mP = ManejadorPerfil::getInstancia();
-    Docente* d1 = new Docente("Juan Malcom", "image01.jpg", "juanmalcom@gmail.com", "juan1010", "Facultad de ingenieria", roles);
-    Docente* d2 = new Docente("Pedro Tunez", "image02.jpg", "pedrotunex@gmail.com", "pedro1010", "Facultad de Economia", roles);
-    Docente* d3 = new Docente("Alberto Gacia", "image03.jpg", "albertogarcia@gmail.com", "alberto1010", "Facultad de Quimica", roles);
-    Estudiante* e1 = new Estudiante("Santiago Martinez", "image04.jpg", "santiagomartinez@gmail.com", "santiago1010", "4723727");
+    Docente* d1 = new Docente("Juan Malcom", "image01.jpg", "j", "j", "Facultad de ingenieria");
+    Docente* d2 = new Docente("Pedro Tunez", "image02.jpg", "pedrotunex@gmail.com", "pedro1010", "Facultad de Economia");
+    Docente* d3 = new Docente("Alberto Gacia", "image03.jpg", "albertogarcia@gmail.com", "alberto1010", "Facultad de Quimica");
+    Estudiante* e1 = new Estudiante("Santiago Martinez", "image04.jpg", "s", "s", "4723727");
     Estudiante* e2 = new Estudiante("Gonzalo Perez", "image05.jpg", "gonzaloperez@gmail.com", "gonzalo1010", "4723721");
     Estudiante* e3 = new Estudiante("Facundo De los Santos", "image06.jpg", "facundedelossantos@gmail.com", "facundo1010", "4723724");
     mP->add(d1);

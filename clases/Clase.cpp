@@ -60,13 +60,13 @@ string Clase::getCodigo(){
   return this->codigo;
 };
 
-DtInfoClase Clase::getDtInfoClase(){
+DtInfoClase* Clase::getDtInfoClase(){
     list<Docente*> docentes = this->docentes;
     list<string> emailDocentes;
     for(list<Docente*>::iterator it=docentes.begin(); it!=docentes.end(); it++){
         emailDocentes.push_front((*it)->getEmail());
     };
-  return DtInfoClase(this->id, this->nombre, emailDocentes);
+  return new DtInfoClase(this->id, this->nombre, emailDocentes);
 };
 
 

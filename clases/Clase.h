@@ -42,7 +42,7 @@ class Clase{
     time_t getInicio();
     time_t getFin();
     string getCodigo();
-    DtInfoClase getDtInfoClase();
+    DtInfoClase* getDtInfoClase();
 
     void addParticipacion(Participacion*);
     

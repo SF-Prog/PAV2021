@@ -11,6 +11,6 @@ using namespace std;
 class IControladorListarClases{
     public:
         virtual list<string> asignaturasAsignadas() = 0;
-        virtual list<DtInfoClase> selectAsignatura(string) = 0;
+        virtual list<DtInfoClase*> selectAsignatura(string) = 0;
 };
 #endif

@@ -33,8 +33,8 @@ list<Clase*> Asignatura::getClases(){
   return res;
 };
 
-list<DtInfoClase> Asignatura::getDtInfoClase(){
-  list<DtInfoClase> dticList;
+list<DtInfoClase*> Asignatura::getDtInfoClase(){
+  list<DtInfoClase*> dticList;
   for(map<int, Clase*>::iterator it = this->clases.begin(); it!=this->clases.end(); it++){
     dticList.push_front(it->second->getDtInfoClase());
   };

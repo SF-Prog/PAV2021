@@ -10,14 +10,14 @@ class Docente;
 using namespace std;
 
 class DtInfoClase{
-    private:
+    protected:
         int id;
         string nombre;
         list<string> docentes;
     public:
         DtInfoClase();
         DtInfoClase(int, string, list<string>);
-        friend ostream& operator <<(ostream&, const DtInfoClase&);
+        friend ostream& operator<<(ostream&, const DtInfoClase&);
         ~DtInfoClase();
 };
 #endif

@@ -30,7 +30,7 @@ class Asignatura{
     list<Clase*> getClases();
 
     // Metodos
-    list<DtInfoClase> getDtInfoClase();
+    list<DtInfoClase*> getDtInfoClase();
     void agregarClase(Clase*);
 
     // DESTRUCTOR
