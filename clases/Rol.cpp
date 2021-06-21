@@ -23,5 +23,18 @@ string Rol::getCodigoAsignatura(){
 void Rol::setAsignatura(Asignatura* asignatura){
   this->asignatura = asignatura;
 }
+
+bool Rol::esAsignatura(string cod){
+  bool esAsig = false;
+  if(this->asignatura->getCodigo() == cod){
+      esAsig = true;
+  }
+  return esAsig;
+}
+
+void Rol::borrarAsignatura(string cod){
+  delete asignatura;
+}
+
 // DESTRUCTOR
 Rol::~Rol(){};

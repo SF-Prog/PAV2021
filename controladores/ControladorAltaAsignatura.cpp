@@ -10,10 +10,10 @@ DtAsignatura ControladorAltaAsignatura::ingresar(DtAsignatura dtAsignatura){
 
 void ControladorAltaAsignatura::altaAsignatura(){
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
-    cout<<datosAsignatura.getCodigo();
+    //cout<<datosAsignatura.getCodigo(); //Comentado RS
     Asignatura* asignatura = new Asignatura(this->datosAsignatura.getCodigo(), this->datosAsignatura.getNombre(), this->datosAsignatura.getTipoClase());
     if(mA->existeAsignatura(this->datosAsignatura.getCodigo())){
-        throw invalid_argument("El codigo ya existe."); 
+        throw invalid_argument("El codigo ya existe.");
     }else{
         mA->agregarAsignatura(asignatura);
     }

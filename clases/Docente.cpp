@@ -50,6 +50,15 @@ bool Docente::noDictaLaAsignatura(string cod){
   };
   return noDicta;
 }
+void Docente::eliminarAsignatura(string cod){
+  for(list<Rol*>::iterator it=this->roles.begin(); it != this->roles.end(); it++){
+    if((*it)->esAsignatura(cod)){
+      (*it)->borrarAsignatura(cod);
+    }
+  };
+}
+
+
 ostream& operator <<(ostream& salida, Docente* docente){
     salida<<docente->getNombre()<<endl;
     return salida;

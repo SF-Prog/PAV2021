@@ -12,7 +12,7 @@ class Rol{
   private:
    TipoRol tipo;
    Asignatura* asignatura;
-   
+
   public:
     //Constructores
     Rol();
@@ -24,7 +24,9 @@ class Rol{
 
     string getCodigoAsignatura();
     void setAsignatura(Asignatura*);
-    
+    bool esAsignatura(string);
+    void borrarAsignatura(string);
+
     // DESTRUCTOR
     ~Rol();
 };

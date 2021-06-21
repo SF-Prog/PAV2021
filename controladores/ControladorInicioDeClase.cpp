@@ -80,7 +80,7 @@ void ControladorInicioDeClase::iniciarClase(){
             }
         }
     }
-    
+
     if (this->tipoRol == PRACTICO){
         Practico* practico = new Practico(this->data.getNombre(),this->data.getFechaHora(),
                                           this->data.getFechaHora(),this->data.getCodigo());

@@ -13,9 +13,11 @@ void ManejadorClase::agregarClase(Clase* clase){
 };
 Clase* ManejadorClase::getClase(int id){
     map<int, Clase*>::iterator it = this->clases.find(id);
-    if (it!=this->clases.end())
+    if (it!=this->clases.end()){
         return this->clases.find(id)->second;
-    else return NULL;
+    }else{
+      return NULL;
+    }
 };
 map<int, Clase*> ManejadorClase::listarClases(){
     return this->clases;

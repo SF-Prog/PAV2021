@@ -12,7 +12,7 @@ list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
    
     for(map<int, Clase*>::iterator it = clases.begin(); it!=clases.end(); it++){
         list<AsisteEnVivo*> asistEnVivo = it->second->getAsistenciasEnVivo();
-        cout<<"CANTIDAD DE ASISTENCIAS EN VIVO ("<<asistEnVivo.size() <<") DE CLASE"<<it->first<<endl;  
+        //cout<<"CANTIDAD DE ASISTENCIAS EN VIVO ("<<asistEnVivo.size() <<") DE CLASE"<<it->first<<endl;
         for(list<AsisteEnVivo*>::iterator it2 = asistEnVivo.begin(); it2!=asistEnVivo.end(); it2++){
             if((*it2)->getEstudiante() == estudiante){
                 clasesOnline.push_front(it->second->getId());
@@ -25,12 +25,14 @@ list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
     this->id = id;
     ManejadorClase* mC = ManejadorClase::getInstancia();
     Clase*  clase = mC->getClase(id);
-    clase->getParticipaciones();
+    map<int, Participacion*> participaciones  = clase->getParticipaciones();
 
     list<DtParticipacion*> listDtParticipacion;
-    for(map<int, Participacion*>::iterator it = clase->getParticipaciones().begin(); it!=clase->getParticipaciones().end(); it++){
-        listDtParticipacion.push_front(new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje(), it->second->getResponde()));
-    };
+    if(participaciones.size()>0){
+        for(map<int, Participacion*>::iterator it = participaciones.begin(); it!=participaciones.end(); it++){
+            listDtParticipacion.push_front(new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje(), it->second->getResponde()));
+        };
+    }
     return listDtParticipacion;
 };
 void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
@@ -50,11 +52,11 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
         map<int, Participacion*> clases = clase->getParticipaciones();
         map<int, Participacion*>::iterator it = clases.find(this->idP);
         if(it != clases.end())
-            it->second->respondeA(new Participacion(fecha, this->txt));     
+            it->second->respondeA(new Participacion(fecha, this->txt));
     }else{
         clase->addParticipacion(new Participacion(fecha, this->txt));
     }
-    
+
 };
 void ControladorEnvioDeMensaje::cancelar(){};
 ControladorEnvioDeMensaje::~ControladorEnvioDeMensaje(){};

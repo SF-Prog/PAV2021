@@ -34,10 +34,10 @@ IControladorAsignarAsignaturaDocente *iConAsignaturaDocente;
 IControladorAsistenciaClaseEnVivo *iConAsistenciaClaseEnVivo;
 IControladorEliminarAsignatura *iConEliminarAsignatura;
 IControladorEnvioDeMensaje *iConEnvioDeMensaje;
-IControladorInicioDeClase *iConInicioDeClase;      
-IControladorInscripcionAsignatura *iConInscripcionAsignatura;      
-IControladorListarClases *iConListarClases;  
-IControladorAgregarDatos *iConAgD; 
+IControladorInicioDeClase *iConInicioDeClase;
+IControladorInscripcionAsignatura *iConInscripcionAsignatura;
+IControladorListarClases *iConListarClases;
+IControladorAgregarDatos *iConAgD;
 
 void agregarUsuario();
 void agregarAsignatura();
@@ -104,7 +104,7 @@ void menuDocente(){
     cout<<"10 - Salir"<<endl<<endl;
     cout<<"Ingrese opcion: ";
 }
-void ingrese_enter(){    
+void ingrese_enter(){
     cout<<endl<<endl<<"Ingrese <enter>"<<endl;
     fflush(stdout);
     getchar();
@@ -154,7 +154,7 @@ void agregarUsuario(){
     while(opt != "si" && opt != "no"){
         cout<<"Desea confirmar (si/no)"<<endl;
         cin>>opt;
-    };    
+    };
     if(opt=="si"){
         iConAltaUsuario->altaUsuario();
     }else
@@ -179,27 +179,27 @@ void agregarAsignatura(){
     cin>>auxTipTeorico;
 
     DtInstanciaClase dtInstanciaClase = DtInstanciaClase(auxTipTeorico=="si",auxTipPractico=="si",auxTipMonitoreo=="si");
-    DtAsignatura dtAsignatura = DtAsignatura(auxCod,auxNombre,dtInstanciaClase); 
-    
+    DtAsignatura dtAsignatura = DtAsignatura(auxCod,auxNombre,dtInstanciaClase);
+
     iConAltaAsignatura->ingresar(dtAsignatura);
-    
+
     cout<<"¿Desea confirmar? (si/no)";
     cin>>confirma;
 
     if(confirma=="si"){
         try{
-            
-            iConAltaAsignatura->altaAsignatura();  
+
+            iConAltaAsignatura->altaAsignatura();
 
         }catch (const invalid_argument& e) {
             cerr << "Invalid argument: " << e.what() << '\n';
         }
     }else{
         iConAltaAsignatura->cancelar();
-    } 
+    }
 }
 void asignacionAsignaturaDocente(){
-    
+
     cout << "_____________________________________________________" << endl;
     cout << "=============ASIGNAR DOCENTE A ASIGNATURA===========" << endl;
     cout << "_____________________________________________________" << endl;
@@ -267,7 +267,7 @@ void inscripcionAsignatura(){
         };
         string cod;// ver si no deberia ser un string
         cout<<"Ingrese el codigo de la asignatura a inscribirse"<<endl;
-        cin>>cod; 
+        cin>>cod;
         iConInscripcionAsignatura->selectAsignatura(cod);
         string confirma;
         cout<<"¿Desea confirmar? (si/no)";
@@ -336,9 +336,9 @@ void inicioClase(){
                 cout << "Ingrese email"<< endl;
                 cin>>email;
                 iConInicioDeClase->habilitar(email);
-            }        
+            }
         }
-        
+
     }
     string confirmar;
     iConInicioDeClase->datosIngresados();
@@ -347,7 +347,7 @@ void inicioClase(){
     if(confirmar == "si"){
        iConInicioDeClase->iniciarClase();
     }else{
-       iConInicioDeClase->cancelar(); 
+       iConInicioDeClase->cancelar();
     }
 }
 
@@ -355,7 +355,7 @@ void inicioClase(){
 void asistenciaClaseEnVivo(){
     list<string> listAsignaturasInscripto = iConAsistenciaClaseEnVivo->asignaturasInscripto();
     if(listAsignaturasInscripto.size() != 0){
-            
+
         for(list<string>::iterator it=listAsignaturasInscripto.begin(); it != listAsignaturasInscripto.end(); it++){
             cout << "Codigo de la Asignatura :"<< (*it) << endl;
         };
@@ -408,13 +408,15 @@ void envioDeMensaje(){
     cout<<"Seleccione la clase:"<<endl;
     cin>>idC;
     list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
-    for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
-        cout<<(*it)<<endl;
-    };
-    cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
-    cin>>idP;
-    if(idP != 0)
-        iConEnvioDeMensaje->responder(idP);
+    if(dtParticipaciones.size()>0){
+        for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
+            cout<<(*it)<<endl;
+        };
+        cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
+        cin>>idP;
+        if(idP != 0)
+            iConEnvioDeMensaje->responder(idP);
+    }
     cout<<"Ingrese su mensaje:"<<endl;
     cin>>texto;
     iConEnvioDeMensaje->ingresarTexto(texto);
@@ -429,7 +431,7 @@ void envioDeMensaje(){
 
 // 8- ELIMINACION DE ASIGNATURA
 void eliminacionDeAsignatura(){
-    int cod;
+    string cod;
     string confirma = "";
     cout << "_____________________________________________________" << endl;
     cout << "==================ELIMINACION DE ASIGNATURA==================" << endl;
@@ -453,7 +455,7 @@ void listarClase(){
     cout << "_____________________________________________________" << endl;
     cout << "==================Listado De Clases==================" << endl;
     cout << "_____________________________________________________" << endl;
-    cout<<"Listado de asignaturas:"<<endl; 
+    cout<<"Listado de asignaturas:"<<endl;
     list<string> listaAsignaturas = iConListarClases->asignaturasAsignadas();
     for(list<string>::iterator it=listaAsignaturas.begin(); it != listaAsignaturas.end(); it++){
         cout << "Codigo de la Asignatura :"<< (*it) << endl;
@@ -532,9 +534,9 @@ void cargarFabrica(){
     iConAsistenciaClaseEnVivo = f->getIControladorAsistenciaClaseEnVivo();
     iConEliminarAsignatura = f->getIControladorEliminarAsignatura();
     iConEnvioDeMensaje = f->getIControladorEnvioDeMensaje();
-    iConInicioDeClase = f->getIControladorInicioDeClase();      
-    iConInscripcionAsignatura = f->getIControladorInscripcionAsignatura();      
-    iConListarClases = f->getIControladorListarClases();     
+    iConInicioDeClase = f->getIControladorInicioDeClase();
+    iConInscripcionAsignatura = f->getIControladorInscripcionAsignatura();
+    iConListarClases = f->getIControladorListarClases();
     iConAgD = f->getIControladorAgregarDatos();
 };
 
@@ -544,21 +546,21 @@ int menuFuncionesDocente(int num){
         case 1:
             limpiarPantalla();
             inicioClase();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 2:
             limpiarPantalla();
             envioDeMensaje();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 3:
             limpiarPantalla();
             listarClase();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 10:
             //salir
-            return 0;                
+            return 0;
             break;
         default:
             cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
@@ -573,21 +575,21 @@ int menuFuncionesEstudiante(int num){
         case 1:
             limpiarPantalla();
             inscripcionAsignatura();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 2:
             limpiarPantalla();
             asistenciaClaseEnVivo();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 3:
             limpiarPantalla();
             envioDeMensaje();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 10:
             //salir
-            return 0;                
+            return 0;
             break;
         default:
             cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
@@ -603,31 +605,31 @@ int menuFuncionesAdministrado(int num){
         case 1:
             limpiarPantalla();
             agregarUsuario();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 2:
             limpiarPantalla();
             agregarAsignatura();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 3:
             limpiarPantalla();
             asignacionAsignaturaDocente();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 4:
             limpiarPantalla();
             eliminacionDeAsignatura();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 99:
             limpiarPantalla();
             cargarDatos();
-            limpiarPantalla();             
+            limpiarPantalla();
             break;
         case 10:
             //salir
-            return 0;                
+            return 0;
             break;
         default:
             cout<<"Opcion incorrecta. Intente nuevamente."<<endl;
@@ -657,21 +659,21 @@ int main(){
                     /// MENU ESTUDIANTE
                     menuEstudiante();
                     cin>>num;
-                    menuFuncionesEstudiante(num);   
+                    menuFuncionesEstudiante(num);
                 }else{
                     cout<<"Ingreso un dato invalido"<<endl;
                 }
             }
-            
-            
+
+
         }else{
             /// MENU ADMINISTRADOR
             menuAdministrador();
             cin>>num;
             menuFuncionesAdministrado(num);
         }
-    
-    } 
+
+    }
     return 0;
 } */
 bool deseaIniciarSesion(){
@@ -694,7 +696,7 @@ int main(){
                     cout<<"Si eres docente ingrese 1, si eres estudiante ingrese 2 y si desea salir ingrese 0"<<endl;
                     cin>>opcion;
                     switch(opcion){
-                        case 1: 
+                        case 1:
                             /// MENU DOCENTE
                             menuDocente();
                             cin>>menuOpcion;

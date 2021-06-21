@@ -27,6 +27,9 @@ map<string, Asignatura*> Estudiante::getAsignaturas(){
   return this->asignaturas;
 };
 
+void Estudiante::borrarAsignatura(string codAsignatura){
+  this->asignaturas.erase(codAsignatura);
+}
 
 void Estudiante::addAsignatura(Asignatura* asignatura){
   this->asignaturas.insert(pair<string, Asignatura*>(asignatura->getCodigo(), asignatura));
