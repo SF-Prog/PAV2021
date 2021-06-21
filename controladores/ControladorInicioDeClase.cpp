@@ -67,10 +67,12 @@ DtIniciarClaseFull ControladorInicioDeClase::datosIngresados(){
     return this->data;
 };
 void ControladorInicioDeClase::iniciarClase(){
+    ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
+    ManejadorClase* mC = ManejadorClase::getInstancia();
     if (this->tipoRol == MONITOREO){
         Monitoreo* monitoreo = new Monitoreo(this->data.getNombre(),this->docente,this->data.getFechaHora(),this->data.getCodigo(),this->habilitados);
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
-        mP->add(this->docente);
+        monitoreo->addDocente(this->docente);
         list<Perfil*> perfiles = mP->listarPerfiles();
         for(list<Perfil*>::iterator it = perfiles.begin(); it != perfiles.end(); it++){
            if (Estudiante* est = dynamic_cast<Estudiante*>(*it)) {
@@ -79,28 +81,31 @@ void ControladorInicioDeClase::iniciarClase(){
                 }
             }
         }
+        mC->agregarClase(monitoreo);
+        Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
+        asignatura->agregarClase(monitoreo);
     }
 
     if (this->tipoRol == PRACTICO){
         Practico* practico = new Practico(this->data.getNombre(),this->data.getFechaHora(),
                                           this->data.getFechaHora(),this->data.getCodigo());
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
-        mP->add(this->docente);
-    }
+        practico->addDocente(this->docente);
+        mC->agregarClase(practico);
+        Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
+        asignatura->agregarClase(practico);
+    };
 
     if (this->tipoRol == TEORICO){
         Teorico* teorico = new Teorico(this->data.getNombre(),this->data.getFechaHora(),
                                        this->data.getFechaHora(),this->data.getCodigo());
         ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
-        mP->add(this->docente);
-    }
-    Clase* clase = new Clase(this->data.getNombre(), this->docente, this->data.getFechaHora(), this->data.getCodigo());
-    ManejadorClase* mC = ManejadorClase::getInstancia();
-    mC->agregarClase(clase);
-    ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
-    Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
-    asignatura->agregarClase(clase);
-}
+        teorico->addDocente(this->docente);
+        mC->agregarClase(teorico);
+        Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
+        asignatura->agregarClase(teorico);
+    };
+};
 
 void ControladorInicioDeClase::cancelar(){
     delete this->docente;
