@@ -42,6 +42,7 @@ void ControladorAsistenciaClaseEnVivo::asistirClaseEnVivo(){
     ManejadorClase* mC = ManejadorClase::getInstancia();
     Clase* clase = mC->getClase(this->id);
     clase->addAsistenciasEnVivo(asistir);    
+
 };
 
 void ControladorAsistenciaClaseEnVivo::cancelar(){};

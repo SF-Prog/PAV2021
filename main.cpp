@@ -371,10 +371,13 @@ void asistenciaClaseEnVivo(){
             cin>>id;
             DtAsistir dtAsistir = iConAsistenciaClaseEnVivo->selectClase(id);
             cout<< dtAsistir << endl;
-            string respuesta;
-            cout << "¿Desea confirmar la asistencia? (SI/NO)"<< endl;
-            cin>>respuesta;
-            if(respuesta=="SI"){
+            string respuesta="";
+            while(respuesta != "si" && respuesta != "no"){
+                cout << "¿Desea confirmar la asistencia? (si/no)"<< endl;
+                cin>>respuesta;
+            }
+
+            if(respuesta=="si"){
                 iConAsistenciaClaseEnVivo->asistirClaseEnVivo();
             }else{
                 iConAsistenciaClaseEnVivo->cancelar();
