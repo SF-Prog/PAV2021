@@ -2,7 +2,7 @@
 
 int Participacion::idAutoGenerado=1;
 Participacion::Participacion(){};
-Participacion::Participacion(time_t fecha, string mensaje){
+Participacion::Participacion(time_t fecha, char mensaje){
     this->id=idAutoGenerado;
     idAutoGenerado++;
     this->fecha=fecha;
@@ -15,13 +15,13 @@ int Participacion::getId(){
 time_t Participacion::getFecha(){
     return this->fecha;
 };
-string Participacion::getMensaje(){
+char Participacion::getMensaje(){
     return this->mensaje;
 };
 void Participacion::setFecha(time_t fecha){
     this->fecha = fecha;
 };
-void Participacion::setMensaje(string mensaje){
+void Participacion::setMensaje(char mensaje){
     this->mensaje=mensaje;
 };
 void Participacion::respondeA(Participacion* p){

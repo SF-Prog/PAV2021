@@ -16,7 +16,7 @@
 class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
     private:
         int id, idP;
-        string txt;
+        char txt;
         time_t fecha;
         bool  vaAresponder;
     public:
@@ -24,7 +24,7 @@ class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
         list<int> clasesOnlineAsistiendo();
         list<DtParticipacion*> selectClase(int id);
         void responder(int);
-        void ingresarTexto(string);
+        void ingresarTexto(char);
         void enviarMensaje();
         void cancelar();
         ~ControladorEnvioDeMensaje();

@@ -15,22 +15,22 @@ class Participacion{
     int id;
     static int idAutoGenerado;
     time_t fecha;
-    string mensaje;
+    char mensaje;
     Participacion* responde;
     list<Perfil*> perfiles;
   public:
     //Constructores
     Participacion();
-    Participacion(time_t, string);
-    Participacion(time_t, string, DtParticipacion*);
+    Participacion(time_t, char);
+    Participacion(time_t, char, DtParticipacion*);
     //Getters y setters
     int getId();
     time_t getFecha();
-    string getMensaje();
+    char getMensaje();
     DtParticipacion* getResponde();
 
     void setFecha(time_t);
-    void setMensaje(string);
+    void setMensaje(char);
     void respondeA(Participacion*);
     
     // DESTRUCTOR
