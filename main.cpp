@@ -317,8 +317,8 @@ void inicioClase(){
     fecha.tm_mday = dia;
     fecha.tm_hour = hora;
     time_t t = mktime(&fecha);
-    cout<< t<<endl;
-    DtIniciarClase dtic = DtIniciarClase(cod, nombre, mktime(&fecha));
+    cout<< fecha.tm_year << "/" << fecha.tm_mon << "/" << fecha.tm_mday << "  hora: " << fecha.tm_hour << ":" << fecha.tm_min <<endl;
+    DtIniciarClase dtic = DtIniciarClase(cod, nombre, t);
     bool monitoreo = iConInicioDeClase->selectAsignatura(dtic);
     if(monitoreo){
         cout << "INSCRIPTOS EN LA ASIGNATURA"<< endl;
@@ -353,31 +353,38 @@ void inicioClase(){
 // 6- ASISTENCIA CLASE EN VIVO
 void asistenciaClaseEnVivo(){
     list<string> listAsignaturasInscripto = iConAsistenciaClaseEnVivo->asignaturasInscripto();
-    for(list<string>::iterator it=listAsignaturasInscripto.begin(); it != listAsignaturasInscripto.end(); it++){
-        cout << "Codigo de la Asignatura :"<< (*it) << endl;
-    };
-    string cod;
-    cout << "INGRESE CODIGO DE LA ASIGNATURA"<< endl;
-    cin>>cod;
-    list<int> listClaseDisponiles = iConAsistenciaClaseEnVivo->clasesOnlineDisponibles(cod);
-    
-    for(list<int>::iterator it=listClaseDisponiles.begin(); it != listClaseDisponiles.end(); it++){
-        cout << "Codigo de la Clase :"<< (*it) << endl;
-    };
-    int id;
-    cout << "INGRESE CODIGO DE LA CLASE"<< endl;
-    cin>>id;
-    DtAsistir dtAsistir = iConAsistenciaClaseEnVivo->selectClase(id);
-    cout<< dtAsistir << endl;
-    string respuesta;
-    cout << "¿Desea confirmar la asistencia? (SI/NO)"<< endl;
-    cin>>respuesta;
-    if(respuesta=="SI"){
-        iConAsistenciaClaseEnVivo->asistirClaseEnVivo();
-    }else{
-        iConAsistenciaClaseEnVivo->cancelar();
+    if(listAsignaturasInscripto.size() != 0){
+            
+        for(list<string>::iterator it=listAsignaturasInscripto.begin(); it != listAsignaturasInscripto.end(); it++){
+            cout << "Codigo de la Asignatura :"<< (*it) << endl;
+        };
+        string cod;
+        cout << "INGRESE CODIGO DE LA ASIGNATURA"<< endl;
+        cin>>cod;
+        list<int> listClaseDisponiles = iConAsistenciaClaseEnVivo->clasesOnlineDisponibles(cod);
+        if(listClaseDisponiles.size() != 0){
+            for(list<int>::iterator it=listClaseDisponiles.begin(); it != listClaseDisponiles.end(); it++){
+                cout << "Codigo de la Clase :"<< (*it) << endl;
+            };
+            int id;
+            cout << "INGRESE CODIGO DE LA CLASE"<< endl;
+            cin>>id;
+            DtAsistir dtAsistir = iConAsistenciaClaseEnVivo->selectClase(id);
+            cout<< dtAsistir << endl;
+            string respuesta;
+            cout << "¿Desea confirmar la asistencia? (SI/NO)"<< endl;
+            cin>>respuesta;
+            if(respuesta=="SI"){
+                iConAsistenciaClaseEnVivo->asistirClaseEnVivo();
+            }else{
+                iConAsistenciaClaseEnVivo->cancelar();
+            }
+        } else {
+            cout << "No hay ninguna Clase de esta materia a la cual inscribirse." << endl;
+        }
+    } else {
+        cout << "El Estudiante no esta inscripto a ninguna asignatura." << endl;
     }
-
 }
 
 // 7- ENVIO DE MENSAJE
