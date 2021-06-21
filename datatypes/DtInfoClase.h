@@ -13,10 +13,11 @@ class DtInfoClase{
     private:
         int id;
         string nombre;
-        list<Docente*> docentes;
+        list<string> docentes;
     public:
         DtInfoClase();
-        DtInfoClase(int, string, list<Docente*>);
-        friend ostream& operator <<(ostream&, DtInfoClase&);
+        DtInfoClase(int, string, list<string>);
+        friend ostream& operator <<(ostream&, const DtInfoClase&);
+        ~DtInfoClase();
 };
 #endif

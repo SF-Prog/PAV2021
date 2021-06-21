@@ -59,9 +59,16 @@ time_t Clase::getFin(){
 string Clase::getCodigo(){
   return this->codigo;
 };
+
 DtInfoClase Clase::getDtInfoClase(){
-  return DtInfoClase(this->id, this->nombre, this->docentes);
+    list<Docente*> docentes = this->docentes;
+    list<string> emailDocentes;
+    for(list<Docente*>::iterator it=docentes.begin(); it!=docentes.end(); it++){
+        emailDocentes.push_front((*it)->getEmail());
+    };
+  return DtInfoClase(this->id, this->nombre, emailDocentes);
 };
+
 
 void Clase::setId(int id){
   this->id = id;

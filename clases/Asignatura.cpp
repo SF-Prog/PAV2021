@@ -16,7 +16,7 @@ string Asignatura::getNombre(){
 void Asignatura::setCodigo(string codigo){
   this->codigo = codigo;
 };
-void Asignatura::setNombre(string nombre ){
+void Asignatura::setNombre(string nombre){
   this->nombre = nombre;
 };
 void Asignatura::agregarClase(Clase* clase){

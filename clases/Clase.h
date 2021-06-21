@@ -4,6 +4,7 @@
 #include "AsisteEnVivo.h"
 #include "AsisteDiferido.h"
 #include "Participacion.h"
+#include "Docente.h"
 #include "../datatypes/DtInfoClase.h"
 #include <string>
 #include <list>
@@ -26,7 +27,6 @@ class Clase{
     time_t inicio;
     time_t fin;
     string codigo;
-   
   public:
     Clase();
     Clase(string, time_t, time_t, string);

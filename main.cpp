@@ -10,6 +10,7 @@
 #include "interfaces/IControladorInicioDeClase.h"
 #include "interfaces/IControladorInscripcionAsignatura.h"
 #include "interfaces/IControladorListarClases.h"
+#include "datatypes/DtInfoClase.h"
 #include "datatypes/DtAsignatura.h"
 #include "datatypes/DtInstanciaClase.h"
 #include "datatypes/DtIniciarClase.h"

@@ -15,6 +15,16 @@ int Teorico::getCantAsistencias(){
 void Teorico::setCantAsistencias(int cantAsistencias){
   this->cantAsistencias = cantAsistencias;
 };
+DtInfoTeorico Teorico::getDtinfoClase(){
+    list<Docente*> docentes = this->getDocentes();
+    list<string> emailDocentes;
+    DtInfoClase dtic;
+    for(list<Docente*>::iterator it=docentes.begin(); it!=docentes.end(); it++){
+        emailDocentes.push_front((*it)->getEmail());
+    };
+    this->cantAsistencias = this->getAsistenciasEnVivo().size();
+    return DtInfoTeorico(this->getId(), this->getNombre(), emailDocentes, this->cantAsistencias);
+};
 // DESTRUCTOR
 Teorico::~Teorico(){
   //delete todos los AsisteEnVivo, AsisteDiferido, 

@@ -1,9 +1,11 @@
 #ifndef ROL
 #define ROL
 
-#include "../enum/TipoRol.h"
 #include "../clases/Asignatura.h"
+#include "../enum/TipoRol.h"
 #include <string>
+
+class Asignatura;
 using namespace std;
 
 class Rol{

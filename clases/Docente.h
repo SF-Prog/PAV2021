@@ -7,6 +7,7 @@
 #include <string>
 #include <list>
 
+class Rol;
 using namespace std;
 
 class Docente: public Perfil{

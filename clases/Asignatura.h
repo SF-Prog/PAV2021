@@ -1,12 +1,13 @@
 #ifndef ASIGNATURA
 #define ASIGNATURA
 
-#include "Clase.h"
+#include "../clases/Clase.h"
 #include "../datatypes/DtInfoClase.h"
 #include "../datatypes/DtInstanciaClase.h"
 #include <string>
 #include <map>
 
+class Clase;
 using namespace std;
 
 class Asignatura{
@@ -29,14 +30,11 @@ class Asignatura{
     list<Clase*> getClases();
 
     // Metodos
-
     list<DtInfoClase> getDtInfoClase();
     void agregarClase(Clase*);
 
     // DESTRUCTOR
     ~Asignatura();
-
-   
 
 };
 
