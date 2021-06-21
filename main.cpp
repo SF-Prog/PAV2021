@@ -407,13 +407,15 @@ void envioDeMensaje(){
     cout<<"Seleccione la clase:"<<endl;
     cin>>idC;
     list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
-    for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
-        cout<<(*it)<<endl;
-    };
-    cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
-    cin>>idP;
-    if(idP != 0)
-        iConEnvioDeMensaje->responder(idP);
+    if(dtParticipaciones.size()>0){
+        for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
+            cout<<(*it)<<endl;
+        };
+        cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
+        cin>>idP;
+        if(idP != 0)
+            iConEnvioDeMensaje->responder(idP);
+    }
     cout<<"Ingrese su mensaje:"<<endl;
     cin>>texto;
     iConEnvioDeMensaje->ingresarTexto(texto);
