@@ -5,6 +5,7 @@ using namespace std;
 
 DtAsignatura ControladorAltaAsignatura::ingresar(DtAsignatura dtAsignatura){
     this->datosAsignatura = dtAsignatura;
+    return dtAsignatura;
 };
 
 void ControladorAltaAsignatura::altaAsignatura(){
