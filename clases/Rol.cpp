@@ -25,7 +25,7 @@ void Rol::setAsignatura(Asignatura* asignatura){
 }
 
 bool Rol::esAsignatura(string cod){
-  bool esAsig = false
+  bool esAsig = false;
   if(this->asignatura->getCodigo() == cod){
       esAsig = true;
   }

@@ -13,7 +13,7 @@ class ControladorEliminarAsignatura: public IControladorEliminarAsignatura{
     public:
         ControladorEliminarAsignatura();
         list<string> listarAsignaturas();
-        void selectAsignatura(int);
+        void selectAsignatura(string);
         void eliminarAsignatura();
         void cancelar();
 };

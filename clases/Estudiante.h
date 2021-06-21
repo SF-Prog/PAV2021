@@ -25,7 +25,7 @@ class Estudiante: public Perfil{
     void setDocumento(string);
 
     bool estaInscripto(string);
-    void borrarAsignatura(codAsignatura);
+    void borrarAsignatura(string);
 
     // DESTRUCTOR
     ~Estudiante();

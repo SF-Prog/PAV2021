@@ -428,7 +428,7 @@ void envioDeMensaje(){
 
 // 8- ELIMINACION DE ASIGNATURA
 void eliminacionDeAsignatura(){
-    int cod;
+    string cod;
     string confirma = "";
     cout << "_____________________________________________________" << endl;
     cout << "==================ELIMINACION DE ASIGNATURA==================" << endl;
