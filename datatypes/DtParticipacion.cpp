@@ -34,8 +34,8 @@ void DtParticipacion::setId(int id){
 void DtParticipacion::setFecha(time_t fecha){
     this->fecha = fecha;
 }
-void DtParticipacion::setMensaje(char *mensaj){
-    mensaje = mensaj;
+void DtParticipacion::setMensaje(char *mensaje){
+    this->mensaje = mensaje;
 }
 void DtParticipacion::setResponde(DtParticipacion* responde){
     this->responde = responde;
@@ -52,7 +52,9 @@ ostream& operator <<(ostream& salida, const DtParticipacion &dtp){
     cout<<"\nId participacion: "<<dtp.id<<endl;
     cout<</*asctime(fecha)*/"Hora: "<<fecha->tm_hour<< " minuntos: "<<fecha->tm_min<<endl;
     cout<<"\n Mensaje: ";
-    //for(int i = 0; i<strlen(dtp.mensaje); i++)
     cout<<dtp.mensaje;
+  /*  for(int i = 0; i<strlen(dtp.mensaje); i++)
+        cout<<dtp.mensaje[i]; */
+    cout<<endl;
     return salida;
 };

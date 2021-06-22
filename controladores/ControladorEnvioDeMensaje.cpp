@@ -66,7 +66,6 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
         clase->addParticipacion(pr);
 
         DtParticipacion* dtpr = new DtParticipacion(pr->getId(), this->fecha, this->txt);
-//        cout<<"agregando part sin respuesta - "<< *(dtpr)<<endl;
     }
 };
 void ControladorEnvioDeMensaje::cancelar(){};

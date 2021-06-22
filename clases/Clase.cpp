@@ -11,14 +11,16 @@ Clase::Clase(string nombre, time_t inicio, time_t fin,string codigo){
   this->codigo = codigo;
 };
 Clase::Clase(string nombre, Docente* docente, time_t inicio, string codigo){
-  this->id = id;
+  this->id = idAutoGenerado;
+  idAutoGenerado++;
   this->nombre = nombre;
   this->docentes.push_front(docente);
   this->inicio = inicio;
   this->codigo = codigo;
 };
 Clase::Clase(string nombre, list<Docente*> docentes, time_t inicio, time_t fin,string codigo){
-  this->id = id;
+  this->id = idAutoGenerado;
+  idAutoGenerado++;
   this->nombre = nombre;
   this->docentes = docentes;
   this->inicio = inicio;

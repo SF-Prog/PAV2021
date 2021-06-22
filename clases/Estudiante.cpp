@@ -15,7 +15,7 @@ void Estudiante::setDocumento(string documento){
 };
 
 bool Estudiante::member(Asignatura* asignatura){
-    this->asignaturas.find(asignatura->getCodigo()) != this->asignaturas.end();
+    return this->asignaturas.find(asignatura->getCodigo()) != this->asignaturas.end();
 };
 bool Estudiante::estaInscripto(string codigo){
   ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();

@@ -661,9 +661,6 @@ bool deseaIniciarSesion(){
     return respuesta == "si";
 };
 int main(){
-    char t[50];
-    cin>>t;
-    cout<<*t;
     cargarFabrica();
     int menuOpcion = 0;
     while (menuOpcion != 10){

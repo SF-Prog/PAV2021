@@ -46,9 +46,10 @@ void ControladorAgregarDatos::cargarDatos(){
     mA->agregarAsignatura(a6);
     mA->agregarAsignatura(a7);
     mA->agregarAsignatura(a8);
+    e1->addAsignatura(a1);
     // Asignar Asignatura
    // Practico* claseP = new Practico("clase1", 10, 10,)
-    Rol* rol = new Rol(TEORICO);
+    Rol* rol = new Rol(MONITOREO);
     rol->setAsignatura(a1);
     d1->agregarAsignatura(rol);
    // a1->agregarClase

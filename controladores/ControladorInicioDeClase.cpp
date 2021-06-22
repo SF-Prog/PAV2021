@@ -76,7 +76,7 @@ void ControladorInicioDeClase::iniciarClase(){
         list<Perfil*> perfiles = mP->listarPerfiles();
         for(list<Perfil*>::iterator it = perfiles.begin(); it != perfiles.end(); it++){
            if (Estudiante* est = dynamic_cast<Estudiante*>(*it)) {
-              if (est->estaInscripto(est->getNombre())){
+              if (est->estaInscripto(this->dtInicio.getCodigo())){
                     monitoreo->addEstudiante(est);
                 }
             }
