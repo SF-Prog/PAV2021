@@ -25,6 +25,8 @@ class Perfil{
     void setEmail(string);
     void setPassword(string);
 
+    virtual void eliminarAsignatura(string) = 0;
+
     // DESTRUCTOR
    virtual ~Perfil();
 };

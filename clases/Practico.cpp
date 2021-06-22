@@ -11,4 +11,17 @@ DtInfoClase Practico::getDtinfoClase(){
     return DtInfoClase(this->getId(), this->getNombre(), emailDocentes);
 };
 // DESTRUCTOR
-Practico::~Practico(){};
+Practico::~Practico(){
+    for(list<AsisteEnVivo*>::iterator it=this->asistenciasEnVivo.begin(); it!=asistenciasEnVivo.end(); ++it){
+    this->asistenciasEnVivo.erase(it);
+  };
+  for(list<AsisteDiferido*>::iterator it=this->asistenciasDiferido.begin(); it!=asistenciasDiferido.end(); ++it){
+    this->asistenciasDiferido.erase(it);
+  };
+  for(map<int, Participacion*>::iterator it=this->participaciones.begin(); it!=participaciones.end(); ++it){
+    this->participaciones.erase(it);
+  };
+  for(list<Docente*>::iterator it=this->docentes.begin(); it!=docentes.end(); ++it){
+    this->docentes.remove(*it);
+  };
+};

@@ -11,12 +11,10 @@
 #include <map>
 #include <ctime>
 
-class Docente;
-
 using namespace std;
 
 class Clase{
-  private:
+  protected:
     static int idAutoGenerado;
     int id;
     string nombre;
@@ -42,7 +40,7 @@ class Clase{
     time_t getInicio();
     time_t getFin();
     string getCodigo();
-    DtInfoClase* getDtInfoClase();
+    virtual DtInfoClase* getDtInfoClase();
 
     void addParticipacion(Participacion*);
     

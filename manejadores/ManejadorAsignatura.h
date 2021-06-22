@@ -8,8 +8,6 @@
 
 using namespace std;
 
-using namespace std;
-
 class ManejadorAsignatura{
     private:
        static ManejadorAsignatura* instancia;

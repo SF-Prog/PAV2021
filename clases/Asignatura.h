@@ -2,12 +2,19 @@
 #define ASIGNATURA
 
 #include "../clases/Clase.h"
-#include "../datatypes/DtInfoClase.h"
+//#include "../clases/Teorico.h"
+//#include "../clases/Monitoreo.h"
+#include "../datatypes/DtInfoMonitoreo.h"
+//#include "../datatypes/DtInfoTeorico.h"
 #include "../datatypes/DtInstanciaClase.h"
 #include <string>
 #include <map>
 
-class Clase;
+
+//class Clase;
+class Teorico;
+class Monitoreo;
+//class DtInfoTeorico;
 using namespace std;
 
 class Asignatura{

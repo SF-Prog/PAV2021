@@ -4,6 +4,8 @@
 #include <string>
 #include <ctime>
 
+#include "Perfil.h"
+
 using namespace std;
 
 class Estudiante;

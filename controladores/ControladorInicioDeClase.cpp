@@ -108,6 +108,6 @@ void ControladorInicioDeClase::iniciarClase(){
 };
 
 void ControladorInicioDeClase::cancelar(){
-    delete this->docente;
+    this->docente = NULL;
 };
 ControladorInicioDeClase::~ControladorInicioDeClase(){};

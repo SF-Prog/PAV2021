@@ -66,7 +66,7 @@ DtInfoClase* Clase::getDtInfoClase(){
     for(list<Docente*>::iterator it=docentes.begin(); it!=docentes.end(); it++){
         emailDocentes.push_front((*it)->getEmail());
     };
-  return new DtInfoClase(this->id, this->nombre, emailDocentes);
+    return new DtInfoClase(this->id, this->nombre, emailDocentes);
 };
 
 

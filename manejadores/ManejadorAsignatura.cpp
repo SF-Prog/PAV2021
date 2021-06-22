@@ -27,7 +27,12 @@ bool ManejadorAsignatura::existeAsignatura(string cod){
     }
 };
 
-void ManejadorAsignatura::removerAsignatura(Asignatura*){};
+void ManejadorAsignatura::removerAsignatura(Asignatura* a){
+    map<string,Asignatura*>::iterator it = this->asignaturas.find(a->getCodigo());
+    if(it!=this->asignaturas.end()){
+        this->asignaturas.erase(it);
+    };
+};
 
 void ManejadorAsignatura::agregarAsignatura(Asignatura* asignatura){
     this->asignaturas.insert(pair<string, Asignatura*>(asignatura->getCodigo(), asignatura));

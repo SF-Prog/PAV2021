@@ -5,6 +5,10 @@
 #include "../manejadores/ManejadorAsignatura.h"
 #include "../manejadores/ManejadorClase.h"
 #include "../manejadores/ManejadorPerfil.h"
+#include "../clases/Perfil.h"
+
+class Estudiante;
+class Docente;
 
 
 class ControladorEliminarAsignatura: public IControladorEliminarAsignatura{

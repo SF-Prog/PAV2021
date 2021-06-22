@@ -1,7 +1,6 @@
 #ifndef ROL
 #define ROL
 
-#include "../clases/Asignatura.h"
 #include "../enum/TipoRol.h"
 #include <string>
 
@@ -25,7 +24,6 @@ class Rol{
     string getCodigoAsignatura();
     void setAsignatura(Asignatura*);
     bool esAsignatura(string);
-    void borrarAsignatura(string);
 
     // DESTRUCTOR
     ~Rol();

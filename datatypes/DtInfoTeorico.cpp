@@ -9,6 +9,6 @@ int DtInfoTeorico::getCantAsistentes(){ return this->cantAsistentes;};
 DtInfoTeorico::~DtInfoTeorico(){};
 
 ostream& operator<<(ostream& salida, const DtInfoTeorico &dtit){
-    cout<<(DtInfoClase)dtit<<" - "<<dtit.cantAsistentes<<endl;
+    cout<<(DtInfoClase)dtit<<"cantidad Asistentes"<<dtit.cantAsistentes<<endl;
     return salida;
 };

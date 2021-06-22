@@ -10,7 +10,7 @@ using namespace std;
 
 class DtInfoTeorico: public DtInfoClase{
     private:
-        int cantAsistentes = 0;
+        int cantAsistentes;
     public:
         DtInfoTeorico();
         DtInfoTeorico(int, string, list<string>, int);

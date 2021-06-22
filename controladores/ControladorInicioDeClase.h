@@ -11,6 +11,7 @@
 #include "../datatypes/DtIniciarClase.h"
 #include "../datatypes/DtIniciarClaseFull.h"
 #include "../clases/Clase.h"
+#include "../clases/Asignatura.h"
 #include "../clases/Monitoreo.h"
 #include "../clases/Practico.h"
 #include "../clases/Teorico.h"

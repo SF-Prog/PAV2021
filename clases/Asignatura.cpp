@@ -1,4 +1,6 @@
 #include "Asignatura.h"
+#include "../clases/Teorico.h"
+#include "../clases/Monitoreo.h"
 
 Asignatura::Asignatura(){};
 Asignatura::Asignatura(string codigo, string nombre, DtInstanciaClase instanciaClase){
@@ -35,15 +37,28 @@ list<Clase*> Asignatura::getClases(){
 
 list<DtInfoClase*> Asignatura::getDtInfoClase(){
   list<DtInfoClase*> dticList;
+  Monitoreo* m;
+  Teorico* t;
   for(map<int, Clase*>::iterator it = this->clases.begin(); it!=this->clases.end(); it++){
-    dticList.push_front(it->second->getDtInfoClase());
+    m = dynamic_cast<Monitoreo*>(it->second);
+    if (m!=NULL)
+      dticList.push_front(m->getDtInfoClase());
+    else{
+      t = dynamic_cast<Teorico*>(it->second);
+      if (t!=NULL)
+        dticList.push_front(t->getDtInfoClase());
+      else
+        dticList.push_front(it->second->getDtInfoClase());
+    }
   };
   return dticList;
 };
 
 Asignatura::~Asignatura(){
+  cout<<"aca se destruye la asignatura"<<endl;
   for(map<int, Clase*>::iterator it=this->clases.begin(); it!=this->clases.end(); it++){
+    Clase* c = it->second;
     this->clases.erase(it);
-    delete it->second;
+    delete c;
   };
 };

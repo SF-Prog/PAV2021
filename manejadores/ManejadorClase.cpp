@@ -25,5 +25,4 @@ map<int, Clase*> ManejadorClase::listarClases(){
 void ManejadorClase::eliminarClase(int id){
     map<int, Clase*>::iterator it = this->clases.find(id);
     this->clases.erase(it);
-    delete it->second;
 };

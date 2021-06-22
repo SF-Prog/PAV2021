@@ -1,4 +1,6 @@
 #include "Rol.h"
+#include "../clases/Asignatura.h"
+
 //Constructores
 Rol::Rol(){};
 Rol::Rol(TipoRol tipo){
@@ -30,10 +32,6 @@ bool Rol::esAsignatura(string cod){
       esAsig = true;
   }
   return esAsig;
-}
-
-void Rol::borrarAsignatura(string cod){
-  delete asignatura;
 }
 
 // DESTRUCTOR

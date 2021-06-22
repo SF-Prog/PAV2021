@@ -36,6 +36,7 @@
         "system_error": "cpp",
         "type_traits": "cpp",
         "tuple": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "xutility": "cpp"
     }
 }

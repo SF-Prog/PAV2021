@@ -3,11 +3,13 @@
 
 #include "Perfil.h"
 #include "Rol.h"
-//#include "../enum/TipoRol.h"
+#include "../enum/TipoRol.h"
 #include <string>
 #include <list>
+#include <iostream>
 
-class Rol;
+//class Rol;
+
 using namespace std;
 
 class Docente: public Perfil{

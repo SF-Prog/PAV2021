@@ -4,12 +4,16 @@
 #include "../manejadores/ManejadorPerfil.h"
 #include "../datatypes/DtInfoMonitoreo.h"
 #include "Estudiante.h"
-#include "Docente.h"
-#include "Clase.h"
+//#include "Docente.h"
+#include "../clases/Clase.h"
+
 #include <string>
 
-class DtInfoMonitoreo;
 using namespace std;
+
+//class Estudiante;
+class Docente;
+class DtInfoMonitoreo;
 
 class Monitoreo: public Clase{
   private:
@@ -17,7 +21,7 @@ class Monitoreo: public Clase{
     list<string> habilitados;
   public:
     Monitoreo(string, Docente*, time_t, string, list<string>);
-    DtInfoMonitoreo getDtInfoClase();
+    DtInfoMonitoreo* getDtInfoClase();
     // DESTRUCTOR
     ~Monitoreo();
 };

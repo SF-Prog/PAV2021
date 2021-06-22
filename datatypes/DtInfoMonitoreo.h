@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 
-class DtInfoClase;
+//class DtInfoClase;
 
 using namespace std;
 
