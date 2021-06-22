@@ -43,7 +43,7 @@ void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
     this->idP = idP;
     this->vaAresponder = true;
 };
-void ControladorEnvioDeMensaje::ingresarTexto(char &mensaje){
+void ControladorEnvioDeMensaje::ingresarTexto(char* mensaje){
     this->txt = mensaje;
  //   cout << mensaje<< "llega char a controlador"  << endl;
 };
@@ -66,7 +66,7 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
         clase->addParticipacion(pr);
 
         DtParticipacion* dtpr = new DtParticipacion(pr->getId(), this->fecha, this->txt);
-        cout<<"agregando part sin respuesta - "<< (dtpr)<<endl;
+//        cout<<"agregando part sin respuesta - "<< *(dtpr)<<endl;
     }
 };
 void ControladorEnvioDeMensaje::cancelar(){};

@@ -47,13 +47,14 @@ list<DtParticipacion*> Participacion::getRespuestas(){
     };
     return dtParticipaciones;
 }*/
+/*
 DtParticipacion* Participacion::getDtRespondeA(){
     if (this->responde == NULL)
         return new DtParticipacion(this->getId(), this->getFecha(), this->getMensaje());
     else
         return new DtParticipacion(this->getId(), this->getFecha(), this->getMensaje(), this->getDtRespondeA());
 };
-
+*/
 // DESTRUCTOR
 Participacion::~Participacion(){
     delete this->responde;

@@ -415,7 +415,7 @@ void envioDeMensaje(){
             cout<<"\nParticipaciones para la clase de id: "<< idC << endl;
             for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
                 if ((*it) != NULL)
-                    cout<<*(it)<<endl;
+                    cout<<**(it)<<endl;
             };
             cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
             cin>>idP;
@@ -661,6 +661,9 @@ bool deseaIniciarSesion(){
     return respuesta == "si";
 };
 int main(){
+    char t[50];
+    cin>>t;
+    cout<<*t;
     cargarFabrica();
     int menuOpcion = 0;
     while (menuOpcion != 10){

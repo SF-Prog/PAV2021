@@ -3,6 +3,7 @@
 
 #include <ctime>
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -10,14 +11,14 @@ class DtParticipacion{
     private:
         int id;
         time_t fecha;
-        char &mensaje;
+        char* mensaje;
         DtParticipacion* responde;
         
     public:
         // Constructores
         DtParticipacion();
-        DtParticipacion(int, time_t, char&);
-        DtParticipacion(int, time_t, char&, DtParticipacion*);
+        DtParticipacion(int, time_t, char*);
+        DtParticipacion(int, time_t, char*, DtParticipacion*);
 
         // Getters and Setters
         int getId();
@@ -26,7 +27,7 @@ class DtParticipacion{
         DtParticipacion* getResponde();
         void setId(int);
         void setFecha(time_t);
-        void setMensaje(char&);
+        void setMensaje(char*);
         void setResponde(DtParticipacion*);
 
         // Destructor
