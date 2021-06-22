@@ -3,7 +3,7 @@
 
 #include "../clases/Perfil.h"
 #include "../datatypes/DtParticipacion.h"
-#include <string>
+//#include <string>
 #include <list>
 #include <map>
 #include <ctime>
@@ -29,6 +29,7 @@ class Participacion{
     char* getMensaje();
     Participacion* getRespondeA();
     DtParticipacion* getResponde();
+    Participacion * getRespondeA();
 
     void setFecha(time_t);
     void setMensaje(char*);

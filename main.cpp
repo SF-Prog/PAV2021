@@ -414,6 +414,7 @@ void envioDeMensaje(){
         list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
         if(dtParticipaciones.size() > 0){
             cout<<"\nParticipaciones para la clase de id: "<< idC << endl;
+
             for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
                 cout<<(*it)<<endl;
             };
