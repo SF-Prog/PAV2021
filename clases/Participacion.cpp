@@ -2,7 +2,7 @@
 
 int Participacion::idAutoGenerado=1;
 Participacion::Participacion(){};
-Participacion::Participacion(time_t fecha, char mensaje[50]){
+Participacion::Participacion(time_t fecha, char* mensaje){
     this->id=idAutoGenerado;
     idAutoGenerado++;
     this->fecha=fecha;

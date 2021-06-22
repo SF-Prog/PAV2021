@@ -45,6 +45,7 @@ void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
 };
 void ControladorEnvioDeMensaje::ingresarTexto(char* mensaje){
     this->txt = mensaje;
+    cout << mensaje<< "llega char a controlador"  << endl;
 };
 void ControladorEnvioDeMensaje::enviarMensaje(){
     ManejadorClase* mC = ManejadorClase::getInstancia();
