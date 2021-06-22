@@ -8,6 +8,8 @@
 #include "../manejadores/ManejadorPerfil.h"
 // DataTypes
 #include "../datatypes/DtInstanciaClase.h"
+#include "../datatypes/DtParticipacion.h"
+#include <time.h>
 
 void ControladorAgregarDatos::cargarDatos(){
     list<Rol*> roles; // incializar esta variable
@@ -56,6 +58,14 @@ void ControladorAgregarDatos::cargarDatos(){
     time_t timer;
     time(&timer);
     cout << timer << endl;
-    // Otros
-
+    // Datatypes
+    struct tm fecha = {0};
+    fecha.tm_year = 2020;
+    fecha.tm_mon = 2;
+    fecha.tm_mday = 2;
+    fecha.tm_hour = 20;
+    fecha.tm_min = 30;
+    time_t t = mktime(&fecha);
+    char* mensaje = "hola me llamo santi";
+    DtParticipacion dtP = DtParticipacion();
 }

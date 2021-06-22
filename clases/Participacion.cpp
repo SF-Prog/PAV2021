@@ -2,17 +2,18 @@
 
 int Participacion::idAutoGenerado=1;
 Participacion::Participacion(){};
-Participacion::Participacion(time_t fecha, char mensaje){
+Participacion::Participacion(time_t fecha, char* mensaje){
     this->id=idAutoGenerado;
     idAutoGenerado++;
     this->fecha=fecha;
     this->mensaje=mensaje;
 };
-Participacion::Participacion(time_t fecha, string mensaje,Participacion * responde){
+Participacion::Participacion(time_t fecha, char* mensaje,Participacion * responde){
     this->id=idAutoGenerado;
     idAutoGenerado++;
     this->fecha=fecha;
     this->mensaje=mensaje;
+    cout << "MENSAJE DE PARTICIPACION CONTRUCTOR" << mensaje << endl;
     this->responde = responde;
 };
 //Getters y setters
@@ -22,19 +23,19 @@ int Participacion::getId(){
 time_t Participacion::getFecha(){
     return this->fecha;
 };
-char Participacion::getMensaje(){
+char* Participacion::getMensaje(){
     return this->mensaje;
 };
 void Participacion::setFecha(time_t fecha){
     this->fecha = fecha;
 };
-void Participacion::setMensaje(char mensaje){
+void Participacion::setMensaje(char* mensaje){
     this->mensaje=mensaje;
 };
 void Participacion::respondeA(Participacion* p){
     this->responde = p;
 };
-Participacion * Participacion::getRespondeA(){
+Participacion* Participacion::getRespondeA(){
     return this->responde;
 }; 
 /*
