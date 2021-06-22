@@ -27,7 +27,6 @@ void DtAsistir::setId(int id) {
 DtAsistir::~DtAsistir(){}
 
 ostream& operator <<(ostream& salida, DtAsistir& dtAsis){
-    cout<<" Codico: "<<dtAsis.getCod()<<" Id: "<<dtAsis.getId() <<endl;
-     
+    cout<<"(DtAsistir) Codigo: "<<dtAsis.getCod()<<" Id: "<<dtAsis.getId() <<endl;
     return salida;
 }

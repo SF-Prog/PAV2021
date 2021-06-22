@@ -8,7 +8,6 @@ list<int> ControladorEnvioDeMensaje::clasesOnlineAsistiendo(){
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
     ManejadorClase* mC = ManejadorClase::getInstancia();
     map<int, Clase*> clases = mC->listarClases();
-    cout<<"cantidad de clases"<<clases.size()<<endl;
    
     for(map<int, Clase*>::iterator it = clases.begin(); it!=clases.end(); it++){
         list<AsisteEnVivo*> asistEnVivo = it->second->getAsistenciasEnVivo();
@@ -30,7 +29,12 @@ list<DtParticipacion*> ControladorEnvioDeMensaje::selectClase(int id){
     list<DtParticipacion*> listDtParticipacion;
     if(participaciones.size()>0){
         for(map<int, Participacion*>::iterator it = participaciones.begin(); it!=participaciones.end(); it++){
-            listDtParticipacion.push_front(new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje(), it->second->getResponde()));
+           cout<< "id seteado: " << it->second->getId()<<endl;
+           cout<< "fecha seteada: " << it->second->getFecha()<<endl;
+           cout<< "mensaje seteado: " <<it->second->getMensaje()<<endl;
+            DtParticipacion* participacion = new DtParticipacion(it->second->getId(), it->second->getFecha(),it->second->getMensaje());
+           //cout<<"PUNTERO" <<prticipacion->getId()<<endl;
+            listDtParticipacion.push_front(participacion);
         };
     }
     return listDtParticipacion;
@@ -39,8 +43,9 @@ void ControladorEnvioDeMensaje::ControladorEnvioDeMensaje::responder(int idP){
     this->idP = idP;
     this->vaAresponder = true;
 };
-void ControladorEnvioDeMensaje::ingresarTexto(string mensaje){
+void ControladorEnvioDeMensaje::ingresarTexto(char* mensaje){
     this->txt = mensaje;
+    cout << mensaje<< "llega char a controlador"  << endl;
 };
 void ControladorEnvioDeMensaje::enviarMensaje(){
     ManejadorClase* mC = ManejadorClase::getInstancia();
@@ -51,12 +56,16 @@ void ControladorEnvioDeMensaje::enviarMensaje(){
     if(this->vaAresponder){
         map<int, Participacion*> clases = clase->getParticipaciones();
         map<int, Participacion*>::iterator it = clases.find(this->idP);
-        if(it != clases.end())
-            it->second->respondeA(new Participacion(fecha, this->txt));
+        if(it != clases.end()){
+            Participacion* p = new Participacion(fecha, this->txt,it->second);
+            clase->addParticipacion(p);
+        }
+        
     }else{
-        clase->addParticipacion(new Participacion(fecha, this->txt));
+        cout << "datos de participacion - \nFecha: " << fecha<<"\ntxt:"<< this->txt <<endl;
+        Participacion* pr = new Participacion(fecha, this->txt);
+        clase->addParticipacion(pr);
     }
-
 };
 void ControladorEnvioDeMensaje::cancelar(){};
 ControladorEnvioDeMensaje::~ControladorEnvioDeMensaje(){};

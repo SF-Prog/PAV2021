@@ -317,6 +317,7 @@ void inicioClase(){
     fecha.tm_mon = mes;
     fecha.tm_mday = dia;
     fecha.tm_hour = hora;
+    fecha.tm_min = minutos;
     time_t t = mktime(&fecha);
     cout<< fecha.tm_year << "/" << fecha.tm_mon << "/" << fecha.tm_mday << "  hora: " << fecha.tm_hour << ":" << fecha.tm_min <<endl;
     DtIniciarClase dtic = DtIniciarClase(cod, nombre, t);
@@ -393,40 +394,52 @@ void asistenciaClaseEnVivo(){
 
 // 7- ENVIO DE MENSAJE
 void envioDeMensaje(){
-    string responde, texto;
+    string responde;
+    char texto[50];
     string confirma = "";
     int idC, idP;
     list<int> clases;
     cout << "_____________________________________________________" << endl;
     cout << "==================ENVIO DE MENSAJE==================" << endl;
     cout << "_____________________________________________________" << endl;
-    cout<<"Clases disponibles:"<<endl;
+    cout<<"\n------Clases disponibles -----\n"<<endl;
     clases = iConEnvioDeMensaje->clasesOnlineAsistiendo();
-    for(list<int>::iterator it=clases.begin(); it!=clases.end(); it++){
-        cout<<(*it)<<endl;
-    }
-    cout<<"Seleccione la clase:"<<endl;
-    cin>>idC;
-    list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
-    if(dtParticipaciones.size()>0){
-        for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
-            cout<<(*it)<<endl;
-        };
-        cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
-        cin>>idP;
-        if(idP != 0)
-            iConEnvioDeMensaje->responder(idP);
-    }
-    cout<<"Ingrese su mensaje:"<<endl;
-    cin>>texto;
-    iConEnvioDeMensaje->ingresarTexto(texto);
-    while(confirma != "si" && confirma != "no"){
-        cout<<"Desea confirmar? (si/no)"<<endl;
+    if(clases.size() != 0){
+
+        for(list<int>::iterator it=clases.begin(); it!=clases.end(); it++){
+            cout<< "Clase con id: " << (*it)<<endl;
+        }
+        cout<<"\nSeleccione el id de la clase:"<<endl;
+        cin>>idC;
+        list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
+        if(dtParticipaciones.size() > 0){
+            cout<<"\nParticipaciones para la clase de id: "<< idC << endl;
+
+            for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
+                cout<<(*it)<<endl;
+            };
+            cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
+            cin>>idP;
+            if(idP != 0)
+                iConEnvioDeMensaje->responder(idP);
+        }
+        cout<<"Ingrese su mensaje:"<<endl;
+        scanf(" %[^\n]s",texto);
+        iConEnvioDeMensaje->ingresarTexto(texto);
+        cout << "\n\n El texto ingreado es: " << texto << endl;
+
+        cout<<"¿Desea confirmar? (si/no)"<<endl;
         cin>>confirma;
+        while(confirma != "si" && confirma != "no"){
+            cout<<"¿Desea confirmar? (si/no)"<<endl;
+            cin>>confirma;
+        }
+        if (confirma == "si")
+            iConEnvioDeMensaje->enviarMensaje();
+        iConEnvioDeMensaje->cancelar();
+    } else {
+        cout << "\nEl estudiante no tiene clases Online a las que se ha inscripto.\n" << endl;
     }
-    if (confirma == "si")
-        iConEnvioDeMensaje->enviarMensaje();
-    iConEnvioDeMensaje->cancelar();
 }
 
 // 8- ELIMINACION DE ASIGNATURA

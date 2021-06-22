@@ -40,7 +40,7 @@ list<string> ControladorInscripcionAsignatura::asignaturasNoInscripto(){
 };
 void ControladorInscripcionAsignatura::selectAsignatura(string cod){
     this->cod = cod;
-    cout<<"CODIGO SELECCIONADO"<<cod<<endl;
+    cout<<"Usted se ha inscripto a la materia de codigo:  "<<cod<<endl;
 };
 void ControladorInscripcionAsignatura::inscribir(){
     Estudiante* estudiante = dynamic_cast<Estudiante*>(Sesion::getInstancia()->getPerfil());
