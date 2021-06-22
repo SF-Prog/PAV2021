@@ -76,20 +76,20 @@ void ControladorInicioDeClase::iniciarClase(){
         list<Perfil*> perfiles = mP->listarPerfiles();
         for(list<Perfil*>::iterator it = perfiles.begin(); it != perfiles.end(); it++){
            if (Estudiante* est = dynamic_cast<Estudiante*>(*it)) {
-              if (est->estaInscripto((*it)->getNombre())){
-                  mP->add((*it));
+              if (est->estaInscripto(est->getNombre())){
+                    monitoreo->addEstudiante(est);
                 }
             }
         }
-        mC->agregarClase(monitoreo);
         Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
         asignatura->agregarClase(monitoreo);
+        mC->agregarClase(monitoreo);
     }
 
     if (this->tipoRol == PRACTICO){
         Practico* practico = new Practico(this->data.getNombre(),this->data.getFechaHora(),
                                           this->data.getFechaHora(),this->data.getCodigo());
-        ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
+        //ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
         practico->addDocente(this->docente);
         mC->agregarClase(practico);
         Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
@@ -99,8 +99,8 @@ void ControladorInicioDeClase::iniciarClase(){
     if (this->tipoRol == TEORICO){
         Teorico* teorico = new Teorico(this->data.getNombre(),this->data.getFechaHora(),
                                        this->data.getFechaHora(),this->data.getCodigo());
-        ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
         teorico->addDocente(this->docente);
+        //ManejadorPerfil* mP =  ManejadorPerfil::getInstancia();
         mC->agregarClase(teorico);
         Asignatura* asignatura = mA->getAsignatura(this->data.getCodigo());
         asignatura->agregarClase(teorico);

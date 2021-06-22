@@ -28,8 +28,8 @@ class Participacion{
     time_t getFecha();
     char* getMensaje();
     Participacion* getRespondeA();
-    DtParticipacion* getResponde();
-    Participacion * getRespondeA();
+    DtParticipacion* getDtRespondeA();
+ //   Participacion * getRespondeA();
 
     void setFecha(time_t);
     void setMensaje(char*);

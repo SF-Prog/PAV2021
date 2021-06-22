@@ -21,6 +21,9 @@ DtInfoMonitoreo* Monitoreo::getDtInfoClase(){
     };
     return new DtInfoMonitoreo(this->getId(), this->getNombre(), emailDocentes, emailEstudiantes);
 };
+void Monitoreo::addEstudiante(Estudiante* est){
+    this->estudiantes.insert(pair<string, Estudiante*>(est->getDocumento(), est));
+};
 // DESTRUCTOR
 Monitoreo::~Monitoreo(){
     for(list<AsisteEnVivo*>::iterator it=this->asistenciasEnVivo.begin(); it!=asistenciasEnVivo.end(); ++it){

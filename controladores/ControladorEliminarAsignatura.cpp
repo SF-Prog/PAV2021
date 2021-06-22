@@ -7,7 +7,6 @@ ControladorEliminarAsignatura::ControladorEliminarAsignatura(){};
 list<string> ControladorEliminarAsignatura::listarAsignaturas(){
     ManejadorAsignatura* mA = ManejadorAsignatura::getInstancia();
     map<string, Asignatura*> asignaturas = mA->getAsignaturas();
-    std::cout << "[RS] - asignaturas.size() es " << asignaturas.size() << '\n';
     list<string> codigosAsignatura;
     for(map<string, Asignatura*>::iterator it=asignaturas.begin(); it!=asignaturas.end(); it++){
         codigosAsignatura.push_front(it->second->getCodigo());

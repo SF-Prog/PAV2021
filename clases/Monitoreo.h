@@ -22,6 +22,7 @@ class Monitoreo: public Clase{
   public:
     Monitoreo(string, Docente*, time_t, string, list<string>);
     DtInfoMonitoreo* getDtInfoClase();
+    void addEstudiante(Estudiante*);
     // DESTRUCTOR
     ~Monitoreo();
 };

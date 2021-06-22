@@ -2,13 +2,13 @@
 
 // Constructores
 DtParticipacion::DtParticipacion(){}
-DtParticipacion::DtParticipacion(int id, time_t fecha, char* mensaje){
+DtParticipacion::DtParticipacion(int id, time_t fecha, char mensaje[50]){
     this->id = id;
     this->fecha = fecha;
     this->mensaje = mensaje;
     this->responde = NULL;
 }
-DtParticipacion::DtParticipacion(int id, time_t fecha, char* mensaje, DtParticipacion* responde){
+DtParticipacion::DtParticipacion(int id, time_t fecha, char mensaje[50], DtParticipacion* responde){
     this->id = id;
     this->fecha = fecha;
     this->mensaje = mensaje;
@@ -34,7 +34,7 @@ void DtParticipacion::setId(int id){
 void DtParticipacion::setFecha(time_t fecha){
     this->fecha = fecha;
 }
-void DtParticipacion::setMensaje(char* mensaje){
+void DtParticipacion::setMensaje(char &mensaje){
     this->mensaje = mensaje;
 }
 void DtParticipacion::setResponde(DtParticipacion* responde){
@@ -47,8 +47,12 @@ DtParticipacion::~DtParticipacion(){}
 ostream& operator <<(ostream& salida, const DtParticipacion &dtp){
     time_t t = dtp.fecha;
     struct tm *fecha;
-    time( &t );
-    fecha = localtime(  &t );
-    cout<<"\nId participacion: "<<dtp.id<<"\n Fecha: %s"<< asctime(fecha) <<"\n Mensaje: "<<dtp.mensaje<<endl;
+    time(&t);
+    fecha = localtime(&t);
+    cout<<"\nId participacion: "<<dtp.id<<"\n Fecha: %s"<<endl;
+    cout<</*asctime(fecha)*/"Hora: "<<fecha->tm_hour<< "minuntos: "<<fecha->tm_min<<endl;
+    cout<<"\n Mensaje: ";
+    for(int i = 0; i<strlen(dtp.mensaje); i++)
+        cout<<i<<endl;
     return salida;
 };

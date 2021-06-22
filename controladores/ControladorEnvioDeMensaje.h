@@ -16,11 +16,7 @@
 class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
     private:
         int id, idP;
-<<<<<<< HEAD
-        char* txt;
-=======
-        char txt;
->>>>>>> 8d3b0f3cd8c657ccac244b190e6d034c4d2234f5
+        char &txt;
         time_t fecha;
         bool  vaAresponder;
     public:
@@ -28,11 +24,7 @@ class ControladorEnvioDeMensaje: public IControladorEnvioDeMensaje{
         list<int> clasesOnlineAsistiendo();
         list<DtParticipacion*> selectClase(int id);
         void responder(int);
-<<<<<<< HEAD
-        void ingresarTexto(char*);
-=======
-        void ingresarTexto(char);
->>>>>>> 8d3b0f3cd8c657ccac244b190e6d034c4d2234f5
+        void ingresarTexto(char&);
         void enviarMensaje();
         void cancelar();
         ~ControladorEnvioDeMensaje();

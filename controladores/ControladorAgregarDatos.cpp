@@ -66,6 +66,6 @@ void ControladorAgregarDatos::cargarDatos(){
     fecha.tm_hour = 20;
     fecha.tm_min = 30;
     time_t t = mktime(&fecha);
-    char* mensaje = "hola me llamo santi";
+    char mensaje [50] = "hola me llamo santi";
     DtParticipacion dtP = DtParticipacion();
 }

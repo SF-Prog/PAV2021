@@ -7,13 +7,14 @@ Participacion::Participacion(time_t fecha, char* mensaje){
     idAutoGenerado++;
     this->fecha=fecha;
     this->mensaje=mensaje;
+    this->responde=NULL;
 };
-Participacion::Participacion(time_t fecha, char* mensaje,Participacion * responde){
+Participacion::Participacion(time_t fecha, char* mensaje,Participacion* responde){
     this->id=idAutoGenerado;
     idAutoGenerado++;
     this->fecha=fecha;
     this->mensaje=mensaje;
-    cout << "MENSAJE DE PARTICIPACION CONTRUCTOR" << mensaje << endl;
+//    cout << "MENSAJE DE PARTICIPACION CONTRUCTOR" << mensaje << endl;
     this->responde = responde;
 };
 //Getters y setters
@@ -46,8 +47,11 @@ list<DtParticipacion*> Participacion::getRespuestas(){
     };
     return dtParticipaciones;
 }*/
-DtParticipacion* Participacion::getResponde(){
-    return new DtParticipacion(this->getId(), this->getFecha(), this->getMensaje(), this->getResponde());
+DtParticipacion* Participacion::getDtRespondeA(){
+    if (this->responde == NULL)
+        return new DtParticipacion(this->getId(), this->getFecha(), this->getMensaje());
+    else
+        return new DtParticipacion(this->getId(), this->getFecha(), this->getMensaje(), this->getDtRespondeA());
 };
 
 // DESTRUCTOR

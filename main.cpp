@@ -101,7 +101,7 @@ void menuDocente(){
     cout<<"1 - Inicio de clase"<<endl;
     cout<<"2 - Envio de mensaje"<<endl;
     cout<<"3 - Listado de Clases"<<endl;
-    cout<<"10 - Salir"<<endl<<endl;
+    cout<<"10 - Salir de sesion"<<endl<<endl;
     cout<<"Ingrese opcion: ";
 }
 void ingrese_enter(){
@@ -404,8 +404,7 @@ void envioDeMensaje(){
     cout << "_____________________________________________________" << endl;
     cout<<"\n------Clases disponibles -----\n"<<endl;
     clases = iConEnvioDeMensaje->clasesOnlineAsistiendo();
-    if(clases.size() != 0){
-
+    if(clases.size() > 0){
         for(list<int>::iterator it=clases.begin(); it!=clases.end(); it++){
             cout<< "Clase con id: " << (*it)<<endl;
         }
@@ -414,9 +413,9 @@ void envioDeMensaje(){
         list<DtParticipacion*> dtParticipaciones = iConEnvioDeMensaje->selectClase(idC);
         if(dtParticipaciones.size() > 0){
             cout<<"\nParticipaciones para la clase de id: "<< idC << endl;
-
             for(list<DtParticipacion*>::iterator it=dtParticipaciones.begin(); it!=dtParticipaciones.end(); it++){
-                cout<<(*it)<<endl;
+                if ((*it) != NULL)
+                    cout<<*(it)<<endl;
             };
             cout<<"Indique el id si desea responder, de lo contrario ingrese 0"<<endl;
             cin>>idP;
@@ -436,7 +435,8 @@ void envioDeMensaje(){
         }
         if (confirma == "si")
             iConEnvioDeMensaje->enviarMensaje();
-        iConEnvioDeMensaje->cancelar();
+        else
+            iConEnvioDeMensaje->cancelar();
     } else {
         cout << "\nEl estudiante no tiene clases Online a las que se ha inscripto.\n" << endl;
     }
